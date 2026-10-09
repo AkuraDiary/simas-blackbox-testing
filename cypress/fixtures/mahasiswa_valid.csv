@@ -1,0 +1,4 @@
+nim,nama_lengkap,email,phone,tanggal_lahir,tahun_masuk,status,prodi,fakultas
+2310801001,Andi Permana,andi.p@student.simas.ac.id,85566778899,2005-03-14T00:00:00.000,2023,AKTIF,Sistem Informasi,Fakultas Teknik
+2310801002,Bela Safira,bela.s@student.simas.ac.id,85599887766,2004-05-20T00:00:00.000,2023,AKTIF,Ilmu Komputer,Fakultas Teknik
+2210801005,Candra Wijaya,candra.w@student.simas.ac.id,81112223334,2003-12-01T00:00:00.000,2022,CUTI,Sistem Informasi,Fakultas Teknik

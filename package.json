@@ -1,0 +1,28 @@
+{
+  "name": "simas-blackbox-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean:reports": "rm -rf cypress/reports || true",
+    "cy:run": "npx cypress run",
+    "merge:reports": "npx mochawesome-merge cypress/reports/*.json > cypress/reports/merged-report.json",
+    "generate:html": "npx marge cypress/reports/merged-report.json --reportDir cypress/reports --inline",
+    "report": "npm run clean:reports && npm run cy:run || npm run merge:reports && npm run generate:html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^26.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.8",
+    "cypress": "^15.20.0",
+    "esbuild": "^0.28.2",
+    "mochawesome": "^8.0.1",
+    "mochawesome-merge": "^5.1.1",
+    "mochawesome-report-generator": "^6.3.2"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/e2e/step_definitions/**/*.js"
+  }
+}

@@ -1,0 +1,4 @@
+nip,nama_lengkap,email,phone,unit_kerja,jabatan
+198604042011041004,Valid Person,valid@simas.ac.id,81111111111,Biro Akademik,Staf
+,No NIP Person,nonip@simas.ac.id,82222222222,Fakultas Hukum,Dosen
+198705052012052005,Bad Email Person,not-an-email,83333333333,Sistem Informasi,Staf

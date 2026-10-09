@@ -1,0 +1,4 @@
+nim,nama_lengkap,email,phone,tanggal_lahir,tahun_masuk,status,prodi,fakultas
+2310801010,Valid Student,valid.s@student.simas.ac.id,89911223344,2005-01-01T00:00:00.000,2023,AKTIF,Sistem Informasi,Fakultas Teknik
+2310801011,Invalid Status,invalid@student.simas.ac.id,89922334455,2005-02-02T00:00:00.000,2023,DROP OUT,Sistem Informasi,Fakultas Teknik
+,Missing NIM,missing@student.simas.ac.id,89933445566,2005-03-03T00:00:00.000,2023,AKTIF,Sistem Informasi,Fakultas Teknik
