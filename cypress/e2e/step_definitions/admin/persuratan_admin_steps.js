@@ -93,21 +93,23 @@ When("Saya mengisi formulir template surat:", (dataTable) => {
 
   // Pilih jabatan pada Jalur Persetujuan jika item default ada
   cy.get("body").then(($body) => {
-    const $approvalBtn = $body.find("button.fi-select-input-btn").filter((i, el) => {
-      return Cypress.$(el).closest(":contains('Jalur Persetujuan')").length > 0;
-    });
-    if ($approvalBtn.length > 0) {
-      cy.wrap($approvalBtn.first()).click({ force: true });
-      cy.get(".fi-dropdown-panel:visible", { timeout: 6000 })
-        .find("li[role='option'], li")
-        .first()
-        .click({ force: true });
+    const $jabatanWrapper = $body.find(".fi-fo-field-wrp:contains('Jabatan'), [data-field-wrapper]:contains('Jabatan')");
+    if ($jabatanWrapper.length > 0) {
+      const $jabatanBtn = $jabatanWrapper.find("button.fi-select-input-btn");
+      if ($jabatanBtn.length > 0) {
+        cy.wrap($jabatanBtn.first()).click({ force: true });
+        cy.get(".fi-dropdown-panel:visible", { timeout: 6000 })
+          .find("li[role='option'], li")
+          .first()
+          .click({ force: true });
+      }
     }
   });
 });
 
 When("Saya memilih kategori template pertama yang tersedia", () => {
-  cy.contains("[data-field-wrapper], .fi-fo-field", "Kategori")
+  cy.get(".fi-fo-field-wrp:contains('Kategori'), [data-field-wrapper]:contains('Kategori')")
+    .first()
     .find("button.fi-select-input-btn")
     .first()
     .click({ force: true });
@@ -179,7 +181,7 @@ When("Saya mengisi formulir format nomor surat:", (dataTable) => {
     cy.get("input[id*='nama_format']").clear().type(data.nama_format);
   }
   if (data.format_penomoran) {
-    cy.get("input[id*='format_penomoran']").clear().type(data.format_penomoran);
+    cy.get("input[id*='format_penomoran']").clear().type(data.format_penomoran, { parseSpecialCharSequences: false });
   }
 });
 
