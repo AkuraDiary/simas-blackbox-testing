@@ -8,7 +8,7 @@
     "cy:run": "npx cypress run",
     "merge:reports": "npx mochawesome-merge cypress/reports/*.json > cypress/reports/merged-report.json",
     "generate:html": "npx marge cypress/reports/merged-report.json --reportDir cypress/reports --inline",
-    "report": "npm run clean:reports && npm run cy:run || npm run merge:reports && npm run generate:html"
+    "report": "npm run clean:reports && (npm run cy:run || true) && npm run merge:reports && npm run generate:html"
   },
   "keywords": [],
   "author": "",
