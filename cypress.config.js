@@ -21,6 +21,8 @@ module.exports = defineConfig({
     },
     numTestsKeptInMemory: 5,
     experimentalMemoryManagement: true,
+    viewportWidth: 1280,
+    viewportHeight: 720,
     // baseUrl: "http://127.0.0.1:8000/", // Update this to your local SIMAS URL
     baseUrl: "https://dev.elsimas.my.id", // Update this to your local SIMAS URL
     redirectionLimit: 50,

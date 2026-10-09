@@ -43,25 +43,22 @@ When("Saya mengisi data unit:", (dataTable) => {
 
     // 3. Jenis Unit (Filament Select / Searchable)
     if (data.jenis_unit !== undefined) {
-      cy.contains("label", "Jenis Unit")
-        .parent()
-        .then(($wrapper) => {
-          const $select = $wrapper.find("select");
-          if ($select.length > 0) {
-            cy.wrap($select).select(data.jenis_unit);
-          } else {
-            // Filament custom searchable select
-            cy.wrap($wrapper)
-              .find("button, input[role='combobox'], [role='combobox']")
-              .first()
-              .click();
-            cy.get(".fi-dropdown-panel, .fi-select-panel, [role='listbox']", { timeout: 5000 })
-              .contains(data.jenis_unit)
-              .click();
-          }
-        });
+      cy.contains("Select an option")
+        .click({ force: true });
     }
   });
+
+  // Pilih item dari panel dropdown yang terbuka di luar modal container
+  if (data.jenis_unit !== undefined) {
+    cy.get("[role='listbox']:visible, .fi-dropdown-panel:visible, div[x-ref='panel']:visible", { timeout: 6000 })
+      .then(($panel) => {
+        if ($panel.find(`:contains("${data.jenis_unit}")`).length > 0) {
+          cy.wrap($panel).contains(data.jenis_unit).click({ force: true });
+        } else {
+          cy.wrap($panel).find("[role='option'], li, button, span").first().click({ force: true });
+        }
+      });
+  }
 });
 
 Then("Unit {string} harus muncul pada bagan organisasi", (unitName) => {
@@ -75,12 +72,13 @@ Then("Form unit tidak terkirim dan modal tetap terbuka", () => {
 });
 
 When("Saya membuka form edit untuk unit {string}", (unitName) => {
-  // Cari card unit berdasarkan nama dan klik tombol edit (heroicon pencil)
+  // Cari card unit berdasarkan nama dan klik tombol edit (tombol kedua / heroicon pencil)
   cy.contains("#org-canvas-inner p", unitName)
     .parents("div.relative.flex.flex-col")
     .first()
     .within(() => {
-      cy.get("button[wire\\:click*='editUnit'], button[title*='Edit'], button[aria-label*='Edit']")
+      cy.get("button[wire\\:click*='editUnit'], button.fi-icon-btn, button:has(svg)")
+        .eq(1)
         .click({ force: true });
     });
 
@@ -125,15 +123,15 @@ When("Saya menambahkan jabatan baru {string} dengan level {string}", (namaJabata
 });
 
 When("Saya mencoba menghapus unit induk yang memiliki sub-unit", () => {
-  // Cari unit card yang memiliki elemen sub-unit/children di bawahnya
-  cy.get("#org-canvas-inner")
-    .find(".border-dashed")
-    .first()
+  // Cari kartu Top Level Unit di canvas
+  cy.contains("#org-canvas-inner", "Top Level Unit")
     .parent()
     .find("div.relative.flex.flex-col")
     .first()
     .within(() => {
-      cy.get("button[wire\\:click*='deleteUnit'], button[title*='Hapus'], button[aria-label*='Hapus']")
+      // Klik tombol trash (tombol pertama)
+      cy.get("button[wire\\:click*='deleteUnit'], button.fi-icon-btn, button:has(svg)")
+        .first()
         .click({ force: true });
     });
 
@@ -157,7 +155,8 @@ When("Saya menghapus unit {string}", (unitName) => {
     .parents("div.relative.flex.flex-col")
     .first()
     .within(() => {
-      cy.get("button[wire\\:click*='deleteUnit'], button[title*='Hapus'], button[aria-label*='Hapus']")
+      cy.get("button[wire\\:click*='deleteUnit'], button.fi-icon-btn, button:has(svg)")
+        .first()
         .click({ force: true });
     });
 

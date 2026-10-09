@@ -5,14 +5,14 @@ Feature: Authentication (FR-AUTH-01)
 
   Scenario: Login Sukses sebagai Admin
     Given Saya berada di halaman login
-    When Saya memasukkan email "admin@simas.com" dan password "password"
+    When Saya memasukkan username "admin" dan password "password"
     And Saya menekan tombol "Sign in"
     Then Saya harus diarahkan ke halaman dashboard
     And Saya melihat teks "Dashboard"
 
   Scenario: Login Gagal dengan Kredensial Salah
     Given Saya berada di halaman login
-    When Saya memasukkan email "salah@simas.com" dan password "salah123"
+    When Saya memasukkan username "salah" dan password "salah123"
     And Saya menekan tombol "Sign in"
     Then Saya harus melihat pesan error "These credentials do not match our records."
     

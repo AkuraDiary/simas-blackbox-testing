@@ -31,10 +31,11 @@ When("Saya memasukkan username {string} dan password {string}", (username, passw
 });
 
 When("Saya menekan tombol {string}", (buttonText) => {
-  cy.contains('button', buttonText).click();
+  cy.contains('button, a, [role="button"]', buttonText).click({ force: true });
 });
 
 Then("Saya harus diarahkan ke halaman dashboard", () => {
+  cy.url({ timeout: 15000 }).should('not.include', '/login');
   cy.url().should('include', '/internal');
 });
 
