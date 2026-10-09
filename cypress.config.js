@@ -18,6 +18,7 @@ module.exports = defineConfig({
       overwrite: false,
       html: true,
       json: true,
+      code: false, 
     },
     numTestsKeptInMemory: 5,
     experimentalMemoryManagement: true,
