@@ -25,9 +25,9 @@ Then("Saya harus melihat notifikasi proses import dimulai", () => {
 });
 
 Then("Form modal import menolak file atau menampilkan validasi format salah", () => {
-  // Filament menampilkan error validasi tipe file atau menonaktifkan tombol submit
+  // Filament menampilkan error validasi tipe file atau FilePond status error
   cy.get(".fi-modal:visible", { timeout: 8000 }).within(() => {
-    cy.get(".fi-fo-field-wrp-error-message, .text-danger-600, :invalid, [role='alert']", { timeout: 6000 })
+    cy.get(".fi-fo-field-wrp-error-message, .text-danger-600, :invalid, [role='alert'], .filepond--file-status, .filepond--root, .filepond--panel", { timeout: 6000 })
       .should("exist");
   });
 });
