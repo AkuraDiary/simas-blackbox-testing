@@ -1,0 +1,163 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-10-10T01:58:38.230Z",
+    "end": "2026-10-10T01:59:43.945Z",
+    "duration": 65715,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b1e2b473-02be-48eb-89d1-36f0599d6f80",
+      "title": "",
+      "fullFile": "cypress/e2e/features/admin/fr_adm_06_format_nomor.feature",
+      "file": "cypress/e2e/features/admin/fr_adm_06_format_nomor.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "13b7ec2b-ba48-47d8-b236-f94fbf3a448d",
+          "title": "FR-ADM-06 Manajemen Format Nomor Surat",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-FR-ADM-06-A Buat Format Nomor Surat Baru (Valid)",
+              "fullTitle": "FR-ADM-06 Manajemen Format Nomor Surat TC-FR-ADM-06-A Buat Format Nomor Surat Baru (Valid)",
+              "timedOut": null,
+              "duration": 19741,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "c007ffb5-7f2b-4d66-b2e9-be5825e39fe4",
+              "parentUUID": "13b7ec2b-ba48-47d8-b236-f94fbf3a448d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-ADM-06-A Buat Format Nomor Surat: Form Kosong (Negative)",
+              "fullTitle": "FR-ADM-06 Manajemen Format Nomor Surat TC-ALT-FR-ADM-06-A Buat Format Nomor Surat: Form Kosong (Negative)",
+              "timedOut": null,
+              "duration": 11296,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "5696a636-b836-48c8-b931-865b832b9be1",
+              "parentUUID": "13b7ec2b-ba48-47d8-b236-f94fbf3a448d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-ADM-06-B Edit Format Nomor Surat (Valid)",
+              "fullTitle": "FR-ADM-06 Manajemen Format Nomor Surat TC-FR-ADM-06-B Edit Format Nomor Surat (Valid)",
+              "timedOut": null,
+              "duration": 14712,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "48202a6c-0a22-410b-bc8b-b4f9028d6961",
+              "parentUUID": "13b7ec2b-ba48-47d8-b236-f94fbf3a448d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-ADM-06-C Hapus Format Nomor Surat Bebas (Valid & Teardown)",
+              "fullTitle": "FR-ADM-06 Manajemen Format Nomor Surat TC-FR-ADM-06-C Hapus Format Nomor Surat Bebas (Valid & Teardown)",
+              "timedOut": null,
+              "duration": 19777,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "0cefb09c-9c79-4901-a1c7-5b75edf3a4c3",
+              "parentUUID": "13b7ec2b-ba48-47d8-b236-f94fbf3a448d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c007ffb5-7f2b-4d66-b2e9-be5825e39fe4",
+            "5696a636-b836-48c8-b931-865b832b9be1",
+            "48202a6c-0a22-410b-bc8b-b4f9028d6961",
+            "0cefb09c-9c79-4901-a1c7-5b75edf3a4c3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 65526,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

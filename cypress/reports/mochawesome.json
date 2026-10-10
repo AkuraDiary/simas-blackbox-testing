@@ -1,0 +1,220 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-10-10T01:50:56.413Z",
+    "end": "2026-10-10T01:52:23.760Z",
+    "duration": 87347,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8e427efa-7708-49de-88f5-ccd45cf190c4",
+      "title": "",
+      "fullFile": "cypress/e2e/features/admin/fr_adm_01_organisasi.feature",
+      "file": "cypress/e2e/features/admin/fr_adm_01_organisasi.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6578ddb1-6869-450d-ac3c-b0a0b17dfff7",
+          "title": "FR-ADM-01 Manajemen Struktur Organisasi",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-FR-ADM-01-A Menguji alur create unit (Valid)",
+              "fullTitle": "FR-ADM-01 Manajemen Struktur Organisasi TC-FR-ADM-01-A Menguji alur create unit (Valid)",
+              "timedOut": null,
+              "duration": 19696,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "7e97c7c8-51ee-4abe-87f9-e70da450f59d",
+              "parentUUID": "6578ddb1-6869-450d-ac3c-b0a0b17dfff7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-ADM-01-A Create Unit: Gagal (Field Wajib Kosong)",
+              "fullTitle": "FR-ADM-01 Manajemen Struktur Organisasi TC-ALT-FR-ADM-01-A Create Unit: Gagal (Field Wajib Kosong)",
+              "timedOut": null,
+              "duration": 8840,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "d0943789-746a-4ad7-86d7-407f118e5a3e",
+              "parentUUID": "6578ddb1-6869-450d-ac3c-b0a0b17dfff7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-ADM-01-B Update: Edit Nama Unit (Sukses)",
+              "fullTitle": "FR-ADM-01 Manajemen Struktur Organisasi TC-FR-ADM-01-B Update: Edit Nama Unit (Sukses)",
+              "timedOut": null,
+              "duration": 12338,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "cdb9ed9b-4093-403e-86b9-1816900bf3a4",
+              "parentUUID": "6578ddb1-6869-450d-ac3c-b0a0b17dfff7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-ADM-01-B Update: Gagal (Nama Kosong)",
+              "fullTitle": "FR-ADM-01 Manajemen Struktur Organisasi TC-ALT-FR-ADM-01-B Update: Gagal (Nama Kosong)",
+              "timedOut": null,
+              "duration": 10301,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "8beb429d-db57-4da3-aef1-100bbf447a2e",
+              "parentUUID": "6578ddb1-6869-450d-ac3c-b0a0b17dfff7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-ADM-01-C Update: Assign Staff ke Unit (Sukses)",
+              "fullTitle": "FR-ADM-01 Manajemen Struktur Organisasi TC-FR-ADM-01-C Update: Assign Staff ke Unit (Sukses)",
+              "timedOut": null,
+              "duration": 13740,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "f6546e93-677e-426d-aba5-1ab7b26b6846",
+              "parentUUID": "6578ddb1-6869-450d-ac3c-b0a0b17dfff7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-ADM-01-C Delete: Gagal (Ada Dependensi Sub-Unit)",
+              "fullTitle": "FR-ADM-01 Manajemen Struktur Organisasi TC-ALT-FR-ADM-01-C Delete: Gagal (Ada Dependensi Sub-Unit)",
+              "timedOut": null,
+              "duration": 10129,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "466b1e44-d8c9-452d-91ae-ff6a033d240a",
+              "parentUUID": "6578ddb1-6869-450d-ac3c-b0a0b17dfff7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-ADM-01-D Delete: Hapus Unit (Sukses & Teardown)",
+              "fullTitle": "FR-ADM-01 Manajemen Struktur Organisasi TC-FR-ADM-01-D Delete: Hapus Unit (Sukses & Teardown)",
+              "timedOut": null,
+              "duration": 11998,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "96d98287-3714-4d9a-8f4e-f27aa840aa59",
+              "parentUUID": "6578ddb1-6869-450d-ac3c-b0a0b17dfff7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7e97c7c8-51ee-4abe-87f9-e70da450f59d",
+            "d0943789-746a-4ad7-86d7-407f118e5a3e",
+            "cdb9ed9b-4093-403e-86b9-1816900bf3a4",
+            "8beb429d-db57-4da3-aef1-100bbf447a2e",
+            "f6546e93-677e-426d-aba5-1ab7b26b6846",
+            "466b1e44-d8c9-452d-91ae-ff6a033d240a",
+            "96d98287-3714-4d9a-8f4e-f27aa840aa59"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 87042,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

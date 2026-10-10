@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-10-10T02:01:53.319Z",
+    "end": "2026-10-10T02:02:01.639Z",
+    "duration": 8320,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "00615abc-5871-40c7-a1b2-dd78108bf132",
+      "title": "",
+      "fullFile": "cypress/e2e/features/guest/fr_req_04_lacak_surat.feature",
+      "file": "cypress/e2e/features/guest/fr_req_04_lacak_surat.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0ed77e93-f73c-4861-a1be-ec7cef31ba28",
+          "title": "FR-REQ-04 Pelacakan Status Surat oleh Tamu (Guest)",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-FR-REQ-04-A - Pelacakan Surat dengan Kode Valid Menampilkan Informasi dan Status Surat",
+              "fullTitle": "FR-REQ-04 Pelacakan Status Surat oleh Tamu (Guest) TC-FR-REQ-04-A - Pelacakan Surat dengan Kode Valid Menampilkan Informasi dan Status Surat",
+              "timedOut": null,
+              "duration": 3258,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "b723649c-f289-4a78-bff2-43dd354a4a6c",
+              "parentUUID": "0ed77e93-f73c-4861-a1be-ec7cef31ba28",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-REQ-04-A - Pelacakan Surat dengan Kode Tidak Terdaftar Menampilkan Pesan Kesalahan",
+              "fullTitle": "FR-REQ-04 Pelacakan Status Surat oleh Tamu (Guest) TC-ALT-FR-REQ-04-A - Pelacakan Surat dengan Kode Tidak Terdaftar Menampilkan Pesan Kesalahan",
+              "timedOut": null,
+              "duration": 2517,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "772f4f87-3e98-4034-9b36-2f506c46dd43",
+              "parentUUID": "0ed77e93-f73c-4861-a1be-ec7cef31ba28",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-REQ-04-B - Pelacakan Surat dengan Kode Kosong atau Format Terlalu Pendek",
+              "fullTitle": "FR-REQ-04 Pelacakan Status Surat oleh Tamu (Guest) TC-ALT-FR-REQ-04-B - Pelacakan Surat dengan Kode Kosong atau Format Terlalu Pendek",
+              "timedOut": null,
+              "duration": 2443,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "d0e989a5-3128-4b09-a0dd-b88e3ce18bb2",
+              "parentUUID": "0ed77e93-f73c-4861-a1be-ec7cef31ba28",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b723649c-f289-4a78-bff2-43dd354a4a6c",
+            "772f4f87-3e98-4034-9b36-2f506c46dd43",
+            "d0e989a5-3128-4b09-a0dd-b88e3ce18bb2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8218,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}
