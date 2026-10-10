@@ -1,0 +1,182 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-10-10T04:13:33.277Z",
+    "end": "2026-10-10T04:14:27.412Z",
+    "duration": 54135,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0dd606bd-9622-4c62-bde7-828a3643a141",
+      "title": "",
+      "fullFile": "cypress/e2e/features/admin/fr_adm_03_import.feature",
+      "file": "cypress/e2e/features/admin/fr_adm_03_import.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "71e71bfe-8bc4-4b23-8065-3c47a8700ebe",
+          "title": "FR-ADM-03 Import Data Pengguna (Pegawai & Mahasiswa)",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-FR-ADM-03-A Import: Data Pegawai Valid (.csv)",
+              "fullTitle": "FR-ADM-03 Import Data Pengguna (Pegawai & Mahasiswa) TC-FR-ADM-03-A Import: Data Pegawai Valid (.csv)",
+              "timedOut": null,
+              "duration": 11828,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "b2efd294-fbf6-453a-8ebc-515ae764a489",
+              "parentUUID": "71e71bfe-8bc4-4b23-8065-3c47a8700ebe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-ADM-03-A Import: Data Mahasiswa Valid (.csv)",
+              "fullTitle": "FR-ADM-03 Import Data Pengguna (Pegawai & Mahasiswa) TC-ALT-FR-ADM-03-A Import: Data Mahasiswa Valid (.csv)",
+              "timedOut": null,
+              "duration": 9981,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "14736697-a0b4-4021-b514-dc6e1dc5be49",
+              "parentUUID": "71e71bfe-8bc4-4b23-8065-3c47a8700ebe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-ADM-03-B Import: Format File Salah (Tolak Non-CSV)",
+              "fullTitle": "FR-ADM-03 Import Data Pengguna (Pegawai & Mahasiswa) TC-FR-ADM-03-B Import: Format File Salah (Tolak Non-CSV)",
+              "timedOut": null,
+              "duration": 11136,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "c6b8a80b-a61a-49a5-9284-213cf56f6b79",
+              "parentUUID": "71e71bfe-8bc4-4b23-8065-3c47a8700ebe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-ADM-03-B Import: Data Pegawai Gagal (Missing Kolom Wajib)",
+              "fullTitle": "FR-ADM-03 Import Data Pengguna (Pegawai & Mahasiswa) TC-ALT-FR-ADM-03-B Import: Data Pegawai Gagal (Missing Kolom Wajib)",
+              "timedOut": null,
+              "duration": 10688,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "b84a0744-8140-4ef9-8593-50470071360b",
+              "parentUUID": "71e71bfe-8bc4-4b23-8065-3c47a8700ebe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-ADM-03-C Import: Data Mahasiswa Gagal (Duplikat NIM)",
+              "fullTitle": "FR-ADM-03 Import Data Pengguna (Pegawai & Mahasiswa) TC-ALT-FR-ADM-03-C Import: Data Mahasiswa Gagal (Duplikat NIM)",
+              "timedOut": null,
+              "duration": 10403,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "3f9506c5-c7e4-41ee-95ee-f3b90be44f3f",
+              "parentUUID": "71e71bfe-8bc4-4b23-8065-3c47a8700ebe",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b2efd294-fbf6-453a-8ebc-515ae764a489",
+            "14736697-a0b4-4021-b514-dc6e1dc5be49",
+            "c6b8a80b-a61a-49a5-9284-213cf56f6b79",
+            "b84a0744-8140-4ef9-8593-50470071360b",
+            "3f9506c5-c7e4-41ee-95ee-f3b90be44f3f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 54036,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

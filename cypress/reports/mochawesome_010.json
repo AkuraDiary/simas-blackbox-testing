@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-10-10T04:19:54.371Z",
+    "end": "2026-10-10T04:20:16.591Z",
+    "duration": 22220,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6ad5d72a-bbb7-465b-adad-2e36a2878732",
+      "title": "",
+      "fullFile": "cypress/e2e/features/guest/fr_req_01_pengajuan_publik.feature",
+      "file": "cypress/e2e/features/guest/fr_req_01_pengajuan_publik.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "062c7ebc-a379-4f2f-8f89-001748f812e1",
+          "title": "FR-REQ-01 & FR-REQ-03 Pengajuan Surat Publik oleh Tamu (Guest)",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-FR-REQ-01-A & TC-FR-REQ-03-A - Pengajuan Surat Publik Berhasil dengan Scratch Template dan Mendapatkan Kode Pelacakan",
+              "fullTitle": "FR-REQ-01 & FR-REQ-03 Pengajuan Surat Publik oleh Tamu (Guest) TC-FR-REQ-01-A & TC-FR-REQ-03-A - Pengajuan Surat Publik Berhasil dengan Scratch Template dan Mendapatkan Kode Pelacakan",
+              "timedOut": null,
+              "duration": 12372,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "e6832079-5659-448b-8b92-00f58446f3db",
+              "parentUUID": "062c7ebc-a379-4f2f-8f89-001748f812e1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-REQ-01-A - Pengajuan Surat Publik dengan Format Email dan Nomor Telepon Tidak Valid",
+              "fullTitle": "FR-REQ-01 & FR-REQ-03 Pengajuan Surat Publik oleh Tamu (Guest) TC-ALT-FR-REQ-01-A - Pengajuan Surat Publik dengan Format Email dan Nomor Telepon Tidak Valid",
+              "timedOut": null,
+              "duration": 5251,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "ca25048a-6107-4d60-aff3-b5546847010d",
+              "parentUUID": "062c7ebc-a379-4f2f-8f89-001748f812e1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-REQ-01-B - Pengajuan Surat Publik Tanpa Mengisi Field Wajib",
+              "fullTitle": "FR-REQ-01 & FR-REQ-03 Pengajuan Surat Publik oleh Tamu (Guest) TC-ALT-FR-REQ-01-B - Pengajuan Surat Publik Tanpa Mengisi Field Wajib",
+              "timedOut": null,
+              "duration": 4496,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "fb4d1e41-ef79-4517-a0e3-8337f6efb98d",
+              "parentUUID": "062c7ebc-a379-4f2f-8f89-001748f812e1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e6832079-5659-448b-8b92-00f58446f3db",
+            "ca25048a-6107-4d60-aff3-b5546847010d",
+            "fb4d1e41-ef79-4517-a0e3-8337f6efb98d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 22119,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

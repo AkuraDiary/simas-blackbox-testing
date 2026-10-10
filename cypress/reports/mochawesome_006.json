@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-10-10T04:17:29.842Z",
+    "end": "2026-10-10T04:18:00.929Z",
+    "duration": 31087,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "97dcf191-7a3f-4498-9827-f7bb13a3d5a6",
+      "title": "",
+      "fullFile": "cypress/e2e/features/arsip/fr_arc_01_arsipkan_surat.feature",
+      "file": "cypress/e2e/features/arsip/fr_arc_01_arsipkan_surat.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2d195d31-7060-4567-81db-45ba15100ed6",
+          "title": "FR-ARC-01 Pengarsipan Surat Masuk",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-ALT-FR-ARC-01-A - Validasi Form Modal Arsip Saat Kategori Arsip Dikosongkan",
+              "fullTitle": "FR-ARC-01 Pengarsipan Surat Masuk TC-ALT-FR-ARC-01-A - Validasi Form Modal Arsip Saat Kategori Arsip Dikosongkan",
+              "timedOut": null,
+              "duration": 14037,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "c6e2b5c1-5b3b-4c78-a5d9-9ba9130d8518",
+              "parentUUID": "2d195d31-7060-4567-81db-45ba15100ed6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-ARC-01-A - Staf Unit Mengarsipkan Surat Masuk Melalui Lembar Detail Surat",
+              "fullTitle": "FR-ARC-01 Pengarsipan Surat Masuk TC-FR-ARC-01-A - Staf Unit Mengarsipkan Surat Masuk Melalui Lembar Detail Surat",
+              "timedOut": null,
+              "duration": 16982,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "0175944f-3170-43a9-a1cb-4bf05467d54f",
+              "parentUUID": "2d195d31-7060-4567-81db-45ba15100ed6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c6e2b5c1-5b3b-4c78-a5d9-9ba9130d8518",
+            "0175944f-3170-43a9-a1cb-4bf05467d54f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 31019,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}
