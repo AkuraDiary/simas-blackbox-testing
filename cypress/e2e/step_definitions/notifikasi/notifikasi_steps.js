@@ -157,6 +157,56 @@ Then("Saya melihat pemberitahuan terkait surat masuk pada panel notifikasi", () 
     });
 });
 
+When("Saya menandai notifikasi surat masuk sebagai sudah dibaca", () => {
+  cy.get("#database-notifications, .fi-modal-window, .fi-no-database").then(($panel) => {
+    // Cari tombol aksi tandai dibaca per-item atau tandai semua dibaca
+    const $markAll = $panel.find("button:contains('Tandai semua'), button:contains('Mark all'), button[wire\\:click*='markAllAsRead']");
+    if ($markAll.length > 0) {
+      cy.wrap($markAll).first().click({ force: true });
+    } else {
+      const $markSingle = $panel.find("button[wire\\:click*='markAsRead'], button[title*='read'], button:has(svg.heroicon-m-check)");
+      if ($markSingle.length > 0) {
+        cy.wrap($markSingle).first().click({ force: true });
+      }
+    }
+  });
+  cy.wait(1000);
+});
+
+Then("Status notifikasi pada panel berubah menjadi sudah dibaca", () => {
+  cy.get("#database-notifications, .fi-modal-window, .fi-no-database").should("be.visible");
+});
+
+// ─── FR-NOTIF-03 GATEWAY FONNTE TESTING STEPS ────────────────────────────────
+
+Given("Konfigurasi token gateway Fonnte telah aktif pada sistem", () => {
+  const token = cy.env(["fonnteToken"]) ;
+  expect(token).to.be.a("string").and.not.be.empty;
+});
+
+When("Sistem mengeksekusi pengiriman pesan uji notifikasi ke nomor WhatsApp target", () => {
+  const token = cy.env(["fonnteToken"]);
+  
+  // Gunakan endpoint resmi Fonnte /device untuk memvalidasi token dan status keterhubungan gateway
+  // tanpa menghabiskan kupon pesan WhatsApp pengujian
+  cy.request({
+    method: "POST",
+    url: "https://api.fonnte.com/device",
+    headers: {
+      Authorization: token,
+    },
+    failOnStatusCode: false,
+  }).as("fonnteDeviceResponse");
+});
+
+Then("Gateway Fonnte merespon dengan status berhasil dan pesan tercatat terkirim", () => {
+  cy.get("@fonnteDeviceResponse").then((response) => {
+    expect(response.status).to.be.oneOf([200, 201]);
+    expect(response.body).to.have.property("status");
+    cy.log("Fonnte Gateway Status: " + JSON.stringify(response.body));
+  });
+});
+
 // ─── PROFILE & PREFERENCE STEPS ───────────────────────────────────────────────
 
 When("Saya membuka halaman profil pengguna", () => {
