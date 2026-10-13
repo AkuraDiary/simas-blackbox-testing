@@ -22,21 +22,20 @@ When("Saya menekan tombol {string} pada modal", (buttonText) => {
 
 Then("Saya harus melihat notifikasi {string}", (notificationText) => {
   let regexPattern = new RegExp(notificationText, "i");
-  if (/dibuat/i.test(notificationText)) regexPattern = /(dibuat|created)/i;
+  if (/berhasil dihapus/i.test(notificationText)) regexPattern = /(berhasil dihapus|successfully deleted)/i;
+  else if (/dibuat/i.test(notificationText)) regexPattern = /(dibuat|created)/i;
   else if (/disimpan/i.test(notificationText)) regexPattern = /(disimpan|saved)/i;
   else if (/dihapus/i.test(notificationText)) regexPattern = /(dihapus|deleted)/i;
   else if (/berhasil/i.test(notificationText)) regexPattern = /(berhasil|success)/i;
 
-  cy.contains(
-    ".fi-no-notification, .fi-notification, [role='status'], [role='alert'], body",
-    regexPattern,
-    { timeout: 10000 }
-  ).should("be.visible");
+  cy.get(".fi-no-notification:not(.fi-status-danger), .fi-notification:not(.fi-status-danger), [role='status']", { timeout: 10000 })
+    .contains(regexPattern)
+    .should("be.visible");
 });
 
 Then("Saya melihat notifikasi error {string}", (errorMessage) => {
   cy.contains(
-    ".fi-no-notification, .fi-notification, [role='alert'], body",
+    ".fi-no-notification, .fi-notification, [role='alert']",
     errorMessage,
     { timeout: 10000 }
   ).should("be.visible");

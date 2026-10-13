@@ -55,6 +55,10 @@ const FILE_ORDER = [
   'cypress/e2e/features/arsip/fr_arc_01_arsipkan_surat.feature',
   'cypress/e2e/features/arsip/fr_arc_02_dan_03_arsip_surat.feature',
   'cypress/e2e/features/arsip/fr_arc_04_kategori_arsip.feature',
+
+  // 9. Notifikasi Web & WhatsApp (No. 127 - 130)
+  'cypress/e2e/features/notifikasi/fr_notif_01_web.feature',
+  'cypress/e2e/features/notifikasi/fr_notif_02_wa.feature',
 ];
 
 function getFileRank(filePath) {

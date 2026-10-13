@@ -1,0 +1,1772 @@
+
+        
+
+        <div class="fi-simple-layout">
+        
+
+                    <div class="fi-simple-layout-header">
+                                    <div wire:snapshot="{&quot;data&quot;:{&quot;knownNotificationIds&quot;:[{&quot;236793d6-a522-4c1b-90e1-2cd8058f4e2d&quot;:true,&quot;cb77fa13-5384-4a0d-a7d4-28c3cf86e9d0&quot;:true,&quot;aa465d71-7acd-4b64-92a3-1c3231c81e6a&quot;:true,&quot;6327cbec-7c31-4a30-b499-9e9680afd097&quot;:true,&quot;84b823df-d9cf-40f5-a74f-7fe6b778a42d&quot;:true,&quot;58ee2c9e-2d53-414b-8077-ea03bafebb24&quot;:true,&quot;3a90e2ee-9028-4c57-aa30-b771293d3adf&quot;:true,&quot;4a658cdc-b585-47dc-9249-a361cbf5bfaa&quot;:true,&quot;b53fb7d4-7641-473d-a478-b876dd93859e&quot;:true,&quot;41470bbb-d206-483f-aca4-944f6f5cdbe5&quot;:true},{&quot;s&quot;:&quot;arr&quot;}],&quot;isInitialized&quot;:true,&quot;position&quot;:[&quot;topbar&quot;,{&quot;class&quot;:&quot;Filament\\Enums\\DatabaseNotificationsPosition&quot;,&quot;s&quot;:&quot;enm&quot;}],&quot;mountedActions&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;defaultAction&quot;:null,&quot;defaultActionArguments&quot;:null,&quot;defaultActionContext&quot;:null,&quot;defaultTableAction&quot;:null,&quot;defaultTableActionRecord&quot;:null,&quot;defaultTableActionArguments&quot;:null,&quot;componentFileAttachments&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;areSchemaStateUpdateHooksDisabledForTesting&quot;:false,&quot;discoveredSchemaNames&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;paginators&quot;:[{&quot;database-notifications-page&quot;:1},{&quot;s&quot;:&quot;arr&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;PkLmf8C4SqWKJzFXMfsr&quot;,&quot;name&quot;:&quot;App\\Filament\\Livewire\\DatabaseNotifications&quot;,&quot;path&quot;:&quot;internal\/profile&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[&quot;993936108-0&quot;],&quot;assets&quot;:[],&quot;lazyLoaded&quot;:true,&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;a96bb969f4405f58d7fac5564751ffc5f219911cc8fbf5efd418e0aa17bf92ab&quot;}" wire:effects="{&quot;returns&quot;:[null],&quot;partials&quot;:[],&quot;scripts&quot;:{&quot;993936108-0&quot;:&quot;                    <script>\n                        window.addEventListener('EchoLoaded', () => {\n                            window.Echo.private('App.Models.User.3').listen(\n                                '.database-notifications.sent',\n                                () => {\n                                    setTimeout(\n                                        () => $wire.call('$refresh'),\n                                        500,\n                                    )\n                                },\n                            )\n                        })\n\n                        if (window.Echo) {\n                            window.dispatchEvent(new CustomEvent('EchoLoaded'))\n                        }\n                    </script>\n                    &quot;},&quot;url&quot;:{&quot;paginators.database-notifications-page&quot;:{&quot;as&quot;:&quot;database-notifications-page&quot;,&quot;use&quot;:&quot;push&quot;,&quot;alwaysShow&quot;:false,&quot;except&quot;:null}},&quot;listeners&quot;:[&quot;databaseNotificationsSent&quot;,&quot;notificationClosed&quot;,&quot;markedNotificationAsRead&quot;,&quot;markedNotificationAsUnread&quot;]}" wire:id="PkLmf8C4SqWKJzFXMfsr" wire:name="App\Filament\Livewire\DatabaseNotifications" class="fi-no-database">
+    <!--[if BLOCK]><![endif]-->    <div>
+    
+
+    <div x-on:click="$dispatch('open-modal', { id: 'database-notifications' })" class="fi-modal-trigger">
+        <button class="fi-icon-btn fi-size-md fi-topbar-database-notifications-btn" title="Notifications" aria-label="Notifications" type="button" wire:loading.attr="disabled">
+    <svg class="fi-icon fi-size-lg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"></path>
+</svg>
+
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]-->        <div class="fi-icon-btn-badge-ctn">
+            <!--[if BLOCK]><![endif]-->                <span class="fi-badge fi-size-xs fi-color fi-color-primary fi-text-color-900 dark:fi-text-color-100">
+                    10
+                </span>
+            <!--[if ENDBLOCK]><![endif]-->        </div>
+    <!--[if ENDBLOCK]><![endif]--></button>
+    </div>
+<!--[if ENDBLOCK]><![endif]-->
+<!--[if BLOCK]><![endif]-->    <template x-teleport="body" data-teleport-template="true">
+    
+<!--[if ENDBLOCK]><![endif]-->
+<div aria-modal="true" id="database-notifications" role="dialog" x-data="filamentModal({
+                id: 'database-notifications',
+            })" data-fi-modal-id="database-notifications" x-on:close-modal.window="if (($event.detail.id === 'database-notifications') &amp;&amp; isOpen) close()" x-on:close-modal-quietly.window="if (($event.detail.id === 'database-notifications') &amp;&amp; isOpen) closeQuietly()" x-on:open-modal.window="if (($event.detail.id === 'database-notifications') &amp;&amp; (! isOpen)) open()" x-bind:class="{
+        'fi-modal-open': isOpen,
+    }" x-cloak="" x-show="isOpen" x-trap.noscroll="isOpen" class="fi-modal fi-absolute-positioning-context fi-modal-slide-over fi-modal-has-sticky-header fi-no-database" wire:poll.30s="">
+    <div aria-hidden="true" x-show="isOpen" x-transition.duration.300ms.opacity="" class="fi-modal-close-overlay"></div>
+
+    <div x-on:click.self="$dispatch('close-modal', { id: 'database-notifications' })" class="fi-modal-window-ctn fi-clickable">
+        <div x-on:keydown.window.escape="$dispatch('close-modal', { id: 'database-notifications' })" x-show="isWindowVisible" x-transition:enter="fi-transition-enter" x-transition:leave="fi-transition-leave" x-transition:enter-start="fi-transition-enter-start" x-transition:enter-end="fi-transition-enter-end" x-transition:leave-start="fi-transition-leave-start" x-transition:leave-end="fi-transition-leave-end" wire:key="PkLmf8C4SqWKJzFXMfsr.modal.database-notifications.window" class="fi-modal-window fi-modal-window-has-close-btn fi-modal-window-has-content fi-align-start fi-width-md">
+            <!--[if BLOCK]><![endif]-->                <div wire:key="PkLmf8C4SqWKJzFXMfsr.modal.database-notifications.header" class="fi-modal-header">
+                    <!--[if BLOCK]><![endif]-->                        <button class="fi-icon-btn fi-size-md fi-modal-close-btn" title="Close" aria-label="Close" type="button" wire:loading.attr="disabled" tabindex="-1" x-on:click="$dispatch('close-modal', { id: 'database-notifications' })">
+    <svg class="fi-icon fi-size-lg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
+</svg>
+
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]--></button>
+                    <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]-->                        <div>
+                    <h2 class="fi-modal-heading">
+                        Notifications
+
+                        <!--[if BLOCK]><![endif]-->                            <span class="fi-badge fi-size-xs fi-color fi-color-primary fi-text-color-900 dark:fi-text-color-100">
+                                10
+                            </span>
+                        <!--[if ENDBLOCK]><![endif]-->                    </h2>
+
+                    <div class="fi-ac">
+                        <!--[if BLOCK]><![endif]-->                            
+        
+        <button class="fi-color fi-color-primary fi-text-color-800 dark:fi-text-color-200 fi-link fi-size-md  fi-ac-link-action" type="button" wire:loading.attr="disabled" tabindex="-1" wire:click="markAllNotificationsAsRead">
+                                            <svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="fi-icon fi-loading-indicator fi-size-md" wire:loading.delay.default="" wire:target="markAllNotificationsAsRead">
+    <path clip-rule="evenodd" d="M12 19C15.866 19 19 15.866 19 12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill-rule="evenodd" fill="currentColor" opacity="0.2"></path>
+    <path d="M2 12C2 6.47715 6.47715 2 12 2V5C8.13401 5 5 8.13401 5 12H2Z" fill="currentColor"></path>
+</svg>            
+                            Mark all as read            
+            
+                    </button>
+
+        
+        
+                        <!--[if ENDBLOCK]><![endif]-->
+                        <!--[if BLOCK]><![endif]-->                            
+        
+        <button class="fi-color fi-color-danger fi-text-color-600 dark:fi-text-color-300 fi-link fi-size-md  fi-ac-link-action" type="button" wire:loading.attr="disabled" tabindex="-1" wire:click="clearNotifications" x-on:click="close()">
+                                            <svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="fi-icon fi-loading-indicator fi-size-md" wire:loading.delay.default="" wire:target="clearNotifications">
+    <path clip-rule="evenodd" d="M12 19C15.866 19 19 15.866 19 12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill-rule="evenodd" fill="currentColor" opacity="0.2"></path>
+    <path d="M2 12C2 6.47715 6.47715 2 12 2V5C8.13401 5 5 8.13401 5 12H2Z" fill="currentColor"></path>
+</svg>            
+                            Clear            
+            
+                    </button>
+
+        
+        
+                        <!--[if ENDBLOCK]><![endif]-->                    </div>
+                </div>
+                    <!--[if ENDBLOCK]><![endif]-->                </div>
+            <!--[if ENDBLOCK]><![endif]-->
+            <!--[if BLOCK]><![endif]-->                <div wire:key="PkLmf8C4SqWKJzFXMfsr.modal.database-notifications.content" class="fi-modal-content">
+                    <!--[if BLOCK]><![endif]-->                     <!--[if ENDBLOCK]><![endif]-->
+        <!--[if BLOCK]><![endif]-->             
+            <!--[if BLOCK]><![endif]-->                <div class="fi-no-notification-unread-ctn">
+                    
+        <div x-data="notificationComponent({ notification: JSON.parse('{\u0022id\u0022:\u0022236793d6-a522-4c1b-90e1-2cd8058f4e2d\u0022,\u0022actions\u0022:[],\u0022body\u0022:\u0022Terdapat permohonan surat baru dari Dr. Hendra Peneliti: Permohonan Riset Kerjasama Rektorat QA-1791882479562\u0022,\u0022color\u0022:null,\u0022duration\u0022:\u0022persistent\u0022,\u0022icon\u0022:\u0022heroicon-o-information-circle\u0022,\u0022iconColor\u0022:\u0022info\u0022,\u0022status\u0022:\u0022info\u0022,\u0022title\u0022:\u0022Pengajuan Surat Baru Masuk\u0022,\u0022view\u0022:null,\u0022viewData\u0022:{\u0022unit_kerja_id\u0022:1,\u0022surat_id\u0022:10}}') })" x-transition:enter-start="fi-transition-enter-start" x-transition:enter-end="fi-transition-enter-end" x-transition:leave-start="fi-transition-leave-start" x-transition:leave-end="fi-transition-leave-end" class="fi-no-notification fi-inline fi-status-info" wire:key="236793d6-a522-4c1b-90e1-2cd8058f4e2d.notifications.236793d6-a522-4c1b-90e1-2cd8058f4e2d" x-on:close-notification.window="if ($event.detail.id == '236793d6-a522-4c1b-90e1-2cd8058f4e2d') close()">
+            <svg class="fi-icon fi-size-md fi-no-notification-icon fi-color fi-color-info" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"></path>
+</svg>
+            <div class="fi-no-notification-main">
+                                    <div class="fi-no-notification-text">
+                                                    <h3 class="fi-no-notification-title">
+                                Pengajuan Surat Baru Masuk                            </h3>
+                        
+                                                    <time class="fi-no-notification-date">
+                                54 seconds ago                            </time>
+                        
+                                                    <div class="fi-no-notification-body">
+                                Terdapat permohonan surat baru dari Dr. Hendra Peneliti: Permohonan Riset Kerjasama Rektorat QA-1791882479562                            </div>
+                                            </div>
+                
+                            </div>
+
+            <button type="button" x-on:click="close" class="fi-icon-btn fi-no-notification-close-btn">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"></path>
+</svg>            </button>
+        </div>
+
+        
+                </div>
+                            <div class="fi-no-notification-unread-ctn">
+                    
+        <div x-data="notificationComponent({ notification: JSON.parse('{\u0022id\u0022:\u0022cb77fa13-5384-4a0d-a7d4-28c3cf86e9d0\u0022,\u0022actions\u0022:[],\u0022body\u0022:\u0022Terdapat permohonan surat baru dari Dr. Hendra Peneliti: Permohonan Riset Kerjasama Rektorat QA-1791877890744\u0022,\u0022color\u0022:null,\u0022duration\u0022:\u0022persistent\u0022,\u0022icon\u0022:\u0022heroicon-o-information-circle\u0022,\u0022iconColor\u0022:\u0022info\u0022,\u0022status\u0022:\u0022info\u0022,\u0022title\u0022:\u0022Pengajuan Surat Baru Masuk\u0022,\u0022view\u0022:null,\u0022viewData\u0022:{\u0022unit_kerja_id\u0022:1,\u0022surat_id\u0022:9}}') })" x-transition:enter-start="fi-transition-enter-start" x-transition:enter-end="fi-transition-enter-end" x-transition:leave-start="fi-transition-leave-start" x-transition:leave-end="fi-transition-leave-end" class="fi-no-notification fi-inline fi-status-info" wire:key="cb77fa13-5384-4a0d-a7d4-28c3cf86e9d0.notifications.cb77fa13-5384-4a0d-a7d4-28c3cf86e9d0" x-on:close-notification.window="if ($event.detail.id == 'cb77fa13-5384-4a0d-a7d4-28c3cf86e9d0') close()">
+            <svg class="fi-icon fi-size-md fi-no-notification-icon fi-color fi-color-info" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"></path>
+</svg>
+            <div class="fi-no-notification-main">
+                                    <div class="fi-no-notification-text">
+                                                    <h3 class="fi-no-notification-title">
+                                Pengajuan Surat Baru Masuk                            </h3>
+                        
+                                                    <time class="fi-no-notification-date">
+                                1 hour ago                            </time>
+                        
+                                                    <div class="fi-no-notification-body">
+                                Terdapat permohonan surat baru dari Dr. Hendra Peneliti: Permohonan Riset Kerjasama Rektorat QA-1791877890744                            </div>
+                                            </div>
+                
+                            </div>
+
+            <button type="button" x-on:click="close" class="fi-icon-btn fi-no-notification-close-btn">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"></path>
+</svg>            </button>
+        </div>
+
+        
+                </div>
+                            <div class="fi-no-notification-unread-ctn">
+                    
+        <div x-data="notificationComponent({ notification: JSON.parse('{\u0022id\u0022:\u0022aa465d71-7acd-4b64-92a3-1c3231c81e6a\u0022,\u0022actions\u0022:[],\u0022body\u0022:\u0022Terdapat permohonan surat baru dari mahasiswa: mahasiswa (Permohonan Riset Mahasiswa - 1791606063883)\u0022,\u0022color\u0022:null,\u0022duration\u0022:\u0022persistent\u0022,\u0022icon\u0022:\u0022heroicon-o-information-circle\u0022,\u0022iconColor\u0022:\u0022info\u0022,\u0022status\u0022:\u0022info\u0022,\u0022title\u0022:\u0022Pengajuan Surat Baru Masuk\u0022,\u0022view\u0022:null,\u0022viewData\u0022:{\u0022unit_kerja_id\u0022:1,\u0022surat_id\u0022:8}}') })" x-transition:enter-start="fi-transition-enter-start" x-transition:enter-end="fi-transition-enter-end" x-transition:leave-start="fi-transition-leave-start" x-transition:leave-end="fi-transition-leave-end" class="fi-no-notification fi-inline fi-status-info" wire:key="aa465d71-7acd-4b64-92a3-1c3231c81e6a.notifications.aa465d71-7acd-4b64-92a3-1c3231c81e6a" x-on:close-notification.window="if ($event.detail.id == 'aa465d71-7acd-4b64-92a3-1c3231c81e6a') close()">
+            <svg class="fi-icon fi-size-md fi-no-notification-icon fi-color fi-color-info" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"></path>
+</svg>
+            <div class="fi-no-notification-main">
+                                    <div class="fi-no-notification-text">
+                                                    <h3 class="fi-no-notification-title">
+                                Pengajuan Surat Baru Masuk                            </h3>
+                        
+                                                    <time class="fi-no-notification-date">
+                                3 days ago                            </time>
+                        
+                                                    <div class="fi-no-notification-body">
+                                Terdapat permohonan surat baru dari mahasiswa: mahasiswa (Permohonan Riset Mahasiswa - 1791606063883)                            </div>
+                                            </div>
+                
+                            </div>
+
+            <button type="button" x-on:click="close" class="fi-icon-btn fi-no-notification-close-btn">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"></path>
+</svg>            </button>
+        </div>
+
+        
+                </div>
+                            <div class="fi-no-notification-unread-ctn">
+                    
+        <div x-data="notificationComponent({ notification: JSON.parse('{\u0022id\u0022:\u00226327cbec-7c31-4a30-b499-9e9680afd097\u0022,\u0022actions\u0022:[],\u0022body\u0022:\u0022Terdapat permohonan surat baru dari Mitra Penguji: Permohonan Kerjasama Riset - 1791606001115\u0022,\u0022color\u0022:null,\u0022duration\u0022:\u0022persistent\u0022,\u0022icon\u0022:\u0022heroicon-o-information-circle\u0022,\u0022iconColor\u0022:\u0022info\u0022,\u0022status\u0022:\u0022info\u0022,\u0022title\u0022:\u0022Pengajuan Surat Baru Masuk\u0022,\u0022view\u0022:null,\u0022viewData\u0022:{\u0022unit_kerja_id\u0022:1,\u0022surat_id\u0022:7}}') })" x-transition:enter-start="fi-transition-enter-start" x-transition:enter-end="fi-transition-enter-end" x-transition:leave-start="fi-transition-leave-start" x-transition:leave-end="fi-transition-leave-end" class="fi-no-notification fi-inline fi-status-info" wire:key="6327cbec-7c31-4a30-b499-9e9680afd097.notifications.6327cbec-7c31-4a30-b499-9e9680afd097" x-on:close-notification.window="if ($event.detail.id == '6327cbec-7c31-4a30-b499-9e9680afd097') close()">
+            <svg class="fi-icon fi-size-md fi-no-notification-icon fi-color fi-color-info" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"></path>
+</svg>
+            <div class="fi-no-notification-main">
+                                    <div class="fi-no-notification-text">
+                                                    <h3 class="fi-no-notification-title">
+                                Pengajuan Surat Baru Masuk                            </h3>
+                        
+                                                    <time class="fi-no-notification-date">
+                                3 days ago                            </time>
+                        
+                                                    <div class="fi-no-notification-body">
+                                Terdapat permohonan surat baru dari Mitra Penguji: Permohonan Kerjasama Riset - 1791606001115                            </div>
+                                            </div>
+                
+                            </div>
+
+            <button type="button" x-on:click="close" class="fi-icon-btn fi-no-notification-close-btn">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"></path>
+</svg>            </button>
+        </div>
+
+        
+                </div>
+                            <div class="fi-no-notification-unread-ctn">
+                    
+        <div x-data="notificationComponent({ notification: JSON.parse('{\u0022id\u0022:\u002284b823df-d9cf-40f5-a74f-7fe6b778a42d\u0022,\u0022actions\u0022:[],\u0022body\u0022:\u0022Terdapat permohonan surat baru dari Mitra Penguji: Permohonan Kerjasama Riset - 1791597696153\u0022,\u0022color\u0022:null,\u0022duration\u0022:\u0022persistent\u0022,\u0022icon\u0022:\u0022heroicon-o-information-circle\u0022,\u0022iconColor\u0022:\u0022info\u0022,\u0022status\u0022:\u0022info\u0022,\u0022title\u0022:\u0022Pengajuan Surat Baru Masuk\u0022,\u0022view\u0022:null,\u0022viewData\u0022:{\u0022unit_kerja_id\u0022:1,\u0022surat_id\u0022:6}}') })" x-transition:enter-start="fi-transition-enter-start" x-transition:enter-end="fi-transition-enter-end" x-transition:leave-start="fi-transition-leave-start" x-transition:leave-end="fi-transition-leave-end" class="fi-no-notification fi-inline fi-status-info" wire:key="84b823df-d9cf-40f5-a74f-7fe6b778a42d.notifications.84b823df-d9cf-40f5-a74f-7fe6b778a42d" x-on:close-notification.window="if ($event.detail.id == '84b823df-d9cf-40f5-a74f-7fe6b778a42d') close()">
+            <svg class="fi-icon fi-size-md fi-no-notification-icon fi-color fi-color-info" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"></path>
+</svg>
+            <div class="fi-no-notification-main">
+                                    <div class="fi-no-notification-text">
+                                                    <h3 class="fi-no-notification-title">
+                                Pengajuan Surat Baru Masuk                            </h3>
+                        
+                                                    <time class="fi-no-notification-date">
+                                3 days ago                            </time>
+                        
+                                                    <div class="fi-no-notification-body">
+                                Terdapat permohonan surat baru dari Mitra Penguji: Permohonan Kerjasama Riset - 1791597696153                            </div>
+                                            </div>
+                
+                            </div>
+
+            <button type="button" x-on:click="close" class="fi-icon-btn fi-no-notification-close-btn">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"></path>
+</svg>            </button>
+        </div>
+
+        
+                </div>
+                            <div class="fi-no-notification-unread-ctn">
+                    
+        <div x-data="notificationComponent({ notification: JSON.parse('{\u0022id\u0022:\u002258ee2c9e-2d53-414b-8077-ea03bafebb24\u0022,\u0022actions\u0022:[],\u0022body\u0022:\u0022Terdapat permohonan surat baru dari mahasiswa: mahasiswa (Permohonan Riset Mahasiswa - 1791597666413)\u0022,\u0022color\u0022:null,\u0022duration\u0022:\u0022persistent\u0022,\u0022icon\u0022:\u0022heroicon-o-information-circle\u0022,\u0022iconColor\u0022:\u0022info\u0022,\u0022status\u0022:\u0022info\u0022,\u0022title\u0022:\u0022Pengajuan Surat Baru Masuk\u0022,\u0022view\u0022:null,\u0022viewData\u0022:{\u0022unit_kerja_id\u0022:1,\u0022surat_id\u0022:5}}') })" x-transition:enter-start="fi-transition-enter-start" x-transition:enter-end="fi-transition-enter-end" x-transition:leave-start="fi-transition-leave-start" x-transition:leave-end="fi-transition-leave-end" class="fi-no-notification fi-inline fi-status-info" wire:key="58ee2c9e-2d53-414b-8077-ea03bafebb24.notifications.58ee2c9e-2d53-414b-8077-ea03bafebb24" x-on:close-notification.window="if ($event.detail.id == '58ee2c9e-2d53-414b-8077-ea03bafebb24') close()">
+            <svg class="fi-icon fi-size-md fi-no-notification-icon fi-color fi-color-info" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"></path>
+</svg>
+            <div class="fi-no-notification-main">
+                                    <div class="fi-no-notification-text">
+                                                    <h3 class="fi-no-notification-title">
+                                Pengajuan Surat Baru Masuk                            </h3>
+                        
+                                                    <time class="fi-no-notification-date">
+                                3 days ago                            </time>
+                        
+                                                    <div class="fi-no-notification-body">
+                                Terdapat permohonan surat baru dari mahasiswa: mahasiswa (Permohonan Riset Mahasiswa - 1791597666413)                            </div>
+                                            </div>
+                
+                            </div>
+
+            <button type="button" x-on:click="close" class="fi-icon-btn fi-no-notification-close-btn">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"></path>
+</svg>            </button>
+        </div>
+
+        
+                </div>
+                            <div class="fi-no-notification-unread-ctn">
+                    
+        <div x-data="notificationComponent({ notification: JSON.parse('{\u0022id\u0022:\u00223a90e2ee-9028-4c57-aa30-b771293d3adf\u0022,\u0022actions\u0022:[],\u0022body\u0022:\u0022Terdapat permohonan surat baru dari Mitra Penguji: Permohonan Kerjasama Riset - 1791557984080\u0022,\u0022color\u0022:null,\u0022duration\u0022:\u0022persistent\u0022,\u0022icon\u0022:\u0022heroicon-o-information-circle\u0022,\u0022iconColor\u0022:\u0022info\u0022,\u0022status\u0022:\u0022info\u0022,\u0022title\u0022:\u0022Pengajuan Surat Baru Masuk\u0022,\u0022view\u0022:null,\u0022viewData\u0022:{\u0022unit_kerja_id\u0022:1,\u0022surat_id\u0022:4}}') })" x-transition:enter-start="fi-transition-enter-start" x-transition:enter-end="fi-transition-enter-end" x-transition:leave-start="fi-transition-leave-start" x-transition:leave-end="fi-transition-leave-end" class="fi-no-notification fi-inline fi-status-info" wire:key="3a90e2ee-9028-4c57-aa30-b771293d3adf.notifications.3a90e2ee-9028-4c57-aa30-b771293d3adf" x-on:close-notification.window="if ($event.detail.id == '3a90e2ee-9028-4c57-aa30-b771293d3adf') close()">
+            <svg class="fi-icon fi-size-md fi-no-notification-icon fi-color fi-color-info" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"></path>
+</svg>
+            <div class="fi-no-notification-main">
+                                    <div class="fi-no-notification-text">
+                                                    <h3 class="fi-no-notification-title">
+                                Pengajuan Surat Baru Masuk                            </h3>
+                        
+                                                    <time class="fi-no-notification-date">
+                                3 days ago                            </time>
+                        
+                                                    <div class="fi-no-notification-body">
+                                Terdapat permohonan surat baru dari Mitra Penguji: Permohonan Kerjasama Riset - 1791557984080                            </div>
+                                            </div>
+                
+                            </div>
+
+            <button type="button" x-on:click="close" class="fi-icon-btn fi-no-notification-close-btn">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"></path>
+</svg>            </button>
+        </div>
+
+        
+                </div>
+                            <div class="fi-no-notification-unread-ctn">
+                    
+        <div x-data="notificationComponent({ notification: JSON.parse('{\u0022id\u0022:\u00224a658cdc-b585-47dc-9249-a361cbf5bfaa\u0022,\u0022actions\u0022:[],\u0022body\u0022:\u0022Terdapat permohonan surat baru dari mahasiswa: mahasiswa (Permohonan Riset Mahasiswa - 1791557954760)\u0022,\u0022color\u0022:null,\u0022duration\u0022:\u0022persistent\u0022,\u0022icon\u0022:\u0022heroicon-o-information-circle\u0022,\u0022iconColor\u0022:\u0022info\u0022,\u0022status\u0022:\u0022info\u0022,\u0022title\u0022:\u0022Pengajuan Surat Baru Masuk\u0022,\u0022view\u0022:null,\u0022viewData\u0022:{\u0022unit_kerja_id\u0022:1,\u0022surat_id\u0022:3}}') })" x-transition:enter-start="fi-transition-enter-start" x-transition:enter-end="fi-transition-enter-end" x-transition:leave-start="fi-transition-leave-start" x-transition:leave-end="fi-transition-leave-end" class="fi-no-notification fi-inline fi-status-info" wire:key="4a658cdc-b585-47dc-9249-a361cbf5bfaa.notifications.4a658cdc-b585-47dc-9249-a361cbf5bfaa" x-on:close-notification.window="if ($event.detail.id == '4a658cdc-b585-47dc-9249-a361cbf5bfaa') close()">
+            <svg class="fi-icon fi-size-md fi-no-notification-icon fi-color fi-color-info" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"></path>
+</svg>
+            <div class="fi-no-notification-main">
+                                    <div class="fi-no-notification-text">
+                                                    <h3 class="fi-no-notification-title">
+                                Pengajuan Surat Baru Masuk                            </h3>
+                        
+                                                    <time class="fi-no-notification-date">
+                                3 days ago                            </time>
+                        
+                                                    <div class="fi-no-notification-body">
+                                Terdapat permohonan surat baru dari mahasiswa: mahasiswa (Permohonan Riset Mahasiswa - 1791557954760)                            </div>
+                                            </div>
+                
+                            </div>
+
+            <button type="button" x-on:click="close" class="fi-icon-btn fi-no-notification-close-btn">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"></path>
+</svg>            </button>
+        </div>
+
+        
+                </div>
+                            <div class="fi-no-notification-unread-ctn">
+                    
+        <div x-data="notificationComponent({ notification: JSON.parse('{\u0022id\u0022:\u0022b53fb7d4-7641-473d-a478-b876dd93859e\u0022,\u0022actions\u0022:[],\u0022body\u0022:\u0022Terdapat permohonan surat baru dari mahasiswa: mahasiswa (Permohonan Riset Mahasiswa - 1791557493207)\u0022,\u0022color\u0022:null,\u0022duration\u0022:\u0022persistent\u0022,\u0022icon\u0022:\u0022heroicon-o-information-circle\u0022,\u0022iconColor\u0022:\u0022info\u0022,\u0022status\u0022:\u0022info\u0022,\u0022title\u0022:\u0022Pengajuan Surat Baru Masuk\u0022,\u0022view\u0022:null,\u0022viewData\u0022:{\u0022unit_kerja_id\u0022:1,\u0022surat_id\u0022:2}}') })" x-transition:enter-start="fi-transition-enter-start" x-transition:enter-end="fi-transition-enter-end" x-transition:leave-start="fi-transition-leave-start" x-transition:leave-end="fi-transition-leave-end" class="fi-no-notification fi-inline fi-status-info" wire:key="b53fb7d4-7641-473d-a478-b876dd93859e.notifications.b53fb7d4-7641-473d-a478-b876dd93859e" x-on:close-notification.window="if ($event.detail.id == 'b53fb7d4-7641-473d-a478-b876dd93859e') close()">
+            <svg class="fi-icon fi-size-md fi-no-notification-icon fi-color fi-color-info" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"></path>
+</svg>
+            <div class="fi-no-notification-main">
+                                    <div class="fi-no-notification-text">
+                                                    <h3 class="fi-no-notification-title">
+                                Pengajuan Surat Baru Masuk                            </h3>
+                        
+                                                    <time class="fi-no-notification-date">
+                                3 days ago                            </time>
+                        
+                                                    <div class="fi-no-notification-body">
+                                Terdapat permohonan surat baru dari mahasiswa: mahasiswa (Permohonan Riset Mahasiswa - 1791557493207)                            </div>
+                                            </div>
+                
+                            </div>
+
+            <button type="button" x-on:click="close" class="fi-icon-btn fi-no-notification-close-btn">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"></path>
+</svg>            </button>
+        </div>
+
+        
+                </div>
+                            <div class="fi-no-notification-unread-ctn">
+                    
+        <div x-data="notificationComponent({ notification: JSON.parse('{\u0022id\u0022:\u002241470bbb-d206-483f-aca4-944f6f5cdbe5\u0022,\u0022actions\u0022:[],\u0022body\u0022:\u0022Terdapat permohonan surat baru dari Mitra Penguji: Permohonan Kerjasama Riset - 1791555816519\u0022,\u0022color\u0022:null,\u0022duration\u0022:\u0022persistent\u0022,\u0022icon\u0022:\u0022heroicon-o-information-circle\u0022,\u0022iconColor\u0022:\u0022info\u0022,\u0022status\u0022:\u0022info\u0022,\u0022title\u0022:\u0022Pengajuan Surat Baru Masuk\u0022,\u0022view\u0022:null,\u0022viewData\u0022:{\u0022unit_kerja_id\u0022:1,\u0022surat_id\u0022:1}}') })" x-transition:enter-start="fi-transition-enter-start" x-transition:enter-end="fi-transition-enter-end" x-transition:leave-start="fi-transition-leave-start" x-transition:leave-end="fi-transition-leave-end" class="fi-no-notification fi-inline fi-status-info" wire:key="41470bbb-d206-483f-aca4-944f6f5cdbe5.notifications.41470bbb-d206-483f-aca4-944f6f5cdbe5" x-on:close-notification.window="if ($event.detail.id == '41470bbb-d206-483f-aca4-944f6f5cdbe5') close()">
+            <svg class="fi-icon fi-size-md fi-no-notification-icon fi-color fi-color-info" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"></path>
+</svg>
+            <div class="fi-no-notification-main">
+                                    <div class="fi-no-notification-text">
+                                                    <h3 class="fi-no-notification-title">
+                                Pengajuan Surat Baru Masuk                            </h3>
+                        
+                                                    <time class="fi-no-notification-date">
+                                3 days ago                            </time>
+                        
+                                                    <div class="fi-no-notification-body">
+                                Terdapat permohonan surat baru dari Mitra Penguji: Permohonan Kerjasama Riset - 1791555816519                            </div>
+                                            </div>
+                
+                            </div>
+
+            <button type="button" x-on:click="close" class="fi-icon-btn fi-no-notification-close-btn">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"></path>
+</svg>            </button>
+        </div>
+
+        
+                </div>
+            <!--[if ENDBLOCK]><![endif]-->
+            <!--[if BLOCK]><![endif]-->                                <!--[if ENDBLOCK]><![endif]-->
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->        <!--[if ENDBLOCK]><![endif]-->
+                </div>
+            <!--[if ENDBLOCK]><![endif]-->
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->        </div>
+    </div>
+</div>
+
+<!--[if BLOCK]><![endif]-->    </template>
+    
+<!--[if ENDBLOCK]><![endif]-->
+<!--[if BLOCK]><![endif]-->    </div>
+    
+<!--[if ENDBLOCK]><![endif]--></div>                
+                                    <div wire:key="lw-533765146-1-2" wire:snapshot="{&quot;data&quot;:{&quot;mountedActions&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;defaultAction&quot;:null,&quot;defaultActionArguments&quot;:null,&quot;defaultActionContext&quot;:null,&quot;defaultTableAction&quot;:null,&quot;defaultTableActionRecord&quot;:null,&quot;defaultTableActionArguments&quot;:null,&quot;componentFileAttachments&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;areSchemaStateUpdateHooksDisabledForTesting&quot;:false,&quot;discoveredSchemaNames&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;Hc8UDXY8vSaP9MzBw3aF&quot;,&quot;name&quot;:&quot;Filament\\Livewire\\SimpleUserMenu&quot;,&quot;path&quot;:&quot;internal\/profile&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;f015a7a85f4796a9ea21a20f61a094d62def81a1789da3d5bdc660194d746973&quot;}" wire:effects="{&quot;partials&quot;:[],&quot;url&quot;:{&quot;defaultAction&quot;:{&quot;as&quot;:&quot;action&quot;,&quot;use&quot;:&quot;replace&quot;,&quot;alwaysShow&quot;:false,&quot;except&quot;:null},&quot;defaultActionArguments&quot;:{&quot;as&quot;:&quot;actionArguments&quot;,&quot;use&quot;:&quot;replace&quot;,&quot;alwaysShow&quot;:false,&quot;except&quot;:null},&quot;defaultActionContext&quot;:{&quot;as&quot;:&quot;actionContext&quot;,&quot;use&quot;:&quot;replace&quot;,&quot;alwaysShow&quot;:false,&quot;except&quot;:null},&quot;defaultTableAction&quot;:{&quot;as&quot;:&quot;tableAction&quot;,&quot;use&quot;:&quot;replace&quot;,&quot;alwaysShow&quot;:false,&quot;except&quot;:null},&quot;defaultTableActionRecord&quot;:{&quot;as&quot;:&quot;tableActionRecord&quot;,&quot;use&quot;:&quot;replace&quot;,&quot;alwaysShow&quot;:false,&quot;except&quot;:null},&quot;defaultTableActionArguments&quot;:{&quot;as&quot;:&quot;tableActionArguments&quot;,&quot;use&quot;:&quot;replace&quot;,&quot;alwaysShow&quot;:false,&quot;except&quot;:null}}}" wire:id="Hc8UDXY8vSaP9MzBw3aF" wire:name="Filament\Livewire\SimpleUserMenu">
+    <div class="fi-simple-user-menu-ctn">
+        <a href="https://dev.elsimas.my.id/internal/switch-role" title="Klik untuk berganti peran/unit" class="flex items-center px-3 py-1.5 text-sm font-medium text-primary-700 hover:bg-primary-50 transition-colors rounded-lg border dark:text-primary-400 border-primary-200 dark:bg-primary-950/30 dark:border-primary-800 mr-4 cursor-pointer">
+
+                            <span>Rektorat</span>
+                        </a>
+
+<div x-data="filamentDropdown" class="fi-dropdown fi-user-menu">
+    <div x-on:keyup.enter="toggle($event)" x-on:keyup.space="toggle($event)" x-on:mousedown="if ($event.button === 0) toggle($event)" class="fi-dropdown-trigger">
+        <!--[if BLOCK]><![endif]-->            <button aria-label="User menu" type="button" class="fi-user-menu-trigger">
+                <img class="fi-avatar fi-circular fi-size-md fi-user-avatar" src="https://ui-avatars.com/api/?name=P+R&amp;color=FFFFFF&amp;background=oklch%280.141+0.005+285.823%29" alt="Avatar of Pak Rektor" loading="lazy">
+            </button>
+        <!--[if ENDBLOCK]><![endif]-->
+    </div>
+
+    <!--[if BLOCK]><![endif]-->        <div x-float.placement.bottom-end.flip.teleport.offset="{ offset: 8,  }" x-ref="panel" x-transition:enter-start="fi-opacity-0" x-transition:leave-end="fi-opacity-0" class="fi-dropdown-panel " style="position: fixed; display: none;">
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]-->        <div class="fi-dropdown-list">
+    <!--[if BLOCK]><![endif]-->                <!--[if BLOCK]><![endif]-->                    
+
+                    
+        
+        <a href="https://dev.elsimas.my.id/internal/profile" class="fi-dropdown-list-item fi-ac-grouped-action">
+            <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-5.5-2.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0ZM10 12a5.99 5.99 0 0 0-4.793 2.39A6.483 6.483 0 0 0 10 16.5a6.483 6.483 0 0 0 4.793-2.11A5.99 5.99 0 0 0 10 12Z" clip-rule="evenodd"></path>
+</svg>            
+            <span class="fi-dropdown-list-item-label">
+                Profile            </span>
+
+                    </a>
+
+        
+        
+
+                    
+                <!--[if ENDBLOCK]><![endif]-->            <!--[if ENDBLOCK]><![endif]-->
+</div>
+    <!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]-->        <div class="fi-dropdown-list">
+    <div x-data="{ theme: null }" x-init="
+        $watch('theme', () => {
+            $dispatch('theme-changed', theme)
+        })
+
+        theme = localStorage.getItem('theme') || 'system'    " class="fi-theme-switcher">
+    <button aria-label="Enable light theme" type="button" x-on:click="(theme = 'light') &amp;&amp; close()" x-tooltip="{
+        content: 'Enable light theme',
+        theme: $store.theme,
+    }" x-bind:class="{ 'fi-active': theme === 'light' }" class="fi-theme-switcher-btn">
+    <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z"></path>
+</svg>
+</button>
+
+    <button aria-label="Enable dark theme" type="button" x-on:click="(theme = 'dark') &amp;&amp; close()" x-tooltip="{
+        content: 'Enable dark theme',
+        theme: $store.theme,
+    }" x-bind:class="{ 'fi-active': theme === 'dark' }" class="fi-theme-switcher-btn">
+    <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z" clip-rule="evenodd"></path>
+</svg>
+</button>
+
+    <button aria-label="Enable system theme" type="button" x-on:click="(theme = 'system') &amp;&amp; close()" x-tooltip="{
+        content: 'Enable system theme',
+        theme: $store.theme,
+    }" x-bind:class="{ 'fi-active': theme === 'system' }" class="fi-theme-switcher-btn fi-active">
+    <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M2 4.25A2.25 2.25 0 0 1 4.25 2h11.5A2.25 2.25 0 0 1 18 4.25v8.5A2.25 2.25 0 0 1 15.75 15h-3.105a3.501 3.501 0 0 0 1.1 1.677A.75.75 0 0 1 13.26 18H6.74a.75.75 0 0 1-.484-1.323A3.501 3.501 0 0 0 7.355 15H4.25A2.25 2.25 0 0 1 2 12.75v-8.5Zm1.5 0a.75.75 0 0 1 .75-.75h11.5a.75.75 0 0 1 .75.75v7.5a.75.75 0 0 1-.75.75H4.25a.75.75 0 0 1-.75-.75v-7.5Z" clip-rule="evenodd"></path>
+</svg>
+</button>
+</div>
+</div>
+    <!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]-->        <div class="fi-dropdown-list">
+    <!--[if BLOCK]><![endif]-->                <!--[if BLOCK]><![endif]-->                    
+        
+        <a href="https://dev.elsimas.my.id/internal/switch-role" class="fi-dropdown-list-item fi-ac-grouped-action">
+            <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 0 0-3.7-3.7 48.678 48.678 0 0 0-7.324 0 4.006 4.006 0 0 0-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 0 0 3.7 3.7 48.656 48.656 0 0 0 7.324 0 4.006 4.006 0 0 0 3.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3-3 3"></path>
+</svg>            
+            <span class="fi-dropdown-list-item-label">
+                Ganti Peran (Unit)            </span>
+
+                    </a>
+
+        
+        
+                <!--[if ENDBLOCK]><![endif]-->                            <!--[if BLOCK]><![endif]-->                    
+        <form action="https://dev.elsimas.my.id/internal/logout" method="post"><input type="hidden" name="_token" value="tqt81Wh2KXFZmFRGRGpaFxOWzGYOG5rkHlP1SBtw" autocomplete="off">
+        <button class="fi-dropdown-list-item" type="submit">
+            <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M3 4.25A2.25 2.25 0 0 1 5.25 2h5.5A2.25 2.25 0 0 1 13 4.25v2a.75.75 0 0 1-1.5 0v-2a.75.75 0 0 0-.75-.75h-5.5a.75.75 0 0 0-.75.75v11.5c0 .414.336.75.75.75h5.5a.75.75 0 0 0 .75-.75v-2a.75.75 0 0 1 1.5 0v2A2.25 2.25 0 0 1 10.75 18h-5.5A2.25 2.25 0 0 1 3 15.75V4.25Z" clip-rule="evenodd"></path>
+  <path fill-rule="evenodd" d="M19 10a.75.75 0 0 0-.75-.75H8.704l1.048-.943a.75.75 0 1 0-1.004-1.114l-2.5 2.25a.75.75 0 0 0 0 1.114l2.5 2.25a.75.75 0 1 0 1.004-1.114l-1.048-.943h9.546A.75.75 0 0 0 19 10Z" clip-rule="evenodd"></path>
+</svg>            
+            <span class="fi-dropdown-list-item-label">
+                Sign out            </span>
+
+                    </button>
+
+        </form>
+        
+                <!--[if ENDBLOCK]><![endif]-->            <!--[if ENDBLOCK]><![endif]-->
+</div>
+    <!--[if ENDBLOCK]><![endif]-->
+        </div>
+    <!--[if ENDBLOCK]><![endif]--></div>
+
+
+    </div>
+
+    <!--[if BLOCK]><![endif]-->    <div wire:partial="action-modals" x-data="filamentActionModals({
+                    livewireId: 'Hc8UDXY8vSaP9MzBw3aF',
+                })" style="height: 0">
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->    </div>
+
+    <!--[if ENDBLOCK]><![endif]--></div>
+                            </div>
+        
+        <div class="fi-simple-main-ctn">
+            <main class="fi-simple-main fi-width-5xl">
+                <div wire:snapshot="{&quot;data&quot;:{&quot;data&quot;:[{&quot;id&quot;:3,&quot;username&quot;:&quot;pakrektor&quot;,&quot;email&quot;:&quot;pegawai@internal.test&quot;,&quot;phone&quot;:null,&quot;tipe_entitas&quot;:&quot;STAF&quot;,&quot;is_active&quot;:true,&quot;settings&quot;:[{&quot;notifikasi_whatsapp&quot;:false,&quot;wa_notif_surat_masuk&quot;:false,&quot;wa_notif_surat_revisi&quot;:false,&quot;wa_notif_surat_selesai&quot;:false,&quot;wa_notif_surat_ditolak&quot;:false,&quot;notifikasi_popup&quot;:false,&quot;notifikasi_email&quot;:false},{&quot;s&quot;:&quot;arr&quot;}],&quot;deleted_at&quot;:null,&quot;created_at&quot;:&quot;2026-08-12T00:20:46.000000Z&quot;,&quot;updated_at&quot;:&quot;2026-08-24T02:55:53.000000Z&quot;,&quot;nama_lengkap&quot;:&quot;Pak Rektor&quot;,&quot;unit_kerja_id&quot;:1,&quot;password&quot;:null,&quot;passwordConfirmation&quot;:null},{&quot;s&quot;:&quot;arr&quot;}],&quot;mountedActions&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;defaultAction&quot;:null,&quot;defaultActionArguments&quot;:null,&quot;defaultActionContext&quot;:null,&quot;defaultTableAction&quot;:null,&quot;defaultTableActionRecord&quot;:null,&quot;defaultTableActionArguments&quot;:null,&quot;componentFileAttachments&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;areSchemaStateUpdateHooksDisabledForTesting&quot;:false,&quot;discoveredSchemaNames&quot;:[[&quot;form&quot;,&quot;content&quot;],{&quot;s&quot;:&quot;arr&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;RMBHmGjNW1qKwrGwoCE0&quot;,&quot;name&quot;:&quot;App\\Filament\\Pages\\Auth\\EditProfile&quot;,&quot;path&quot;:&quot;internal\/profile&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;3c73e8d411119c4452d7c251f80ca771c7cd1c7a9be6c405cea55f4523af2092&quot;}" wire:effects="{&quot;partials&quot;:[],&quot;url&quot;:{&quot;defaultAction&quot;:{&quot;as&quot;:&quot;action&quot;,&quot;use&quot;:&quot;replace&quot;,&quot;alwaysShow&quot;:false,&quot;except&quot;:null},&quot;defaultActionArguments&quot;:{&quot;as&quot;:&quot;actionArguments&quot;,&quot;use&quot;:&quot;replace&quot;,&quot;alwaysShow&quot;:false,&quot;except&quot;:null},&quot;defaultActionContext&quot;:{&quot;as&quot;:&quot;actionContext&quot;,&quot;use&quot;:&quot;replace&quot;,&quot;alwaysShow&quot;:false,&quot;except&quot;:null},&quot;defaultTableAction&quot;:{&quot;as&quot;:&quot;tableAction&quot;,&quot;use&quot;:&quot;replace&quot;,&quot;alwaysShow&quot;:false,&quot;except&quot;:null},&quot;defaultTableActionRecord&quot;:{&quot;as&quot;:&quot;tableActionRecord&quot;,&quot;use&quot;:&quot;replace&quot;,&quot;alwaysShow&quot;:false,&quot;except&quot;:null},&quot;defaultTableActionArguments&quot;:{&quot;as&quot;:&quot;tableActionArguments&quot;,&quot;use&quot;:&quot;replace&quot;,&quot;alwaysShow&quot;:false,&quot;except&quot;:null}},&quot;listeners&quot;:[&quot;refresh-page&quot;]}" wire:id="RMBHmGjNW1qKwrGwoCE0" wire:name="App\Filament\Pages\Auth\EditProfile" class="fi-simple-page">
+    
+
+    <div class="fi-simple-page-content">
+        <!--[if BLOCK]><![endif]-->            <header class="fi-simple-header">
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]-->        <h1 class="fi-simple-header-heading">
+            Profile
+        </h1>
+    <!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]--></header>
+        <!--[if ENDBLOCK]><![endif]-->
+        <div class="fi-sc  fi-sc-has-gap fi-grid" style="--cols-default: repeat(1, minmax(0, 1fr));" x-data="filamentSchema({ livewireId: 'RMBHmGjNW1qKwrGwoCE0' })" x-on:form-validation-error.window="handleFormValidationError">
+                                                
+        <div x-data="filamentSchemaComponent({
+                    path: '',
+                    containerPath: '',
+                    $wire,
+                })" class="fi-grid-col" style="--col-span-default: span 1 / span 1;">
+                            <div class="fi-sc-component">
+                    <form class="fi-sc-form" id="form" wire:submit="save">
+    
+
+    
+        <div class="fi-sc  fi-sc-has-gap fi-grid" style="--cols-default: repeat(1, minmax(0, 1fr));">
+                                                
+        <div x-data="filamentSchemaComponent({
+                    path: '',
+                    containerPath: '',
+                    $wire,
+                })" class="fi-grid-col" style="--col-span-default: span 1 / span 1;">
+                            <div class="fi-sc-component">
+                    
+        <div class="fi-sc  fi-sc-has-gap fi-grid" style="--cols-default: repeat(1, minmax(0, 1fr));" x-data="filamentSchema({ livewireId: 'RMBHmGjNW1qKwrGwoCE0' })" x-on:form-validation-error.window="handleFormValidationError">
+                                                
+        <div wire:partial="schema-component::form.informasi-profil-kontak::data::section" x-data="filamentSchemaComponent({
+                    path: 'data',
+                    containerPath: 'data',
+                    $wire,
+                })" class="fi-grid-col" style="--col-span-default: span 1 / span 1;" wire:key="RMBHmGjNW1qKwrGwoCE0.form.informasi-profil-kontak::data::section">
+                            <div class="fi-sc-component">
+                    <div class="fi-sc-section" id="form.informasi-profil-kontak::data::section">
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <section x-data="{
+        isCollapsed:  false ,
+    }" class="fi-section fi-section-has-header">
+    <!--[if BLOCK]><![endif]-->        <header class="fi-section-header">
+            
+
+            <!--[if BLOCK]><![endif]-->                <div class="fi-section-header-text-ctn">
+                    <!--[if BLOCK]><![endif]-->                        <h2 class="fi-section-header-heading">
+                            Informasi Profil &amp; Kontak
+                        </h2>
+                    <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]-->                        <p class="fi-section-header-description">
+                            Perbarui informasi akun, email, dan nomor kontak Anda.
+                        </p>
+                    <!--[if ENDBLOCK]><![endif]-->                </div>
+            <!--[if ENDBLOCK]><![endif]-->
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->        </header>
+    <!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]-->        <div class="fi-section-content-ctn">
+            <!--[if BLOCK]><![endif]-->                <div class="fi-sc  fi-sc-has-gap fi-grid lg:fi-grid-cols  fi-section-content" style="--cols-lg: repeat(2, minmax(0, 1fr)); --cols-default: repeat(1, minmax(0, 1fr));">
+                                                
+        <div wire:partial="schema-component::form.nama_lengkap" x-data="filamentSchemaComponent({
+                    path: 'data.nama_lengkap',
+                    containerPath: 'data',
+                    $wire,
+                })" class="fi-grid-col" style="--col-span-default: span 1 / span 1;" wire:key="RMBHmGjNW1qKwrGwoCE0.form.nama_lengkap">
+                            <div class="fi-sc-component">
+                    <div data-field-wrapper="" class="fi-fo-field">
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]-->        <div class="fi-fo-field-label-col">
+            
+
+            <div class="fi-fo-field-label-ctn ">
+                
+
+                <!--[if BLOCK]><![endif]-->                    <label for="form.nama_lengkap" class="fi-fo-field-label">
+                        
+
+                        <!--[if BLOCK]><![endif]-->                            <span class="fi-fo-field-label-content">
+                                Nama Lengkap<!--[if BLOCK]><![endif]--><sup class="fi-fo-field-label-required-mark">*</sup>
+                                <!--[if ENDBLOCK]><![endif]-->                            </span>
+                        <!--[if ENDBLOCK]><![endif]-->
+                        
+                    </label>
+                <!--[if ENDBLOCK]><![endif]-->
+                
+            </div>
+
+            
+        </div>
+    <!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]-->        <div class="fi-fo-field-content-col">
+            
+
+            <!--[if BLOCK]><![endif]-->                <div class="fi-input-wrp fi-fo-text-input" x-on:focus-input.stop="$el.querySelector('input')?.focus()">
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <div class="fi-input-wrp-content-ctn">
+        <input class="fi-input" id="form.nama_lengkap" maxlength="255" required="required" type="text" wire:model="data.nama_lengkap">
+    </div>
+
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]--></div>
+
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+            <!--[if ENDBLOCK]><![endif]-->
+            
+
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->        </div>
+    <!--[if ENDBLOCK]><![endif]--></div>
+                </div>
+                    </div>
+
+                                                                        
+        <div wire:partial="schema-component::form.username" x-data="filamentSchemaComponent({
+                    path: 'data.username',
+                    containerPath: 'data',
+                    $wire,
+                })" class="fi-grid-col" style="--col-span-default: span 1 / span 1;" wire:key="RMBHmGjNW1qKwrGwoCE0.form.username">
+                            <div class="fi-sc-component">
+                    <div data-field-wrapper="" class="fi-fo-field">
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]-->        <div class="fi-fo-field-label-col">
+            
+
+            <div class="fi-fo-field-label-ctn ">
+                
+
+                <!--[if BLOCK]><![endif]-->                    <label for="form.username" class="fi-fo-field-label">
+                        
+
+                        <!--[if BLOCK]><![endif]-->                            <span class="fi-fo-field-label-content">
+                                Username<!--[if BLOCK]><![endif]--><sup class="fi-fo-field-label-required-mark">*</sup>
+                                <!--[if ENDBLOCK]><![endif]-->                            </span>
+                        <!--[if ENDBLOCK]><![endif]-->
+                        
+                    </label>
+                <!--[if ENDBLOCK]><![endif]-->
+                
+            </div>
+
+            
+        </div>
+    <!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]-->        <div class="fi-fo-field-content-col">
+            
+
+            <!--[if BLOCK]><![endif]-->                <div class="fi-input-wrp fi-fo-text-input" x-on:focus-input.stop="$el.querySelector('input')?.focus()">
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <div class="fi-input-wrp-content-ctn">
+        <input class="fi-input" id="form.username" maxlength="255" required="required" type="text" wire:model="data.username">
+    </div>
+
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]--></div>
+
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+            <!--[if ENDBLOCK]><![endif]-->
+            
+
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->        </div>
+    <!--[if ENDBLOCK]><![endif]--></div>
+                </div>
+                    </div>
+
+                                                                        
+        <div wire:partial="schema-component::form.email" x-data="filamentSchemaComponent({
+                    path: 'data.email',
+                    containerPath: 'data',
+                    $wire,
+                })" class="fi-grid-col" style="--col-span-default: span 1 / span 1;" wire:key="RMBHmGjNW1qKwrGwoCE0.form.email">
+                            <div class="fi-sc-component">
+                    <div data-field-wrapper="" class="fi-fo-field">
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]-->        <div class="fi-fo-field-label-col">
+            
+
+            <div class="fi-fo-field-label-ctn ">
+                
+
+                <!--[if BLOCK]><![endif]-->                    <label for="form.email" class="fi-fo-field-label">
+                        
+
+                        <!--[if BLOCK]><![endif]-->                            <span class="fi-fo-field-label-content">
+                                Alamat Email<!--[if BLOCK]><![endif]--><sup class="fi-fo-field-label-required-mark">*</sup>
+                                <!--[if ENDBLOCK]><![endif]-->                            </span>
+                        <!--[if ENDBLOCK]><![endif]-->
+                        
+                    </label>
+                <!--[if ENDBLOCK]><![endif]-->
+                
+            </div>
+
+            
+        </div>
+    <!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]-->        <div class="fi-fo-field-content-col">
+            
+
+            <!--[if BLOCK]><![endif]-->                <div class="fi-input-wrp fi-fo-text-input" x-on:focus-input.stop="$el.querySelector('input')?.focus()">
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <div class="fi-input-wrp-content-ctn">
+        <input class="fi-input" id="form.email" maxlength="255" required="required" type="email" wire:model.live.debounce.500="data.email">
+    </div>
+
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]--></div>
+
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+            <!--[if ENDBLOCK]><![endif]-->
+            
+
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->        </div>
+    <!--[if ENDBLOCK]><![endif]--></div>
+                </div>
+                    </div>
+
+                                                                        
+        <div wire:partial="schema-component::form.phone" x-data="filamentSchemaComponent({
+                    path: 'data.phone',
+                    containerPath: 'data',
+                    $wire,
+                })" class="fi-grid-col" style="--col-span-default: span 1 / span 1;" wire:key="RMBHmGjNW1qKwrGwoCE0.form.phone">
+                            <div class="fi-sc-component">
+                    <div data-field-wrapper="" class="fi-fo-field">
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]-->        <div class="fi-fo-field-label-col">
+            
+
+            <div class="fi-fo-field-label-ctn ">
+                
+
+                <!--[if BLOCK]><![endif]-->                    <label for="form.phone" class="fi-fo-field-label">
+                        
+
+                        <!--[if BLOCK]><![endif]-->                            <span class="fi-fo-field-label-content">
+                                Nomor WhatsApp / HP<!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                            </span>
+                        <!--[if ENDBLOCK]><![endif]-->
+                        
+                    </label>
+                <!--[if ENDBLOCK]><![endif]-->
+                
+            </div>
+
+            
+        </div>
+    <!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]-->        <div class="fi-fo-field-content-col">
+            
+
+            <!--[if BLOCK]><![endif]-->                <div class="fi-input-wrp fi-fo-text-input" x-on:focus-input.stop="$el.querySelector('input')?.focus()">
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <div class="fi-input-wrp-content-ctn">
+        <input class="fi-input" id="form.phone" inputmode="decimal" maxlength="20" minlength="10" placeholder="Contoh: 081234567890 atau 6281234567890" step="any" type="number" wire:model="data.phone">
+    </div>
+
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]--></div>
+
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+            <!--[if ENDBLOCK]><![endif]-->
+            
+        <div class="fi-sc fi-inline  fi-sc-has-gap fi-sc-dense">
+                                                
+        <div x-data="filamentSchemaComponent({
+                    path: 'data.phone',
+                    containerPath: 'data',
+                    $wire,
+                })" class="">
+                            <div class="fi-sc-component">
+                    <!--[if BLOCK]><![endif]-->    <span class="fi-sc-text">
+        Digunakan untuk pengiriman notifikasi alur surat melalui WhatsApp.
+    </span>
+<!--[if ENDBLOCK]><![endif]-->                </div>
+                    </div>
+
+                                            </div>
+
+        
+
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->        </div>
+    <!--[if ENDBLOCK]><![endif]--></div>
+                </div>
+                    </div>
+
+                                            </div>
+            <!--[if ENDBLOCK]><![endif]-->
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->        </div>
+    <!--[if ENDBLOCK]><![endif]--></section>
+
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]--></div>
+                </div>
+                    </div>
+
+                                                                        
+        <div wire:partial="schema-component::form.keamanan-kata-sandi::data::section" x-data="filamentSchemaComponent({
+                    path: 'data',
+                    containerPath: 'data',
+                    $wire,
+                })" class="fi-grid-col" style="--col-span-default: 1 / -1;" wire:key="RMBHmGjNW1qKwrGwoCE0.form.keamanan-kata-sandi::data::section">
+                            <div class="fi-sc-component">
+                    <div class="fi-sc-section" id="form.keamanan-kata-sandi::data::section">
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <section x-data="{
+        isCollapsed:  false ,
+    }" class="fi-section fi-section-has-header">
+    <!--[if BLOCK]><![endif]-->        <header class="fi-section-header">
+            
+
+            <!--[if BLOCK]><![endif]-->                <div class="fi-section-header-text-ctn">
+                    <!--[if BLOCK]><![endif]-->                        <h2 class="fi-section-header-heading">
+                            Keamanan &amp; Kata Sandi
+                        </h2>
+                    <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]-->                        <p class="fi-section-header-description">
+                            Kosongkan bagian ini jika Anda tidak bermaksud mengubah kata sandi.
+                        </p>
+                    <!--[if ENDBLOCK]><![endif]-->                </div>
+            <!--[if ENDBLOCK]><![endif]-->
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->        </header>
+    <!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]-->        <div class="fi-section-content-ctn">
+            <!--[if BLOCK]><![endif]-->                <div class="fi-sc  fi-sc-has-gap fi-grid  fi-section-content" style="--cols-default: repeat(1, minmax(0, 1fr));">
+                                                
+        <div wire:partial="schema-component::form.password" x-data="filamentSchemaComponent({
+                    path: 'data.password',
+                    containerPath: 'data',
+                    $wire,
+                })" class="fi-grid-col" style="--col-span-default: span 1 / span 1;" wire:key="RMBHmGjNW1qKwrGwoCE0.form.password">
+                            <div class="fi-sc-component">
+                    <div data-field-wrapper="" class="fi-fo-field">
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]-->        <div class="fi-fo-field-label-col">
+            
+
+            <div class="fi-fo-field-label-ctn ">
+                
+
+                <!--[if BLOCK]><![endif]-->                    <label for="form.password" class="fi-fo-field-label">
+                        
+
+                        <!--[if BLOCK]><![endif]-->                            <span class="fi-fo-field-label-content">
+                                New password<!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                            </span>
+                        <!--[if ENDBLOCK]><![endif]-->
+                        
+                    </label>
+                <!--[if ENDBLOCK]><![endif]-->
+                
+            </div>
+
+            
+        </div>
+    <!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]-->        <div class="fi-fo-field-content-col">
+            
+
+            <!--[if BLOCK]><![endif]-->                <div class="fi-input-wrp fi-fo-text-input" x-data="{ isPasswordRevealed: false }" x-on:focus-input.stop="$el.querySelector('input')?.focus()">
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <div class="fi-input-wrp-content-ctn">
+        <input class="fi-input fi-revealable" autocomplete="new-password" id="form.password" minlength="8" wire:model.live.debounce.500="data.password" x-bind:type="isPasswordRevealed ? 'text' : 'password'" type="password">
+    </div>
+
+    <!--[if BLOCK]><![endif]-->        <div class="fi-input-wrp-suffix">
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+            
+
+            <!--[if BLOCK]><![endif]-->                <div class="fi-input-wrp-actions">
+                    <!--[if BLOCK]><![endif]-->                        
+        
+        <button class="fi-icon-btn fi-size-sm fi-ac-icon-btn-action" title="Show password" aria-label="Show password" type="button" wire:loading.attr="disabled" x-show="! isPasswordRevealed" x-on:click="isPasswordRevealed = true">
+            <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M10 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"></path>
+  <path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 0 1 0-1.186A10.004 10.004 0 0 1 10 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0 1 10 17c-4.257 0-7.893-2.66-9.336-6.41ZM14 10a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" clip-rule="evenodd"></path>
+</svg>            
+                    </button>
+
+        
+        
+                                            
+        
+        <button class="fi-icon-btn fi-size-sm fi-ac-icon-btn-action" title="Hide password" aria-label="Hide password" type="button" wire:loading.attr="disabled" x-show="isPasswordRevealed" x-on:click="isPasswordRevealed = false" style="display: none;">
+            <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path fill-rule="evenodd" d="M3.28 2.22a.75.75 0 0 0-1.06 1.06l14.5 14.5a.75.75 0 1 0 1.06-1.06l-1.745-1.745a10.029 10.029 0 0 0 3.3-4.38 1.651 1.651 0 0 0 0-1.185A10.004 10.004 0 0 0 9.999 3a9.956 9.956 0 0 0-4.744 1.194L3.28 2.22ZM7.752 6.69l1.092 1.092a2.5 2.5 0 0 1 3.374 3.373l1.091 1.092a4 4 0 0 0-5.557-5.557Z" clip-rule="evenodd"></path>
+  <path d="m10.748 13.93 2.523 2.523a9.987 9.987 0 0 1-3.27.547c-4.258 0-7.894-2.66-9.337-6.41a1.651 1.651 0 0 1 0-1.186A10.007 10.007 0 0 1 2.839 6.02L6.07 9.252a4 4 0 0 0 4.678 4.678Z"></path>
+</svg>            
+                    </button>
+
+        
+        
+                    <!--[if ENDBLOCK]><![endif]-->                </div>
+            <!--[if ENDBLOCK]><![endif]-->        </div>
+    <!--[if ENDBLOCK]><![endif]--></div>
+
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+            <!--[if ENDBLOCK]><![endif]-->
+            
+        <div class="fi-sc fi-inline  fi-sc-has-gap fi-sc-dense">
+                                                
+        <div x-data="filamentSchemaComponent({
+                    path: 'data.password',
+                    containerPath: 'data',
+                    $wire,
+                })" class="">
+                            <div class="fi-sc-component">
+                    <!--[if BLOCK]><![endif]-->    <span class="fi-sc-text">
+        Password minimal 8 karakter dan berisi kombinasi huruf dan angka.
+    </span>
+<!--[if ENDBLOCK]><![endif]-->                </div>
+                    </div>
+
+                                            </div>
+
+        
+
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->        </div>
+    <!--[if ENDBLOCK]><![endif]--></div>
+                </div>
+                    </div>
+
+                                                                        
+        <div wire:partial="schema-component::form.passwordConfirmation" class="fi-grid-col fi-hidden" style="--col-span-default: span 1 / span 1;" wire:key="RMBHmGjNW1qKwrGwoCE0.form.passwordConfirmation">
+                    </div>
+
+                                            </div>
+            <!--[if ENDBLOCK]><![endif]-->
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->        </div>
+    <!--[if ENDBLOCK]><![endif]--></section>
+
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]--></div>
+                </div>
+                    </div>
+
+                                                                        
+        <div wire:partial="schema-component::form.preferensi-notifikasi-whatsapp::data::section" x-data="filamentSchemaComponent({
+                    path: 'data',
+                    containerPath: 'data',
+                    $wire,
+                })" class="fi-grid-col" style="--col-span-default: span 1 / span 1;" wire:key="RMBHmGjNW1qKwrGwoCE0.form.preferensi-notifikasi-whatsapp::data::section">
+                            <div class="fi-sc-component">
+                    <div class="fi-sc-section" id="form.preferensi-notifikasi-whatsapp::data::section">
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <section x-data="{
+        isCollapsed:  false ,
+    }" class="fi-section fi-section-has-header">
+    <!--[if BLOCK]><![endif]-->        <header class="fi-section-header">
+            
+
+            <!--[if BLOCK]><![endif]-->                <div class="fi-section-header-text-ctn">
+                    <!--[if BLOCK]><![endif]-->                        <h2 class="fi-section-header-heading">
+                            Preferensi Notifikasi WhatsApp
+                        </h2>
+                    <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]-->                        <p class="fi-section-header-description">
+                            Atur jenis notifikasi surat yang ingin Anda terima secara otomatis melalui pesan WhatsApp.
+                        </p>
+                    <!--[if ENDBLOCK]><![endif]-->                </div>
+            <!--[if ENDBLOCK]><![endif]-->
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->        </header>
+    <!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]-->        <div class="fi-section-content-ctn">
+            <!--[if BLOCK]><![endif]-->                <div class="fi-sc  fi-sc-has-gap fi-grid lg:fi-grid-cols  fi-section-content" style="--cols-lg: repeat(2, minmax(0, 1fr)); --cols-default: repeat(1, minmax(0, 1fr));">
+                                                
+        <div wire:partial="schema-component::form.settings.notifikasi_whatsapp" x-data="filamentSchemaComponent({
+                    path: 'data.settings.notifikasi_whatsapp',
+                    containerPath: 'data',
+                    $wire,
+                })" class="fi-grid-col" style="--col-span-default: 1 / -1;" wire:key="RMBHmGjNW1qKwrGwoCE0.form.settings.notifikasi_whatsapp">
+                            <div class="fi-sc-component">
+                    <div data-field-wrapper="" class="fi-fo-field">
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]-->        <div class="fi-fo-field-label-col">
+            
+
+            <div class="fi-fo-field-label-ctn ">
+                
+
+                <!--[if BLOCK]><![endif]-->                    <label for="form.settings.notifikasi_whatsapp" class="fi-fo-field-label">
+                        <button x-data="{ state: $wire.$entangle('data.settings.notifikasi_whatsapp', true) }" x-bind:aria-checked="state?.toString()" x-on:click="state = ! state" x-bind:class="
+        state ? 'fi-toggle-on fi-color fi-color-primary fi-bg-color-400 fi-text-color-400 dark:fi-bg-color-700' : 'fi-toggle-off'    " class="fi-toggle fi-fo-toggle fi-toggle-off" role="switch" type="button" ariachecked="false" id="form.settings.notifikasi_whatsapp" wire:loading.attr="disabled" wire:target="data.settings.notifikasi_whatsapp" aria-checked="false">
+    <div>
+        <div aria-hidden="true">
+            
+        </div>
+
+        <div aria-hidden="true">
+            
+        </div>
+    </div>
+</button>
+
+<!--[if BLOCK]><![endif]-->    <div wire:ignore="" class="fi-toggle fi-toggle-on fi-hidden fi-color fi-color-primary fi-bg-color-400 fi-text-color-400 dark:fi-bg-color-700">
+        <div>
+            <div aria-hidden="true"></div>
+
+            <div aria-hidden="true">
+                
+            </div>
+        </div>
+    </div>
+<!--[if ENDBLOCK]><![endif]-->
+
+                        <!--[if BLOCK]><![endif]-->                            <span class="fi-fo-field-label-content">
+                                Aktifkan Notifikasi via WhatsApp<!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                            </span>
+                        <!--[if ENDBLOCK]><![endif]-->
+                        
+                    </label>
+                <!--[if ENDBLOCK]><![endif]-->
+                
+            </div>
+
+            
+        </div>
+    <!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]-->        <div class="fi-fo-field-content-col">
+            
+
+            <!--[if BLOCK]><![endif]-->                <!--[if BLOCK]><![endif]-->             <!--[if ENDBLOCK]><![endif]-->
+            <!--[if ENDBLOCK]><![endif]-->
+            
+        <div class="fi-sc fi-inline  fi-sc-has-gap fi-sc-dense">
+                                                
+        <div x-data="filamentSchemaComponent({
+                    path: 'data.settings.notifikasi_whatsapp',
+                    containerPath: 'data',
+                    $wire,
+                })" class="">
+                            <div class="fi-sc-component">
+                    <!--[if BLOCK]><![endif]-->    <span class="fi-sc-text">
+        Aktifkan untuk menerima pembaruan status surat langsung ke WhatsApp Anda.
+    </span>
+<!--[if ENDBLOCK]><![endif]-->                </div>
+                    </div>
+
+                                            </div>
+
+        
+
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->        </div>
+    <!--[if ENDBLOCK]><![endif]--></div>
+                </div>
+                    </div>
+
+                                                                        
+        <div wire:partial="schema-component::form.settings.wa_notif_surat_masuk" class="fi-grid-col fi-hidden" style="--col-span-default: span 1 / span 1;" wire:key="RMBHmGjNW1qKwrGwoCE0.form.settings.wa_notif_surat_masuk">
+                    </div>
+
+                                                                        
+        <div wire:partial="schema-component::form.settings.wa_notif_surat_revisi" class="fi-grid-col fi-hidden" style="--col-span-default: span 1 / span 1;" wire:key="RMBHmGjNW1qKwrGwoCE0.form.settings.wa_notif_surat_revisi">
+                    </div>
+
+                                                                        
+        <div wire:partial="schema-component::form.settings.wa_notif_surat_selesai" class="fi-grid-col fi-hidden" style="--col-span-default: span 1 / span 1;" wire:key="RMBHmGjNW1qKwrGwoCE0.form.settings.wa_notif_surat_selesai">
+                    </div>
+
+                                                                        
+        <div wire:partial="schema-component::form.settings.wa_notif_surat_ditolak" class="fi-grid-col fi-hidden" style="--col-span-default: span 1 / span 1;" wire:key="RMBHmGjNW1qKwrGwoCE0.form.settings.wa_notif_surat_ditolak">
+                    </div>
+
+                                            </div>
+            <!--[if ENDBLOCK]><![endif]-->
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->        </div>
+    <!--[if ENDBLOCK]><![endif]--></section>
+
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]--></div>
+                </div>
+                    </div>
+
+                                                                        
+        <div wire:partial="schema-component::form.preferensi-notifikasi-pop-up-email::data::section" x-data="filamentSchemaComponent({
+                    path: 'data',
+                    containerPath: 'data',
+                    $wire,
+                })" class="fi-grid-col" style="--col-span-default: span 1 / span 1;" wire:key="RMBHmGjNW1qKwrGwoCE0.form.preferensi-notifikasi-pop-up-email::data::section">
+                            <div class="fi-sc-component">
+                    <div class="fi-sc-section" id="form.preferensi-notifikasi-pop-up-email::data::section">
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <section x-data="{
+        isCollapsed:  false ,
+    }" class="fi-section fi-section-has-header">
+    <!--[if BLOCK]><![endif]-->        <header class="fi-section-header">
+            
+
+            <!--[if BLOCK]><![endif]-->                <div class="fi-section-header-text-ctn">
+                    <!--[if BLOCK]><![endif]-->                        <h2 class="fi-section-header-heading">
+                            Preferensi Notifikasi Pop-up &amp; Email
+                        </h2>
+                    <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]-->                        <p class="fi-section-header-description">
+                            Atur apakah notifikasi ditampilkan sebagai pop-up melayang di layar dan dikirim ke surel.
+                        </p>
+                    <!--[if ENDBLOCK]><![endif]-->                </div>
+            <!--[if ENDBLOCK]><![endif]-->
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->        </header>
+    <!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]-->        <div class="fi-section-content-ctn">
+            <!--[if BLOCK]><![endif]-->                <div class="fi-sc  fi-sc-has-gap fi-grid lg:fi-grid-cols  fi-section-content" style="--cols-lg: repeat(2, minmax(0, 1fr)); --cols-default: repeat(1, minmax(0, 1fr));">
+                                                
+        <div wire:partial="schema-component::form.settings.notifikasi_popup" x-data="filamentSchemaComponent({
+                    path: 'data.settings.notifikasi_popup',
+                    containerPath: 'data',
+                    $wire,
+                })" class="fi-grid-col" style="--col-span-default: span 1 / span 1;" wire:key="RMBHmGjNW1qKwrGwoCE0.form.settings.notifikasi_popup">
+                            <div class="fi-sc-component">
+                    <div data-field-wrapper="" class="fi-fo-field">
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]-->        <div class="fi-fo-field-label-col">
+            
+
+            <div class="fi-fo-field-label-ctn ">
+                
+
+                <!--[if BLOCK]><![endif]-->                    <label for="form.settings.notifikasi_popup" class="fi-fo-field-label">
+                        <button x-data="{ state: $wire.$entangle('data.settings.notifikasi_popup', false) }" x-bind:aria-checked="state?.toString()" x-on:click="state = ! state" x-bind:class="
+        state ? 'fi-toggle-on fi-color fi-color-primary fi-bg-color-400 fi-text-color-400 dark:fi-bg-color-700' : 'fi-toggle-off'    " class="fi-toggle fi-fo-toggle fi-toggle-off" role="switch" type="button" ariachecked="false" id="form.settings.notifikasi_popup" wire:loading.attr="disabled" wire:target="data.settings.notifikasi_popup" aria-checked="false">
+    <div>
+        <div aria-hidden="true">
+            
+        </div>
+
+        <div aria-hidden="true">
+            
+        </div>
+    </div>
+</button>
+
+<!--[if BLOCK]><![endif]-->    <div wire:ignore="" class="fi-toggle fi-toggle-on fi-hidden fi-color fi-color-primary fi-bg-color-400 fi-text-color-400 dark:fi-bg-color-700">
+        <div>
+            <div aria-hidden="true"></div>
+
+            <div aria-hidden="true">
+                
+            </div>
+        </div>
+    </div>
+<!--[if ENDBLOCK]><![endif]-->
+
+                        <!--[if BLOCK]><![endif]-->                            <span class="fi-fo-field-label-content">
+                                Notifikasi Web (Pop-up)<!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                            </span>
+                        <!--[if ENDBLOCK]><![endif]-->
+                        
+                    </label>
+                <!--[if ENDBLOCK]><![endif]-->
+                
+            </div>
+
+            
+        </div>
+    <!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]-->        <div class="fi-fo-field-content-col">
+            
+
+            <!--[if BLOCK]><![endif]-->                <!--[if BLOCK]><![endif]-->             <!--[if ENDBLOCK]><![endif]-->
+            <!--[if ENDBLOCK]><![endif]-->
+            
+        <div class="fi-sc fi-inline  fi-sc-has-gap fi-sc-dense">
+                                                
+        <div x-data="filamentSchemaComponent({
+                    path: 'data.settings.notifikasi_popup',
+                    containerPath: 'data',
+                    $wire,
+                })" class="">
+                            <div class="fi-sc-component">
+                    <!--[if BLOCK]><![endif]-->    <span class="fi-sc-text">
+        Tampilkan pop-up melayang saat ada pembaruan surat.
+    </span>
+<!--[if ENDBLOCK]><![endif]-->                </div>
+                    </div>
+
+                                            </div>
+
+        
+
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->        </div>
+    <!--[if ENDBLOCK]><![endif]--></div>
+                </div>
+                    </div>
+
+                                                                        
+        <div wire:partial="schema-component::form.settings.notifikasi_email" x-data="filamentSchemaComponent({
+                    path: 'data.settings.notifikasi_email',
+                    containerPath: 'data',
+                    $wire,
+                })" class="fi-grid-col" style="--col-span-default: span 1 / span 1;" wire:key="RMBHmGjNW1qKwrGwoCE0.form.settings.notifikasi_email">
+                            <div class="fi-sc-component">
+                    <div data-field-wrapper="" class="fi-fo-field">
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]-->        <div class="fi-fo-field-label-col">
+            
+
+            <div class="fi-fo-field-label-ctn ">
+                
+
+                <!--[if BLOCK]><![endif]-->                    <label for="form.settings.notifikasi_email" class="fi-fo-field-label">
+                        <button x-data="{ state: $wire.$entangle('data.settings.notifikasi_email', false) }" x-bind:aria-checked="state?.toString()" x-on:click="state = ! state" x-bind:class="
+        state ? 'fi-toggle-on fi-color fi-color-primary fi-bg-color-400 fi-text-color-400 dark:fi-bg-color-700' : 'fi-toggle-off'    " class="fi-toggle fi-fo-toggle fi-toggle-off" role="switch" type="button" ariachecked="false" id="form.settings.notifikasi_email" wire:loading.attr="disabled" wire:target="data.settings.notifikasi_email" aria-checked="false">
+    <div>
+        <div aria-hidden="true">
+            
+        </div>
+
+        <div aria-hidden="true">
+            
+        </div>
+    </div>
+</button>
+
+<!--[if BLOCK]><![endif]-->    <div wire:ignore="" class="fi-toggle fi-toggle-on fi-hidden fi-color fi-color-primary fi-bg-color-400 fi-text-color-400 dark:fi-bg-color-700">
+        <div>
+            <div aria-hidden="true"></div>
+
+            <div aria-hidden="true">
+                
+            </div>
+        </div>
+    </div>
+<!--[if ENDBLOCK]><![endif]-->
+
+                        <!--[if BLOCK]><![endif]-->                            <span class="fi-fo-field-label-content">
+                                Terima Notifikasi via Email<!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                            </span>
+                        <!--[if ENDBLOCK]><![endif]-->
+                        
+                    </label>
+                <!--[if ENDBLOCK]><![endif]-->
+                
+            </div>
+
+            
+        </div>
+    <!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]-->        <div class="fi-fo-field-content-col">
+            
+
+            <!--[if BLOCK]><![endif]-->                <!--[if BLOCK]><![endif]-->             <!--[if ENDBLOCK]><![endif]-->
+            <!--[if ENDBLOCK]><![endif]-->
+            
+        <div class="fi-sc fi-inline  fi-sc-has-gap fi-sc-dense">
+                                                
+        <div x-data="filamentSchemaComponent({
+                    path: 'data.settings.notifikasi_email',
+                    containerPath: 'data',
+                    $wire,
+                })" class="">
+                            <div class="fi-sc-component">
+                    <!--[if BLOCK]><![endif]-->    <span class="fi-sc-text">
+        Kirim salinan pemberitahuan penting ke alamat email akun Anda.
+    </span>
+<!--[if ENDBLOCK]><![endif]-->                </div>
+                    </div>
+
+                                            </div>
+
+        
+
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->        </div>
+    <!--[if ENDBLOCK]><![endif]--></div>
+                </div>
+                    </div>
+
+                                            </div>
+            <!--[if ENDBLOCK]><![endif]-->
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->        </div>
+    <!--[if ENDBLOCK]><![endif]--></section>
+
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]--></div>
+                </div>
+                    </div>
+
+                                            </div>
+
+                        </div>
+                    </div>
+
+                                            </div>
+
+        
+
+    
+        <div class="fi-sc  fi-sc-has-gap fi-grid" style="--cols-default: repeat(1, minmax(0, 1fr));">
+                                                
+        <div wire:partial="schema-component::content.form-actions" x-data="filamentSchemaComponent({
+                    path: '',
+                    containerPath: '',
+                    $wire,
+                })" class="fi-grid-col" style="--col-span-default: span 1 / span 1;" wire:key="RMBHmGjNW1qKwrGwoCE0.content.form-actions">
+                            <div class="fi-sc-component">
+                    <div class="fi-sc-actions" id="content.form-actions">
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]-->    <div class="fi-ac fi-align-start">
+        <!--[if BLOCK]><![endif]-->            <!--[if BLOCK]><![endif]-->                
+        
+        
+        <button x-bind:id="$id('key-bindings')" x-mousetrap.global.mod-s="document.getElementById($el.id)?.click()" x-data="filamentFormButton" x-bind:class="{ 'fi-processing': isProcessing }" class="fi-color fi-color-primary fi-bg-color-600 hover:fi-bg-color-500 dark:fi-bg-color-600 dark:hover:fi-bg-color-500 fi-text-color-0 hover:fi-text-color-0 dark:fi-text-color-0 dark:hover:fi-text-color-0 fi-btn fi-size-md  fi-ac-btn-action" type="submit" wire:loading.attr="disabled" wire:target="save" x-bind:disabled="isProcessing" id="key-bindings-1">
+                                            <svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="fi-icon fi-loading-indicator fi-size-md" wire:loading.delay.default="" wire:target="save">
+    <path clip-rule="evenodd" d="M12 19C15.866 19 19 15.866 19 12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill-rule="evenodd" fill="currentColor" opacity="0.2"></path>
+    <path d="M2 12C2 6.47715 6.47715 2 12 2V5C8.13401 5 5 8.13401 5 12H2Z" fill="currentColor"></path>
+</svg>                <svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="fi-icon fi-loading-indicator fi-size-md" x-show="isProcessing" style="display: none;">
+    <path clip-rule="evenodd" d="M12 19C15.866 19 19 15.866 19 12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill-rule="evenodd" fill="currentColor" opacity="0.2"></path>
+    <path d="M2 12C2 6.47715 6.47715 2 12 2V5C8.13401 5 5 8.13401 5 12H2Z" fill="currentColor"></path>
+</svg>            
+                                                <span x-show="! isProcessing">
+                        Save changes                    </span>
+                            
+                            <span x-show="isProcessing" x-text="processingMessage" style="display: none;"></span>
+            
+            
+                    </button>
+
+        
+        
+                            
+        
+        
+        <button class="fi-btn fi-size-md  fi-ac-btn-action" type="button" wire:loading.attr="disabled" x-on:click="document.referrer ? window.history.back() : (window.location.href = 'https:\/\/dev.elsimas.my.id\/internal')">
+                                                                        
+                                                Cancel                            
+            
+            
+                    </button>
+
+        
+        
+            <!--[if ENDBLOCK]><![endif]-->        <!--[if ENDBLOCK]><![endif]-->    </div>
+<!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]--></div>
+                </div>
+                    </div>
+
+                                            </div>
+
+        
+</form>
+                </div>
+                    </div>
+
+                                            </div>
+    </div>
+
+    <!--[if BLOCK]><![endif]-->        <!--[if BLOCK]><![endif]-->    <div wire:partial="action-modals" x-data="filamentActionModals({
+                    livewireId: 'RMBHmGjNW1qKwrGwoCE0',
+                })" style="height: 0">
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->    </div>
+
+    <!--[if ENDBLOCK]><![endif]-->    <!--[if ENDBLOCK]><![endif]-->
+    
+</div>
+            </main>
+        </div>
+
+        
+
+        
+    </div>
+
+        <div wire:key="lw-348507680-0-5" wire:snapshot="{&quot;data&quot;:{&quot;isFilamentNotificationsComponent&quot;:true,&quot;notifications&quot;:[[],{&quot;class&quot;:&quot;Filament\\Notifications\\Collection&quot;,&quot;s&quot;:&quot;wrbl&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;ninkmYPGZAX6tPxFRtA5&quot;,&quot;name&quot;:&quot;Filament\\Livewire\\Notifications&quot;,&quot;path&quot;:&quot;internal\/profile&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[&quot;1742607724-0&quot;],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;8e366a2403034bda46cbd0c8b355d1e4c16b82baab50283f508a36ad24af0a11&quot;}" wire:effects="{&quot;partials&quot;:[],&quot;scripts&quot;:{&quot;1742607724-0&quot;:&quot;            <script>\n                window.addEventListener('EchoLoaded', () => {\n                    window.Echo.private('App.Models.User.3').notification(\n                        (notification) => {\n                            setTimeout(\n                                () =>\n                                    $wire.handleBroadcastNotification(\n                                        notification,\n                                    ),\n                                500,\n                            )\n                        },\n                    )\n                })\n\n                if (window.Echo) {\n                    window.dispatchEvent(new CustomEvent('EchoLoaded'))\n                }\n            <\/script>\n            &quot;},&quot;listeners&quot;:[&quot;notificationsSent&quot;,&quot;notificationSent&quot;,&quot;notificationClosed&quot;]}" wire:id="ninkmYPGZAX6tPxFRtA5" wire:name="Filament\Livewire\Notifications">
+    <div class="fi-no fi-align-right fi-vertical-align-start" role="status">
+        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->    </div>
+
+    <!--[if BLOCK]><![endif]-->                <!--[if ENDBLOCK]><![endif]--></div>
+
+        
+
+        <script>
+        window.filamentData = []    </script>
+
+            
+            <script src="https://cdn.jsdelivr.net/npm/tinymce@8.0.2/tinymce.js"></script>
+        
+                                                                                                                
+            <script src="https://dev.elsimas.my.id/js/filament/actions/actions.js?v=5.2.0.0"></script>
+        
+                
+            <script src="https://dev.elsimas.my.id/js/filament/notifications/notifications.js?v=5.2.0.0"></script>
+        
+                
+            <script src="https://dev.elsimas.my.id/js/filament/schemas/schemas.js?v=5.2.0.0"></script>
+        
+                
+            <script src="https://dev.elsimas.my.id/js/filament/support/support.js?v=5.2.0.0"></script>
+        
+                                                                                                                                            
+            <script src="https://dev.elsimas.my.id/js/filament/tables/tables.js?v=5.2.0.0"></script>
+        
+                
+            <script src="https://dev.elsimas.my.id/js/filament/filament/echo.js?v=5.2.0.0"></script>
+        
+                
+            <script src="https://dev.elsimas.my.id/js/filament/filament/app.js?v=5.2.0.0"></script>
+        
+    
+<style>
+    :root {
+            }
+
+    </style>
+
+        
+                    <script>
+                loadDarkMode()
+            </script>
+        
+        
+        
+
+        
+    <!-- Livewire Scripts -->
+<script src="https://dev.elsimas.my.id/livewire-bc59d852/livewire.js?id=26bbdf42" data-csrf="tqt81Wh2KXFZmFRGRGpaFxOWzGYOG5rkHlP1SBtw" data-module-url="https://dev.elsimas.my.id/livewire-bc59d852" data-update-uri="https://dev.elsimas.my.id/livewire-bc59d852/update" data-navigate-once="true"></script>
+
+
+<div aria-modal="true" id="database-notifications" role="dialog" x-data="filamentModal({
+                id: 'database-notifications',
+            })" data-fi-modal-id="database-notifications" x-on:close-modal.window="if (($event.detail.id === 'database-notifications') &amp;&amp; isOpen) close()" x-on:close-modal-quietly.window="if (($event.detail.id === 'database-notifications') &amp;&amp; isOpen) closeQuietly()" x-on:open-modal.window="if (($event.detail.id === 'database-notifications') &amp;&amp; (! isOpen)) open()" x-bind:class="{
+        'fi-modal-open': isOpen,
+    }" x-show="isOpen" x-trap.noscroll="isOpen" class="fi-modal fi-absolute-positioning-context fi-modal-slide-over fi-modal-has-sticky-header fi-no-database" wire:poll.30s="" data-teleport-target="true" style="display: none;">
+    <div aria-hidden="true" x-show="isOpen" x-transition.duration.300ms.opacity="" class="fi-modal-close-overlay" style="display: none;"></div>
+
+    <div x-on:click.self="$dispatch('close-modal', { id: 'database-notifications' })" class="fi-modal-window-ctn fi-clickable">
+        <div x-on:keydown.window.escape="$dispatch('close-modal', { id: 'database-notifications' })" x-show="isWindowVisible" x-transition:enter="fi-transition-enter" x-transition:leave="fi-transition-leave" x-transition:enter-start="fi-transition-enter-start" x-transition:enter-end="fi-transition-enter-end" x-transition:leave-start="fi-transition-leave-start" x-transition:leave-end="fi-transition-leave-end" wire:key="PkLmf8C4SqWKJzFXMfsr.modal.database-notifications.window" class="fi-modal-window fi-modal-window-has-close-btn fi-modal-window-has-content fi-align-start fi-width-md" style="display: none;">
+            <!--[if BLOCK]><![endif]-->                <div wire:key="PkLmf8C4SqWKJzFXMfsr.modal.database-notifications.header" class="fi-modal-header">
+                    <!--[if BLOCK]><![endif]-->                        <button class="fi-icon-btn fi-size-md fi-modal-close-btn" title="Close" aria-label="Close" type="button" wire:loading.attr="disabled" tabindex="-1" x-on:click="$dispatch('close-modal', { id: 'database-notifications' })">
+    <svg class="fi-icon fi-size-lg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
+</svg>
+
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]--></button>
+                    <!--[if ENDBLOCK]><![endif]-->
+                    <!--[if BLOCK]><![endif]-->                        <div>
+                    <h2 class="fi-modal-heading">
+                        Notifications
+
+                        <!--[if BLOCK]><![endif]-->                            <span class="fi-badge fi-size-xs fi-color fi-color-primary fi-text-color-900 dark:fi-text-color-100">
+                                10
+                            </span>
+                        <!--[if ENDBLOCK]><![endif]-->                    </h2>
+
+                    <div class="fi-ac">
+                        <!--[if BLOCK]><![endif]-->                            
+        
+        <button class="fi-color fi-color-primary fi-text-color-800 dark:fi-text-color-200 fi-link fi-size-md  fi-ac-link-action" type="button" wire:loading.attr="disabled" tabindex="-1" wire:click="markAllNotificationsAsRead">
+                                            <svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="fi-icon fi-loading-indicator fi-size-md" wire:loading.delay.default="" wire:target="markAllNotificationsAsRead">
+    <path clip-rule="evenodd" d="M12 19C15.866 19 19 15.866 19 12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill-rule="evenodd" fill="currentColor" opacity="0.2"></path>
+    <path d="M2 12C2 6.47715 6.47715 2 12 2V5C8.13401 5 5 8.13401 5 12H2Z" fill="currentColor"></path>
+</svg>            
+                            Mark all as read            
+            
+                    </button>
+
+        
+        
+                        <!--[if ENDBLOCK]><![endif]-->
+                        <!--[if BLOCK]><![endif]-->                            
+        
+        <button class="fi-color fi-color-danger fi-text-color-600 dark:fi-text-color-300 fi-link fi-size-md  fi-ac-link-action" type="button" wire:loading.attr="disabled" tabindex="-1" wire:click="clearNotifications" x-on:click="close()">
+                                            <svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="fi-icon fi-loading-indicator fi-size-md" wire:loading.delay.default="" wire:target="clearNotifications">
+    <path clip-rule="evenodd" d="M12 19C15.866 19 19 15.866 19 12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill-rule="evenodd" fill="currentColor" opacity="0.2"></path>
+    <path d="M2 12C2 6.47715 6.47715 2 12 2V5C8.13401 5 5 8.13401 5 12H2Z" fill="currentColor"></path>
+</svg>            
+                            Clear            
+            
+                    </button>
+
+        
+        
+                        <!--[if ENDBLOCK]><![endif]-->                    </div>
+                </div>
+                    <!--[if ENDBLOCK]><![endif]-->                </div>
+            <!--[if ENDBLOCK]><![endif]-->
+            <!--[if BLOCK]><![endif]-->                <div wire:key="PkLmf8C4SqWKJzFXMfsr.modal.database-notifications.content" class="fi-modal-content">
+                    <!--[if BLOCK]><![endif]-->                     <!--[if ENDBLOCK]><![endif]-->
+        <!--[if BLOCK]><![endif]-->             
+            <!--[if BLOCK]><![endif]-->                <div class="fi-no-notification-unread-ctn">
+                    
+        <div x-data="notificationComponent({ notification: JSON.parse('{\u0022id\u0022:\u0022236793d6-a522-4c1b-90e1-2cd8058f4e2d\u0022,\u0022actions\u0022:[],\u0022body\u0022:\u0022Terdapat permohonan surat baru dari Dr. Hendra Peneliti: Permohonan Riset Kerjasama Rektorat QA-1791882479562\u0022,\u0022color\u0022:null,\u0022duration\u0022:\u0022persistent\u0022,\u0022icon\u0022:\u0022heroicon-o-information-circle\u0022,\u0022iconColor\u0022:\u0022info\u0022,\u0022status\u0022:\u0022info\u0022,\u0022title\u0022:\u0022Pengajuan Surat Baru Masuk\u0022,\u0022view\u0022:null,\u0022viewData\u0022:{\u0022unit_kerja_id\u0022:1,\u0022surat_id\u0022:10}}') })" x-transition:enter-start="fi-transition-enter-start" x-transition:enter-end="fi-transition-enter-end" x-transition:leave-start="fi-transition-leave-start" x-transition:leave-end="fi-transition-leave-end" class="fi-no-notification fi-inline fi-status-info fi-transition-enter-end" wire:key="236793d6-a522-4c1b-90e1-2cd8058f4e2d.notifications.236793d6-a522-4c1b-90e1-2cd8058f4e2d" x-on:close-notification.window="if ($event.detail.id == '236793d6-a522-4c1b-90e1-2cd8058f4e2d') close()" style="display: flex; visibility: visible;">
+            <svg class="fi-icon fi-size-md fi-no-notification-icon fi-color fi-color-info" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"></path>
+</svg>
+            <div class="fi-no-notification-main">
+                                    <div class="fi-no-notification-text">
+                                                    <h3 class="fi-no-notification-title">
+                                Pengajuan Surat Baru Masuk                            </h3>
+                        
+                                                    <time class="fi-no-notification-date">
+                                54 seconds ago                            </time>
+                        
+                                                    <div class="fi-no-notification-body">
+                                Terdapat permohonan surat baru dari Dr. Hendra Peneliti: Permohonan Riset Kerjasama Rektorat QA-1791882479562                            </div>
+                                            </div>
+                
+                            </div>
+
+            <button type="button" x-on:click="close" class="fi-icon-btn fi-no-notification-close-btn">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"></path>
+</svg>            </button>
+        </div>
+
+        
+                </div>
+                            <div class="fi-no-notification-unread-ctn">
+                    
+        <div x-data="notificationComponent({ notification: JSON.parse('{\u0022id\u0022:\u0022cb77fa13-5384-4a0d-a7d4-28c3cf86e9d0\u0022,\u0022actions\u0022:[],\u0022body\u0022:\u0022Terdapat permohonan surat baru dari Dr. Hendra Peneliti: Permohonan Riset Kerjasama Rektorat QA-1791877890744\u0022,\u0022color\u0022:null,\u0022duration\u0022:\u0022persistent\u0022,\u0022icon\u0022:\u0022heroicon-o-information-circle\u0022,\u0022iconColor\u0022:\u0022info\u0022,\u0022status\u0022:\u0022info\u0022,\u0022title\u0022:\u0022Pengajuan Surat Baru Masuk\u0022,\u0022view\u0022:null,\u0022viewData\u0022:{\u0022unit_kerja_id\u0022:1,\u0022surat_id\u0022:9}}') })" x-transition:enter-start="fi-transition-enter-start" x-transition:enter-end="fi-transition-enter-end" x-transition:leave-start="fi-transition-leave-start" x-transition:leave-end="fi-transition-leave-end" class="fi-no-notification fi-inline fi-status-info fi-transition-enter-end" wire:key="cb77fa13-5384-4a0d-a7d4-28c3cf86e9d0.notifications.cb77fa13-5384-4a0d-a7d4-28c3cf86e9d0" x-on:close-notification.window="if ($event.detail.id == 'cb77fa13-5384-4a0d-a7d4-28c3cf86e9d0') close()" style="display: flex; visibility: visible;">
+            <svg class="fi-icon fi-size-md fi-no-notification-icon fi-color fi-color-info" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"></path>
+</svg>
+            <div class="fi-no-notification-main">
+                                    <div class="fi-no-notification-text">
+                                                    <h3 class="fi-no-notification-title">
+                                Pengajuan Surat Baru Masuk                            </h3>
+                        
+                                                    <time class="fi-no-notification-date">
+                                1 hour ago                            </time>
+                        
+                                                    <div class="fi-no-notification-body">
+                                Terdapat permohonan surat baru dari Dr. Hendra Peneliti: Permohonan Riset Kerjasama Rektorat QA-1791877890744                            </div>
+                                            </div>
+                
+                            </div>
+
+            <button type="button" x-on:click="close" class="fi-icon-btn fi-no-notification-close-btn">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"></path>
+</svg>            </button>
+        </div>
+
+        
+                </div>
+                            <div class="fi-no-notification-unread-ctn">
+                    
+        <div x-data="notificationComponent({ notification: JSON.parse('{\u0022id\u0022:\u0022aa465d71-7acd-4b64-92a3-1c3231c81e6a\u0022,\u0022actions\u0022:[],\u0022body\u0022:\u0022Terdapat permohonan surat baru dari mahasiswa: mahasiswa (Permohonan Riset Mahasiswa - 1791606063883)\u0022,\u0022color\u0022:null,\u0022duration\u0022:\u0022persistent\u0022,\u0022icon\u0022:\u0022heroicon-o-information-circle\u0022,\u0022iconColor\u0022:\u0022info\u0022,\u0022status\u0022:\u0022info\u0022,\u0022title\u0022:\u0022Pengajuan Surat Baru Masuk\u0022,\u0022view\u0022:null,\u0022viewData\u0022:{\u0022unit_kerja_id\u0022:1,\u0022surat_id\u0022:8}}') })" x-transition:enter-start="fi-transition-enter-start" x-transition:enter-end="fi-transition-enter-end" x-transition:leave-start="fi-transition-leave-start" x-transition:leave-end="fi-transition-leave-end" class="fi-no-notification fi-inline fi-status-info fi-transition-enter-end" wire:key="aa465d71-7acd-4b64-92a3-1c3231c81e6a.notifications.aa465d71-7acd-4b64-92a3-1c3231c81e6a" x-on:close-notification.window="if ($event.detail.id == 'aa465d71-7acd-4b64-92a3-1c3231c81e6a') close()" style="display: flex; visibility: visible;">
+            <svg class="fi-icon fi-size-md fi-no-notification-icon fi-color fi-color-info" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"></path>
+</svg>
+            <div class="fi-no-notification-main">
+                                    <div class="fi-no-notification-text">
+                                                    <h3 class="fi-no-notification-title">
+                                Pengajuan Surat Baru Masuk                            </h3>
+                        
+                                                    <time class="fi-no-notification-date">
+                                3 days ago                            </time>
+                        
+                                                    <div class="fi-no-notification-body">
+                                Terdapat permohonan surat baru dari mahasiswa: mahasiswa (Permohonan Riset Mahasiswa - 1791606063883)                            </div>
+                                            </div>
+                
+                            </div>
+
+            <button type="button" x-on:click="close" class="fi-icon-btn fi-no-notification-close-btn">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"></path>
+</svg>            </button>
+        </div>
+
+        
+                </div>
+                            <div class="fi-no-notification-unread-ctn">
+                    
+        <div x-data="notificationComponent({ notification: JSON.parse('{\u0022id\u0022:\u00226327cbec-7c31-4a30-b499-9e9680afd097\u0022,\u0022actions\u0022:[],\u0022body\u0022:\u0022Terdapat permohonan surat baru dari Mitra Penguji: Permohonan Kerjasama Riset - 1791606001115\u0022,\u0022color\u0022:null,\u0022duration\u0022:\u0022persistent\u0022,\u0022icon\u0022:\u0022heroicon-o-information-circle\u0022,\u0022iconColor\u0022:\u0022info\u0022,\u0022status\u0022:\u0022info\u0022,\u0022title\u0022:\u0022Pengajuan Surat Baru Masuk\u0022,\u0022view\u0022:null,\u0022viewData\u0022:{\u0022unit_kerja_id\u0022:1,\u0022surat_id\u0022:7}}') })" x-transition:enter-start="fi-transition-enter-start" x-transition:enter-end="fi-transition-enter-end" x-transition:leave-start="fi-transition-leave-start" x-transition:leave-end="fi-transition-leave-end" class="fi-no-notification fi-inline fi-status-info fi-transition-enter-end" wire:key="6327cbec-7c31-4a30-b499-9e9680afd097.notifications.6327cbec-7c31-4a30-b499-9e9680afd097" x-on:close-notification.window="if ($event.detail.id == '6327cbec-7c31-4a30-b499-9e9680afd097') close()" style="display: flex; visibility: visible;">
+            <svg class="fi-icon fi-size-md fi-no-notification-icon fi-color fi-color-info" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"></path>
+</svg>
+            <div class="fi-no-notification-main">
+                                    <div class="fi-no-notification-text">
+                                                    <h3 class="fi-no-notification-title">
+                                Pengajuan Surat Baru Masuk                            </h3>
+                        
+                                                    <time class="fi-no-notification-date">
+                                3 days ago                            </time>
+                        
+                                                    <div class="fi-no-notification-body">
+                                Terdapat permohonan surat baru dari Mitra Penguji: Permohonan Kerjasama Riset - 1791606001115                            </div>
+                                            </div>
+                
+                            </div>
+
+            <button type="button" x-on:click="close" class="fi-icon-btn fi-no-notification-close-btn">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"></path>
+</svg>            </button>
+        </div>
+
+        
+                </div>
+                            <div class="fi-no-notification-unread-ctn">
+                    
+        <div x-data="notificationComponent({ notification: JSON.parse('{\u0022id\u0022:\u002284b823df-d9cf-40f5-a74f-7fe6b778a42d\u0022,\u0022actions\u0022:[],\u0022body\u0022:\u0022Terdapat permohonan surat baru dari Mitra Penguji: Permohonan Kerjasama Riset - 1791597696153\u0022,\u0022color\u0022:null,\u0022duration\u0022:\u0022persistent\u0022,\u0022icon\u0022:\u0022heroicon-o-information-circle\u0022,\u0022iconColor\u0022:\u0022info\u0022,\u0022status\u0022:\u0022info\u0022,\u0022title\u0022:\u0022Pengajuan Surat Baru Masuk\u0022,\u0022view\u0022:null,\u0022viewData\u0022:{\u0022unit_kerja_id\u0022:1,\u0022surat_id\u0022:6}}') })" x-transition:enter-start="fi-transition-enter-start" x-transition:enter-end="fi-transition-enter-end" x-transition:leave-start="fi-transition-leave-start" x-transition:leave-end="fi-transition-leave-end" class="fi-no-notification fi-inline fi-status-info fi-transition-enter-end" wire:key="84b823df-d9cf-40f5-a74f-7fe6b778a42d.notifications.84b823df-d9cf-40f5-a74f-7fe6b778a42d" x-on:close-notification.window="if ($event.detail.id == '84b823df-d9cf-40f5-a74f-7fe6b778a42d') close()" style="display: flex; visibility: visible;">
+            <svg class="fi-icon fi-size-md fi-no-notification-icon fi-color fi-color-info" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"></path>
+</svg>
+            <div class="fi-no-notification-main">
+                                    <div class="fi-no-notification-text">
+                                                    <h3 class="fi-no-notification-title">
+                                Pengajuan Surat Baru Masuk                            </h3>
+                        
+                                                    <time class="fi-no-notification-date">
+                                3 days ago                            </time>
+                        
+                                                    <div class="fi-no-notification-body">
+                                Terdapat permohonan surat baru dari Mitra Penguji: Permohonan Kerjasama Riset - 1791597696153                            </div>
+                                            </div>
+                
+                            </div>
+
+            <button type="button" x-on:click="close" class="fi-icon-btn fi-no-notification-close-btn">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"></path>
+</svg>            </button>
+        </div>
+
+        
+                </div>
+                            <div class="fi-no-notification-unread-ctn">
+                    
+        <div x-data="notificationComponent({ notification: JSON.parse('{\u0022id\u0022:\u002258ee2c9e-2d53-414b-8077-ea03bafebb24\u0022,\u0022actions\u0022:[],\u0022body\u0022:\u0022Terdapat permohonan surat baru dari mahasiswa: mahasiswa (Permohonan Riset Mahasiswa - 1791597666413)\u0022,\u0022color\u0022:null,\u0022duration\u0022:\u0022persistent\u0022,\u0022icon\u0022:\u0022heroicon-o-information-circle\u0022,\u0022iconColor\u0022:\u0022info\u0022,\u0022status\u0022:\u0022info\u0022,\u0022title\u0022:\u0022Pengajuan Surat Baru Masuk\u0022,\u0022view\u0022:null,\u0022viewData\u0022:{\u0022unit_kerja_id\u0022:1,\u0022surat_id\u0022:5}}') })" x-transition:enter-start="fi-transition-enter-start" x-transition:enter-end="fi-transition-enter-end" x-transition:leave-start="fi-transition-leave-start" x-transition:leave-end="fi-transition-leave-end" class="fi-no-notification fi-inline fi-status-info fi-transition-enter-end" wire:key="58ee2c9e-2d53-414b-8077-ea03bafebb24.notifications.58ee2c9e-2d53-414b-8077-ea03bafebb24" x-on:close-notification.window="if ($event.detail.id == '58ee2c9e-2d53-414b-8077-ea03bafebb24') close()" style="display: flex; visibility: visible;">
+            <svg class="fi-icon fi-size-md fi-no-notification-icon fi-color fi-color-info" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"></path>
+</svg>
+            <div class="fi-no-notification-main">
+                                    <div class="fi-no-notification-text">
+                                                    <h3 class="fi-no-notification-title">
+                                Pengajuan Surat Baru Masuk                            </h3>
+                        
+                                                    <time class="fi-no-notification-date">
+                                3 days ago                            </time>
+                        
+                                                    <div class="fi-no-notification-body">
+                                Terdapat permohonan surat baru dari mahasiswa: mahasiswa (Permohonan Riset Mahasiswa - 1791597666413)                            </div>
+                                            </div>
+                
+                            </div>
+
+            <button type="button" x-on:click="close" class="fi-icon-btn fi-no-notification-close-btn">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"></path>
+</svg>            </button>
+        </div>
+
+        
+                </div>
+                            <div class="fi-no-notification-unread-ctn">
+                    
+        <div x-data="notificationComponent({ notification: JSON.parse('{\u0022id\u0022:\u00223a90e2ee-9028-4c57-aa30-b771293d3adf\u0022,\u0022actions\u0022:[],\u0022body\u0022:\u0022Terdapat permohonan surat baru dari Mitra Penguji: Permohonan Kerjasama Riset - 1791557984080\u0022,\u0022color\u0022:null,\u0022duration\u0022:\u0022persistent\u0022,\u0022icon\u0022:\u0022heroicon-o-information-circle\u0022,\u0022iconColor\u0022:\u0022info\u0022,\u0022status\u0022:\u0022info\u0022,\u0022title\u0022:\u0022Pengajuan Surat Baru Masuk\u0022,\u0022view\u0022:null,\u0022viewData\u0022:{\u0022unit_kerja_id\u0022:1,\u0022surat_id\u0022:4}}') })" x-transition:enter-start="fi-transition-enter-start" x-transition:enter-end="fi-transition-enter-end" x-transition:leave-start="fi-transition-leave-start" x-transition:leave-end="fi-transition-leave-end" class="fi-no-notification fi-inline fi-status-info fi-transition-enter-end" wire:key="3a90e2ee-9028-4c57-aa30-b771293d3adf.notifications.3a90e2ee-9028-4c57-aa30-b771293d3adf" x-on:close-notification.window="if ($event.detail.id == '3a90e2ee-9028-4c57-aa30-b771293d3adf') close()" style="display: flex; visibility: visible;">
+            <svg class="fi-icon fi-size-md fi-no-notification-icon fi-color fi-color-info" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"></path>
+</svg>
+            <div class="fi-no-notification-main">
+                                    <div class="fi-no-notification-text">
+                                                    <h3 class="fi-no-notification-title">
+                                Pengajuan Surat Baru Masuk                            </h3>
+                        
+                                                    <time class="fi-no-notification-date">
+                                3 days ago                            </time>
+                        
+                                                    <div class="fi-no-notification-body">
+                                Terdapat permohonan surat baru dari Mitra Penguji: Permohonan Kerjasama Riset - 1791557984080                            </div>
+                                            </div>
+                
+                            </div>
+
+            <button type="button" x-on:click="close" class="fi-icon-btn fi-no-notification-close-btn">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"></path>
+</svg>            </button>
+        </div>
+
+        
+                </div>
+                            <div class="fi-no-notification-unread-ctn">
+                    
+        <div x-data="notificationComponent({ notification: JSON.parse('{\u0022id\u0022:\u00224a658cdc-b585-47dc-9249-a361cbf5bfaa\u0022,\u0022actions\u0022:[],\u0022body\u0022:\u0022Terdapat permohonan surat baru dari mahasiswa: mahasiswa (Permohonan Riset Mahasiswa - 1791557954760)\u0022,\u0022color\u0022:null,\u0022duration\u0022:\u0022persistent\u0022,\u0022icon\u0022:\u0022heroicon-o-information-circle\u0022,\u0022iconColor\u0022:\u0022info\u0022,\u0022status\u0022:\u0022info\u0022,\u0022title\u0022:\u0022Pengajuan Surat Baru Masuk\u0022,\u0022view\u0022:null,\u0022viewData\u0022:{\u0022unit_kerja_id\u0022:1,\u0022surat_id\u0022:3}}') })" x-transition:enter-start="fi-transition-enter-start" x-transition:enter-end="fi-transition-enter-end" x-transition:leave-start="fi-transition-leave-start" x-transition:leave-end="fi-transition-leave-end" class="fi-no-notification fi-inline fi-status-info fi-transition-enter-end" wire:key="4a658cdc-b585-47dc-9249-a361cbf5bfaa.notifications.4a658cdc-b585-47dc-9249-a361cbf5bfaa" x-on:close-notification.window="if ($event.detail.id == '4a658cdc-b585-47dc-9249-a361cbf5bfaa') close()" style="display: flex; visibility: visible;">
+            <svg class="fi-icon fi-size-md fi-no-notification-icon fi-color fi-color-info" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"></path>
+</svg>
+            <div class="fi-no-notification-main">
+                                    <div class="fi-no-notification-text">
+                                                    <h3 class="fi-no-notification-title">
+                                Pengajuan Surat Baru Masuk                            </h3>
+                        
+                                                    <time class="fi-no-notification-date">
+                                3 days ago                            </time>
+                        
+                                                    <div class="fi-no-notification-body">
+                                Terdapat permohonan surat baru dari mahasiswa: mahasiswa (Permohonan Riset Mahasiswa - 1791557954760)                            </div>
+                                            </div>
+                
+                            </div>
+
+            <button type="button" x-on:click="close" class="fi-icon-btn fi-no-notification-close-btn">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"></path>
+</svg>            </button>
+        </div>
+
+        
+                </div>
+                            <div class="fi-no-notification-unread-ctn">
+                    
+        <div x-data="notificationComponent({ notification: JSON.parse('{\u0022id\u0022:\u0022b53fb7d4-7641-473d-a478-b876dd93859e\u0022,\u0022actions\u0022:[],\u0022body\u0022:\u0022Terdapat permohonan surat baru dari mahasiswa: mahasiswa (Permohonan Riset Mahasiswa - 1791557493207)\u0022,\u0022color\u0022:null,\u0022duration\u0022:\u0022persistent\u0022,\u0022icon\u0022:\u0022heroicon-o-information-circle\u0022,\u0022iconColor\u0022:\u0022info\u0022,\u0022status\u0022:\u0022info\u0022,\u0022title\u0022:\u0022Pengajuan Surat Baru Masuk\u0022,\u0022view\u0022:null,\u0022viewData\u0022:{\u0022unit_kerja_id\u0022:1,\u0022surat_id\u0022:2}}') })" x-transition:enter-start="fi-transition-enter-start" x-transition:enter-end="fi-transition-enter-end" x-transition:leave-start="fi-transition-leave-start" x-transition:leave-end="fi-transition-leave-end" class="fi-no-notification fi-inline fi-status-info fi-transition-enter-end" wire:key="b53fb7d4-7641-473d-a478-b876dd93859e.notifications.b53fb7d4-7641-473d-a478-b876dd93859e" x-on:close-notification.window="if ($event.detail.id == 'b53fb7d4-7641-473d-a478-b876dd93859e') close()" style="display: flex; visibility: visible;">
+            <svg class="fi-icon fi-size-md fi-no-notification-icon fi-color fi-color-info" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"></path>
+</svg>
+            <div class="fi-no-notification-main">
+                                    <div class="fi-no-notification-text">
+                                                    <h3 class="fi-no-notification-title">
+                                Pengajuan Surat Baru Masuk                            </h3>
+                        
+                                                    <time class="fi-no-notification-date">
+                                3 days ago                            </time>
+                        
+                                                    <div class="fi-no-notification-body">
+                                Terdapat permohonan surat baru dari mahasiswa: mahasiswa (Permohonan Riset Mahasiswa - 1791557493207)                            </div>
+                                            </div>
+                
+                            </div>
+
+            <button type="button" x-on:click="close" class="fi-icon-btn fi-no-notification-close-btn">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"></path>
+</svg>            </button>
+        </div>
+
+        
+                </div>
+                            <div class="fi-no-notification-unread-ctn">
+                    
+        <div x-data="notificationComponent({ notification: JSON.parse('{\u0022id\u0022:\u002241470bbb-d206-483f-aca4-944f6f5cdbe5\u0022,\u0022actions\u0022:[],\u0022body\u0022:\u0022Terdapat permohonan surat baru dari Mitra Penguji: Permohonan Kerjasama Riset - 1791555816519\u0022,\u0022color\u0022:null,\u0022duration\u0022:\u0022persistent\u0022,\u0022icon\u0022:\u0022heroicon-o-information-circle\u0022,\u0022iconColor\u0022:\u0022info\u0022,\u0022status\u0022:\u0022info\u0022,\u0022title\u0022:\u0022Pengajuan Surat Baru Masuk\u0022,\u0022view\u0022:null,\u0022viewData\u0022:{\u0022unit_kerja_id\u0022:1,\u0022surat_id\u0022:1}}') })" x-transition:enter-start="fi-transition-enter-start" x-transition:enter-end="fi-transition-enter-end" x-transition:leave-start="fi-transition-leave-start" x-transition:leave-end="fi-transition-leave-end" class="fi-no-notification fi-inline fi-status-info fi-transition-enter-end" wire:key="41470bbb-d206-483f-aca4-944f6f5cdbe5.notifications.41470bbb-d206-483f-aca4-944f6f5cdbe5" x-on:close-notification.window="if ($event.detail.id == '41470bbb-d206-483f-aca4-944f6f5cdbe5') close()" style="display: flex; visibility: visible;">
+            <svg class="fi-icon fi-size-md fi-no-notification-icon fi-color fi-color-info" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"></path>
+</svg>
+            <div class="fi-no-notification-main">
+                                    <div class="fi-no-notification-text">
+                                                    <h3 class="fi-no-notification-title">
+                                Pengajuan Surat Baru Masuk                            </h3>
+                        
+                                                    <time class="fi-no-notification-date">
+                                3 days ago                            </time>
+                        
+                                                    <div class="fi-no-notification-body">
+                                Terdapat permohonan surat baru dari Mitra Penguji: Permohonan Kerjasama Riset - 1791555816519                            </div>
+                                            </div>
+                
+                            </div>
+
+            <button type="button" x-on:click="close" class="fi-icon-btn fi-no-notification-close-btn">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"></path>
+</svg>            </button>
+        </div>
+
+        
+                </div>
+            <!--[if ENDBLOCK]><![endif]-->
+            <!--[if BLOCK]><![endif]-->                                <!--[if ENDBLOCK]><![endif]-->
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->        <!--[if ENDBLOCK]><![endif]-->
+                </div>
+            <!--[if ENDBLOCK]><![endif]-->
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->        </div>
+    </div>
+</div>

@@ -24,8 +24,15 @@ Cypress.Commands.add('loginAs', (role) => {
         username = 'mahasiswa';
         password = 'password123';
         break;
+      case 'pakrektor':
+      case 'rektor':
+        username = 'pakrektor';
+        password = 'password';
+        break;
       default:
-        throw new Error(`Role "${role}" is not recognized for loginAs custom command.`);
+        username = role;
+        password = 'password';
+        break;
     }
 
     cy.get('input[id*="username"], input[wire\\:model*="username"], input[type="text"]')
