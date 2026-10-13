@@ -30,6 +30,7 @@ const FILE_ORDER = [
   // 3. Draft Surat Keluar / NDE (No. 37 - 46, jika ada di masa depan)
   'cypress/e2e/features/draft/fr_srt_01_pembuatan_draft.feature',
   'cypress/e2e/features/draft/fr_srt_02_editor_naskah.feature',
+  'cypress/e2e/features/draft/fr_srt_03_asisten_ai.feature',
   'cypress/e2e/features/draft/fr_srt_03_pratinjau_draft.feature',
   'cypress/e2e/features/draft/fr_srt_04_nomor_surat.feature',
   'cypress/e2e/features/draft/fr_srt_05_verifikasi_draft.feature',

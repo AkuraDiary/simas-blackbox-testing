@@ -78,6 +78,23 @@ When("Saya mengisi formulir template surat:", (dataTable) => {
   if (data.deskripsi) {
     cy.get("textarea[id*='deskripsi']").clear().type(data.deskripsi);
   }
+  if (data.aksesibilitas) {
+    cy.get("[data-field-wrapper]:contains('Aksesibilitas'), .fi-fo-field:contains('Aksesibilitas')")
+      .first()
+      .then(($wrp) => {
+        const $native = $wrp.find("select");
+        if ($native.length > 0) {
+          cy.wrap($native.first()).select(data.aksesibilitas, { force: true }).trigger("change");
+        } else {
+          cy.wrap($wrp).find("button.fi-select-input-btn, button, [role='combobox']").first().click({ force: true });
+          cy.wait(800);
+          cy.get(".fi-dropdown-panel:visible, [role='listbox']:visible")
+            .contains("[role='option'], li, button", /Internal/i)
+            .click({ force: true });
+        }
+      });
+    cy.wait(1500);
+  }
 
   // Isi placeholder repeater jika item default ada
   cy.get("body").then(($body) => {
