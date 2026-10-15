@@ -95,6 +95,15 @@ When("Saya mengisi formulir template surat:", (dataTable) => {
       });
     cy.wait(1500);
   }
+  if (data.is_active === "true" || data.status === "aktif" || data.aksesibilitas === "INTERNAL") {
+    cy.get("body").then(($body) => {
+      const $toggle = $body.find("[data-field-wrapper]:contains('Template Aktif'), .fi-fo-field:contains('Template Aktif')").find("button[role='switch']");
+      if ($toggle.length > 0 && $toggle.attr("aria-checked") === "false") {
+        cy.wrap($toggle).click({ force: true });
+        cy.wait(500);
+      }
+    });
+  }
 
   // Isi placeholder repeater jika item default ada
   cy.get("body").then(($body) => {

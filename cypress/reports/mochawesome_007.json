@@ -1,0 +1,163 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-10-14T23:35:48.779Z",
+    "end": "2026-10-14T23:36:21.268Z",
+    "duration": 32489,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0972c8ff-153e-48b5-a0f4-d6b061d2930a",
+      "title": "",
+      "fullFile": "cypress/e2e/features/arsip/fr_arc_02_dan_03_arsip_surat.feature",
+      "file": "cypress/e2e/features/arsip/fr_arc_02_dan_03_arsip_surat.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1085cd93-8747-4160-9f5d-e85ef5403507",
+          "title": "FR-ARC-02 & FR-ARC-03 Daftar dan Pencarian Arsip Surat",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-FR-ARC-02-A - Staf Unit Membuka Menu Arsip Surat dan Memeriksa Kelengkapan Tabel Arsip",
+              "fullTitle": "FR-ARC-02 & FR-ARC-03 Daftar dan Pencarian Arsip Surat TC-FR-ARC-02-A - Staf Unit Membuka Menu Arsip Surat dan Memeriksa Kelengkapan Tabel Arsip",
+              "timedOut": null,
+              "duration": 9817,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "10899402-2b13-4fa5-bec8-f3037d47521f",
+              "parentUUID": "1085cd93-8747-4160-9f5d-e85ef5403507",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-ARC-02-A - Akses Langsung Halaman Arsip Surat Tanpa Autentikasi Ditolak",
+              "fullTitle": "FR-ARC-02 & FR-ARC-03 Daftar dan Pencarian Arsip Surat TC-ALT-FR-ARC-02-A - Akses Langsung Halaman Arsip Surat Tanpa Autentikasi Ditolak",
+              "timedOut": null,
+              "duration": 2382,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "41986b61-f374-4a32-808d-ccdbe641bb2e",
+              "parentUUID": "1085cd93-8747-4160-9f5d-e85ef5403507",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-ARC-03-A - Staf Unit Mencari Arsip Surat Berdasarkan Kata Kunci Perihal yang Valid",
+              "fullTitle": "FR-ARC-02 & FR-ARC-03 Daftar dan Pencarian Arsip Surat TC-FR-ARC-03-A - Staf Unit Mencari Arsip Surat Berdasarkan Kata Kunci Perihal yang Valid",
+              "timedOut": null,
+              "duration": 9597,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "923072f8-fe0e-4846-9b46-762b36e58977",
+              "parentUUID": "1085cd93-8747-4160-9f5d-e85ef5403507",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-ARC-03-A - Pencarian Arsip Surat dengan Kata Kunci Tidak Cocok Menampilkan Status Data Kosong",
+              "fullTitle": "FR-ARC-02 & FR-ARC-03 Daftar dan Pencarian Arsip Surat TC-ALT-FR-ARC-03-A - Pencarian Arsip Surat dengan Kata Kunci Tidak Cocok Menampilkan Status Data Kosong",
+              "timedOut": null,
+              "duration": 10581,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "49156e39-fdfa-47b5-b039-08abfd15bcad",
+              "parentUUID": "1085cd93-8747-4160-9f5d-e85ef5403507",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "10899402-2b13-4fa5-bec8-f3037d47521f",
+            "41986b61-f374-4a32-808d-ccdbe641bb2e",
+            "923072f8-fe0e-4846-9b46-762b36e58977",
+            "49156e39-fdfa-47b5-b039-08abfd15bcad"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 32377,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

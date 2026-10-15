@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-10-14T23:38:15.459Z",
+    "end": "2026-10-14T23:38:48.417Z",
+    "duration": 32958,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ea88f3d8-cf07-4ba1-82d3-57f272baf12d",
+      "title": "",
+      "fullFile": "cypress/e2e/features/notifikasi/fr_notif_01_web.feature",
+      "file": "cypress/e2e/features/notifikasi/fr_notif_01_web.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1f6c960b-8788-4300-a7b8-7533ac296cba",
+          "title": "FR-NOTIF-01 Notifikasi Web Sistem Persuratan",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-FR-NOTIF-01-A - Staf Unit Memeriksa Notifikasi Web Surat Masuk dan Menandai Sudah Dibaca",
+              "fullTitle": "FR-NOTIF-01 Notifikasi Web Sistem Persuratan TC-FR-NOTIF-01-A - Staf Unit Memeriksa Notifikasi Web Surat Masuk dan Menandai Sudah Dibaca",
+              "timedOut": null,
+              "duration": 19197,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "25a31ff1-a94b-465e-afc9-a06a4ef717a9",
+              "parentUUID": "1f6c960b-8788-4300-a7b8-7533ac296cba",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-NOTIF-01-A - Staf Unit Menonaktifkan Preferensi Notifikasi Web Pop-up melalui Halaman Profil",
+              "fullTitle": "FR-NOTIF-01 Notifikasi Web Sistem Persuratan TC-ALT-FR-NOTIF-01-A - Staf Unit Menonaktifkan Preferensi Notifikasi Web Pop-up melalui Halaman Profil",
+              "timedOut": null,
+              "duration": 13671,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "8f46ca68-3e91-4da3-910e-2776a1c0c168",
+              "parentUUID": "1f6c960b-8788-4300-a7b8-7533ac296cba",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "25a31ff1-a94b-465e-afc9-a06a4ef717a9",
+            "8f46ca68-3e91-4da3-910e-2776a1c0c168"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 32868,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

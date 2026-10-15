@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-10-15T00:41:39.322Z",
+    "end": "2026-10-15T00:41:39.804Z",
+    "duration": 482,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a74c6143-a08d-437c-948d-3b6897c02033",
+      "title": "",
+      "fullFile": "cypress/e2e/features/notifikasi/fr_notif_03_wa_gateway.feature",
+      "file": "cypress/e2e/features/notifikasi/fr_notif_03_wa_gateway.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6a56773c-375b-4ccd-b6af-7da4ade45e28",
+          "title": "FR-NOTIF-03 Integrasi Fonnte WhatsApp Gateway API",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-FR-NOTIF-03-A - Verifikasi Konfigurasi Gateway Fonnte dan Pengiriman Pesan Notifikasi Uji",
+              "fullTitle": "FR-NOTIF-03 Integrasi Fonnte WhatsApp Gateway API TC-FR-NOTIF-03-A - Verifikasi Konfigurasi Gateway Fonnte dan Pengiriman Pesan Notifikasi Uji",
+              "timedOut": null,
+              "duration": 465,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "1e8422a7-60ad-4450-86ba-f4e3ab72567c",
+              "parentUUID": "6a56773c-375b-4ccd-b6af-7da4ade45e28",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1e8422a7-60ad-4450-86ba-f4e3ab72567c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 465,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

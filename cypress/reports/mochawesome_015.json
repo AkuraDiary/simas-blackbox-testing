@@ -1,0 +1,163 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-10-14T23:39:20.263Z",
+    "end": "2026-10-14T23:40:00.977Z",
+    "duration": 40714,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0e86f94d-83bf-43be-806f-459b7245064a",
+      "title": "",
+      "fullFile": "cypress/e2e/features/auth/login.feature",
+      "file": "cypress/e2e/features/auth/login.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b3f8a692-26b1-4e35-a158-90ed7541234c",
+          "title": "Authentication (FR-AUTH-01)",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-FR-AUTH-01 - Login Sukses sebagai Admin",
+              "fullTitle": "Authentication (FR-AUTH-01) TC-FR-AUTH-01 - Login Sukses sebagai Admin",
+              "timedOut": null,
+              "duration": 6260,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "a73a5b8e-203d-4f57-9104-e793e7015e2c",
+              "parentUUID": "b3f8a692-26b1-4e35-a158-90ed7541234c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-AUTH-01 - Login Gagal dengan Kredensial Salah",
+              "fullTitle": "Authentication (FR-AUTH-01) TC-ALT-FR-AUTH-01 - Login Gagal dengan Kredensial Salah",
+              "timedOut": null,
+              "duration": 3440,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "7979dcf8-ae80-4bd8-9028-297aafe3ffed",
+              "parentUUID": "b3f8a692-26b1-4e35-a158-90ed7541234c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-AUTH-CUSTOM - Menguji Login Menggunakan Reusable Custom Command",
+              "fullTitle": "Authentication (FR-AUTH-01) TC-AUTH-CUSTOM - Menguji Login Menggunakan Reusable Custom Command",
+              "timedOut": null,
+              "duration": 5269,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "64a02e23-1934-41ce-8777-92c931db18af",
+              "parentUUID": "b3f8a692-26b1-4e35-a158-90ed7541234c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-AUTH-LOGOUT - Logout Sukses",
+              "fullTitle": "Authentication (FR-AUTH-01) TC-AUTH-LOGOUT - Logout Sukses",
+              "timedOut": null,
+              "duration": 7848,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "25f85dee-79d9-4a5d-84e2-084502c05ae4",
+              "parentUUID": "b3f8a692-26b1-4e35-a158-90ed7541234c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a73a5b8e-203d-4f57-9104-e793e7015e2c",
+            "7979dcf8-ae80-4bd8-9028-297aafe3ffed",
+            "64a02e23-1934-41ce-8777-92c931db18af",
+            "25f85dee-79d9-4a5d-84e2-084502c05ae4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 22817,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

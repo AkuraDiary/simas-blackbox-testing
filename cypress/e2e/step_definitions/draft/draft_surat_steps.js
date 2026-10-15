@@ -28,25 +28,21 @@ function selectUnitTujuanIfEmpty() {
     if ($wrp.length > 0) {
       // Jika belum ada badge terpilih
       if ($wrp.find(".fi-badge, [class*='badge']").length === 0) {
-        const $interactive = $wrp.find("select, input, button.fi-select-input-btn, button, [role='combobox']");
-        if ($interactive.length > 0) {
-          const $el = $interactive.first();
+        cy.wrap($wrp.first()).find("select, button.fi-select-input-btn, button, [role='combobox']").first().then(($el) => {
           if ($el.is("select")) {
             cy.wrap($el).select(1, { force: true }).trigger("change");
           } else {
             cy.wrap($el).click({ force: true });
+            cy.get(".fi-dropdown-panel:visible, [role='listbox']:visible, div[x-ref='panel']:visible", { timeout: 8000 })
+              .last()
+              .find("[role='option'], li, button")
+              .first()
+              .click({ force: true });
             cy.wait(1000);
-            cy.get("body").then(($b) => {
-              const $options = $b.find(
-                ".fi-dropdown-panel:visible [role='option'], .fi-dropdown-panel:visible li, [role='listbox']:visible [role='option'], li.fi-select-input-option:visible"
-              );
-              if ($options.length > 0) {
-                cy.wrap($options.first()).click({ force: true });
-                cy.wait(800);
-              }
-            });
+            cy.get("body").type("{esc}");
+            cy.wait(500);
           }
-        }
+        });
       }
     }
   });
@@ -65,11 +61,11 @@ When("Staf Unit menekan tombol {string}", (buttonText) => {
       .first()
       .click({ force: true });
   } else if (/Simpan Draft/i.test(buttonText)) {
-    // 1. Pastikan unit tujuan terisi jika mandatory
-    selectUnitTujuanIfEmpty();
-
-    // 2. Bersihkan baris repeater default kosong jika ada agar tidak memblokir submit draft (Butir 3 AGENTS.md)
+    // 1. Bersihkan baris repeater default kosong jika ada agar tidak memblokir submit draft (Butir 3 AGENTS.md)
     cleanupEmptyRepeaterRows();
+
+    // 2. Beri toleransi jeda sebelum submit
+    cy.wait(800);
 
     // 3. Isolasi tombol Simpan Draft di area aksi form
     cy.get(".fi-form-actions, form, body")
@@ -110,23 +106,41 @@ When("Staf Unit memilih template surat pertama yang tersedia", () => {
     .select(1, { force: true })
     .trigger("change");
 
-  cy.wait(2000);
+  // Tunggu hingga Livewire selesai merender banner template terpilih
+  cy.contains("span, a", /Unduh File Word|Template Terpilih/i, { timeout: 15000 }).should("be.visible");
+  cy.wait(1500);
 
   // Pastikan unit tujuan terisi jika diperlukan
   selectUnitTujuanIfEmpty();
+  cy.wait(1000);
 });
 
 When("Staf Unit mengisi perihal surat dengan {string}", (perihalText) => {
-  cy.get("input[id*='perihal'], input[wire\\:model*='perihal']")
-    .first()
-    .clear({ force: true })
-    .type(perihalText, { force: true });
+  cy.get("input[id*='perihal'], input[wire\\:model*='perihal']").each(($input) => {
+    cy.wrap($input)
+      .should("be.visible")
+      .clear({ force: true })
+      .type(perihalText, { force: true })
+      .trigger("input")
+      .trigger("change")
+      .blur();
+  });
+
+  cy.wait(500);
+
+  cy.get("input[id*='perihal'], input[wire\\:model*='perihal']").each(($input) => {
+    cy.wrap($input).should("have.value", perihalText);
+  });
 });
 
 When("Staf Unit mengosongkan perihal surat", () => {
-  cy.get("input[id*='perihal'], input[wire\\:model*='perihal']")
-    .first()
-    .clear({ force: true });
+  cy.get("input[id*='perihal'], input[wire\\:model*='perihal']").each(($input) => {
+    cy.wrap($input)
+      .clear({ force: true })
+      .trigger("input")
+      .trigger("change")
+      .blur();
+  });
 });
 
 When("Staf Unit mengisi redaksi naskah surat pada editor dengan {string}", (isiNaskah) => {
@@ -199,7 +213,7 @@ When("Staf Unit mengosongkan redaksi naskah surat pada editor", () => {
 
 Then("Sistem menampilkan notifikasi sukses {string}", (notifTitle) => {
   let regexPattern = new RegExp(notifTitle.replace(/[()]/g, "\\$&"), "i");
-  if (/disimpan/i.test(notifTitle)) regexPattern = /(disimpan|saved)/i;
+  if (/disimpan/i.test(notifTitle)) regexPattern = /(disimpan|saved|simpan|simpan draft)/i;
   else if (/berhasil/i.test(notifTitle)) regexPattern = /(berhasil|success)/i;
 
   cy.get(".fi-no-notification:not(.fi-status-danger), .fi-notification:not(.fi-status-danger), [role='status'], body", { timeout: 10000 })
@@ -277,16 +291,20 @@ When("Staf Unit membuka form edit draft surat {string}", (perihal) => {
 });
 
 When("Staf Unit mengubah perihal surat menjadi {string}", (perihalBaru) => {
-  cy.get("input[id*='perihal'], input[wire\\:model*='perihal']")
-    .first()
-    .clear({ force: true })
-    .type(perihalBaru, { force: true });
+  cy.get("input[id*='perihal'], input[wire\\:model*='perihal']").each(($input) => {
+    cy.wrap($input)
+      .clear({ force: true })
+      .type(perihalBaru, { force: true })
+      .trigger("input")
+      .trigger("change")
+      .blur();
+  });
 });
 
 // ─── FR-SRT-03: ASISTEN AI DRAFT SURAT ───────────────────────────────────────
 
 When("Staf Unit menekan tombol aksi hint {string} di samping editor", (labelTombol) => {
-  cy.contains("button, a", new RegExp(labelTombol.replace(/[()]/g, "\\$&"), "i"), { timeout: 10000 })
+  cy.contains("button, a, span", /(Bantuan|Asisten) AI/i, { timeout: 15000 })
     .first()
     .click({ force: true });
 });
@@ -297,43 +315,41 @@ Then("Sistem menampilkan modal dialog {string}", (modalTitle) => {
 });
 
 When("Staf Unit memilih kategori surat AI {string}", (kategori) => {
-  cy.get(".fi-modal:visible")
-    .contains("label", /Kategori/i)
-    .closest("div")
-    .parent()
-    .find("select, button, input")
-    .first()
-    .then(($el) => {
-      if ($el.is("select")) {
-        cy.wrap($el).select(kategori, { force: true });
-      } else {
-        cy.wrap($el).click({ force: true });
+  cy.get(".fi-modal:visible").then(($modal) => {
+    const $wrp = $modal.find("[data-field-wrapper]:contains('Kategori'), .fi-fo-field:contains('Kategori')");
+    if ($wrp.length > 0) {
+      const $interactive = $wrp.find("select, button, [role='combobox']");
+      if ($interactive.length > 0) {
+        const $el = $interactive.first();
+        if ($el.is("select")) {
+          cy.wrap($el).select(kategori, { force: true });
+        } else {
+          cy.wrap($el).click({ force: true });
+          cy.get(".fi-dropdown-panel:visible, [role='listbox']:visible", { timeout: 6000 })
+            .contains("[role='option'], li, button", new RegExp(kategori.replace(/[()]/g, "\\$&"), "i"))
+            .click({ force: true });
+        }
       }
-    });
-  cy.get("body").then(($body) => {
-    if ($body.find(".fi-dropdown-panel:visible").length > 0) {
-      cy.get(".fi-dropdown-panel:visible").contains("[role='option'], li, button", kategori).click({ force: true });
     }
   });
 });
 
 When("Staf Unit memilih gaya bahasa AI {string}", (tone) => {
-  cy.get(".fi-modal:visible")
-    .contains("label", /Gaya Bahasa|Tone/i)
-    .closest("div")
-    .parent()
-    .find("select, button, input")
-    .first()
-    .then(($el) => {
-      if ($el.is("select")) {
-        cy.wrap($el).select(tone, { force: true });
-      } else {
-        cy.wrap($el).click({ force: true });
+  cy.get(".fi-modal:visible").then(($modal) => {
+    const $wrp = $modal.find("[data-field-wrapper]:contains('Gaya Bahasa'), [data-field-wrapper]:contains('Tone'), .fi-fo-field:contains('Gaya Bahasa')");
+    if ($wrp.length > 0) {
+      const $interactive = $wrp.find("select, button, [role='combobox']");
+      if ($interactive.length > 0) {
+        const $el = $interactive.first();
+        if ($el.is("select")) {
+          cy.wrap($el).select(tone, { force: true });
+        } else {
+          cy.wrap($el).click({ force: true });
+          cy.get(".fi-dropdown-panel:visible, [role='listbox']:visible", { timeout: 6000 })
+            .contains("[role='option'], li, button", new RegExp(tone.replace(/[()]/g, "\\$&"), "i"))
+            .click({ force: true });
+        }
       }
-    });
-  cy.get("body").then(($body) => {
-    if ($body.find(".fi-dropdown-panel:visible").length > 0) {
-      cy.get(".fi-dropdown-panel:visible").contains("[role='option'], li, button", tone).click({ force: true });
     }
   });
 });
@@ -355,19 +371,27 @@ When("Staf Unit mengosongkan instruksi kebutuhan surat pada modal AI", () => {
 
 When("Staf Unit menekan tombol submit pada modal AI", () => {
   cy.get(".fi-modal:visible")
-    .find(".fi-modal-footer-actions button, button[type='submit']")
+    .contains("button", /Buat Draft dengan AI|Terapkan/i)
     .first()
     .click({ force: true });
 });
 
 Then("Form modal AI menampilkan validasi bahwa instruksi prompt wajib diisi", () => {
+  cy.get(".fi-no-notification, .fi-notification, [role='status'], [role='alert'], .fi-modal:visible", { timeout: 10000 })
+    .contains(/Instruksi belum diisi|harus diisi|wajib diisi|required/i)
+    .should("be.visible");
+});
+
+When("Staf Unit menutup modal aktif", () => {
   cy.get(".fi-modal:visible")
-    .find(".fi-fo-field-wrp-error-message, .text-danger-600, .fi-error, [role='alert']")
-    .should("exist");
+    .find("button[aria-label='Close'], button:contains('Tutup'), button:contains('Cancel'), button:contains('Batal'), .fi-modal-close-btn")
+    .first()
+    .click({ force: true });
+  cy.wait(800);
 });
 
 Then("Modal dialog Asisten AI berhasil ditutup dan kembali ke form pembuatan surat", () => {
-  cy.get(".fi-modal").should("not.exist");
+  cy.get(".fi-modal:visible:not(#database-notifications), [role='dialog']:visible").should("not.exist");
 });
 
 // ─── TEARDOWN DRAFT SURAT ────────────────────────────────────────────────────

@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-10-14T23:42:42.848Z",
+    "end": "2026-10-14T23:44:16.911Z",
+    "duration": 94063,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f2db1e40-3f0f-415c-b7c4-68eb486fec7c",
+      "title": "",
+      "fullFile": "cypress/e2e/features/draft/fr_srt_02_editor_naskah.feature",
+      "file": "cypress/e2e/features/draft/fr_srt_02_editor_naskah.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "93c70f8a-6fcb-41bd-9aec-70bd3ba355d0",
+          "title": "FR-SRT-02 Mengedit Draft Surat Naskah Dinas Elektronik",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-FR-SRT-02-A - Staf mengedit data dan konten draft surat yang tersimpan",
+              "fullTitle": "FR-SRT-02 Mengedit Draft Surat Naskah Dinas Elektronik TC-FR-SRT-02-A - Staf mengedit data dan konten draft surat yang tersimpan",
+              "timedOut": null,
+              "duration": 48290,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "ac680944-d94f-4262-ba1a-181b17776858",
+              "parentUUID": "93c70f8a-6fcb-41bd-9aec-70bd3ba355d0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-SRT-02-A - Pengeditan draft surat gagal saat Perihal dikosongkan",
+              "fullTitle": "FR-SRT-02 Mengedit Draft Surat Naskah Dinas Elektronik TC-ALT-FR-SRT-02-A - Pengeditan draft surat gagal saat Perihal dikosongkan",
+              "timedOut": null,
+              "duration": 18973,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "02aaa6f1-537c-49aa-909d-334fd7e2c3cb",
+              "parentUUID": "93c70f8a-6fcb-41bd-9aec-70bd3ba355d0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-TEARDOWN-FR-SRT-02 - Pembersihan draft surat pengujian edit",
+              "fullTitle": "FR-SRT-02 Mengedit Draft Surat Naskah Dinas Elektronik TC-TEARDOWN-FR-SRT-02 - Pembersihan draft surat pengujian edit",
+              "timedOut": null,
+              "duration": 26674,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "7d51bc6a-8b50-4946-a622-44da5a7e81fb",
+              "parentUUID": "93c70f8a-6fcb-41bd-9aec-70bd3ba355d0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ac680944-d94f-4262-ba1a-181b17776858",
+            "02aaa6f1-537c-49aa-909d-334fd7e2c3cb",
+            "7d51bc6a-8b50-4946-a622-44da5a7e81fb"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 93937,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

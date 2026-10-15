@@ -1,4 +1,4 @@
-Feature: Authentication (FR-AUTH-01)
+Feature: FR-AUTH-01 Authentication 
   Sebagai pengguna sistem SIMAS
   Saya ingin bisa login dan logout
   Agar saya dapat mengakses fitur sesuai hak akses saya

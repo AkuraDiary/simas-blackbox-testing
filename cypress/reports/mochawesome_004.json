@@ -1,0 +1,163 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-10-14T23:33:27.191Z",
+    "end": "2026-10-14T23:34:13.660Z",
+    "duration": 46469,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9db7a872-4789-4446-aed0-9bff75631b93",
+      "title": "",
+      "fullFile": "cypress/e2e/features/admin/fr_adm_05_kategori_template.feature",
+      "file": "cypress/e2e/features/admin/fr_adm_05_kategori_template.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "615fec82-040c-4d06-94d7-b9155e468ed3",
+          "title": "FR-ADM-05 Manajemen Kategori Template Surat",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-FR-ADM-05-A Tambah Kategori Template Baru (Valid)",
+              "fullTitle": "FR-ADM-05 Manajemen Kategori Template Surat TC-FR-ADM-05-A Tambah Kategori Template Baru (Valid)",
+              "timedOut": null,
+              "duration": 11718,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "d6be22df-9ef0-485d-b430-ea9b41ce7d10",
+              "parentUUID": "615fec82-040c-4d06-94d7-b9155e468ed3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-ADM-05-A Tambah Kategori Template Duplikat (Negative)",
+              "fullTitle": "FR-ADM-05 Manajemen Kategori Template Surat TC-ALT-FR-ADM-05-A Tambah Kategori Template Duplikat (Negative)",
+              "timedOut": null,
+              "duration": 11224,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "d8431715-bdea-4537-a0f5-cc3c8c1c557f",
+              "parentUUID": "615fec82-040c-4d06-94d7-b9155e468ed3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-ADM-05-B Edit Kategori Template (Valid)",
+              "fullTitle": "FR-ADM-05 Manajemen Kategori Template Surat TC-FR-ADM-05-B Edit Kategori Template (Valid)",
+              "timedOut": null,
+              "duration": 12277,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "476b3a1f-1250-4f10-a641-be06761f6b1c",
+              "parentUUID": "615fec82-040c-4d06-94d7-b9155e468ed3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-ADM-05-C Hapus Kategori Template Bebas (Valid & Teardown)",
+              "fullTitle": "FR-ADM-05 Manajemen Kategori Template Surat TC-FR-ADM-05-C Hapus Kategori Template Bebas (Valid & Teardown)",
+              "timedOut": null,
+              "duration": 11145,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "fff410e3-63ed-4d49-bb1c-c1ddd73f278c",
+              "parentUUID": "615fec82-040c-4d06-94d7-b9155e468ed3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d6be22df-9ef0-485d-b430-ea9b41ce7d10",
+            "d8431715-bdea-4537-a0f5-cc3c8c1c557f",
+            "476b3a1f-1250-4f10-a641-be06761f6b1c",
+            "fff410e3-63ed-4d49-bb1c-c1ddd73f278c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 46364,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

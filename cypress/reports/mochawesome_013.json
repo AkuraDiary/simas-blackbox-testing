@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-10-14T23:38:49.251Z",
+    "end": "2026-10-14T23:39:17.522Z",
+    "duration": 28271,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c27db66b-ad0f-4bd0-84c3-81c198d4999d",
+      "title": "",
+      "fullFile": "cypress/e2e/features/notifikasi/fr_notif_02_wa.feature",
+      "file": "cypress/e2e/features/notifikasi/fr_notif_02_wa.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cd09eab5-fbb6-4660-9096-4e4e8047c092",
+          "title": "FR-NOTIF-02 Notifikasi WhatsApp dan Pengaturan Preferensi",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-FR-NOTIF-02-A - Staf Unit Mengaktifkan Notifikasi WhatsApp dan Menyimpan Preferensi Alur Surat",
+              "fullTitle": "FR-NOTIF-02 Notifikasi WhatsApp dan Pengaturan Preferensi TC-FR-NOTIF-02-A - Staf Unit Mengaktifkan Notifikasi WhatsApp dan Menyimpan Preferensi Alur Surat",
+              "timedOut": null,
+              "duration": 16318,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "0c73dbc5-fa42-4abb-994f-7a86cd7944a6",
+              "parentUUID": "cd09eab5-fbb6-4660-9096-4e4e8047c092",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-NOTIF-02-A - Menonaktifkan Toggle Utama WhatsApp Menyembunyikan Sub-Pilihan dan Validasi Format Nomor Telepon",
+              "fullTitle": "FR-NOTIF-02 Notifikasi WhatsApp dan Pengaturan Preferensi TC-ALT-FR-NOTIF-02-A - Menonaktifkan Toggle Utama WhatsApp Menyembunyikan Sub-Pilihan dan Validasi Format Nomor Telepon",
+              "timedOut": null,
+              "duration": 11869,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "5967610b-e08e-4904-955c-6a729f1a3ce3",
+              "parentUUID": "cd09eab5-fbb6-4660-9096-4e4e8047c092",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0c73dbc5-fa42-4abb-994f-7a86cd7944a6",
+            "5967610b-e08e-4904-955c-6a729f1a3ce3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 28187,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

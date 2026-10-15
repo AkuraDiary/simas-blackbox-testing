@@ -180,12 +180,12 @@ Then("Status notifikasi pada panel berubah menjadi sudah dibaca", () => {
 // ─── FR-NOTIF-03 GATEWAY FONNTE TESTING STEPS ────────────────────────────────
 
 Given("Konfigurasi token gateway Fonnte telah aktif pada sistem", () => {
-  const token = cy.env(["fonnteToken"]) ;
+  const token = Cypress.env("fonnteToken");
   expect(token).to.be.a("string").and.not.be.empty;
 });
 
 When("Sistem mengeksekusi pengiriman pesan uji notifikasi ke nomor WhatsApp target", () => {
-  const token = cy.env(["fonnteToken"]);
+  const token = Cypress.env("fonnteToken");
   
   // Gunakan endpoint resmi Fonnte /device untuk memvalidasi token dan status keterhubungan gateway
   // tanpa menghabiskan kupon pesan WhatsApp pengujian

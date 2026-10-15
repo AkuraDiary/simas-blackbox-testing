@@ -1,0 +1,163 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-10-14T23:32:20.341Z",
+    "end": "2026-10-14T23:33:26.003Z",
+    "duration": 65662,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f926a216-d974-4390-ad73-e9870d881a22",
+      "title": "",
+      "fullFile": "cypress/e2e/features/admin/fr_adm_04_template_surat.feature",
+      "file": "cypress/e2e/features/admin/fr_adm_04_template_surat.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ac3ac7d0-666c-420d-8a4f-cdf134e50f54",
+          "title": "FR-ADM-04 Manajemen Template Surat",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-FR-ADM-04-A Buat Template Surat Baru (Valid)",
+              "fullTitle": "FR-ADM-04 Manajemen Template Surat TC-FR-ADM-04-A Buat Template Surat Baru (Valid)",
+              "timedOut": null,
+              "duration": 21476,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "70e1bcad-79d6-4730-97cd-80eab598bf5b",
+              "parentUUID": "ac3ac7d0-666c-420d-8a4f-cdf134e50f54",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-ADM-04-A Buat Template Surat: Form Kosong (Negative)",
+              "fullTitle": "FR-ADM-04 Manajemen Template Surat TC-ALT-FR-ADM-04-A Buat Template Surat: Form Kosong (Negative)",
+              "timedOut": null,
+              "duration": 10510,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "77a37a46-87ff-4dc3-931d-a0e188b9ab42",
+              "parentUUID": "ac3ac7d0-666c-420d-8a4f-cdf134e50f54",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-ADM-04-B Edit Template Surat (Valid)",
+              "fullTitle": "FR-ADM-04 Manajemen Template Surat TC-FR-ADM-04-B Edit Template Surat (Valid)",
+              "timedOut": null,
+              "duration": 15970,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "daf50285-8896-4dc8-8760-9e510b5f37fd",
+              "parentUUID": "ac3ac7d0-666c-420d-8a4f-cdf134e50f54",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-ADM-04-C Hapus Template Surat Bebas (Valid & Teardown)",
+              "fullTitle": "FR-ADM-04 Manajemen Template Surat TC-FR-ADM-04-C Hapus Template Surat Bebas (Valid & Teardown)",
+              "timedOut": null,
+              "duration": 17598,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "7d5d0876-523f-4dd1-bce8-2212998e44f5",
+              "parentUUID": "ac3ac7d0-666c-420d-8a4f-cdf134e50f54",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "70e1bcad-79d6-4730-97cd-80eab598bf5b",
+            "77a37a46-87ff-4dc3-931d-a0e188b9ab42",
+            "daf50285-8896-4dc8-8760-9e510b5f37fd",
+            "7d5d0876-523f-4dd1-bce8-2212998e44f5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 65554,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

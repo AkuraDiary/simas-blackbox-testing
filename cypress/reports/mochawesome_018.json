@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-10-14T23:44:18.248Z",
+    "end": "2026-10-14T23:45:09.087Z",
+    "duration": 50839,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "892b75ca-585e-4aeb-91e8-132748b9b90a",
+      "title": "",
+      "fullFile": "cypress/e2e/features/draft/fr_srt_03_asisten_ai.feature",
+      "file": "cypress/e2e/features/draft/fr_srt_03_asisten_ai.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b445379f-b9ef-4080-a888-8e7dcd7181f0",
+          "title": "FR-SRT-03 Bantuan AI dalam Pembuatan Draft Surat Naskah Dinas",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-FR-SRT-03-A - Staf menggunakan modal Bantuan AI untuk menyusun draft surat pada mode Scratch",
+              "fullTitle": "FR-SRT-03 Bantuan AI dalam Pembuatan Draft Surat Naskah Dinas TC-FR-SRT-03-A - Staf menggunakan modal Bantuan AI untuk menyusun draft surat pada mode Scratch",
+              "timedOut": null,
+              "duration": 19912,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "d235748e-2f8a-47e0-aa9d-0cdcd8ca2ca0",
+              "parentUUID": "b445379f-b9ef-4080-a888-8e7dcd7181f0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-SRT-03-A - Form modal Asisten AI memvalidasi field prompt kebutuhan surat",
+              "fullTitle": "FR-SRT-03 Bantuan AI dalam Pembuatan Draft Surat Naskah Dinas TC-ALT-FR-SRT-03-A - Form modal Asisten AI memvalidasi field prompt kebutuhan surat",
+              "timedOut": null,
+              "duration": 20217,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "b23aeb82-354c-4f94-b650-783c7791dbda",
+              "parentUUID": "b445379f-b9ef-4080-a888-8e7dcd7181f0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-TEARDOWN-FR-SRT-03 - Pembersihan draft surat pengujian AI",
+              "fullTitle": "FR-SRT-03 Bantuan AI dalam Pembuatan Draft Surat Naskah Dinas TC-TEARDOWN-FR-SRT-03 - Pembersihan draft surat pengujian AI",
+              "timedOut": null,
+              "duration": 10617,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "d1cad98e-0147-4160-a341-de5e20c836ed",
+              "parentUUID": "b445379f-b9ef-4080-a888-8e7dcd7181f0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d235748e-2f8a-47e0-aa9d-0cdcd8ca2ca0",
+            "b23aeb82-354c-4f94-b650-783c7791dbda",
+            "d1cad98e-0147-4160-a341-de5e20c836ed"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 50746,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

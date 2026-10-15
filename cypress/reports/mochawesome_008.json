@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-10-14T23:36:22.317Z",
+    "end": "2026-10-14T23:36:47.318Z",
+    "duration": 25001,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6982aa03-861b-42b4-88e0-d61e7dfad2ac",
+      "title": "",
+      "fullFile": "cypress/e2e/features/arsip/fr_arc_04_kategori_arsip.feature",
+      "file": "cypress/e2e/features/arsip/fr_arc_04_kategori_arsip.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "90d206f4-2eb8-49eb-8e89-93874d5835c9",
+          "title": "FR-ARC-04 Pengelolaan Kategori Arsip Unit",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-FR-ARC-04-A - Staf Unit Menambah Kategori Arsip Baru pada Modal Kelola Kategori Arsip",
+              "fullTitle": "FR-ARC-04 Pengelolaan Kategori Arsip Unit TC-FR-ARC-04-A - Staf Unit Menambah Kategori Arsip Baru pada Modal Kelola Kategori Arsip",
+              "timedOut": null,
+              "duration": 12784,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "37fca8df-f3d8-4616-964a-c1a2145ddc17",
+              "parentUUID": "90d206f4-2eb8-49eb-8e89-93874d5835c9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-ARC-04-A - Tambah Kategori Arsip dengan Nama Duplikat Ditolak",
+              "fullTitle": "FR-ARC-04 Pengelolaan Kategori Arsip Unit TC-ALT-FR-ARC-04-A - Tambah Kategori Arsip dengan Nama Duplikat Ditolak",
+              "timedOut": null,
+              "duration": 12150,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "969db22e-1c38-46d9-bd6e-338758d8bf82",
+              "parentUUID": "90d206f4-2eb8-49eb-8e89-93874d5835c9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "37fca8df-f3d8-4616-964a-c1a2145ddc17",
+            "969db22e-1c38-46d9-bd6e-338758d8bf82"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 24934,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}
