@@ -1,0 +1,182 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-10-24T03:36:14.160Z",
+    "end": "2026-10-24T03:37:35.533Z",
+    "duration": 81373,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2122e578-6d0d-434d-9b67-c1bb856ac5b5",
+      "title": "",
+      "fullFile": "cypress/e2e/features/nde/fr_srt_09_11_dan_ttd.feature",
+      "file": "cypress/e2e/features/nde/fr_srt_09_11_dan_ttd.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ef0d2706-4368-43f3-99d2-b025741bc3f2",
+          "title": "FR-SRT-09 s/d FR-SRT-11 dan FR-TTD-01 Alur Linimasa, Respon Dokumen, dan Tanda Tangan Elektronik",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-FR-SRT-09-A - Staf dan Pimpinan melihat riwayat linimasa perjalanan surat secara komprehensif",
+              "fullTitle": "FR-SRT-09 s/d FR-SRT-11 dan FR-TTD-01 Alur Linimasa, Respon Dokumen, dan Tanda Tangan Elektronik TC-FR-SRT-09-A - Staf dan Pimpinan melihat riwayat linimasa perjalanan surat secara komprehensif",
+              "timedOut": null,
+              "duration": 14930,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "7271a769-ec1a-44a9-a5b1-2bd982e82efe",
+              "parentUUID": "ef0d2706-4368-43f3-99d2-b025741bc3f2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-SRT-11-A - Pengguna mengakses pratinjau dan mengunduh dokumen surat",
+              "fullTitle": "FR-SRT-09 s/d FR-SRT-11 dan FR-TTD-01 Alur Linimasa, Respon Dokumen, dan Tanda Tangan Elektronik TC-FR-SRT-11-A - Pengguna mengakses pratinjau dan mengunduh dokumen surat",
+              "timedOut": null,
+              "duration": 12948,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "eb956845-2e55-4116-ab71-6e8f327c79ca",
+              "parentUUID": "ef0d2706-4368-43f3-99d2-b025741bc3f2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-TTD-01-A - Pimpinan mengatur metode visual tanda tangan digital atau QR pada lembar surat",
+              "fullTitle": "FR-SRT-09 s/d FR-SRT-11 dan FR-TTD-01 Alur Linimasa, Respon Dokumen, dan Tanda Tangan Elektronik TC-FR-TTD-01-A - Pimpinan mengatur metode visual tanda tangan digital atau QR pada lembar surat",
+              "timedOut": null,
+              "duration": 18611,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "d3027d05-3ab2-4603-a075-8f8b3d151369",
+              "parentUUID": "ef0d2706-4368-43f3-99d2-b025741bc3f2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-TTD-01-B - Pimpinan melakukan finalisasi dan pengesahan akhir surat",
+              "fullTitle": "FR-SRT-09 s/d FR-SRT-11 dan FR-TTD-01 Alur Linimasa, Respon Dokumen, dan Tanda Tangan Elektronik TC-FR-TTD-01-B - Pimpinan melakukan finalisasi dan pengesahan akhir surat",
+              "timedOut": null,
+              "duration": 19478,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "ecf5e1c6-b6a3-4b60-b213-a40ef7bf8bb8",
+              "parentUUID": "ef0d2706-4368-43f3-99d2-b025741bc3f2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-SRT-10-A - Staf menanggapi dan menyelesaikan surat internal langsung",
+              "fullTitle": "FR-SRT-09 s/d FR-SRT-11 dan FR-TTD-01 Alur Linimasa, Respon Dokumen, dan Tanda Tangan Elektronik TC-FR-SRT-10-A - Staf menanggapi dan menyelesaikan surat internal langsung",
+              "timedOut": null,
+              "duration": 15173,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "44ab68ab-ce24-443d-874c-6dab27a9bf84",
+              "parentUUID": "ef0d2706-4368-43f3-99d2-b025741bc3f2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7271a769-ec1a-44a9-a5b1-2bd982e82efe",
+            "eb956845-2e55-4116-ab71-6e8f327c79ca",
+            "d3027d05-3ab2-4603-a075-8f8b3d151369",
+            "ecf5e1c6-b6a3-4b60-b213-a40ef7bf8bb8",
+            "44ab68ab-ce24-443d-874c-6dab27a9bf84"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 81140,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 3,
+    "pending": 0,
+    "failures": 2,
+    "start": "2026-10-24T03:27:01.305Z",
+    "end": "2026-10-24T03:30:25.892Z",
+    "duration": 204587,
+    "testsRegistered": 5,
+    "passPercent": 60,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "946e3c76-aa6a-4714-8a18-96d49575e51b",
+      "title": "",
+      "fullFile": "cypress/e2e/features/nde/fr_srt_09_11_dan_ttd.feature",
+      "file": "cypress/e2e/features/nde/fr_srt_09_11_dan_ttd.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fee634d1-ed4d-4d61-8618-bb72866f7585",
+          "title": "FR-SRT-09 s/d FR-SRT-11 dan FR-TTD-01 Alur Linimasa, Respon Dokumen, dan Tanda Tangan Elektronik",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-FR-SRT-09-A - Staf dan Pimpinan melihat riwayat linimasa perjalanan surat secara komprehensif",
+              "fullTitle": "FR-SRT-09 s/d FR-SRT-11 dan FR-TTD-01 Alur Linimasa, Respon Dokumen, dan Tanda Tangan Elektronik TC-FR-SRT-09-A - Staf dan Pimpinan melihat riwayat linimasa perjalanan surat secara komprehensif",
+              "timedOut": null,
+              "duration": 26163,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find content: 'PERJALANAN SURAT' within the selector: 'h2, h3, div' but never did.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find content: 'PERJALANAN SURAT' within the selector: 'h2, h3, div' but never did.\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_09_11_dan_ttd.feature:13738:12)\n    at Registry.runStepDefinition (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_09_11_dan_ttd.feature:9368:48)\n    at Object.fn (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_09_11_dan_ttd.feature:12371:42)\n    at runStepWithLogGroup (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_09_11_dan_ttd.feature:11320:29)\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_09_11_dan_ttd.feature:12364:60)\n    at getRet (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121346:20)\n    at tryCatcher (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:1780:23)\n    at Promise.attempt.Promise.try (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:4288:29)\n    at Context.thenFn (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121357:66)",
+                "diff": null
+              },
+              "uuid": "5d25c47a-c2a7-444e-bcea-e456d55030ae",
+              "parentUUID": "fee634d1-ed4d-4d61-8618-bb72866f7585",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-SRT-11-A - Pengguna mengakses pratinjau dan mengunduh dokumen surat",
+              "fullTitle": "FR-SRT-09 s/d FR-SRT-11 dan FR-TTD-01 Alur Linimasa, Respon Dokumen, dan Tanda Tangan Elektronik TC-FR-SRT-11-A - Pengguna mengakses pratinjau dan mengunduh dokumen surat",
+              "timedOut": null,
+              "duration": 10384,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "bb9d0449-4a05-49f5-8917-a3a840058d01",
+              "parentUUID": "fee634d1-ed4d-4d61-8618-bb72866f7585",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-TTD-01-A - Pimpinan mengatur metode visual tanda tangan digital atau QR pada lembar surat",
+              "fullTitle": "FR-SRT-09 s/d FR-SRT-11 dan FR-TTD-01 Alur Linimasa, Respon Dokumen, dan Tanda Tangan Elektronik TC-FR-TTD-01-A - Pimpinan mengatur metode visual tanda tangan digital atau QR pada lembar surat",
+              "timedOut": null,
+              "duration": 19307,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "4ba76d58-d091-4cd3-85a8-8dcb06ed43cc",
+              "parentUUID": "fee634d1-ed4d-4d61-8618-bb72866f7585",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-TTD-01-B - Pimpinan melakukan finalisasi dan pengesahan akhir surat",
+              "fullTitle": "FR-SRT-09 s/d FR-SRT-11 dan FR-TTD-01 Alur Linimasa, Respon Dokumen, dan Tanda Tangan Elektronik TC-FR-TTD-01-B - Pimpinan melakukan finalisasi dan pengesahan akhir surat",
+              "timedOut": null,
+              "duration": 21881,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "4ee52b87-12c7-430b-9aed-d7087e54509f",
+              "parentUUID": "fee634d1-ed4d-4d61-8618-bb72866f7585",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-SRT-10-A - Staf menanggapi dan menyelesaikan surat internal langsung",
+              "fullTitle": "FR-SRT-09 s/d FR-SRT-11 dan FR-TTD-01 Alur Linimasa, Respon Dokumen, dan Tanda Tangan Elektronik TC-FR-SRT-10-A - Staf menanggapi dan menyelesaikan surat internal langsung",
+              "timedOut": null,
+              "duration": 27264,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find content: '/Tanggapi & Selesaikan/i' within the selector: 'button, a' but never did.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find content: '/Tanggapi & Selesaikan/i' within the selector: 'button, a' but never did.\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_09_11_dan_ttd.feature:13792:61)\n    at Registry.runStepDefinition (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_09_11_dan_ttd.feature:9368:48)\n    at Object.fn (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_09_11_dan_ttd.feature:12371:42)\n    at runStepWithLogGroup (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_09_11_dan_ttd.feature:11320:29)\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_09_11_dan_ttd.feature:12364:60)\n    at getRet (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121346:20)\n    at tryCatcher (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:1780:23)\n    at Promise.attempt.Promise.try (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:4288:29)\n    at Context.thenFn (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121357:66)",
+                "diff": null
+              },
+              "uuid": "fe6151b0-e519-42d9-9b3a-c62b8df58c3f",
+              "parentUUID": "fee634d1-ed4d-4d61-8618-bb72866f7585",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bb9d0449-4a05-49f5-8917-a3a840058d01",
+            "4ba76d58-d091-4cd3-85a8-8dcb06ed43cc",
+            "4ee52b87-12c7-430b-9aed-d7087e54509f"
+          ],
+          "failures": [
+            "5d25c47a-c2a7-444e-bcea-e456d55030ae",
+            "fe6151b0-e519-42d9-9b3a-c62b8df58c3f"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 104999,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

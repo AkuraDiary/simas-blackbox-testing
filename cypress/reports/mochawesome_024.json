@@ -1,0 +1,153 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 1,
+    "pending": 0,
+    "failures": 2,
+    "start": "2026-10-24T01:33:35.515Z",
+    "end": "2026-10-24T01:38:37.619Z",
+    "duration": 302104,
+    "testsRegistered": 3,
+    "passPercent": 33.33333333333333,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cf722fe2-032c-4428-b90e-bcfd1803fa54",
+      "title": "",
+      "fullFile": "cypress/e2e/features/nde/fr_srt_04_pengiriman_surat.feature",
+      "file": "cypress/e2e/features/nde/fr_srt_04_pengiriman_surat.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "db41974d-6e66-42bc-8f9f-e32882fdf7e7",
+          "title": "FR-SRT-04 Mengirim dan Meneruskan Surat Dinas Elektronik",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-FR-SRT-04-A - Staf mengirimkan surat dinas langsung ke unit tujuan",
+              "fullTitle": "FR-SRT-04 Mengirim dan Meneruskan Surat Dinas Elektronik TC-FR-SRT-04-A - Staf mengirimkan surat dinas langsung ke unit tujuan",
+              "timedOut": null,
+              "duration": 47133,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find content: '/Surat berhasil dikirim untuk diproses/i' within the selector: '.fi-no-notification-title, .fi-notification-title, [class*='notification-title'], .fi-notification, .fi-no-notification, body' but never did.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find content: '/Surat berhasil dikirim untuk diproses/i' within the selector: '.fi-no-notification-title, .fi-notification-title, [class*='notification-title'], .fi-notification, .fi-no-notification, body' but never did.\n    at assertToastNotification (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_04_pengiriman_surat.feature:13501:7)\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_04_pengiriman_surat.feature:13653:9)\n    at Registry.runStepDefinition (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_04_pengiriman_surat.feature:9368:48)\n    at Object.fn (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_04_pengiriman_surat.feature:12371:42)\n    at runStepWithLogGroup (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_04_pengiriman_surat.feature:11320:29)\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_04_pengiriman_surat.feature:12364:60)\n    at getRet (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121346:20)\n    at tryCatcher (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:1780:23)\n    at Promise.attempt.Promise.try (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:4288:29)",
+                "diff": null
+              },
+              "uuid": "52a7134a-706f-4cf3-9886-fa91256cbb31",
+              "parentUUID": "db41974d-6e66-42bc-8f9f-e32882fdf7e7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-SRT-04-A - Pengiriman surat ditolak jika unit tujuan dan alur persetujuan kosong",
+              "fullTitle": "FR-SRT-04 Mengirim dan Meneruskan Surat Dinas Elektronik TC-ALT-FR-SRT-04-A - Pengiriman surat ditolak jika unit tujuan dan alur persetujuan kosong",
+              "timedOut": null,
+              "duration": 22746,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "d3d7177a-4893-481a-9d22-3c5987baeca9",
+              "parentUUID": "db41974d-6e66-42bc-8f9f-e32882fdf7e7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-SRT-04-B - Pengirim mengajukan surat dinas melalui Jalur Persetujuan Khusus berjenjang",
+              "fullTitle": "FR-SRT-04 Mengirim dan Meneruskan Surat Dinas Elektronik TC-FR-SRT-04-B - Pengirim mengajukan surat dinas melalui Jalur Persetujuan Khusus berjenjang",
+              "timedOut": null,
+              "duration": 44767,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `tr, .fi-ta-record`, but never found it. Queried from:\n\n              > cy.contains(table tbody, .fi-ta-content, body, Draf Keputusan Bersama QA 1792805886088, [object Object])",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `tr, .fi-ta-record`, but never found it. Queried from:\n\n              > cy.contains(table tbody, .fi-ta-content, body, Draf Keputusan Bersama QA 1792805886088, [object Object])\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_04_pengiriman_surat.feature:13670:90)\n    at Registry.runStepDefinition (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_04_pengiriman_surat.feature:9368:48)\n    at Object.fn (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_04_pengiriman_surat.feature:12371:42)\n    at runStepWithLogGroup (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_04_pengiriman_surat.feature:11320:29)\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_04_pengiriman_surat.feature:12364:60)\n    at getRet (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121346:20)\n    at tryCatcher (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:1780:23)\n    at Promise.attempt.Promise.try (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:4288:29)\n    at Context.thenFn (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121357:66)",
+                "diff": null
+              },
+              "uuid": "48fa980b-c030-44c9-8bdc-66f865b0d1ab",
+              "parentUUID": "db41974d-6e66-42bc-8f9f-e32882fdf7e7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d3d7177a-4893-481a-9d22-3c5987baeca9"
+          ],
+          "failures": [
+            "52a7134a-706f-4cf3-9886-fa91256cbb31",
+            "48fa980b-c030-44c9-8bdc-66f865b0d1ab"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 114646,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

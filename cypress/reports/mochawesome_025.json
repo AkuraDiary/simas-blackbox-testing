@@ -1,0 +1,149 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-10-24T01:48:35.562Z",
+    "end": "2026-10-24T01:51:54.186Z",
+    "duration": 198624,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "103d5c9a-163e-458e-b391-3ddbe28f02c7",
+      "title": "",
+      "fullFile": "cypress/e2e/features/nde/fr_srt_04_pengiriman_surat.feature",
+      "file": "cypress/e2e/features/nde/fr_srt_04_pengiriman_surat.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "25d1db8d-7b4f-4271-97bb-6d1b4adc2b3a",
+          "title": "FR-SRT-04 Mengirim dan Meneruskan Surat Dinas Elektronik",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-FR-SRT-04-A - Staf mengirimkan surat dinas langsung ke unit tujuan",
+              "fullTitle": "FR-SRT-04 Mengirim dan Meneruskan Surat Dinas Elektronik TC-FR-SRT-04-A - Staf mengirimkan surat dinas langsung ke unit tujuan",
+              "timedOut": null,
+              "duration": 35510,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "1695c856-5817-40aa-a7d5-68e73631790b",
+              "parentUUID": "25d1db8d-7b4f-4271-97bb-6d1b4adc2b3a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-SRT-04-A - Pengiriman surat ditolak jika unit tujuan dan alur persetujuan kosong",
+              "fullTitle": "FR-SRT-04 Mengirim dan Meneruskan Surat Dinas Elektronik TC-ALT-FR-SRT-04-A - Pengiriman surat ditolak jika unit tujuan dan alur persetujuan kosong",
+              "timedOut": null,
+              "duration": 21142,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "1178ca16-76b4-4267-9c52-864d9ff9a913",
+              "parentUUID": "25d1db8d-7b4f-4271-97bb-6d1b4adc2b3a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-SRT-04-B - Pengirim mengajukan surat dinas melalui Jalur Persetujuan Khusus berjenjang",
+              "fullTitle": "FR-SRT-04 Mengirim dan Meneruskan Surat Dinas Elektronik TC-FR-SRT-04-B - Pengirim mengajukan surat dinas melalui Jalur Persetujuan Khusus berjenjang",
+              "timedOut": null,
+              "duration": 49916,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find content: '/Surat berhasil dikirim untuk diproses/i' within the selector: '.fi-no-notification-title, .fi-notification-title, [class*='notification-title'], .fi-notification, .fi-no-notification, body' but never did.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find content: '/Surat berhasil dikirim untuk diproses/i' within the selector: '.fi-no-notification-title, .fi-notification-title, [class*='notification-title'], .fi-notification, .fi-no-notification, body' but never did.\n    at assertToastNotification (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_04_pengiriman_surat.feature:13501:7)\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_04_pengiriman_surat.feature:13673:9)\n    at Registry.runStepDefinition (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_04_pengiriman_surat.feature:9368:48)\n    at Object.fn (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_04_pengiriman_surat.feature:12371:42)\n    at runStepWithLogGroup (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_04_pengiriman_surat.feature:11320:29)\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/nde/fr_srt_04_pengiriman_surat.feature:12364:60)\n    at getRet (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121346:20)\n    at tryCatcher (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:1780:23)\n    at Promise.attempt.Promise.try (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:4288:29)",
+                "diff": null
+              },
+              "uuid": "54a3edd1-f79d-4f75-beb1-2143a41d2441",
+              "parentUUID": "25d1db8d-7b4f-4271-97bb-6d1b4adc2b3a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1695c856-5817-40aa-a7d5-68e73631790b",
+            "1178ca16-76b4-4267-9c52-864d9ff9a913"
+          ],
+          "failures": [
+            "54a3edd1-f79d-4f75-beb1-2143a41d2441"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 106568,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

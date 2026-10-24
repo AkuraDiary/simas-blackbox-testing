@@ -27,18 +27,18 @@ const FILE_ORDER = [
   'cypress/e2e/features/admin/fr_adm_05_kategori_template.feature',
   'cypress/e2e/features/admin/fr_adm_06_format_nomor.feature',
 
-  // 3. Draft Surat Keluar / NDE (No. 37 - 46, jika ada di masa depan)
+  // 3. Draft Surat Keluar & Naskah Dinas Elektronik
   'cypress/e2e/features/draft/fr_srt_01_pembuatan_draft.feature',
   'cypress/e2e/features/draft/fr_srt_02_editor_naskah.feature',
   'cypress/e2e/features/draft/fr_srt_03_asisten_ai.feature',
-  'cypress/e2e/features/draft/fr_srt_03_pratinjau_draft.feature',
-  'cypress/e2e/features/draft/fr_srt_04_nomor_surat.feature',
-  'cypress/e2e/features/draft/fr_srt_05_verifikasi_draft.feature',
+  'cypress/e2e/features/nde/fr_srt_04_pengiriman_surat.feature',
+  'cypress/e2e/features/nde/fr_srt_05_backtrack_revisi.feature',
 
   // 4. Penerimaan & Surat Masuk Staf (No. 47 - 52, No. 81)
   'cypress/e2e/features/staf/fr_srt_06_surat_masuk.feature',
   'cypress/e2e/features/staf/fr_srt_07_pencarian_surat.feature',
   'cypress/e2e/features/staf/fr_srt_08_detail_surat.feature',
+  'cypress/e2e/features/nde/fr_srt_09_11_dan_ttd.feature',
 
   // 5. Disposisi Surat (No. 59 - 64, jika ada di masa depan)
   'cypress/e2e/features/disposisi/fr_disp_01_buat_disposisi.feature',
