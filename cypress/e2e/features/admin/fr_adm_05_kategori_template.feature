@@ -32,6 +32,12 @@ Feature: FR-ADM-05 Manajemen Kategori Template Surat
     And Kategori "Kategori Uji Coba QA Revisi" harus muncul pada daftar kategori di modal
     And Saya menutup modal aktif
 
+  @negative @kategori @delete
+  Scenario: TC-ALT-FR-ADM-05-B Hapus Kategori Template yang Sedang Digunakan (Negative)
+    When Saya menekan tombol "Kelola Kategori Template"
+    Then Tombol hapus pada kategori yang sedang digunakan template harus dinonaktifkan
+    And Saya menutup modal aktif
+
   @positive @kategori @delete @teardown
   Scenario: TC-FR-ADM-05-C Hapus Kategori Template Bebas (Valid & Teardown)
     When Saya menekan tombol "Kelola Kategori Template"

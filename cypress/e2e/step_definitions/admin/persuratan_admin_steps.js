@@ -62,6 +62,20 @@ When("Saya menghapus kategori {string} pada modal", (namaKategori) => {
     });
 });
 
+Then("Tombol hapus pada kategori yang sedang digunakan template harus dinonaktifkan", () => {
+  cy.get(".fi-modal:visible", { timeout: 10000 })
+    .find("table tbody tr")
+    .filter((idx, tr) => {
+      const text = Cypress.$(tr).text();
+      return /\b[1-9]\d*\s+template\b/i.test(text);
+    })
+    .should("have.length.at.least", 1)
+    .first()
+    .within(() => {
+      cy.contains("button", "Hapus").should("be.disabled");
+    });
+});
+
 Then("Kategori {string} tidak boleh muncul pada daftar kategori di modal", (namaKategori) => {
   cy.get(".fi-modal:visible", { timeout: 10000 })
     .should("not.contain", namaKategori);

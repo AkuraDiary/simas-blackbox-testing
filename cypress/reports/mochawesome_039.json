@@ -1,0 +1,163 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-10-28T02:35:31.034Z",
+    "end": "2026-10-28T02:37:00.812Z",
+    "duration": 89778,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fd951490-708e-4bb7-9794-80b2a81accb0",
+      "title": "",
+      "fullFile": "cypress/e2e/features/disposisi/fr_disp_01_buat_disposisi.feature",
+      "file": "cypress/e2e/features/disposisi/fr_disp_01_buat_disposisi.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "95068486-9504-4227-82de-a833c4c8292c",
+          "title": "FR-DISP-01 Melakukan Disposisi Surat",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-FR-DISP-01-A Disposisi Surat Antar-Unit Kerja (Eksternal)",
+              "fullTitle": "FR-DISP-01 Melakukan Disposisi Surat TC-FR-DISP-01-A Disposisi Surat Antar-Unit Kerja (Eksternal)",
+              "timedOut": null,
+              "duration": 30500,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "0be222ba-465d-4b24-9a17-585252ab0d5a",
+              "parentUUID": "95068486-9504-4227-82de-a833c4c8292c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-DISP-01-B Disposisi Surat Internal Unit ke Staf Bawahan",
+              "fullTitle": "FR-DISP-01 Melakukan Disposisi Surat TC-FR-DISP-01-B Disposisi Surat Internal Unit ke Staf Bawahan",
+              "timedOut": null,
+              "duration": 26904,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "bedf20aa-e9af-4055-9782-de72a0c937fd",
+              "parentUUID": "95068486-9504-4227-82de-a833c4c8292c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-DISP-01-A Validasi Form Disposisi Kosong (Negative)",
+              "fullTitle": "FR-DISP-01 Melakukan Disposisi Surat TC-ALT-FR-DISP-01-A Validasi Form Disposisi Kosong (Negative)",
+              "timedOut": null,
+              "duration": 14597,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "0cfb0aef-4ceb-4c01-b5b2-d828a66375eb",
+              "parentUUID": "95068486-9504-4227-82de-a833c4c8292c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-DISP-01-B Pembatasan Otorisasi Disposisi Staf Biasa (Boundary)",
+              "fullTitle": "FR-DISP-01 Melakukan Disposisi Surat TC-ALT-FR-DISP-01-B Pembatasan Otorisasi Disposisi Staf Biasa (Boundary)",
+              "timedOut": null,
+              "duration": 17528,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "fcf5b335-f702-4c23-9e77-3249937dd3a3",
+              "parentUUID": "95068486-9504-4227-82de-a833c4c8292c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0be222ba-465d-4b24-9a17-585252ab0d5a",
+            "bedf20aa-e9af-4055-9782-de72a0c937fd",
+            "0cfb0aef-4ceb-4c01-b5b2-d828a66375eb",
+            "fcf5b335-f702-4c23-9e77-3249937dd3a3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 89529,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

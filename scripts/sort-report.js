@@ -40,10 +40,10 @@ const FILE_ORDER = [
   'cypress/e2e/features/staf/fr_srt_08_detail_surat.feature',
   'cypress/e2e/features/nde/fr_srt_09_11_dan_ttd.feature',
 
-  // 5. Disposisi Surat (No. 59 - 64, jika ada di masa depan)
+  // 5. Disposisi Surat (No. 59 - 67)
   'cypress/e2e/features/disposisi/fr_disp_01_buat_disposisi.feature',
-  'cypress/e2e/features/disposisi/fr_disp_02_riwayat_disposisi.feature',
-  'cypress/e2e/features/disposisi/fr_disp_03_instruksi_disposisi.feature',
+  'cypress/e2e/features/disposisi/fr_disp_02_respon_disposisi.feature',
+  'cypress/e2e/features/disposisi/fr_disp_03_riwayat_dan_lembar_disposisi.feature',
 
   // 6. Pengajuan Publik & Pelacakan (No. 65 - 77)
   'cypress/e2e/features/guest/fr_req_01_pengajuan_publik.feature',

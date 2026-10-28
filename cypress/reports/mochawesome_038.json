@@ -1,0 +1,168 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 3,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-10-28T02:32:19.598Z",
+    "end": "2026-10-28T02:35:03.267Z",
+    "duration": 163669,
+    "testsRegistered": 4,
+    "passPercent": 75,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e6b990b0-38d8-403f-ad0d-d4ccf437c1bb",
+      "title": "",
+      "fullFile": "cypress/e2e/features/disposisi/fr_disp_01_buat_disposisi.feature",
+      "file": "cypress/e2e/features/disposisi/fr_disp_01_buat_disposisi.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "70645fa0-745a-498e-8a79-ad84973f6963",
+          "title": "FR-DISP-01 Melakukan Disposisi Surat",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-FR-DISP-01-A Disposisi Surat Antar-Unit Kerja (Eksternal)",
+              "fullTitle": "FR-DISP-01 Melakukan Disposisi Surat TC-FR-DISP-01-A Disposisi Surat Antar-Unit Kerja (Eksternal)",
+              "timedOut": null,
+              "duration": 34803,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: '/(berhasil|success)/i' within the element: <div.fi-no-notification.fi-inline.fi-status-info> but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: '/(berhasil|success)/i' within the element: <div.fi-no-notification.fi-inline.fi-status-info> but never did.\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/disposisi/fr_disp_01_buat_disposisi.feature:14728:161)\n    at Registry.runStepDefinition (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/disposisi/fr_disp_01_buat_disposisi.feature:9368:48)\n    at Object.fn (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/disposisi/fr_disp_01_buat_disposisi.feature:12371:42)\n    at runStepWithLogGroup (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/disposisi/fr_disp_01_buat_disposisi.feature:11320:29)\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/disposisi/fr_disp_01_buat_disposisi.feature:12364:60)\n    at getRet (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121346:20)\n    at tryCatcher (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:1780:23)\n    at Promise.attempt.Promise.try (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:4288:29)\n    at Context.thenFn (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121357:66)",
+                "diff": null
+              },
+              "uuid": "7e3e8884-de8f-467e-9f07-c4dd73a35b6d",
+              "parentUUID": "70645fa0-745a-498e-8a79-ad84973f6963",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-DISP-01-B Disposisi Surat Internal Unit ke Staf Bawahan",
+              "fullTitle": "FR-DISP-01 Melakukan Disposisi Surat TC-FR-DISP-01-B Disposisi Surat Internal Unit ke Staf Bawahan",
+              "timedOut": null,
+              "duration": 26848,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "2f9e65cf-0e84-4200-a170-63347852811f",
+              "parentUUID": "70645fa0-745a-498e-8a79-ad84973f6963",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-DISP-01-A Validasi Form Disposisi Kosong (Negative)",
+              "fullTitle": "FR-DISP-01 Melakukan Disposisi Surat TC-ALT-FR-DISP-01-A Validasi Form Disposisi Kosong (Negative)",
+              "timedOut": null,
+              "duration": 13832,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "c98f9a44-836e-431a-9c2f-d2ed944c6196",
+              "parentUUID": "70645fa0-745a-498e-8a79-ad84973f6963",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-DISP-01-B Pembatasan Otorisasi Disposisi Staf Biasa (Boundary)",
+              "fullTitle": "FR-DISP-01 Melakukan Disposisi Surat TC-ALT-FR-DISP-01-B Pembatasan Otorisasi Disposisi Staf Biasa (Boundary)",
+              "timedOut": null,
+              "duration": 16464,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "3970c2dd-25fe-4752-9620-a723cbaaf682",
+              "parentUUID": "70645fa0-745a-498e-8a79-ad84973f6963",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2f9e65cf-0e84-4200-a170-63347852811f",
+            "c98f9a44-836e-431a-9c2f-d2ed944c6196",
+            "3970c2dd-25fe-4752-9620-a723cbaaf682"
+          ],
+          "failures": [
+            "7e3e8884-de8f-467e-9f07-c4dd73a35b6d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 91947,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

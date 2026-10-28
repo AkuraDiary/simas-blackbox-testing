@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-10-28T02:38:59.077Z",
+    "end": "2026-10-28T02:39:48.826Z",
+    "duration": 49749,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "30818354-6b24-4f84-8317-c09d5b4fb272",
+      "title": "",
+      "fullFile": "cypress/e2e/features/disposisi/fr_disp_02_respon_disposisi.feature",
+      "file": "cypress/e2e/features/disposisi/fr_disp_02_respon_disposisi.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bc2e7c53-e02f-4436-bbc6-6cdac1468947",
+          "title": "FR-DISP-02 Merespon dan Menindaklanjuti Disposisi Surat",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-FR-DISP-02-A Menindaklanjuti Disposisi dengan Progres Sedang Diproses",
+              "fullTitle": "FR-DISP-02 Merespon dan Menindaklanjuti Disposisi Surat TC-FR-DISP-02-A Menindaklanjuti Disposisi dengan Progres Sedang Diproses",
+              "timedOut": null,
+              "duration": 18325,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "e0538356-c366-4030-a633-1eba594ab1b0",
+              "parentUUID": "bc2e7c53-e02f-4436-bbc6-6cdac1468947",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-DISP-02-A Validasi Form Respon Disposisi Kosong (Negative)",
+              "fullTitle": "FR-DISP-02 Merespon dan Menindaklanjuti Disposisi Surat TC-ALT-FR-DISP-02-A Validasi Form Respon Disposisi Kosong (Negative)",
+              "timedOut": null,
+              "duration": 14168,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "28c8ed80-cc08-42e0-b089-0c45add46a34",
+              "parentUUID": "bc2e7c53-e02f-4436-bbc6-6cdac1468947",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-DISP-02-B Menyelesaikan Tugas Disposisi (Status Selesai)",
+              "fullTitle": "FR-DISP-02 Merespon dan Menindaklanjuti Disposisi Surat TC-FR-DISP-02-B Menyelesaikan Tugas Disposisi (Status Selesai)",
+              "timedOut": null,
+              "duration": 17030,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "68b8cd96-c5c5-4115-9a62-684363d00e18",
+              "parentUUID": "bc2e7c53-e02f-4436-bbc6-6cdac1468947",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e0538356-c366-4030-a633-1eba594ab1b0",
+            "28c8ed80-cc08-42e0-b089-0c45add46a34",
+            "68b8cd96-c5c5-4115-9a62-684363d00e18"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 49523,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}
