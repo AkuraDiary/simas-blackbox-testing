@@ -48,6 +48,64 @@ function selectUnitTujuanIfEmpty() {
   });
 }
 
+// ─── HELPER: ISI FIELD DINAMIS TEMPLATE JIKA ADA (BUTIR 19 AGENTS.MD) ────────
+
+function fillDynamicTemplateFieldsIfAny() {
+  cy.get("body").then(($body) => {
+    // 1. Bersihkan baris repeater default kosong jika ada
+    cleanupEmptyRepeaterRows();
+
+    // 2. Cari semua field dinamis template (input, textarea) yang terlihat dan belum terisi
+    const $dynInputs = $body.find(
+      "input[name*='content.'], textarea[name*='content.'], input[wire\\:model*='content.'], textarea[wire\\:model*='content.'], input[id*='content.'], textarea[id*='content.']"
+    );
+    if ($dynInputs.length > 0) {
+      cy.wrap($dynInputs).each(($el) => {
+        const val = $el.val();
+        const id = $el.attr("id") || "";
+        const name = $el.attr("name") || "";
+        // Jangan timpa jika field adalah perihal yang nanti diisi oleh step berikutnya
+        if (id.includes("perihal") || name.includes("perihal")) {
+          return;
+        }
+        if (!val || val.trim() === "") {
+          const type = $el.attr("type");
+          if (type === "number") {
+            cy.wrap($el).clear({ force: true }).type("100", { force: true }).trigger("input").trigger("change").blur();
+          } else if (type === "date") {
+            cy.wrap($el).clear({ force: true }).type("2026-10-30", { force: true }).trigger("input").trigger("change").blur();
+          } else if (type !== "radio" && type !== "checkbox" && type !== "file") {
+            cy.wrap($el).clear({ force: true }).type("Data Uji Variabel QA", { force: true }).trigger("input").trigger("change").blur();
+          }
+          cy.wait(300);
+        }
+      });
+    }
+
+    // 3. Cari juga setiap input/textarea required yang masih kosong di form
+    const $reqInputs = $body.find("form input[required]:visible, form textarea[required]:visible");
+    if ($reqInputs.length > 0) {
+      cy.wrap($reqInputs).each(($req) => {
+        const val = $req.val();
+        const id = $req.attr("id") || "";
+        const name = $req.attr("name") || "";
+        if (id.includes("perihal") || name.includes("perihal")) return;
+        if (!val || val.trim() === "") {
+          const type = $req.attr("type");
+          if (type === "number") {
+            cy.wrap($req).clear({ force: true }).type("100", { force: true }).trigger("input").trigger("change").blur();
+          } else if (type === "date") {
+            cy.wrap($req).clear({ force: true }).type("2026-10-30", { force: true }).trigger("input").trigger("change").blur();
+          } else if (type !== "radio" && type !== "checkbox" && type !== "file") {
+            cy.wrap($req).clear({ force: true }).type("Data Uji Variabel QA", { force: true }).trigger("input").trigger("change").blur();
+          }
+          cy.wait(300);
+        }
+      });
+    }
+  });
+}
+
 // ─── NAVIGASI & AKSI FORM DASAR ──────────────────────────────────────────────
 
 When("Staf Unit mengakses halaman draft surat {string}", (url) => {
@@ -112,6 +170,10 @@ When("Staf Unit memilih template surat pertama yang tersedia", () => {
 
   // Pastikan unit tujuan terisi jika diperlukan
   selectUnitTujuanIfEmpty();
+  cy.wait(1000);
+
+  // Isi variabel dinamis bawaan template jika ada (Butir 19 AGENTS.md)
+  fillDynamicTemplateFieldsIfAny();
   cy.wait(1000);
 });
 

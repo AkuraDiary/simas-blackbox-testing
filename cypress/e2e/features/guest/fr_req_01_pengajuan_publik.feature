@@ -1,7 +1,7 @@
-Feature: FR-REQ-01 & FR-REQ-03 Pengajuan Surat Publik oleh Tamu (Guest)
+Feature: FR-REQ-01, FR-REQ-02 & FR-REQ-03 Pengajuan Surat Publik oleh Tamu (Guest)
   Sebagai pengguna publik / instansi luar
-  Saya ingin dapat mengajukan surat permohonan mandiri tanpa login akun
-  Agar permohonan surat saya dapat diproses dan saya memperoleh kode pelacakan unik
+  Saya ingin dapat mengajukan surat permohonan mandiri tanpa login akun dan mengunduh draf
+  Agar permohonan surat saya dapat diproses dan saya memperoleh bukti draf serta kode pelacakan unik
 
   Background:
     Given Pengguna membuka halaman pengajuan surat publik "/pengajuan"
@@ -24,6 +24,23 @@ Feature: FR-REQ-01 & FR-REQ-03 Pengajuan Surat Publik oleh Tamu (Guest)
     Then Sistem menampilkan layar sukses pengajuan surat
     And Sistem menampilkan kode pelacakan unik berformat "REQ-"
     And Sistem menyimpan kode pelacakan ke dalam fixture "last_tracking.json"
+
+  @positive @fr-req-02
+  Scenario: TC-FR-REQ-02-A - Pemohon Mengunduh Draf Pratinjau Surat Permohonan (.pdf) pada Layar Ringkasan
+    When Pengguna memilih opsi pembuatan surat "scratch"
+    And Pengguna mengklik tombol wizard "Lanjutkan"
+    And Pengguna mengisi identitas pengirim guest:
+      | nama            | email                   | telp         | instansi       |
+      | Mitra Penguji   | mitra.tester@gmail.com  | 081234567890 | PT Mitra Utama |
+    And Pengguna mengklik tombol wizard "Lanjutkan"
+    And Pengguna mengisi detail isi surat pengajuan:
+      | tipe_surat | unit_tujuan | perihal                    |
+      | PENGAJUAN  | Rektorat    | Permohonan Kerjasama Riset |
+    And Pengguna mengklik tombol wizard "Lanjutkan"
+    And Pengguna berada di langkah lampiran dan mengklik tombol wizard "Lanjutkan"
+    Then Sistem menampilkan bagian draf surat digital dengan tombol unduh draf PDF
+    When Pengguna menekan tombol unduh draf "Download Draft (.pdf)"
+    Then Permintaan unduhan berkas draf PDF berhasil diproses oleh sistem
 
   @negative @fr-req-01
   Scenario: TC-ALT-FR-REQ-01-A - Pengajuan Surat Publik dengan Format Email dan Nomor Telepon Tidak Valid

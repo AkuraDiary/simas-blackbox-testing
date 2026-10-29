@@ -5,9 +5,9 @@
     "passes": 3,
     "pending": 0,
     "failures": 0,
-    "start": "2026-10-28T13:21:14.939Z",
-    "end": "2026-10-28T13:22:05.305Z",
-    "duration": 50366,
+    "start": "2026-10-29T01:36:07.170Z",
+    "end": "2026-10-29T01:36:54.483Z",
+    "duration": 47313,
     "testsRegistered": 3,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "f85a7834-50f9-4d0a-902a-7c14ddef985e",
+      "uuid": "4e83e7dd-11cb-42d2-a89a-4f7dc301bf0a",
       "title": "",
       "fullFile": "cypress/e2e/features/draft/fr_srt_03_asisten_ai.feature",
       "file": "cypress/e2e/features/draft/fr_srt_03_asisten_ai.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "34298e4b-b498-4192-a4bd-af8d9ad1b1e9",
+          "uuid": "08479903-0ac1-4ab9-9b01-d87bc98cafbb",
           "title": "FR-SRT-03 Bantuan AI dalam Pembuatan Draft Surat Naskah Dinas",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "TC-FR-SRT-03-A - Staf menggunakan modal Bantuan AI untuk menyusun draft surat pada mode Scratch",
               "fullTitle": "FR-SRT-03 Bantuan AI dalam Pembuatan Draft Surat Naskah Dinas TC-FR-SRT-03-A - Staf menggunakan modal Bantuan AI untuk menyusun draft surat pada mode Scratch",
               "timedOut": null,
-              "duration": 19670,
+              "duration": 18457,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "",
               "err": {},
-              "uuid": "dafb0efd-4547-40c8-8b87-d1ae6eba50a7",
-              "parentUUID": "34298e4b-b498-4192-a4bd-af8d9ad1b1e9",
+              "uuid": "0235dada-ff24-4d4c-a901-84028ad49cf4",
+              "parentUUID": "08479903-0ac1-4ab9-9b01-d87bc98cafbb",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "TC-ALT-FR-SRT-03-A - Form modal Asisten AI memvalidasi field prompt kebutuhan surat",
               "fullTitle": "FR-SRT-03 Bantuan AI dalam Pembuatan Draft Surat Naskah Dinas TC-ALT-FR-SRT-03-A - Form modal Asisten AI memvalidasi field prompt kebutuhan surat",
               "timedOut": null,
-              "duration": 19234,
+              "duration": 18274,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "",
               "err": {},
-              "uuid": "e88b6ee5-e2eb-494d-bb37-9e55a7226b3f",
-              "parentUUID": "34298e4b-b498-4192-a4bd-af8d9ad1b1e9",
+              "uuid": "9831284e-7f27-4458-a38e-a2561789ce1b",
+              "parentUUID": "08479903-0ac1-4ab9-9b01-d87bc98cafbb",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "TC-TEARDOWN-FR-SRT-03 - Pembersihan draft surat pengujian AI",
               "fullTitle": "FR-SRT-03 Bantuan AI dalam Pembuatan Draft Surat Naskah Dinas TC-TEARDOWN-FR-SRT-03 - Pembersihan draft surat pengujian AI",
               "timedOut": null,
-              "duration": 11297,
+              "duration": 10454,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -83,22 +83,22 @@
               "context": null,
               "code": "",
               "err": {},
-              "uuid": "82cafd48-9bfc-4ba9-ac21-dcd3c24877d9",
-              "parentUUID": "34298e4b-b498-4192-a4bd-af8d9ad1b1e9",
+              "uuid": "9b97b6b0-bf74-4171-ab71-30239d9545a7",
+              "parentUUID": "08479903-0ac1-4ab9-9b01-d87bc98cafbb",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "dafb0efd-4547-40c8-8b87-d1ae6eba50a7",
-            "e88b6ee5-e2eb-494d-bb37-9e55a7226b3f",
-            "82cafd48-9bfc-4ba9-ac21-dcd3c24877d9"
+            "0235dada-ff24-4d4c-a901-84028ad49cf4",
+            "9831284e-7f27-4458-a38e-a2561789ce1b",
+            "9b97b6b0-bf74-4171-ab71-30239d9545a7"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 50201,
+          "duration": 47185,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

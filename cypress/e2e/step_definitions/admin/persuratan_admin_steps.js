@@ -55,7 +55,7 @@ When("Saya mengubah nama kategori {string} menjadi {string} pada modal", (namaLa
 });
 
 When("Saya menghapus kategori {string} pada modal", (namaKategori) => {
-  cy.get(".fi-modal:visible", { timeout: 10000 })
+  cy.contains(".fi-modal:visible", /Kelola Kategori Template|Daftar Kategori/i, { timeout: 10000 })
     .contains("tr", namaKategori)
     .within(() => {
       cy.contains("button", "Hapus").click({ force: true });
@@ -63,7 +63,7 @@ When("Saya menghapus kategori {string} pada modal", (namaKategori) => {
 });
 
 Then("Tombol hapus pada kategori yang sedang digunakan template harus dinonaktifkan", () => {
-  cy.get(".fi-modal:visible", { timeout: 10000 })
+  cy.contains(".fi-modal:visible", /Kelola Kategori Template|Daftar Kategori/i, { timeout: 10000 })
     .find("table tbody tr")
     .filter((idx, tr) => {
       const text = Cypress.$(tr).text();
@@ -77,7 +77,7 @@ Then("Tombol hapus pada kategori yang sedang digunakan template harus dinonaktif
 });
 
 Then("Kategori {string} tidak boleh muncul pada daftar kategori di modal", (namaKategori) => {
-  cy.get(".fi-modal:visible", { timeout: 10000 })
+  cy.contains(".fi-modal:visible", /Kelola Kategori Template|Daftar Kategori/i, { timeout: 10000 })
     .should("not.contain", namaKategori);
 });
 

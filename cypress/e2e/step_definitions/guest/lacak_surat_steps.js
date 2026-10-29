@@ -126,3 +126,13 @@ Then("Sistem menampilkan pesan validasi {string} atau mencegah pencarian", (keyw
     expect(textFound).to.be.true;
   });
 });
+
+// ─── STEP DEFINITIONS UNDUH TERBITAN (FR-REQ-05) ─────────────────────────────
+
+Then("Sistem tidak menampilkan kartu hasil pengunduhan dokumen terbitan", () => {
+  cy.contains("h3", /Balasan Surat Sudah Terbit!/i).should("not.exist");
+  cy.get("body").then(($body) => {
+    const $btn = $body.find('button:contains("Unduh Dokumen")');
+    expect($btn.length).to.equal(0);
+  });
+});

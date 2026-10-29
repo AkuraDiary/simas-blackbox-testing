@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2026-10-28T13:31:43.029Z",
-    "end": "2026-10-28T13:32:15.658Z",
-    "duration": 32629,
+    "start": "2026-10-29T01:46:10.294Z",
+    "end": "2026-10-29T01:46:44.089Z",
+    "duration": 33795,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "24cced8e-f566-49be-8c49-50c9e73b24c4",
+      "uuid": "0ea8beb3-a129-436f-82f4-c1f8509a8f5b",
       "title": "",
       "fullFile": "cypress/e2e/features/notifikasi/fr_notif_01_web.feature",
       "file": "cypress/e2e/features/notifikasi/fr_notif_01_web.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "94cda0eb-70a8-4df4-929f-caa5803fa470",
+          "uuid": "ade959f3-e042-4db8-a13a-e8980dac3ec8",
           "title": "FR-NOTIF-01 Notifikasi Web Sistem Persuratan",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "TC-FR-NOTIF-01-A - Staf Unit Memeriksa Notifikasi Web Surat Masuk dan Menandai Sudah Dibaca",
               "fullTitle": "FR-NOTIF-01 Notifikasi Web Sistem Persuratan TC-FR-NOTIF-01-A - Staf Unit Memeriksa Notifikasi Web Surat Masuk dan Menandai Sudah Dibaca",
               "timedOut": null,
-              "duration": 19130,
+              "duration": 20965,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "",
               "err": {},
-              "uuid": "322c2014-f7f0-4300-a575-d8006010c4d1",
-              "parentUUID": "94cda0eb-70a8-4df4-929f-caa5803fa470",
+              "uuid": "65418b6a-bb79-479e-bb8b-34c9754ebfba",
+              "parentUUID": "ade959f3-e042-4db8-a13a-e8980dac3ec8",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "TC-ALT-FR-NOTIF-01-A - Staf Unit Menonaktifkan Preferensi Notifikasi Web Pop-up melalui Halaman Profil",
               "fullTitle": "FR-NOTIF-01 Notifikasi Web Sistem Persuratan TC-ALT-FR-NOTIF-01-A - Staf Unit Menonaktifkan Preferensi Notifikasi Web Pop-up melalui Halaman Profil",
               "timedOut": null,
-              "duration": 13398,
+              "duration": 12751,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -65,21 +65,21 @@
               "context": null,
               "code": "",
               "err": {},
-              "uuid": "cbcffb7a-941e-4155-a6ca-4c8a5c1badcc",
-              "parentUUID": "94cda0eb-70a8-4df4-929f-caa5803fa470",
+              "uuid": "8ae72633-76b3-461d-9265-aa684d61cacf",
+              "parentUUID": "ade959f3-e042-4db8-a13a-e8980dac3ec8",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "322c2014-f7f0-4300-a575-d8006010c4d1",
-            "cbcffb7a-941e-4155-a6ca-4c8a5c1badcc"
+            "65418b6a-bb79-479e-bb8b-34c9754ebfba",
+            "8ae72633-76b3-461d-9265-aa684d61cacf"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 32528,
+          "duration": 33716,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

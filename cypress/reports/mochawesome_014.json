@@ -5,9 +5,9 @@
     "passes": 3,
     "pending": 0,
     "failures": 0,
-    "start": "2026-10-28T13:19:47.762Z",
-    "end": "2026-10-28T13:21:12.795Z",
-    "duration": 85033,
+    "start": "2026-10-29T01:34:39.183Z",
+    "end": "2026-10-29T01:36:05.316Z",
+    "duration": 86133,
     "testsRegistered": 3,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "b150f313-5258-44d2-8c47-36070ac9ec0a",
+      "uuid": "348a2733-32b7-4335-8ea4-207c05edf0c1",
       "title": "",
       "fullFile": "cypress/e2e/features/draft/fr_srt_02_editor_naskah.feature",
       "file": "cypress/e2e/features/draft/fr_srt_02_editor_naskah.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "197e9860-3a53-415f-8697-4687c67735f2",
+          "uuid": "9807d163-f8d8-4987-b559-0589241720b5",
           "title": "FR-SRT-02 Mengedit Draft Surat Naskah Dinas Elektronik",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "TC-FR-SRT-02-A - Staf mengedit data dan konten draft surat yang tersimpan",
               "fullTitle": "FR-SRT-02 Mengedit Draft Surat Naskah Dinas Elektronik TC-FR-SRT-02-A - Staf mengedit data dan konten draft surat yang tersimpan",
               "timedOut": null,
-              "duration": 43829,
+              "duration": 43491,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "",
               "err": {},
-              "uuid": "8662c9fc-0eda-4912-80c7-a300b89e1296",
-              "parentUUID": "197e9860-3a53-415f-8697-4687c67735f2",
+              "uuid": "a02f7a38-6fba-4e49-aec5-5ead2f3c2398",
+              "parentUUID": "9807d163-f8d8-4987-b559-0589241720b5",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "TC-ALT-FR-SRT-02-A - Pengeditan draft surat gagal saat Perihal dikosongkan",
               "fullTitle": "FR-SRT-02 Mengedit Draft Surat Naskah Dinas Elektronik TC-ALT-FR-SRT-02-A - Pengeditan draft surat gagal saat Perihal dikosongkan",
               "timedOut": null,
-              "duration": 16827,
+              "duration": 17454,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "",
               "err": {},
-              "uuid": "8f4d2671-fe93-44aa-86c8-02cb5d742141",
-              "parentUUID": "197e9860-3a53-415f-8697-4687c67735f2",
+              "uuid": "da2a236f-d71b-43de-8e6e-6237cbe49ed2",
+              "parentUUID": "9807d163-f8d8-4987-b559-0589241720b5",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "TC-TEARDOWN-FR-SRT-02 - Pembersihan draft surat pengujian edit",
               "fullTitle": "FR-SRT-02 Mengedit Draft Surat Naskah Dinas Elektronik TC-TEARDOWN-FR-SRT-02 - Pembersihan draft surat pengujian edit",
               "timedOut": null,
-              "duration": 24244,
+              "duration": 25049,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -83,22 +83,22 @@
               "context": null,
               "code": "",
               "err": {},
-              "uuid": "f2ea9ce7-4311-4fbb-b311-944c89f7a094",
-              "parentUUID": "197e9860-3a53-415f-8697-4687c67735f2",
+              "uuid": "e4515cec-9ddf-4d67-a194-7a412be7b54f",
+              "parentUUID": "9807d163-f8d8-4987-b559-0589241720b5",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "8662c9fc-0eda-4912-80c7-a300b89e1296",
-            "8f4d2671-fe93-44aa-86c8-02cb5d742141",
-            "f2ea9ce7-4311-4fbb-b311-944c89f7a094"
+            "a02f7a38-6fba-4e49-aec5-5ead2f3c2398",
+            "da2a236f-d71b-43de-8e6e-6237cbe49ed2",
+            "e4515cec-9ddf-4d67-a194-7a412be7b54f"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 84900,
+          "duration": 85994,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-10-28T13:32:47.107Z",
-    "end": "2026-10-28T13:32:47.558Z",
-    "duration": 451,
+    "start": "2026-10-29T01:47:13.989Z",
+    "end": "2026-10-29T01:47:14.280Z",
+    "duration": 291,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "f624a532-83db-4999-b577-4339d62dbf0c",
+      "uuid": "7920d254-1efc-4ad5-a7a9-93dd69acf066",
       "title": "",
       "fullFile": "cypress/e2e/features/notifikasi/fr_notif_03_wa_gateway.feature",
       "file": "cypress/e2e/features/notifikasi/fr_notif_03_wa_gateway.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "9d155677-a042-4733-a882-bf773ff6c342",
+          "uuid": "553ac02e-e040-4173-9c7e-7c437a73c63b",
           "title": "FR-NOTIF-03 Integrasi Fonnte WhatsApp Gateway API",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "TC-FR-NOTIF-03-A - Verifikasi Konfigurasi Gateway Fonnte dan Pengiriman Pesan Notifikasi Uji",
               "fullTitle": "FR-NOTIF-03 Integrasi Fonnte WhatsApp Gateway API TC-FR-NOTIF-03-A - Verifikasi Konfigurasi Gateway Fonnte dan Pengiriman Pesan Notifikasi Uji",
               "timedOut": null,
-              "duration": 424,
+              "duration": 262,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "",
               "err": {},
-              "uuid": "22e7384c-7580-421e-8b14-5be177fd60f8",
-              "parentUUID": "9d155677-a042-4733-a882-bf773ff6c342",
+              "uuid": "d691d5c8-b00c-4a6d-926f-374db216b28c",
+              "parentUUID": "553ac02e-e040-4173-9c7e-7c437a73c63b",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "22e7384c-7580-421e-8b14-5be177fd60f8"
+            "d691d5c8-b00c-4a6d-926f-374db216b28c"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 424,
+          "duration": 262,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

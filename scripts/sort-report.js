@@ -52,7 +52,10 @@ const FILE_ORDER = [
   // 7. Portal Mahasiswa (No. 68, 78 - 80)
   'cypress/e2e/features/mahasiswa/fr_req_06_portal_mahasiswa.feature',
 
-  // 8. Pengarsipan Surat & Kategori Arsip (No. 119 - 126)
+  // 8. Pengelolaan Nomor Surat (FR-NBR-01 & FR-NBR-02)
+  'cypress/e2e/features/penomoran/fr_nbr_01_02_penomoran_surat.feature',
+
+  // 9. Pengarsipan Surat & Kategori Arsip (No. 119 - 126)
   'cypress/e2e/features/arsip/fr_arc_01_arsipkan_surat.feature',
   'cypress/e2e/features/arsip/fr_arc_02_dan_03_arsip_surat.feature',
   'cypress/e2e/features/arsip/fr_arc_04_kategori_arsip.feature',

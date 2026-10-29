@@ -114,22 +114,29 @@ When("Pengguna mengisi detail isi surat pengajuan:", (dataTable) => {
   // Isi TinyEditor / Content Scratch
   cy.wait(1000);
   cy.window().then((win) => {
-    if (win.tinymce && win.tinymce.activeEditor) {
-      win.tinymce.activeEditor.setContent("<p>Isi surat permohonan resmi otomatis oleh Cypress.</p>");
-    } else {
-      cy.get("body").then(($body) => {
-        if ($body.find('iframe[id*="content_scratch"]').length > 0) {
-          cy.get('iframe[id*="content_scratch"]')
-            .its("0.contentDocument.body")
-            .should("not.be.empty")
-            .then(cy.wrap)
-            .clear({ force: true })
-            .type("Isi surat pengujian otomatis via TinyEditor iframe", { force: true });
-        } else if ($body.find('textarea[id*="content_scratch"]').length > 0) {
-          cy.get('textarea[id*="content_scratch"]').type("Isi surat pengujian otomatis", { force: true });
-        }
-      });
+    const hasEditors = win.tinymce && win.tinymce.editors && Object.keys(win.tinymce.editors).length > 0;
+    if (win.tinymce && (win.tinymce.activeEditor || hasEditors)) {
+      const editor = win.tinymce.activeEditor || (hasEditors ? Object.values(win.tinymce.editors)[0] : null);
+      if (editor) {
+        editor.setContent("<p>Isi surat permohonan resmi otomatis oleh Cypress.</p>");
+        editor.fire("change");
+        editor.save();
+        return;
+      }
     }
+
+    cy.get("body").then(($body) => {
+      if ($body.find('iframe[id*="content_scratch"]').length > 0) {
+        cy.get('iframe[id*="content_scratch"]')
+          .its("0.contentDocument.body")
+          .should("not.be.empty")
+          .then(cy.wrap)
+          .clear({ force: true })
+          .type("Isi surat pengujian otomatis via TinyEditor iframe", { force: true });
+      } else if ($body.find('textarea[id*="content_scratch"]').length > 0) {
+        cy.get('textarea[id*="content_scratch"]').type("Isi surat pengujian otomatis", { force: true });
+      }
+    });
   });
 });
 
@@ -203,4 +210,25 @@ Then("Form pengajuan tetap berada pada langkah data pengirim", () => {
 Then("Sistem mencegah navigasi ke langkah berikutnya", () => {
   // Form tidak berpindah ke step 3 (Isi Surat)
   cy.get('input[id*="pengirim_nama"]').should("be.visible");
+});
+
+// ─── STEP DEFINITIONS UNDUH DRAF (FR-REQ-02) ─────────────────────────────────
+
+Then("Sistem menampilkan bagian draf surat digital dengan tombol unduh draf PDF", () => {
+  cy.contains("h4", /Draf Surat Digital/i, { timeout: 15000 }).should("be.visible");
+  cy.contains("button", /Download Draft/i, { timeout: 10000 })
+    .should("be.visible")
+    .and("not.be.disabled");
+});
+
+When("Pengguna menekan tombol unduh draf {string}", (buttonText) => {
+  cy.contains("button", /Download Draft/i, { timeout: 10000 })
+    .first()
+    .click({ force: true });
+});
+
+Then("Permintaan unduhan berkas draf PDF berhasil diproses oleh sistem", () => {
+  cy.wait(1500);
+  cy.get(".fi-fo-field-wrp-error-message, .text-danger-600, .fi-notification-danger").should("not.exist");
+  cy.contains("h4", /Draf Surat Digital/i).should("be.visible");
 });

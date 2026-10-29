@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-10-29T01:49:37.235Z",
+    "end": "2026-10-29T01:50:17.312Z",
+    "duration": 40077,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b23e07c2-bb54-47b0-89ed-dd905b1dad44",
+      "title": "",
+      "fullFile": "cypress/e2e/features/staf/fr_srt_08_detail_surat.feature",
+      "file": "cypress/e2e/features/staf/fr_srt_08_detail_surat.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "430f6c99-20c1-41ad-99f5-8673f0ca58a2",
+          "title": "FR-SRT-08 & FR-PRC-02 Melihat Lembar Detail Surat Masuk dan Pengajuan",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-FR-SRT-08-A - Staf Unit Membuka dan Memeriksa Lembar Detail Surat Masuk",
+              "fullTitle": "FR-SRT-08 & FR-PRC-02 Melihat Lembar Detail Surat Masuk dan Pengajuan TC-FR-SRT-08-A - Staf Unit Membuka dan Memeriksa Lembar Detail Surat Masuk",
+              "timedOut": null,
+              "duration": 13780,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "7b3a84e6-8a6d-4037-b8e4-16b81d94f04e",
+              "parentUUID": "430f6c99-20c1-41ad-99f5-8673f0ca58a2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-SRT-08-A - Akses Detail Surat dengan ID Surat Fiktif Menghasilkan Error 404",
+              "fullTitle": "FR-SRT-08 & FR-PRC-02 Melihat Lembar Detail Surat Masuk dan Pengajuan TC-ALT-FR-SRT-08-A - Akses Detail Surat dengan ID Surat Fiktif Menghasilkan Error 404",
+              "timedOut": null,
+              "duration": 8129,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "d34a5ff5-3f9f-401e-9e0d-11752f1eacde",
+              "parentUUID": "430f6c99-20c1-41ad-99f5-8673f0ca58a2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7b3a84e6-8a6d-4037-b8e4-16b81d94f04e",
+            "d34a5ff5-3f9f-401e-9e0d-11752f1eacde"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 21909,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}
