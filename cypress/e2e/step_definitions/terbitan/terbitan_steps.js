@@ -91,12 +91,19 @@ When("Staf Unit mengisi perihal surat terbitan dengan timestamp dinamis {string}
     .should("be.visible")
     .select("12", { force: true })
     .trigger("change");
-  cy.wait(1500);
+  cy.wait(2500);
 
   // 3. Isi semua input perihal dan variabel dinamis template
   cy.get('input[id*="perihal"], input[name*="perihal"]').each(($el) => {
-    cy.wrap($el).clear({ force: true }).type(dynamicPerihal, { force: true }).trigger("input").trigger("change");
+    cy.wrap($el)
+      .clear({ force: true })
+      .type(dynamicPerihal, { force: true })
+      .trigger("input")
+      .trigger("change")
+      .blur();
   });
+  cy.wait(500);
+  cy.get('input[id*="perihal"]').first().should("have.value", dynamicPerihal);
 });
 
 When("Staf Unit mengklik tombol form {string}", (buttonText) => {
@@ -213,7 +220,8 @@ When("Staf Unit membuka draf surat terbitan yang sedang diproses review", () => 
     cy.get(".fi-modal-window:visible, [role='dialog']:visible", { timeout: 10000 }).within(() => {
       cy.contains("button, .fi-btn", /Submit|Kirim/i).first().click({ force: true });
     });
-    cy.wait(2500);
+    cy.url({ timeout: 20000 }).should("include", "scope=keluar");
+    cy.contains(".fi-no-notification, .fi-notification", /berhasil dikirim|berhasil/i, { timeout: 15000 }).should("be.visible");
   }
 
   if (id) {

@@ -21,22 +21,141 @@ beforeEach(() => {
 When("Staf Unit mengklik salah satu baris surat masuk pengajuan pada tabel", () => {
   cy.get(".fi-ta-content, table", { timeout: 15000 }).should("be.visible");
   cy.wait(800);
-  cy.get("body").then(($body) => {
-    // Cari baris surat pengajuan yang berstatus DIPROSES, BARU, atau TERKIRIM
-    const $rows = $body.find("table.fi-ta-table tbody tr.fi-ta-row, .fi-ta-record");
-    const matchingRows = [];
-    $rows.each((_, row) => {
-      const text = Cypress.$(row).text();
-      if (text.includes("DIPROSES") || text.includes("BARU") || text.includes("TERKIRIM")) {
-        matchingRows.push(Cypress.$(row));
-      }
-    });
-    const targetIdx = pengajuanPairIndex < matchingRows.length ? pengajuanPairIndex : 0;
-    const $targetRow = matchingRows[targetIdx] || $rows.first();
-    cy.wrap($targetRow).find("a[href*='/internal/surat-masuk/']").first().click({ force: true });
-  });
+  cy.get("table.fi-ta-table tbody tr.fi-ta-row, .fi-ta-record").first().find("a[href*='/internal/surat-masuk/']").first().click({ force: true });
   cy.url({ timeout: 15000 }).should("include", "/internal/surat-masuk/");
   cy.get(".fi-header-heading, .fi-page-header, main", { timeout: 15000 }).should("exist");
+
+  // Periksa apakah surat yang dibuka memiliki tombol aksi proses/kembalikan yang aktif untuk Rektorat
+  cy.get("body").then(($body) => {
+    const hasActions = $body.find("button:contains('Proses Surat'), button:contains('Kembalikan / Tolak')").length > 0;
+    if (!hasActions) {
+      // Jika surat yang dibuka tidak memiliki tombol aksi pending, ajukan surat baru ke Rektorat via /pengajuan
+      cy.visit("/pengajuan");
+      cy.get("body", { timeout: 15000 }).should("be.visible");
+
+      // Step 1: Template (Scratch)
+      cy.contains(/Buat Surat Tanpa Template/i, { timeout: 10000 })
+        .scrollIntoView()
+        .should("be.visible")
+        .click({ force: true });
+      cy.wait(1200);
+      cy.get("button").contains(/^\s*Lanjutkan\s*$/i).first().should("be.visible").click({ force: true });
+      cy.wait(1200);
+
+      // Step 2: Data Pengirim
+      cy.get('input[id*="pengirim_nama"], input[wire\\:model*="pengirim_nama"]')
+        .first()
+        .clear({ force: true })
+        .type("Mitra Penguji QA", { force: true });
+
+      cy.get('input[id*="pengirim_email"], input[wire\\:model*="pengirim_email"]')
+        .first()
+        .clear({ force: true })
+        .type("mitra.tester@gmail.com", { force: true });
+
+      cy.get('input[id*="pengirim_telp"], input[wire\\:model*="pengirim_telp"]')
+        .first()
+        .clear({ force: true })
+        .type("081234567890", { force: true });
+
+      cy.get('input[id*="pengirim_instansi"], input[wire\\:model*="pengirim_instansi"]')
+        .first()
+        .clear({ force: true })
+        .type("PT Mitra Riset QA", { force: true });
+
+      cy.get("button").contains(/^\s*Lanjutkan\s*$/i).first().click({ force: true });
+      cy.wait(1200);
+
+      // Step 3: Isi Surat
+      cy.get("body").then(($b3) => {
+        if ($b3.find('select[id*="unit_tujuan"], select[wire\\:model*="unit_tujuan"]').length > 0) {
+          cy.get('select[id*="unit_tujuan"], select[wire\\:model*="unit_tujuan"]')
+            .first()
+            .select(1, { force: true });
+        } else {
+          cy.contains("label", /Unit Tujuan/i)
+            .parent()
+            .find("select, input, button")
+            .first()
+            .then(($el) => {
+              if ($el.is("select")) {
+                cy.wrap($el).select(1, { force: true });
+              } else {
+                cy.wrap($el).click({ force: true });
+                cy.wait(500);
+                cy.get("li[role='option']").first().click({ force: true });
+              }
+            });
+        }
+      });
+
+      const perihalUnik = `Permohonan Riset QA - ${Date.now()}`;
+      cy.get('input[id*="perihal"], input[wire\\:model*="perihal"]')
+        .first()
+        .clear({ force: true })
+        .type(perihalUnik, { force: true });
+
+      cy.wait(1000);
+      cy.window().then((win) => {
+        const hasEditors = win.tinymce && win.tinymce.editors && Object.keys(win.tinymce.editors).length > 0;
+        if (win.tinymce && (win.tinymce.activeEditor || hasEditors)) {
+          const editor = win.tinymce.activeEditor || (hasEditors ? Object.values(win.tinymce.editors)[0] : null);
+          if (editor) {
+            editor.setContent("<p>Isi permohonan resmi pengujian QA otomatis oleh Cypress.</p>");
+            editor.fire("change");
+            editor.save();
+            return;
+          }
+        }
+        cy.get("body").then(($bTiny) => {
+          if ($bTiny.find('iframe[id*="content_scratch"]').length > 0) {
+            cy.get('iframe[id*="content_scratch"]')
+              .its("0.contentDocument.body")
+              .should("not.be.empty")
+              .then(cy.wrap)
+              .clear({ force: true })
+              .type("Isi permohonan resmi pengujian QA otomatis", { force: true });
+          } else if ($bTiny.find('textarea[id*="content_scratch"]').length > 0) {
+            cy.get('textarea[id*="content_scratch"]').type("Isi permohonan resmi pengujian QA otomatis", { force: true });
+          }
+        });
+      });
+
+      cy.get("button").contains(/^\s*Lanjutkan\s*$/i).first().click({ force: true });
+      cy.wait(1200);
+
+      // Step 4: Lampiran
+      cy.get("button").contains(/^\s*Lanjutkan\s*$/i).first().click({ force: true });
+      cy.wait(1200);
+
+      // Step 5: Konfirmasi
+      cy.get('input[type="checkbox"][id*="konfirmasi"], input[type="checkbox"]')
+        .last()
+        .check({ force: true });
+      cy.get("button[type='submit']")
+        .contains(/Kirim Sekarang|Kirim/i)
+        .first()
+        .click({ force: true });
+      cy.contains(/Surat Berhasil Dikirim/i, { timeout: 15000 }).should("be.visible");
+
+      // Login kembali sebagai pakrektor dan buka surat yang baru dibuat di tab Pengajuan
+      cy.visit("/internal/login");
+      cy.get("body").then(($b) => {
+        if ($b.find("input[id*='username']").length > 0) {
+          cy.get("input[id*='username']").first().clear({ force: true }).type("pakrektor", { force: true });
+          cy.get("input[type='password']").first().clear({ force: true }).type("password", { force: true });
+          cy.get("button[type='submit']").first().click({ force: true });
+          cy.url({ timeout: 15000 }).should("include", "/internal");
+        }
+      });
+      cy.visit("/internal/surat-masuk?activeTab=persetujuan");
+      cy.get(".fi-ta-content, table", { timeout: 15000 }).should("be.visible");
+      cy.wait(1200);
+      cy.get("table.fi-ta-table tbody tr.fi-ta-row, .fi-ta-record").first().find("a[href*='/internal/surat-masuk/']").first().click({ force: true });
+      cy.url({ timeout: 15000 }).should("include", "/internal/surat-masuk/");
+      cy.get(".fi-header-heading, .fi-page-header, main", { timeout: 15000 }).should("exist");
+    }
+  });
 });
 
 Then("Halaman detail surat menampilkan tipe surat pengajuan", () => {

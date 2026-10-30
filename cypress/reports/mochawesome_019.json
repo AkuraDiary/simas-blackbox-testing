@@ -5,9 +5,9 @@
     "passes": 3,
     "pending": 0,
     "failures": 0,
-    "start": "2026-10-29T23:12:01.578Z",
-    "end": "2026-10-29T23:13:24.150Z",
-    "duration": 82572,
+    "start": "2026-10-30T01:41:55.896Z",
+    "end": "2026-10-30T01:43:16.346Z",
+    "duration": 80450,
     "testsRegistered": 3,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "a89eba2b-0391-4ef1-a736-c8a2ec572ee6",
+      "uuid": "00b07228-8db3-44b6-8727-d262b45825fd",
       "title": "",
       "fullFile": "cypress/e2e/features/nde/fr_srt_04_pengiriman_surat.feature",
       "file": "cypress/e2e/features/nde/fr_srt_04_pengiriman_surat.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "5abfd20d-dce0-4ef9-9049-7570914af4c8",
+          "uuid": "fda416ce-6ec0-4412-9a66-d111055e8dfd",
           "title": "FR-SRT-04 Mengirim dan Meneruskan Surat Dinas Elektronik",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "TC-FR-SRT-04-A - Staf mengirimkan surat dinas langsung ke unit tujuan",
               "fullTitle": "FR-SRT-04 Mengirim dan Meneruskan Surat Dinas Elektronik TC-FR-SRT-04-A - Staf mengirimkan surat dinas langsung ke unit tujuan",
               "timedOut": null,
-              "duration": 32296,
+              "duration": 32467,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "",
               "err": {},
-              "uuid": "c45c6c06-0706-46c1-b7fa-4bb46cacccd0",
-              "parentUUID": "5abfd20d-dce0-4ef9-9049-7570914af4c8",
+              "uuid": "f3e49e88-8fe0-4931-af94-2820c3f6fa94",
+              "parentUUID": "fda416ce-6ec0-4412-9a66-d111055e8dfd",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "TC-ALT-FR-SRT-04-A - Pengiriman surat ditolak jika unit tujuan dan alur persetujuan kosong",
               "fullTitle": "FR-SRT-04 Mengirim dan Meneruskan Surat Dinas Elektronik TC-ALT-FR-SRT-04-A - Pengiriman surat ditolak jika unit tujuan dan alur persetujuan kosong",
               "timedOut": null,
-              "duration": 19620,
+              "duration": 17972,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "",
               "err": {},
-              "uuid": "33a447e8-3adb-45fa-af28-467fba06054c",
-              "parentUUID": "5abfd20d-dce0-4ef9-9049-7570914af4c8",
+              "uuid": "a56b261d-e3f7-46be-8be1-97be47722af4",
+              "parentUUID": "fda416ce-6ec0-4412-9a66-d111055e8dfd",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "TC-FR-SRT-04-B - Pengirim mengajukan surat dinas melalui Jalur Persetujuan Khusus berjenjang",
               "fullTitle": "FR-SRT-04 Mengirim dan Meneruskan Surat Dinas Elektronik TC-FR-SRT-04-B - Pengirim mengajukan surat dinas melalui Jalur Persetujuan Khusus berjenjang",
               "timedOut": null,
-              "duration": 30513,
+              "duration": 29828,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -83,22 +83,22 @@
               "context": null,
               "code": "",
               "err": {},
-              "uuid": "e9349fbf-b729-4c40-a206-e05a659639ce",
-              "parentUUID": "5abfd20d-dce0-4ef9-9049-7570914af4c8",
+              "uuid": "008a20ba-e42c-4c97-856f-18de3fc638c1",
+              "parentUUID": "fda416ce-6ec0-4412-9a66-d111055e8dfd",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "c45c6c06-0706-46c1-b7fa-4bb46cacccd0",
-            "33a447e8-3adb-45fa-af28-467fba06054c",
-            "e9349fbf-b729-4c40-a206-e05a659639ce"
+            "f3e49e88-8fe0-4931-af94-2820c3f6fa94",
+            "a56b261d-e3f7-46be-8be1-97be47722af4",
+            "008a20ba-e42c-4c97-856f-18de3fc638c1"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 82429,
+          "duration": 80267,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
