@@ -1,0 +1,182 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-10-29T23:35:24.242Z",
+    "end": "2026-10-29T23:37:01.428Z",
+    "duration": 97186,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "aea06ceb-830d-49b1-89ed-abee63d9a98e",
+      "title": "",
+      "fullFile": "cypress/e2e/features/penomoran/fr_nbr_01_02_penomoran_surat.feature",
+      "file": "cypress/e2e/features/penomoran/fr_nbr_01_02_penomoran_surat.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c5e321c9-59dc-4489-8d8f-ac4782928cc2",
+          "title": "FR-NBR-01 & FR-NBR-02 Pengelolaan Nomor Surat dan Pengaturan Nomor Backdate",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-FR-NBR-01-A - Menetapkan Nomor Surat Otomatis Berdasarkan Format Unit Aktif",
+              "fullTitle": "FR-NBR-01 & FR-NBR-02 Pengelolaan Nomor Surat dan Pengaturan Nomor Backdate TC-FR-NBR-01-A - Menetapkan Nomor Surat Otomatis Berdasarkan Format Unit Aktif",
+              "timedOut": null,
+              "duration": 23546,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "86af1e15-bab4-43a3-b5c0-3c1f9aa31d6a",
+              "parentUUID": "c5e321c9-59dc-4489-8d8f-ac4782928cc2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-NBR-01-B - Menetapkan Nomor Surat Kustom atau Sisipan Manual Tanpa Menaikkan Counter",
+              "fullTitle": "FR-NBR-01 & FR-NBR-02 Pengelolaan Nomor Surat dan Pengaturan Nomor Backdate TC-FR-NBR-01-B - Menetapkan Nomor Surat Kustom atau Sisipan Manual Tanpa Menaikkan Counter",
+              "timedOut": null,
+              "duration": 20471,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "91be73f4-6cea-4ce2-a2e6-0e4f0ec97c4d",
+              "parentUUID": "c5e321c9-59dc-4489-8d8f-ac4782928cc2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-NBR-01-A - Validasi Gagal Submit Saat Field Wajib Nomor Surat Dikosongkan",
+              "fullTitle": "FR-NBR-01 & FR-NBR-02 Pengelolaan Nomor Surat dan Pengaturan Nomor Backdate TC-ALT-FR-NBR-01-A - Validasi Gagal Submit Saat Field Wajib Nomor Surat Dikosongkan",
+              "timedOut": null,
+              "duration": 15151,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "f7a09aba-3a56-408e-ba2f-e1c0b3d6961f",
+              "parentUUID": "c5e321c9-59dc-4489-8d8f-ac4782928cc2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-NBR-02-A - Menetapkan Nomor Surat Bertanggal Mundur dengan Alasan Audit Valid",
+              "fullTitle": "FR-NBR-01 & FR-NBR-02 Pengelolaan Nomor Surat dan Pengaturan Nomor Backdate TC-FR-NBR-02-A - Menetapkan Nomor Surat Bertanggal Mundur dengan Alasan Audit Valid",
+              "timedOut": null,
+              "duration": 19996,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "22bc1dc3-5458-4003-935a-460b7f592302",
+              "parentUUID": "c5e321c9-59dc-4489-8d8f-ac4782928cc2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-NBR-02-A - Validasi Mandatory Alasan Backdate Saat Memilih Tanggal Mundur",
+              "fullTitle": "FR-NBR-01 & FR-NBR-02 Pengelolaan Nomor Surat dan Pengaturan Nomor Backdate TC-ALT-FR-NBR-02-A - Validasi Mandatory Alasan Backdate Saat Memilih Tanggal Mundur",
+              "timedOut": null,
+              "duration": 17763,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "b11e3b9f-b975-4a0c-84bc-b7aa1a28f8aa",
+              "parentUUID": "c5e321c9-59dc-4489-8d8f-ac4782928cc2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "86af1e15-bab4-43a3-b5c0-3c1f9aa31d6a",
+            "91be73f4-6cea-4ce2-a2e6-0e4f0ec97c4d",
+            "f7a09aba-3a56-408e-ba2f-e1c0b3d6961f",
+            "22bc1dc3-5458-4003-935a-460b7f592302",
+            "b11e3b9f-b975-4a0c-84bc-b7aa1a28f8aa"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 96927,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

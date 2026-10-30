@@ -1,0 +1,302 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 10,
+    "passes": 4,
+    "pending": 0,
+    "failures": 6,
+    "start": "2026-10-29T23:41:43.732Z",
+    "end": "2026-10-29T23:49:59.962Z",
+    "duration": 496230,
+    "testsRegistered": 10,
+    "passPercent": 40,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "08185104-7a43-4f75-9f02-36aed11bf96a",
+      "title": "",
+      "fullFile": "cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature",
+      "file": "cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "98db8c1d-c40d-4b9f-b76d-95fafbc330bc",
+          "title": "FR-PRC-04, FR-PRC-05 & FR-PRC-06 Alur Penerusan, Persetujuan, Pengembalian, dan Penyelesaian Pengajuan",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-ALT-FR-PRC-04-A - Validasi Penolakan Saat Unit Tujuan Penerusan Dikosongkan",
+              "fullTitle": "FR-PRC-04, FR-PRC-05 & FR-PRC-06 Alur Penerusan, Persetujuan, Pengembalian, dan Penyelesaian Pengajuan TC-ALT-FR-PRC-04-A - Validasi Penolakan Saat Unit Tujuan Penerusan Dikosongkan",
+              "timedOut": null,
+              "duration": 17673,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "b664aab6-adea-48d8-800d-3d24fc650261",
+              "parentUUID": "98db8c1d-c40d-4b9f-b76d-95fafbc330bc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-PRC-04-A - Staf Unit Meneruskan Surat Pengajuan ke Unit Kerja Lain",
+              "fullTitle": "FR-PRC-04, FR-PRC-05 & FR-PRC-06 Alur Penerusan, Persetujuan, Pengembalian, dan Penyelesaian Pengajuan TC-FR-PRC-04-A - Staf Unit Meneruskan Surat Pengajuan ke Unit Kerja Lain",
+              "timedOut": null,
+              "duration": 21014,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "735a2c2a-e0d9-4789-953e-60c8a088c21e",
+              "parentUUID": "98db8c1d-c40d-4b9f-b76d-95fafbc330bc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-PRC-05-REVERSE-A - Validasi Mandatory Catatan Alasan Saat Mengembalikan Pengajuan",
+              "fullTitle": "FR-PRC-04, FR-PRC-05 & FR-PRC-06 Alur Penerusan, Persetujuan, Pengembalian, dan Penyelesaian Pengajuan TC-ALT-FR-PRC-05-REVERSE-A - Validasi Mandatory Catatan Alasan Saat Mengembalikan Pengajuan",
+              "timedOut": null,
+              "duration": 22391,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find content: 'Kembalikan / Tolak' within the selector: 'button' but never did.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find content: 'Kembalikan / Tolak' within the selector: 'button' but never did.\n    at openDropdown2 (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:13938:64)\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:14007:9)\n    at Registry.runStepDefinition (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:9368:48)\n    at Object.fn (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:12371:42)\n    at runStepWithLogGroup (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:11320:29)\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:12364:60)\n    at getRet (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121346:20)\n    at tryCatcher (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:1780:23)\n    at Promise.attempt.Promise.try (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:4288:29)",
+                "diff": null
+              },
+              "uuid": "7ed1d03c-acae-486d-a0fe-9c468f357eba",
+              "parentUUID": "98db8c1d-c40d-4b9f-b76d-95fafbc330bc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-PRC-05-REVERSE-A - Pejabat Mengembalikan Surat Pengajuan ke Langkah Sebelumnya",
+              "fullTitle": "FR-PRC-04, FR-PRC-05 & FR-PRC-06 Alur Penerusan, Persetujuan, Pengembalian, dan Penyelesaian Pengajuan TC-FR-PRC-05-REVERSE-A - Pejabat Mengembalikan Surat Pengajuan ke Langkah Sebelumnya",
+              "timedOut": null,
+              "duration": 22515,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find content: 'Kembalikan / Tolak' within the selector: 'button' but never did.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find content: 'Kembalikan / Tolak' within the selector: 'button' but never did.\n    at openDropdown2 (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:13938:64)\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:14007:9)\n    at Registry.runStepDefinition (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:9368:48)\n    at Object.fn (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:12371:42)\n    at runStepWithLogGroup (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:11320:29)\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:12364:60)\n    at getRet (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121346:20)\n    at tryCatcher (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:1780:23)\n    at Promise.attempt.Promise.try (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:4288:29)",
+                "diff": null
+              },
+              "uuid": "6ed95367-a158-44e0-8eed-fa8bea335e72",
+              "parentUUID": "98db8c1d-c40d-4b9f-b76d-95fafbc330bc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-PRC-05-REVISE-A - Validasi Mandatory Alasan Saat Melakukan Revisi Total Pengajuan",
+              "fullTitle": "FR-PRC-04, FR-PRC-05 & FR-PRC-06 Alur Penerusan, Persetujuan, Pengembalian, dan Penyelesaian Pengajuan TC-ALT-FR-PRC-05-REVISE-A - Validasi Mandatory Alasan Saat Melakukan Revisi Total Pengajuan",
+              "timedOut": null,
+              "duration": 23162,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find content: 'Kembalikan / Tolak' within the selector: 'button' but never did.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find content: 'Kembalikan / Tolak' within the selector: 'button' but never did.\n    at openDropdown2 (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:13938:64)\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:14007:9)\n    at Registry.runStepDefinition (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:9368:48)\n    at Object.fn (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:12371:42)\n    at runStepWithLogGroup (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:11320:29)\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:12364:60)\n    at getRet (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121346:20)\n    at tryCatcher (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:1780:23)\n    at Promise.attempt.Promise.try (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:4288:29)",
+                "diff": null
+              },
+              "uuid": "d906dcb7-90f1-461e-a415-e934124f5e84",
+              "parentUUID": "98db8c1d-c40d-4b9f-b76d-95fafbc330bc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-PRC-05-REVISE-A - Staf Mengembalikan Surat Pengajuan ke Pembuat Awal untuk Revisi Total",
+              "fullTitle": "FR-PRC-04, FR-PRC-05 & FR-PRC-06 Alur Penerusan, Persetujuan, Pengembalian, dan Penyelesaian Pengajuan TC-FR-PRC-05-REVISE-A - Staf Mengembalikan Surat Pengajuan ke Pembuat Awal untuk Revisi Total",
+              "timedOut": null,
+              "duration": 23424,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find content: 'Kembalikan / Tolak' within the selector: 'button' but never did.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find content: 'Kembalikan / Tolak' within the selector: 'button' but never did.\n    at openDropdown2 (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:13938:64)\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:14007:9)\n    at Registry.runStepDefinition (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:9368:48)\n    at Object.fn (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:12371:42)\n    at runStepWithLogGroup (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:11320:29)\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:12364:60)\n    at getRet (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121346:20)\n    at tryCatcher (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:1780:23)\n    at Promise.attempt.Promise.try (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:4288:29)",
+                "diff": null
+              },
+              "uuid": "a1eb1024-9fe0-4a8c-92f1-7471a1e97d55",
+              "parentUUID": "98db8c1d-c40d-4b9f-b76d-95fafbc330bc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-PRC-05-APPROVE-A - Aksi Persetujuan Dinonaktifkan untuk Pengguna di Luar Hak Akses",
+              "fullTitle": "FR-PRC-04, FR-PRC-05 & FR-PRC-06 Alur Penerusan, Persetujuan, Pengembalian, dan Penyelesaian Pengajuan TC-ALT-FR-PRC-05-APPROVE-A - Aksi Persetujuan Dinonaktifkan untuk Pengguna di Luar Hak Akses",
+              "timedOut": null,
+              "duration": 13295,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "8e46adbd-d917-49d4-b608-0b35fb8b6e4f",
+              "parentUUID": "98db8c1d-c40d-4b9f-b76d-95fafbc330bc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-PRC-05-APPROVE-A - Pejabat Berwenang Menyetujui Tahapan Pengajuan Surat",
+              "fullTitle": "FR-PRC-04, FR-PRC-05 & FR-PRC-06 Alur Penerusan, Persetujuan, Pengembalian, dan Penyelesaian Pengajuan TC-FR-PRC-05-APPROVE-A - Pejabat Berwenang Menyetujui Tahapan Pengajuan Surat",
+              "timedOut": null,
+              "duration": 26169,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find content: 'Proses Surat' within the selector: 'button' but never did.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find content: 'Proses Surat' within the selector: 'button' but never did.\n    at openDropdown2 (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:13938:64)\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:14007:9)\n    at Registry.runStepDefinition (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:9368:48)\n    at Object.fn (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:12371:42)\n    at runStepWithLogGroup (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:11320:29)\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:12364:60)\n    at getRet (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121346:20)\n    at tryCatcher (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:1780:23)\n    at Promise.attempt.Promise.try (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:4288:29)",
+                "diff": null
+              },
+              "uuid": "dd5340c5-610f-4755-bcb9-335b058cbfd8",
+              "parentUUID": "98db8c1d-c40d-4b9f-b76d-95fafbc330bc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-PRC-06-A - Staf Menyelesaikan Pengajuan Surat Secara Mandiri Tanpa Terbitan",
+              "fullTitle": "FR-PRC-04, FR-PRC-05 & FR-PRC-06 Alur Penerusan, Persetujuan, Pengembalian, dan Penyelesaian Pengajuan TC-FR-PRC-06-A - Staf Menyelesaikan Pengajuan Surat Secara Mandiri Tanpa Terbitan",
+              "timedOut": null,
+              "duration": 24407,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find content: 'Proses Surat' within the selector: 'button' but never did.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find content: 'Proses Surat' within the selector: 'button' but never did.\n    at openDropdown2 (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:13938:64)\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:14007:9)\n    at Registry.runStepDefinition (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:9368:48)\n    at Object.fn (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:12371:42)\n    at runStepWithLogGroup (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:11320:29)\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/pengajuan/fr_prc_04_06_alur_pengajuan.feature:12364:60)\n    at getRet (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121346:20)\n    at tryCatcher (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:1780:23)\n    at Promise.attempt.Promise.try (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:4288:29)",
+                "diff": null
+              },
+              "uuid": "7f4abcc9-0d23-47ba-97e4-eee3a021cfb8",
+              "parentUUID": "98db8c1d-c40d-4b9f-b76d-95fafbc330bc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-PRC-06-A - Sistem Mencegah Penyelesaian Ulang pada Pengajuan yang Telah Berstatus Selesai",
+              "fullTitle": "FR-PRC-04, FR-PRC-05 & FR-PRC-06 Alur Penerusan, Persetujuan, Pengembalian, dan Penyelesaian Pengajuan TC-ALT-FR-PRC-06-A - Sistem Mencegah Penyelesaian Ulang pada Pengajuan yang Telah Berstatus Selesai",
+              "timedOut": null,
+              "duration": 13802,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "4fed6ac1-d1c3-41f4-b5ee-9bcdb88c4770",
+              "parentUUID": "98db8c1d-c40d-4b9f-b76d-95fafbc330bc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b664aab6-adea-48d8-800d-3d24fc650261",
+            "735a2c2a-e0d9-4789-953e-60c8a088c21e",
+            "8e46adbd-d917-49d4-b608-0b35fb8b6e4f",
+            "4fed6ac1-d1c3-41f4-b5ee-9bcdb88c4770"
+          ],
+          "failures": [
+            "7ed1d03c-acae-486d-a0fe-9c468f357eba",
+            "6ed95367-a158-44e0-8eed-fa8bea335e72",
+            "d906dcb7-90f1-461e-a415-e934124f5e84",
+            "a1eb1024-9fe0-4a8c-92f1-7471a1e97d55",
+            "dd5340c5-610f-4755-bcb9-335b058cbfd8",
+            "7f4abcc9-0d23-47ba-97e4-eee3a021cfb8"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 207852,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

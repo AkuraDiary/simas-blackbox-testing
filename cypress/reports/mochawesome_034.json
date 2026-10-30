@@ -1,0 +1,290 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 10,
+    "passes": 7,
+    "pending": 0,
+    "failures": 3,
+    "start": "2026-10-29T23:54:22.309Z",
+    "end": "2026-10-30T00:00:43.151Z",
+    "duration": 380842,
+    "testsRegistered": 10,
+    "passPercent": 70,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cbfe1401-008a-4095-9900-0833cb5d06fb",
+      "title": "",
+      "fullFile": "cypress/e2e/features/terbitan/fr_rel_01_04_draf_dan_review_terbitan.feature",
+      "file": "cypress/e2e/features/terbitan/fr_rel_01_04_draf_dan_review_terbitan.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2fbd2790-f2f6-490e-bcf7-3f95942eb02f",
+          "title": "FR-REL-01, FR-REL-02, FR-REL-03 & FR-REL-04 Pembuatan Draf, Review Bertingkat, dan Revisi Surat Terbitan Balasan",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-ALT-FR-REL-01-A - Tombol Aksi Terbitkan Surat Balasan Tidak Ditampilkan pada Surat Bukan Pengajuan",
+              "fullTitle": "FR-REL-01, FR-REL-02, FR-REL-03 & FR-REL-04 Pembuatan Draf, Review Bertingkat, dan Revisi Surat Terbitan Balasan TC-ALT-FR-REL-01-A - Tombol Aksi Terbitkan Surat Balasan Tidak Ditampilkan pada Surat Bukan Pengajuan",
+              "timedOut": null,
+              "duration": 16456,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {
+                "message": "AssertionError: expected 1 to equal 0",
+                "estack": "AssertionError: expected 1 to equal 0\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/terbitan/fr_rel_01_04_draf_dan_review_terbitan.feature:13205:37)\n    at getRet (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121346:20)\n    at tryCatcher (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:1780:23)\n    at Promise.attempt.Promise.try (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:4288:29)\n    at Context.thenFn (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121357:66)\n    at Context.then (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121608:21)",
+                "diff": null
+              },
+              "uuid": "d47279c4-f589-451c-ad28-16876e7cb1f1",
+              "parentUUID": "2fbd2790-f2f6-490e-bcf7-3f95942eb02f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-REL-01-A - Staf Unit Membuat Draf Surat Terbitan Balasan dari Pengajuan Rujukan",
+              "fullTitle": "FR-REL-01, FR-REL-02, FR-REL-03 & FR-REL-04 Pembuatan Draf, Review Bertingkat, dan Revisi Surat Terbitan Balasan TC-FR-REL-01-A - Staf Unit Membuat Draf Surat Terbitan Balasan dari Pengajuan Rujukan",
+              "timedOut": null,
+              "duration": 23589,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "c869db54-e41f-4695-81bd-b1499e27434a",
+              "parentUUID": "2fbd2790-f2f6-490e-bcf7-3f95942eb02f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-REL-02-A - Validasi Gagal Kirim Draf Terbitan Saat Form Wajib Belum Lengkap",
+              "fullTitle": "FR-REL-01, FR-REL-02, FR-REL-03 & FR-REL-04 Pembuatan Draf, Review Bertingkat, dan Revisi Surat Terbitan Balasan TC-ALT-FR-REL-02-A - Validasi Gagal Kirim Draf Terbitan Saat Form Wajib Belum Lengkap",
+              "timedOut": null,
+              "duration": 9947,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "2c8f7b6b-2843-4da3-8955-2be2dd3f13ca",
+              "parentUUID": "2fbd2790-f2f6-490e-bcf7-3f95942eb02f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-REL-02-A - Staf Unit Mengajukan Draf Surat Terbitan ke Alur Persetujuan Bertingkat",
+              "fullTitle": "FR-REL-01, FR-REL-02, FR-REL-03 & FR-REL-04 Pembuatan Draf, Review Bertingkat, dan Revisi Surat Terbitan Balasan TC-FR-REL-02-A - Staf Unit Mengajukan Draf Surat Terbitan ke Alur Persetujuan Bertingkat",
+              "timedOut": null,
+              "duration": 23186,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "593ed92f-03e3-4900-9052-7a16a155c491",
+              "parentUUID": "2fbd2790-f2f6-490e-bcf7-3f95942eb02f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-REL-03-REVERSE-A - Validasi Wajib Isi Alasan Saat Mengembalikan Draf Terbitan",
+              "fullTitle": "FR-REL-01, FR-REL-02, FR-REL-03 & FR-REL-04 Pembuatan Draf, Review Bertingkat, dan Revisi Surat Terbitan Balasan TC-ALT-FR-REL-03-REVERSE-A - Validasi Wajib Isi Alasan Saat Mengembalikan Draf Terbitan",
+              "timedOut": null,
+              "duration": 22104,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find content: 'Kembalikan / Tolak' within the selector: 'button' but never did.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find content: 'Kembalikan / Tolak' within the selector: 'button' but never did.\n    at openDropdown2 (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/terbitan/fr_rel_01_04_draf_dan_review_terbitan.feature:13938:64)\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/terbitan/fr_rel_01_04_draf_dan_review_terbitan.feature:14007:9)\n    at Registry.runStepDefinition (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/terbitan/fr_rel_01_04_draf_dan_review_terbitan.feature:9368:48)\n    at Object.fn (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/terbitan/fr_rel_01_04_draf_dan_review_terbitan.feature:12371:42)\n    at runStepWithLogGroup (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/terbitan/fr_rel_01_04_draf_dan_review_terbitan.feature:11320:29)\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/terbitan/fr_rel_01_04_draf_dan_review_terbitan.feature:12364:60)\n    at getRet (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121346:20)\n    at tryCatcher (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:1780:23)\n    at Promise.attempt.Promise.try (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:4288:29)",
+                "diff": null
+              },
+              "uuid": "5a0d02c5-d508-4537-9b3c-d48bb99cecb1",
+              "parentUUID": "2fbd2790-f2f6-490e-bcf7-3f95942eb02f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-REL-03-REVERSE-A - Pimpinan Mengembalikan Draf Surat Terbitan ke Penyusun untuk Koreksi Redaksi",
+              "fullTitle": "FR-REL-01, FR-REL-02, FR-REL-03 & FR-REL-04 Pembuatan Draf, Review Bertingkat, dan Revisi Surat Terbitan Balasan TC-FR-REL-03-REVERSE-A - Pimpinan Mengembalikan Draf Surat Terbitan ke Penyusun untuk Koreksi Redaksi",
+              "timedOut": null,
+              "duration": 21766,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find content: 'Kembalikan / Tolak' within the selector: 'button' but never did.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find content: 'Kembalikan / Tolak' within the selector: 'button' but never did.\n    at openDropdown2 (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/terbitan/fr_rel_01_04_draf_dan_review_terbitan.feature:13938:64)\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/terbitan/fr_rel_01_04_draf_dan_review_terbitan.feature:14007:9)\n    at Registry.runStepDefinition (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/terbitan/fr_rel_01_04_draf_dan_review_terbitan.feature:9368:48)\n    at Object.fn (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/terbitan/fr_rel_01_04_draf_dan_review_terbitan.feature:12371:42)\n    at runStepWithLogGroup (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/terbitan/fr_rel_01_04_draf_dan_review_terbitan.feature:11320:29)\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/terbitan/fr_rel_01_04_draf_dan_review_terbitan.feature:12364:60)\n    at getRet (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121346:20)\n    at tryCatcher (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:1780:23)\n    at Promise.attempt.Promise.try (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:4288:29)",
+                "diff": null
+              },
+              "uuid": "227d3230-2e62-4a5e-af01-c15402897309",
+              "parentUUID": "2fbd2790-f2f6-490e-bcf7-3f95942eb02f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-REL-04-REVISE-A - Penyusun Memperbarui Redaksi Konten Draf Terbitan Pasca Dikembalikan",
+              "fullTitle": "FR-REL-01, FR-REL-02, FR-REL-03 & FR-REL-04 Pembuatan Draf, Review Bertingkat, dan Revisi Surat Terbitan Balasan TC-FR-REL-04-REVISE-A - Penyusun Memperbarui Redaksi Konten Draf Terbitan Pasca Dikembalikan",
+              "timedOut": null,
+              "duration": 18331,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "d90b09ba-e61e-4fe3-810b-135debbedb93",
+              "parentUUID": "2fbd2790-f2f6-490e-bcf7-3f95942eb02f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-REL-04-REVISE-A - Sistem Mencegah Pengeditan Konten Terbitan yang Sudah Berstatus Selesai",
+              "fullTitle": "FR-REL-01, FR-REL-02, FR-REL-03 & FR-REL-04 Pembuatan Draf, Review Bertingkat, dan Revisi Surat Terbitan Balasan TC-ALT-FR-REL-04-REVISE-A - Sistem Mencegah Pengeditan Konten Terbitan yang Sudah Berstatus Selesai",
+              "timedOut": null,
+              "duration": 11425,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "c2ed25ea-660b-4661-bce6-b19de0e8826c",
+              "parentUUID": "2fbd2790-f2f6-490e-bcf7-3f95942eb02f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-REL-03-APPROVE-A - Akses Persetujuan Terbitan Ditolak Bagi Pengguna di Luar Alur",
+              "fullTitle": "FR-REL-01, FR-REL-02, FR-REL-03 & FR-REL-04 Pembuatan Draf, Review Bertingkat, dan Revisi Surat Terbitan Balasan TC-ALT-FR-REL-03-APPROVE-A - Akses Persetujuan Terbitan Ditolak Bagi Pengguna di Luar Alur",
+              "timedOut": null,
+              "duration": 13829,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "57ab9b33-0528-41e0-8af8-4e76c89d2f38",
+              "parentUUID": "2fbd2790-f2f6-490e-bcf7-3f95942eb02f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-REL-03-APPROVE-A - Pimpinan Menyetujui Draf Surat Terbitan Balasan",
+              "fullTitle": "FR-REL-01, FR-REL-02, FR-REL-03 & FR-REL-04 Pembuatan Draf, Review Bertingkat, dan Revisi Surat Terbitan Balasan TC-FR-REL-03-APPROVE-A - Pimpinan Menyetujui Draf Surat Terbitan Balasan",
+              "timedOut": null,
+              "duration": 32202,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "469aaf16-2945-4b41-9d13-5bc0631e3a44",
+              "parentUUID": "2fbd2790-f2f6-490e-bcf7-3f95942eb02f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c869db54-e41f-4695-81bd-b1499e27434a",
+            "2c8f7b6b-2843-4da3-8955-2be2dd3f13ca",
+            "593ed92f-03e3-4900-9052-7a16a155c491",
+            "d90b09ba-e61e-4fe3-810b-135debbedb93",
+            "c2ed25ea-660b-4661-bce6-b19de0e8826c",
+            "57ab9b33-0528-41e0-8af8-4e76c89d2f38",
+            "469aaf16-2945-4b41-9d13-5bc0631e3a44"
+          ],
+          "failures": [
+            "d47279c4-f589-451c-ad28-16876e7cb1f1",
+            "5a0d02c5-d508-4537-9b3c-d48bb99cecb1",
+            "227d3230-2e62-4a5e-af01-c15402897309"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 192835,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

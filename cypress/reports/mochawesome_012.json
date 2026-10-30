@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2026-10-29T01:31:17.132Z",
-    "end": "2026-10-29T01:31:42.649Z",
-    "duration": 25517,
+    "start": "2026-10-29T23:03:43.870Z",
+    "end": "2026-10-29T23:04:07.796Z",
+    "duration": 23926,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "96a75ed4-9cea-4e5d-a42b-7b141f5645be",
+      "uuid": "856dc506-39c2-45c9-bd10-d2c469f74df5",
       "title": "",
       "fullFile": "cypress/e2e/features/disposisi/fr_disp_03_riwayat_dan_lembar_disposisi.feature",
       "file": "cypress/e2e/features/disposisi/fr_disp_03_riwayat_dan_lembar_disposisi.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "2e09c133-0857-4f09-88b3-0c9f27c3631a",
+          "uuid": "f5d4ba3b-96f5-4fbe-89b1-fa7dc2e8ca21",
           "title": "FR-DISP-03 Riwayat Perjalanan dan Lembar Disposisi Surat",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "TC-FR-DISP-03-A Memantau Riwayat Linimasa Disposisi Surat",
               "fullTitle": "FR-DISP-03 Riwayat Perjalanan dan Lembar Disposisi Surat TC-FR-DISP-03-A Memantau Riwayat Linimasa Disposisi Surat",
               "timedOut": null,
-              "duration": 11059,
+              "duration": 11142,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "",
               "err": {},
-              "uuid": "6b3d4a31-89ab-40b0-b1af-12a5332b731e",
-              "parentUUID": "2e09c133-0857-4f09-88b3-0c9f27c3631a",
+              "uuid": "1e27444d-0247-4c60-a1ed-1cc445b0805b",
+              "parentUUID": "f5d4ba3b-96f5-4fbe-89b1-fa7dc2e8ca21",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "TC-FR-DISP-03-B Verifikasi Ekspor Dokumen yang Memuat Lembar Disposisi",
               "fullTitle": "FR-DISP-03 Riwayat Perjalanan dan Lembar Disposisi Surat TC-FR-DISP-03-B Verifikasi Ekspor Dokumen yang Memuat Lembar Disposisi",
               "timedOut": null,
-              "duration": 14373,
+              "duration": 12722,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -65,21 +65,21 @@
               "context": null,
               "code": "",
               "err": {},
-              "uuid": "7a0c1465-d13d-4a64-b52c-e3008a6eb901",
-              "parentUUID": "2e09c133-0857-4f09-88b3-0c9f27c3631a",
+              "uuid": "1ad0f239-2ecf-4835-a578-8afbf6a53d21",
+              "parentUUID": "f5d4ba3b-96f5-4fbe-89b1-fa7dc2e8ca21",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "6b3d4a31-89ab-40b0-b1af-12a5332b731e",
-            "7a0c1465-d13d-4a64-b52c-e3008a6eb901"
+            "1e27444d-0247-4c60-a1ed-1cc445b0805b",
+            "1ad0f239-2ecf-4835-a578-8afbf6a53d21"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 25432,
+          "duration": 23864,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

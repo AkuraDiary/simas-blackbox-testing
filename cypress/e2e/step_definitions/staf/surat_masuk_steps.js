@@ -6,7 +6,7 @@ Given("Staf Unit telah login dengan akun {string} dan kata sandi {string}", (use
   cy.visit("/internal/login");
   cy.url().then((url) => {
     if (url.includes("/login")) {
-      cy.get('input[id*="username"], input[wire\\:model*="username"], input[type="text"]')
+      cy.get('input[id*="username"], input[wire\\:model*="username"], input[type="text"]', { timeout: 15000 })
         .first()
         .clear({ force: true })
         .type(username, { force: true });
@@ -40,7 +40,8 @@ Then("Sistem menolak akses dan mengalihkan pengguna ke halaman login {string}", 
 
 When("Staf Unit mengakses halaman surat masuk {string}", (url) => {
   cy.visit(url);
-  cy.get(".fi-ta-header, .fi-ta-content, .fi-page-header, body", { timeout: 15000 }).should("be.visible");
+  cy.url({ timeout: 15000 }).should("match", /\/internal\/surat-masuk(\?.*)?$/);
+  cy.get(".fi-tabs-item, button[role='tab']", { timeout: 15000 }).should("be.visible");
 });
 
 // ─── FR-SRT-06: DAFTAR SURAT MASUK ───────────────────────────────────────────

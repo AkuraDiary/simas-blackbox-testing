@@ -5,9 +5,9 @@
     "passes": 3,
     "pending": 0,
     "failures": 0,
-    "start": "2026-10-29T01:30:18.369Z",
-    "end": "2026-10-29T01:31:15.549Z",
-    "duration": 57180,
+    "start": "2026-10-29T23:02:54.688Z",
+    "end": "2026-10-29T23:03:42.970Z",
+    "duration": 48282,
     "testsRegistered": 3,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "6a0f9884-d717-49b0-b600-18bab99cbb49",
+      "uuid": "bc38914b-7090-4c16-9f4a-c9d02c5225e4",
       "title": "",
       "fullFile": "cypress/e2e/features/disposisi/fr_disp_02_respon_disposisi.feature",
       "file": "cypress/e2e/features/disposisi/fr_disp_02_respon_disposisi.feature",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "55752573-e22d-4ab7-888b-efbdbc5ccafb",
+          "uuid": "e853ed82-249d-437e-8ff5-5fcb927d1c1b",
           "title": "FR-DISP-02 Merespon dan Menindaklanjuti Disposisi Surat",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "TC-FR-DISP-02-A Menindaklanjuti Disposisi dengan Progres Sedang Diproses",
               "fullTitle": "FR-DISP-02 Merespon dan Menindaklanjuti Disposisi Surat TC-FR-DISP-02-A Menindaklanjuti Disposisi dengan Progres Sedang Diproses",
               "timedOut": null,
-              "duration": 24605,
+              "duration": 16982,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "",
               "err": {},
-              "uuid": "928fc4d0-1d3e-46c8-ba0e-3e867134ad35",
-              "parentUUID": "55752573-e22d-4ab7-888b-efbdbc5ccafb",
+              "uuid": "94850d56-d1a7-450a-b127-5243f69886ad",
+              "parentUUID": "e853ed82-249d-437e-8ff5-5fcb927d1c1b",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "TC-ALT-FR-DISP-02-A Validasi Form Respon Disposisi Kosong (Negative)",
               "fullTitle": "FR-DISP-02 Merespon dan Menindaklanjuti Disposisi Surat TC-ALT-FR-DISP-02-A Validasi Form Respon Disposisi Kosong (Negative)",
               "timedOut": null,
-              "duration": 13523,
+              "duration": 14101,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "",
               "err": {},
-              "uuid": "30d25a2b-9247-446f-8df1-a3ce325df5fd",
-              "parentUUID": "55752573-e22d-4ab7-888b-efbdbc5ccafb",
+              "uuid": "1bc1c90e-0fe8-4ce4-9c20-d38ef2c76b43",
+              "parentUUID": "e853ed82-249d-437e-8ff5-5fcb927d1c1b",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "TC-FR-DISP-02-B Menyelesaikan Tugas Disposisi (Status Selesai)",
               "fullTitle": "FR-DISP-02 Merespon dan Menindaklanjuti Disposisi Surat TC-FR-DISP-02-B Menyelesaikan Tugas Disposisi (Status Selesai)",
               "timedOut": null,
-              "duration": 18921,
+              "duration": 17096,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -83,22 +83,22 @@
               "context": null,
               "code": "",
               "err": {},
-              "uuid": "150cce40-4646-4134-962c-03124fa5c4f6",
-              "parentUUID": "55752573-e22d-4ab7-888b-efbdbc5ccafb",
+              "uuid": "81d46bcc-898f-444c-94af-7602343f7f3c",
+              "parentUUID": "e853ed82-249d-437e-8ff5-5fcb927d1c1b",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "928fc4d0-1d3e-46c8-ba0e-3e867134ad35",
-            "30d25a2b-9247-446f-8df1-a3ce325df5fd",
-            "150cce40-4646-4134-962c-03124fa5c4f6"
+            "94850d56-d1a7-450a-b127-5243f69886ad",
+            "1bc1c90e-0fe8-4ce4-9c20-d38ef2c76b43",
+            "81d46bcc-898f-444c-94af-7602343f7f3c"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 57049,
+          "duration": 48179,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

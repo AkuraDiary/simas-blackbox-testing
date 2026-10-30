@@ -209,6 +209,8 @@ Then("Surat yang baru diajukan muncul pada tabel riwayat surat mahasiswa", () =>
   cy.get(".fi-ta-content, table", { timeout: 15000 }).should("be.visible");
   const expectedPerihal = Cypress.env("lastMhsPerihal");
   if (expectedPerihal) {
+    cy.get('input[type="search"], input[placeholder*="Search"]').first().type(expectedPerihal, { force: true });
+    cy.wait(1500);
     cy.contains("body", expectedPerihal, { timeout: 15000 }).should("be.visible");
   }
 });
