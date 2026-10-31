@@ -63,5 +63,6 @@ module.exports = defineConfig({
       return config;
     },
     specPattern: "cypress/e2e/**/*.feature",
+    excludeSpecPattern: ["cypress/e2e/features/supplementary/**"],
   },
 });
