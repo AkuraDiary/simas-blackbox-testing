@@ -1,0 +1,97 @@
+Analysis for 	FR-REQ-03 (Menerima Kode Pengajuan)		
+ID : 	FR-REQ-03 - DATA		
+Method :	Equivalence Partitioning & Use Case Testing		
+Skenario	Data	Expected Result	Referensi Test Case ID
+Skenario Valid: Sistem menerbitkan kode pelacakan unik	Formulir pengajuan valid dan lengkap	Layar sukses menampilkan kode unik berformat REQ- beserta tombol salin	TC-FR-REQ-03-A
+Skenario Invalid: Pengiriman dibatalkan / gagal validasi	Data formulir kosong / tidak lengkap	Sistem menahan pengiriman dan tidak menerbitkan kode pelacakan	TC-ALT-FR-REQ-03-A
+
+Analysis for 	FR-PRC-03 (Mengelola Lampiran Pengajuan)		
+ID : 	FR-PRC-03 - DATA		
+Method :	Equivalence Partitioning & Use Case Testing		
+Skenario	Data	Expected Result	Referensi Test Case ID
+Skenario Valid: Membuka pratinjau dan mengunduh berkas lampiran	Surat pengajuan memuat berkas lampiran	Sistem menampilkan modal preview (#preview-modal) atau mengunduh dokumen lampiran	TC-FR-PRC-03-A
+Skenario Invalid: Akses lampiran pada surat tanpa berkas	Surat pengajuan tanpa lampiran	Halaman detail menampilkan keterangan "Tidak ada berkas lampiran pada surat ini."	TC-ALT-FR-PRC-03-A
+
+Analysis for 	FR-PRC-04 (Meneruskan Surat Bertingkat)		
+ID : 	FR-PRC-04 - DATA		
+Method :	Equivalence Partitioning & Use Case Testing		
+Skenario	Data	Expected Result	Referensi Test Case ID
+Skenario Valid: Meneruskan surat pengajuan ke unit kerja lain	Unit tujuan dipilih dan catatan valid	Pengajuan berhasil diteruskan, riwayat tercatat, dan notifikasi sukses muncul	TC-FR-PRC-04-A
+Skenario Invalid: Submit penerusan tanpa memilih unit tujuan	Pilihan unit tujuan dikosongkan	Sistem menolak submit dan memunculkan pesan validasi error bahwa unit tujuan wajib dipilih	TC-ALT-FR-PRC-04-A
+
+Analysis for 	FR-PRC-05-APPROVE (Menyetujui Pengajuan)		
+ID : 	FR-PRC-05-APPROVE - DATA		
+Method :	Equivalence Partitioning & Use Case Testing		
+Skenario	Data	Expected Result	Referensi Test Case ID
+Skenario Valid: Pejabat berwenang menyetujui tahapan pengajuan	Akun berwenang dan catatan persetujuan diisi	Surat disetujui, timeline riwayat diperbarui, dan notifikasi sukses muncul	TC-FR-PRC-05-APPROVE-A
+Skenario Invalid: Akses persetujuan oleh pengguna di luar hak akses	Akun staf tanpa wewenang (Logistik)	Tombol aksi persetujuan ("Proses Surat") tidak ditampilkan / dinonaktifkan	TC-ALT-FR-PRC-05-APPROVE-A
+
+Analysis for 	FR-PRC-05-REVERSE (Mengembalikan Pengajuan)		
+ID : 	FR-PRC-05-REVERSE - DATA		
+Method :	Equivalence Partitioning & Use Case Testing		
+Skenario	Data	Expected Result	Referensi Test Case ID
+Skenario Valid: Pejabat mengembalikan surat ke langkah sebelumnya	Alasan pengembalian diisi lengkap	Surat dikembalikan ke langkah sebelumnya dengan catatan evaluasi tersimpan	TC-FR-PRC-05-REVERSE-A
+Skenario Invalid: Mengosongkan catatan alasan saat mengembalikan	Catatan alasan dikosongkan	Sistem menahan submit dan mewajibkan pengisian alasan pengembalian	TC-ALT-FR-PRC-05-REVERSE-A
+
+Analysis for 	FR-PRC-05-REVISE (Merevisi Pengajuan)		
+ID : 	FR-PRC-05-REVISE - DATA		
+Method :	Equivalence Partitioning & Use Case Testing		
+Skenario	Data	Expected Result	Referensi Test Case ID
+Skenario Valid: Mengembalikan surat ke pembuat awal untuk revisi	Alasan revisi total diisi lengkap	Surat dikembalikan ke pembuat awal dengan status REVISI dan tercatat di riwayat	TC-FR-PRC-05-REVISE-A
+Skenario Invalid: Mengosongkan alasan revisi total saat mengembalikan	Alasan revisi total dikosongkan	Sistem menolak submit dan mewajibkan pengisian alasan revisi total	TC-ALT-FR-PRC-05-REVISE-A
+
+Analysis for 	FR-PRC-06 (Menyelesaikan Pengajuan)		
+ID : 	FR-PRC-06 - DATA		
+Method :	Equivalence Partitioning & Use Case Testing		
+Skenario	Data	Expected Result	Referensi Test Case ID
+Skenario Valid: Staf menyelesaikan pengajuan secara mandiri	Catatan finalisasi valid	Status surat berubah menjadi SELESAI, alur pengajuan tuntas, notifikasi sukses muncul	TC-FR-PRC-06-A
+Skenario Invalid: Akses finalisasi ulang pada surat yang sudah selesai	Surat berstatus SELESAI	Sistem tidak lagi menampilkan opsi "Finalisasi & Selesai" untuk mencegah eksekusi ganda	TC-ALT-FR-PRC-06-A
+
+Analysis for 	FR-REL-01 (Membuat Surat Terbitan)		
+ID : 	FR-REL-01 - DATA		
+Method :	Equivalence Partitioning & Use Case Testing		
+Skenario	Data	Expected Result	Referensi Test Case ID
+Skenario Valid: Membuat draf terbitan balasan dari pengajuan rujukan	ID pengajuan rujukan valid dan perihal diisi	Form /create memuat rujukan dan menyimpan draf terbitan baru berstatus DRAFT	TC-FR-REL-01-A
+Skenario Invalid: Akses aksi terbitkan balasan pada surat non-pengajuan	Surat masuk internal / eksternal biasa	Menu dropdown Kelola Surat tidak menampilkan opsi "Terbitkan Surat Balasan"	TC-ALT-FR-REL-01-A
+
+Analysis for 	FR-REL-02 (Mengajukan Penerbitan Bertingkat)		
+ID : 	FR-REL-02 - DATA		
+Method :	Equivalence Partitioning & Use Case Testing		
+Skenario	Data	Expected Result	Referensi Test Case ID
+Skenario Valid: Mengajukan draf terbitan ke alur persetujuan	Draf terbitan lengkap dan catatan pengantar diisi	Draf diajukan, status berubah menjadi TERKIRIM / DIPROSES, notifikasi sukses muncul	TC-FR-REL-02-A
+Skenario Invalid: Mengajukan draf terbitan dengan form wajib belum lengkap	Perihal draf terbitan dikosongkan	Sistem menahan submit form dan menampilkan validasi error pada perihal	TC-ALT-FR-REL-02-A
+
+Analysis for 	FR-REL-03-APPROVE (Menyetujui Penerbitan)		
+ID : 	FR-REL-03-APPROVE - DATA		
+Method :	Equivalence Partitioning & Use Case Testing		
+Skenario	Data	Expected Result	Referensi Test Case ID
+Skenario Valid: Pimpinan menyetujui draf surat terbitan balasan	Akun pimpinan berwenang dan catatan persetujuan diisi	Surat terbitan disetujui, alur persetujuan diperbarui, dan notifikasi sukses muncul	TC-FR-REL-03-APPROVE-A
+Skenario Invalid: Akses persetujuan terbitan oleh pengguna di luar alur	Akun staf di luar alur (Logistik)	Tombol aksi persetujuan ("Proses Surat") tidak ditampilkan bagi staf di luar alur	TC-ALT-FR-REL-03-APPROVE-A
+
+Analysis for 	FR-REL-03-REVERSE (Mengembalikan Penerbitan)		
+ID : 	FR-REL-03-REVERSE - DATA		
+Method :	Equivalence Partitioning & Use Case Testing		
+Skenario	Data	Expected Result	Referensi Test Case ID
+Skenario Valid: Pimpinan mengembalikan draf terbitan ke penyusun	Catatan koreksi redaksi diisi lengkap	Draf dikembalikan ke penyusun dengan status REVISI dan catatan evaluasi terekam	TC-FR-REL-03-REVERSE-A
+Skenario Invalid: Mengembalikan draf terbitan tanpa mengisi alasan	Catatan alasan pengembalian dikosongkan	Sistem menahan pengembalian dan mewajibkan pengisian alasan pengembalian draf	TC-ALT-FR-REL-03-REVERSE-A
+
+Analysis for 	FR-REL-04-REVISE (Merevisi Draft Penerbitan)		
+ID : 	FR-REL-04-REVISE - DATA		
+Method :	Equivalence Partitioning & Use Case Testing		
+Skenario	Data	Expected Result	Referensi Test Case ID
+Skenario Valid: Penyusun memperbarui redaksi konten draf terbitan	Teks perihal/konten diperbarui sesuai evaluasi	Perubahan naskah tersimpan dan draf siap diajukan kembali ke pimpinan	TC-FR-REL-04-REVISE-A
+Skenario Invalid: Akses pengeditan konten terbitan yang sudah berstatus selesai	Surat terbitan berstatus SELESAI	Form edit dinonaktifkan atau hanya tampilan pratinjau lembar surat yang dapat diakses	TC-ALT-FR-REL-04-REVISE-A
+
+Analysis for 	FR-REL-05-SEND (Mengirimkan Surat Terbitan)		
+ID : 	FR-REL-05-SEND - DATA		
+Method :	Equivalence Partitioning & Use Case Testing		
+Skenario	Data	Expected Result	Referensi Test Case ID
+Skenario Valid: Memberikan nomor resmi dan mempublikasikan surat terbitan	Format penomoran unit dipilih valid	Nomor resmi terpasang, status berubah SELESAI, dan terbitan terpublikasi ke pemohon	TC-FR-REL-05-SEND-A
+Skenario Invalid: Menerapkan penomoran surat tanpa memilih format penomoran	Pilihan format penomoran dikosongkan	Sistem menolak penerapan nomor dan menampilkan pesan validasi error	TC-ALT-FR-REL-05-SEND-A
+
+Analysis for 	FR-REL-06-ARCHIVE (Mengarsipkan Surat Terbitan)		
+ID : 	FR-REL-06-ARCHIVE - DATA		
+Method :	Equivalence Partitioning & Use Case Testing		
+Skenario	Data	Expected Result	Referensi Test Case ID
+Skenario Valid: Mengarsipkan surat terbitan resmi berstatus selesai	Kategori klasifikasi arsip dipilih valid	Surat terbitan berhasil dimasukkan ke repositori arsip unit kerja	TC-FR-REL-06-ARCHIVE-A
+Skenario Invalid: Submit pengarsipan tanpa memilih kategori arsip	Pilihan kategori arsip dikosongkan	Sistem menolak pengarsipan dan menampilkan pesan validasi error	TC-ALT-FR-REL-06-ARCHIVE-A

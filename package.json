@@ -9,6 +9,7 @@
     "merge:reports": "npx mochawesome-merge \"cypress/reports/mochawesome*.json\" > cypress/reports/merged-report.json",
     "sort:reports": "node scripts/sort-report.js",
     "generate:html": "npx marge cypress/reports/merged-report.json --reportDir cypress/reports --inline --enableCode false",
+    "backup:report": "node scripts/backup-report.js",
     "report": "npm run clean:reports && (npm run cy:run || true) && npm run merge:reports && npm run sort:reports && npm run generate:html"
   },
   "keywords": [],

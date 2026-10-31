@@ -1,0 +1,88 @@
+Analysis for 	FR-REQ-03 (Menerima Kode Pengajuan)
+ID : 	FR-REQ-03 - DATA
+Method :	Use Case Testing & Equivalence Partitioning
+Valid Scenario
+Skenario	Data	Expected Result	Referensi Test Case ID
+Sistem menerbitkan kode unik pelacakan setelah permohonan berhasil terkirim	Formulir pengajuan surat layanan terisi valid & terkirim	Sistem menampilkan kode unik pelacakan berformat REQ-XXXXXXXXXXXX dan menyediakan tombol salin kode	TC-FR-REQ-03
+
+Invalid Scenario
+Skenario	Data	Expected Result	Referensi Test Case ID
+Sistem menahan penerbitan kode pelacakan jika formulir belum valid	Formulir dengan field wajib kosong / submit gagal	Sistem tidak menerbitkan kode pelacakan dan menampilkan pesan validasi error	TC-ALT-FR-REQ-03
+
+Analysis for 	FR-PRC-03 (Mengelola Lampiran Pengajuan)
+ID : 	FR-PRC-03 - DATA
+Method :	Equivalence Partitioning & Use Case Testing
+Valid Scenario
+Skenario	Data	Expected Result	Referensi Test Case ID
+Staf Unit memeriksa dan mengunduh berkas lampiran pendukung pengajuan	Berkas lampiran format PDF/JPG valid	Berkas lampiran dapat dibuka, dipratinjau, dan diunduh ke perangkat pengguna	TC-FR-PRC-03
+
+Invalid Scenario
+Skenario	Data	Expected Result	Referensi Test Case ID
+Pemeriksaan detail pengajuan tanpa berkas lampiran pendukung	Pengajuan tanpa file lampiran pendukung	Sistem menampilkan keterangan 'Tidak ada lampiran' tanpa memunculkan error atau tautan rusak	TC-ALT-FR-PRC-03
+
+Analysis for 	FR-PRC-04 (Meneruskan Surat Bertingkat)
+ID : 	FR-PRC-04 - DATA
+Method :	Equivalence Partitioning & Use Case Testing
+Valid Scenario
+Skenario	Data	Expected Result	Referensi Test Case ID
+Staf Unit meneruskan surat pengajuan secara bertingkat ke pimpinan unit	Unit Peninjau valid, Catatan pengantar terisi	Surat permohonan berpindah ke antrean pimpinan dengan status MENUNGGU PERSETUJUAN	TC-FR-PRC-04
+
+Invalid Scenario
+Skenario	Data	Expected Result	Referensi Test Case ID
+Validasi penolakan saat unit tujuan penerusan dikosongkan	Unit peninjau tujuan: [Kosong]	Sistem menolak submit dan memunculkan notifikasi validasi error bahwa unit tujuan wajib dipilih	TC-ALT-FR-PRC-04
+
+Analysis for 	FR-PRC-05-APPROVE (Menyetujui Pengajuan)
+ID : 	FR-PRC-05-APPROVE - DATA
+Method :	Use Case Testing & Equivalence Partitioning
+Valid Scenario
+Skenario	Data	Expected Result	Referensi Test Case ID
+Pimpinan Unit menyetujui permohonan pengajuan surat yang masuk	Keputusan: DISETUJUI, Catatan persetujuan valid	Status pengajuan berubah menjadi DISETUJUI dan siap diproses ke tahap pembuatan surat terbitan	TC-FR-PRC-05-APPROVE
+
+Invalid Scenario
+Skenario	Data	Expected Result	Referensi Test Case ID
+Aksi persetujuan dinonaktifkan untuk pengguna di luar kewenangan alur	Akun login di luar unit kerja penerima	Tombol aksi persetujuan 'Proses Surat' tidak ditampilkan oleh sistem	TC-ALT-FR-PRC-05-APPROVE
+
+Analysis for 	FR-PRC-05-REVERSE (Mengembalikan Pengajuan)
+ID : 	FR-PRC-05-REVERSE - DATA
+Method :	Use Case Testing & Boundary Value Analysis
+Valid Scenario
+Skenario	Data	Expected Result	Referensi Test Case ID
+Pimpinan Unit mengembalikan surat pengajuan ke unit peninjau sebelumnya (backtrack)	Catatan alasan: 'Data pendukung belum lengkap dari unit pengusul'	Surat dikembalikan ke antrean unit sebelumnya dengan status REVISI dan catatan terekam	TC-FR-PRC-05-REVERSE
+
+Invalid Scenario
+Skenario	Data	Expected Result	Referensi Test Case ID
+Validasi form saat alasan pengembalian pengajuan dikosongkan	Catatan alasan pengembalian: [Kosong]	Sistem menahan pengembalian dan mewajibkan pengisian alasan pengembalian	TC-ALT-FR-PRC-05-REVERSE
+
+Analysis for 	FR-PRC-05-REVISE (Merevisi Pengajuan)
+ID : 	FR-PRC-05-REVISE - DATA
+Method :	Use Case Testing & Equivalence Partitioning
+Valid Scenario
+Skenario	Data	Expected Result	Referensi Test Case ID
+Staf Unit mengembalikan draf permohonan ke pemohon awal untuk perbaikan berkas	Catatan revisi: 'KTM buram, mohon unggah ulang berkas baru'	Status pengajuan berubah menjadi PERLU PERBAIKAN dan catatan perbaikan dapat dilihat pemohon	TC-FR-PRC-05-REVISE
+
+Invalid Scenario
+Skenario	Data	Expected Result	Referensi Test Case ID
+Validasi form penolakan saat instruksi reset revisi dikosongkan	Catatan perbaikan pemohon: [Kosong]	Sistem menahan submit dan memunculkan pesan validasi error bahwa alasan wajib diisi	TC-ALT-FR-PRC-05-REVISE
+
+Analysis for 	FR-PRC-06 (Menyelesaikan Pengajuan)
+ID : 	FR-PRC-06 - DATA
+Method :	Use Case Testing & Equivalence Partitioning
+Valid Scenario
+Skenario	Data	Expected Result	Referensi Test Case ID
+Staf Unit menyelesaikan alur pemrosesan pengajuan setelah layanan tuntas	Pengajuan telah tuntas diproses / disetujui	Status pengajuan berubah menjadi SELESAI dan seluruh siklus alur pengajuan selesai	TC-FR-PRC-06
+
+Invalid Scenario
+Skenario	Data	Expected Result	Referensi Test Case ID
+Sistem mencegah penyelesaian pengajuan yang masih berstatus menunggu revisi	Pengajuan berstatus REVISI / PERLU PERBAIKAN	Tombol selesaikan surat tidak aktif atau sistem menolak penyelesaian sebelum surat disetujui	TC-ALT-FR-PRC-06
+
+Analysis for 	FR-REL-01 (Membuat Surat Terbitan)
+ID : 	FR-REL-01 - DATA
+Method :	Equivalence Partitioning & Use Case Testing
+Valid Scenario
+Skenario	Data	Expected Result	Referensi Test Case ID
+Staf Unit membuat draf surat terbitan balasan dari pengajuan yang telah disetujui	Surat rujukan berstatus disetujui, Perihal & naskah balasan valid	Surat terbitan baru berhasil dibuat dengan status DRAFT dan terhubung dengan surat rujukan	TC-FR-REL-01
+
+Invalid Scenario
+Skenario	Data	Expected Result	Referensi Test Case ID
+Validasi submit draf terbitan saat field perihal dikosongkan	Perihal surat terbitan: [Kosong]	Sistem menolak penyimpanan draf dan memunculkan notifikasi validasi bahwa perihal wajib diisi	TC-ALT-FR-REL-01
+

@@ -1,0 +1,61 @@
+77	FR-REQ-03	TC-FR-REQ-03	Sistem menerbitkan kode pelacakan unik setelah permohonan berhasil dikirim	Formulir pengajuan surat layanan terkirim	"1. Lakukan pengiriman formulir permohonan surat hingga tuntas
+2. Amati tampilan kartu konfirmasi pada layar sukses"	Formulir pengajuan surat layanan terkirim	Sistem menampilkan kode unik pelacakan (format: REQ-XXXXXXXXXXXX) dan menyediakan tombol salin kode tracking	BBT	Positive	Seta & ayang	Berhasil	Automated
+78		TC-ALT-FR-REQ-03	Sistem menahan penerbitan kode pelacakan jika formulir belum valid	Halaman formulir pengajuan surat publik terbuka	"1. Biarkan field wajib kosong pada formulir pengajuan
+2. Klik tombol Kirim / Lanjutkan"	Formulir dengan field wajib tidak lengkap	Sistem menahan pengiriman, kode pelacakan tidak diterbitkan, dan menampilkan pesan validasi error	BBT	Negative	Seta & ayang	Berhasil	Automated
+88		TC-ALT-FR-PRC-01	Pencarian antrean surat pengajuan dengan kata kunci fiktif menampilkan status kosong	Staf Unit login dan membuka menu Surat Masuk tab Pengajuan	"1. Ketik kata kunci acak fiktif pada kotak pencarian antrean pengajuan
+2. Tekan Enter atau tunggu filter otomatis"	"Keyword: ""DataPengajuanFiktif999XYZ"""	Tabel pengajuan menyaring baris dan menampilkan pesan status data kosong tanpa error aplikasi	BBT	Negative	Seta & ayang	Berhasil	Automated
+89	FR-PRC-02	TC-FR-PRC-02	Staf Unit membuka dan memeriksa lembar detail surat pengajuan masuk	Terdapat surat pengajuan masuk di antrean unit	"1. Klik tombol aksi detail (ikon mata / record URL) pada baris pengajuan
+2. Periksa panel data pemohon dan riwayat alur pengajuan"	ID Pengajuan valid	Halaman detail pengajuan terbuka menampilkan data pemohon lengkap, alasan pengajuan, dan timeline alur surat	BBT	Positive	Seta & ayang	Berhasil	Automated
+90		TC-ALT-FR-PRC-02	Akses langsung detail pengajuan dengan ID fiktif menampilkan penanganan not found	Staf Unit login pada sistem SIMAS	"1. Akses langsung URL detail pengajuan dengan ID fiktif non-existent di browser (/admin/surats/99999999)
+2. Amati respon halaman"	ID Pengajuan: 99999999	Sistem merespon dengan halaman HTTP 404 Not Found yang terisolasi dengan aman	BBT	Negative	Seta & ayang	Berhasil	Automated
+91	FR-PRC-03	TC-FR-PRC-03	Staf Unit memeriksa dan mengunduh berkas lampiran pendukung pengajuan	Surat pengajuan memuat berkas lampiran pendukung	"1. Pada halaman detail pengajuan, buka tab atau daftar Lampiran
+2. Klik tautan berkas lampiran untuk mengunduh atau melihat pratinjau"	Berkas lampiran valid	Berkas lampiran dapat dibuka dan diunduh ke perangkat pengguna secara utuh	BBT	Positive	Seta & ayang	Berhasil	Automated
+92		TC-ALT-FR-PRC-03	Pemeriksaan detail pengajuan tanpa lampiran menampilkan penanda kosong informatif	Surat pengajuan diajukan tanpa mengunggah berkas lampiran opsional	"1. Buka detail surat pengajuan tanpa lampiran
+2. Amati bagian daftar berkas lampiran"	Pengajuan tanpa file lampiran	Sistem menampilkan keterangan 'Tidak ada lampiran' tanpa error atau tombol rusak	BBT	Negative	Seta & ayang	Berhasil	Automated
+93	FR-PRC-04	TC-FR-PRC-04	Staf Unit meneruskan surat pengajuan secara bertingkat ke pimpinan unit	Surat pengajuan berstatus MENUNGGU dan ditujukan ke unit kerja aktif	"1. Buka detail pengajuan
+2. Klik tombol aksi 'Proses Surat'
+3. Pilih 'Teruskan Saja (Tanpa Setuju)'
+4. Pilih unit peninjau dan masukkan catatan pengantar
+5. Klik Konfirmasi Kirim"	Unit Peninjau valid, Catatan pengantar terisi	Surat permohonan berhasil diteruskan, berpindah ke antrean pimpinan dengan status MENUNGGU PERSETUJUAN	BBT	Positive	Seta & ayang	Berhasil	Automated
+94		TC-ALT-FR-PRC-04	Validasi form penolakan saat unit tujuan penerusan dikosongkan	Modal aksi penerusan surat terbuka	"1. Buka modal Teruskan Surat
+2. Kosongkan pilihan unit peninjau tujuan
+3. Klik tombol konfirmasi kirim"	Unit tujuan: [Kosong]	Sistem menolak submit dan memunculkan pesan validasi error bahwa unit tujuan wajib dipilih	BBT	Negative	Seta & ayang	Berhasil	Automated
+95	FR-PRC-05-APPROVE	TC-FR-PRC-05-APPROVE	Pimpinan Unit menyetujui permohonan pengajuan surat yang masuk	Pimpinan login dan surat berada pada antrean persetujuan unit	"1. Buka detail pengajuan masuk pada akun Pimpinan
+2. Buka dropdown 'Proses Surat'
+3. Pilih aksi persetujuan ('Setujui')
+4. Masukkan catatan persetujuan dan konfirmasi"	Catatan persetujuan terisi	Status pengajuan berubah menjadi DISETUJUI dan siap diproses ke tahap pembuatan surat terbitan	BBT	Positive	Seta & ayang	Berhasil	Automated
+96		TC-ALT-FR-PRC-05-APPROVE	Aksi persetujuan dinonaktifkan atau ditolak bagi pengguna di luar kewenangan alur	Akun login bukan penerima target dari langkah riwayat aktif	"1. Buka detail surat pengajuan yang ditujukan ke unit lain
+2. Amati ketersediaan tombol 'Proses Surat'"	Akun di luar wewenang unit tujuan	Tombol aksi persetujuan 'Proses Surat' tidak ditampilkan oleh sistem	BBT	Negative	Seta & ayang	Berhasil	Automated
+97	FR-PRC-05-REVERSE	TC-FR-PRC-05-REVERSE	Pimpinan Unit mengembalikan surat pengajuan ke unit peninjau sebelumnya (backtrack)	Surat berada pada tahapan review bertingkat	"1. Buka detail pengajuan pada menu Surat Masuk
+2. Buka dropdown aksi 'Kembalikan / Tolak'
+3. Pilih 'Kembalikan ke Langkah Sebelumnya'
+4. Masukkan alasan koreksi dan konfirmasi"	"Catatan alasan: ""Data lampiran belum lengkap"""	Surat dikembalikan ke antrean unit sebelumnya dengan status REVISI dan catatan terekam pada riwayat alur	BBT	Positive	Seta & ayang	Berhasil	Automated
+98		TC-ALT-FR-PRC-05-REVERSE	Validasi form saat alasan pengembalian pengajuan dikosongkan	Modal aksi pengembalian surat terbuka	"1. Buka modal Kembalikan Surat
+2. Kosongkan field catatan alasan pengembalian
+3. Klik tombol konfirmasi"	Catatan alasan: [Kosong]	Sistem menahan pengembalian dan mewajibkan pengisian alasan pengembalian	BBT	Negative	Seta & ayang	Berhasil	Automated
+99	FR-PRC-05-REVISE	TC-FR-PRC-05-REVISE	Staf Unit mengembalikan draf permohonan ke pemohon awal untuk perbaikan berkas	Surat pengajuan berstatus perlu verifikasi di unit kerja	"1. Buka detail surat pengajuan masuk
+2. Buka dropdown 'Kembalikan / Tolak'
+3. Pilih 'Kembalikan ke Pembuat Awal (Reset)'
+4. Tulis instruksi perbaikan dan konfirmasi"	"Catatan: ""KTM buram, mohon unggah ulang"""	Status pengajuan berubah menjadi PERLU PERBAIKAN dan catatan perbaikan dapat dilihat oleh pemohon	BBT	Positive	Seta & ayang	Berhasil	Automated
+100		TC-ALT-FR-PRC-05-REVISE	Validasi form penolakan saat instruksi reset revisi dikosongkan	Modal reset pengajuan ke pemohon awal terbuka	"1. Buka modal kembalikan ke pembuat awal
+2. Kosongkan field alasan/catatan perbaikan
+3. Klik tombol konfirmasi"	Alasan perbaikan: [Kosong]	Sistem menahan submit dan memunculkan pesan validasi error bahwa alasan wajib diisi	BBT	Negative	Seta & ayang	Berhasil	Automated
+101	FR-PRC-06	TC-FR-PRC-06	Staf Unit menyelesaikan alur pemrosesan pengajuan setelah layanan tuntas	Pengajuan telah disetujui pimpinan atau selesai ditindaklanjuti	"1. Buka detail pengajuan yang telah tuntas
+2. Klik tombol aksi 'Tandai Selesai' / 'Selesaikan Pengajuan'
+3. Konfirmasi penyelesaian"	Pengajuan valid tuntas diproses	Status pengajuan berubah menjadi SELESAI dan seluruh alur siklus permohonan tuntas	BBT	Positive	Seta & ayang	Berhasil	Automated
+102		TC-ALT-FR-PRC-06	Sistem mencegah penyelesaian pengajuan yang masih berstatus menunggu revisi	Surat pengajuan berstatus REVISI / PERLU PERBAIKAN	"1. Buka detail pengajuan yang berstatus REVISI
+2. Amati ketersediaan tombol selesaikan pengajuan"	Pengajuan berstatus REVISI	Tombol untuk menyelesaikan surat tidak aktif atau sistem menolak penyelesaian sebelum permohonan disetujui	BBT	Negative	Seta & ayang	Berhasil	Automated
+103	FR-REL-01	TC-FR-REL-01	Staf Unit membuat draf surat terbitan balasan dari pengajuan yang telah disetujui	Surat pengajuan berstatus disetujui pimpinan	"1. Buka detail pengajuan yang telah disetujui
+2. Klik tombol aksi 'Terbitkan Surat Balasan'
+3. Pilih template terbitan atau buat draf dari awal
+4. Isi perihal dan naskah surat lalu simpan"	Template terbitan valid, Perihal balasan terisi	Surat terbitan baru berhasil dibuat dengan status DRAFT dan terhubung dengan surat rujukan pengajuan	BBT	Positive	Seta & ayang	Berhasil	Automated
+104		TC-ALT-FR-REL-01	Validasi submit draf terbitan saat field perihal dikosongkan	Form draf surat terbitan balasan terbuka	"1. Buka form pembuatan terbitan balasan
+2. Kosongkan field perihal surat
+3. Klik tombol 'Simpan Draft'"	Perihal: [Kosong]	Sistem menolak penyimpanan draf dan memunculkan notifikasi validasi bahwa perihal wajib diisi	BBT	Negative	Seta & ayang	Berhasil	Automated
+105	FR-REL-02	TC-FR-REL-02	Staf Unit mengajukan draf surat terbitan secara berjenjang ke pimpinan unit	Draf surat terbitan berstatus DRAFT telah selesai disusun	"1. Buka draf surat terbitan
+2. Klik tombol aksi 'Kirim / Pengajuan'
+3. Tentukan alur peninjau bertingkat dan masukkan catatan pengantar
+4. Klik Konfirmasi Kirim"	Alur peninjau bertingkat dipilih, Catatan pengantar terisi	Status surat terbitan berubah menjadi DIPROSES (Menunggu Persetujuan) dan masuk ke daftar kerja surat pimpinan	BBT	Positive	Seta & ayang	Berhasil	Automated
+106		TC-ALT-FR-REL-02	Validasi pengajuan terbitan saat belum ada unit peninjau yang dipilih	Modal alur pengajuan draf surat terbitan terbuka	"1. Klik tombol Kirim / Pengajuan pada draf terbitan
+2. Kosongkan daftar alur peninjau pimpinan
+3. Klik tombol Konfirmasi Kirim"	Alur peninjau: [Kosong]	Sistem menolak pengiriman dan mewajibkan pemilihan minimal satu unit peninjau pimpinan	BBT	Negative	Seta & ayang	Berhasil	Automated
