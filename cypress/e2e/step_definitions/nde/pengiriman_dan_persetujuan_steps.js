@@ -23,9 +23,11 @@ function cleanupEmptyRepeaterRows() {
     if ($sec.length > 0) {
       $sec.find(".fi-fo-repeater-item, [wire\\:key*='approval_path']").each((idx, item) => {
         const $item = Cypress.$(item);
+        const itemText = $item.find(".choices__item, .choices, .fi-fo-select, select").text().trim();
         const hasSelectedJabatan =
-          $item.find(".fi-select-input-value-label").length > 0 ||
-          ($item.find("select").length > 0 && Boolean($item.find("select").val()));
+          itemText.length > 0 &&
+          !/Pilih opsi|Pilih sebuah opsi|Select an option/i.test(itemText) &&
+          ($item.find("select").length === 0 || Boolean($item.find("select").val()));
 
         if (!hasSelectedJabatan) {
           const deleteBtn = $item.find(
@@ -44,7 +46,6 @@ function cleanupEmptyRepeaterRows() {
 When("Staf Unit menekan tombol aksi {string}", (buttonText) => {
   cy.wait(800);
   if (/Kirim \/ Pengajuan/i.test(buttonText)) {
-    cleanupEmptyRepeaterRows();
     cy.get(".fi-form-actions, form, body")
       .contains("button", /Kirim \/ Pengajuan|Kirim|Pengajuan/i, { timeout: 10000 })
       .first()
@@ -77,57 +78,59 @@ function sendQuickApprovalSurat(callback) {
   cy.get("input[id*='perihal'], input[wire\\:model*='perihal'], input[name*='perihal']")
     .first().clear({ force: true }).type(uniqueTitle, { force: true });
 
-  // Tambahkan alur persetujuan khusus untuk jabatan pimpinan
-  cy.get(".fi-section:contains('Jalur Persetujuan Khusus'), body").then(($sec) => {
-    const $emptySelect = $sec.find(".fi-fo-field-wrp:contains('Jabatan'), [data-field-wrapper]:contains('Jabatan')");
-    if ($emptySelect.length === 0) {
-      const addBtn = $sec.find("button:contains('Alur Persetujuan'), button:contains('Add to'), button:contains('Tambah'), .fi-fo-repeater-add-btn");
-      if (addBtn.length > 0) {
-        cy.wrap(addBtn.first()).click({ force: true });
-        cy.wait(1200);
-      }
+  // 1. Scroll dan buka section Jalur Persetujuan Khusus
+  cy.contains(".fi-section-header", /Jalur Persetujuan Khusus/i)
+    .scrollIntoView()
+    .click({ force: true });
+  cy.wait(1000);
+
+  // 2. Klik tombol tambah repeater dan tunggu Livewire me-render baris baru
+  cy.contains("button", /Add to alur Persetujuan|Tambah/i, { timeout: 10000 })
+    .scrollIntoView()
+    .click({ force: true });
+  cy.wait(1500);
+
+  // 3. Pastikan section tetap terbuka jika re-render sempat menutupnya
+  cy.get("body").then(($body) => {
+    const $btn = $body.find(".fi-select-input-btn:visible");
+    if ($btn.length === 0) {
+      cy.contains(".fi-section-header", /Jalur Persetujuan Khusus/i).click({ force: true });
+      cy.wait(1000);
     }
   });
 
-  cy.get(".fi-section:contains('Jalur Persetujuan Khusus'), body")
-    .find(".fi-fo-field-wrp:contains('Jabatan'), [data-field-wrapper]:contains('Jabatan')")
+  // 4. Buka dropdown jabatan
+  cy.get(".fi-select-input-btn", { timeout: 10000 })
     .last()
-    .find("button, [role='combobox'], select")
-    .first()
-    .then(($el) => {
-      if ($el.is("select")) {
-        cy.wrap($el).select(1, { force: true }).trigger("change");
-      } else {
-        cy.wrap($el).click({ force: true });
-        cy.wait(1000);
-        cy.get(".fi-dropdown-panel:visible, [role='listbox']:visible").last().then(($panel) => {
-          const $search = $panel.find("input[type='search'], input[type='text'], input");
-          if ($search.length > 0) {
-            cy.wrap($search.first()).type("Direktur", { force: true });
-            cy.wait(800);
-          }
-          cy.get(".fi-dropdown-panel:visible, [role='listbox']:visible").last()
-            .find("[role='option']:contains('Direktur'), [role='option'], li")
-            .first()
-            .click({ force: true });
-        });
-      }
-    });
+    .scrollIntoView()
+    .click({ force: true });
+  cy.wait(1000);
+
+  // 5. Cari dan pilih opsi jabatan pimpinan (Wakil Rektor II)
+  cy.get(".fi-dropdown-panel:visible, [role='listbox']:visible").last().then(($panel) => {
+    const $search = $panel.find("input.fi-input, input[type='search'], input[type='text'], input");
+    if ($search.length > 0) {
+      cy.wrap($search.first()).type("Wakil Rektor II", { force: true });
+      cy.wait(1000);
+    }
+    cy.get(".fi-dropdown-panel:visible, [role='listbox']:visible")
+      .last()
+      .find(".fi-dropdown-list-item, [role='option'], li")
+      .first()
+      .click({ force: true });
+  });
 
   cy.wait(800);
 
-  // Aktifkan switch Penandatangan
-  cy.get(".fi-section:contains('Jalur Persetujuan Khusus'), body")
-    .find(".fi-fo-field-wrp:contains('Penandatangan'), [data-field-wrapper]:contains('Penandatangan')")
-    .last()
-    .find("button[role='switch'], input[type='checkbox']")
-    .then(($sw) => {
-      if ($sw.is("button") && $sw.attr("aria-checked") !== "true") {
-        cy.wrap($sw).click({ force: true });
-      } else if ($sw.is("input") && !$sw.is(":checked")) {
-        cy.wrap($sw).check({ force: true });
+  // 6. Aktifkan switch Penandatangan secara defensif jika tersedia
+  cy.get("body").then(($body) => {
+    const $sw = $body.find("button[role='switch'][id*='is_signer'], button[role='switch']");
+    if ($sw.length > 0) {
+      if ($sw.attr("aria-checked") !== "true") {
+        cy.wrap($sw.last()).click({ force: true });
       }
-    });
+    }
+  });
 
   // Isi konten TinyMCE / textarea
   cy.wait(1000);
@@ -337,51 +340,59 @@ When("Staf Unit memastikan unit tujuan dan jalur persetujuan dalam keadaan koson
 });
 
 When("Staf Unit menambahkan jalur persetujuan khusus untuk jabatan pimpinan", () => {
-  cy.get(".fi-section:contains('Jalur Persetujuan Khusus'), body").then(($sec) => {
-    const $emptySelect = $sec.find(".fi-fo-field-wrp:contains('Jabatan'), [data-field-wrapper]:contains('Jabatan')");
-    if ($emptySelect.length === 0) {
-      const addBtn = $sec.find("button:contains('Alur Persetujuan'), button:contains('Add to'), button:contains('Tambah'), .fi-fo-repeater-add-btn");
-      if (addBtn.length > 0) {
-        cy.wrap(addBtn.first()).click({ force: true });
-        cy.wait(1200);
-      }
+  // 1. Scroll dan buka section Jalur Persetujuan Khusus
+  cy.contains(".fi-section-header", /Jalur Persetujuan Khusus/i)
+    .scrollIntoView()
+    .click({ force: true });
+  cy.wait(1000);
+
+  // 2. Klik tombol tambah repeater dan tunggu Livewire me-render baris baru
+  cy.contains("button", /Add to alur Persetujuan|Tambah/i, { timeout: 10000 })
+    .scrollIntoView()
+    .click({ force: true });
+  cy.wait(1500);
+
+  // 3. Pastikan section tetap terbuka jika re-render sempat menutupnya
+  cy.get("body").then(($body) => {
+    const $btn = $body.find(".fi-select-input-btn:visible");
+    if ($btn.length === 0) {
+      cy.contains(".fi-section-header", /Jalur Persetujuan Khusus/i).click({ force: true });
+      cy.wait(1000);
     }
   });
 
-  // Pilih jabatan pada repeater item
-  cy.get(".fi-section:contains('Jalur Persetujuan Khusus'), body")
-    .find(".fi-fo-field-wrp:contains('Jabatan'), [data-field-wrapper]:contains('Jabatan')")
+  // 4. Buka dropdown jabatan
+  cy.get(".fi-select-input-btn", { timeout: 10000 })
     .last()
-    .find("button, [role='combobox'], select")
-    .first()
-    .then(($el) => {
-      if ($el.is("select")) {
-        cy.wrap($el).select(1, { force: true }).trigger("change");
-      } else {
-        cy.wrap($el).click({ force: true });
-        cy.wait(1500);
-        cy.get(".fi-dropdown-panel:visible, [role='listbox']:visible")
-          .last()
-          .find("[role='option'], li, button")
-          .first()
-          .click({ force: true });
-      }
-    });
+    .scrollIntoView()
+    .click({ force: true });
+  cy.wait(1000);
+
+  // 5. Cari dan pilih opsi jabatan pimpinan (Wakil Rektor II)
+  cy.get(".fi-dropdown-panel:visible, [role='listbox']:visible").last().then(($panel) => {
+    const $search = $panel.find("input.fi-input, input[type='search'], input[type='text'], input");
+    if ($search.length > 0) {
+      cy.wrap($search.first()).type("Wakil Rektor II", { force: true });
+      cy.wait(1000);
+    }
+    cy.get(".fi-dropdown-panel:visible, [role='listbox']:visible")
+      .last()
+      .find(".fi-dropdown-list-item, [role='option'], li")
+      .first()
+      .click({ force: true });
+  });
 
   cy.wait(800);
 
-  // Aktifkan switch Penandatangan jika tersedia
-  cy.get(".fi-section:contains('Jalur Persetujuan Khusus'), body")
-    .find(".fi-fo-field-wrp:contains('Penandatangan'), [data-field-wrapper]:contains('Penandatangan')")
-    .last()
-    .find("button[role='switch'], input[type='checkbox']")
-    .then(($sw) => {
-      if ($sw.is("button") && $sw.attr("aria-checked") !== "true") {
-        cy.wrap($sw).click({ force: true });
-      } else if ($sw.is("input") && !$sw.is(":checked")) {
-        cy.wrap($sw).check({ force: true });
+  // 6. Aktifkan switch Penandatangan secara defensif jika tersedia
+  cy.get("body").then(($body) => {
+    const $sw = $body.find("button[role='switch'][id*='is_signer'], button[role='switch']");
+    if ($sw.length > 0) {
+      if ($sw.attr("aria-checked") !== "true") {
+        cy.wrap($sw.last()).click({ force: true });
       }
-    });
+    }
+  });
 });
 
 

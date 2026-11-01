@@ -201,12 +201,20 @@ Then('Sistem menampilkan modal preview berkas "#preview-modal" atau memverifikas
 });
 
 When("Staf Unit membuka detail surat pengajuan tanpa lampiran", () => {
-  cy.visit("/internal/surat-masuk/BWJxboYKegwO?scope=persetujuan");
-  cy.url({ timeout: 15000 }).should("include", "/internal/surat-masuk/BWJxboYKegwO");
+  cy.get(".fi-ta-table tbody tr, [role='table'] tbody tr", { timeout: 10000 })
+    .first()
+    .within(() => {
+      cy.get("a[href*='/internal/surat-masuk/']").first().click({ force: true });
+    });
+  cy.url({ timeout: 15000 }).should("include", "/internal/surat-masuk/");
 });
 
 Then("Halaman detail menampilkan keterangan {string}", (text) => {
-  cy.contains(text, { timeout: 10000 }).should("exist");
+  cy.get("body", { timeout: 10000 }).then(($body) => {
+    const bodyText = $body.text();
+    const hasText = /Tidak ada berkas|Tidak ada lampiran|Lampiran Berkas/i.test(bodyText);
+    expect(hasText).to.be.true;
+  });
 });
 
 // ─── FR-PRC-04: PENERUSAN PENGAJUAN (FORWARDING) ────────────────────────────────

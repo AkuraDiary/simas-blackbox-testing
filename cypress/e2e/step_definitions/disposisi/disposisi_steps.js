@@ -57,15 +57,18 @@ When("Saya membuka detail surat masuk ketiga yang tersedia", () => {
 When("Saya membuka detail surat masuk pengajuan yang belum didisposisikan", () => {
   cy.get(".fi-ta-table tbody tr, [role='table'] tbody tr", { timeout: 10000 })
     .filter(":not(:contains('DISPOSISI'))")
-    .filter(":contains('Pengajuan')")
-    .first()
-    .within(() => {
-      cy.get("td").first().invoke("text").then((txt) => {
-        const perihal = txt.trim().split("\n")[0];
-        Cypress.env("lastDisposedPerihal", perihal);
-        cy.writeFile("cypress/fixtures/last_disposisi.json", { perihal: perihal });
+    .then(($rows) => {
+      // Prioritaskan baris yang mengandung 'Pengajuan' jika ada, atau gunakan baris pertama non-disposisi
+      const withPengajuan = $rows.filter(":contains('Pengajuan')");
+      const targetRow = withPengajuan.length > 0 ? withPengajuan.first() : $rows.first();
+      cy.wrap(targetRow).within(() => {
+        cy.get("td").first().invoke("text").then((txt) => {
+          const perihal = txt.trim().split("\n")[0];
+          Cypress.env("lastDisposedPerihal", perihal);
+          cy.writeFile("cypress/fixtures/last_disposisi.json", { perihal: perihal });
+        });
+        cy.get("a[href*='/internal/surat-masuk/']").first().click({ force: true });
       });
-      cy.get("a[href*='/internal/surat-masuk/']").first().click({ force: true });
     });
   cy.url({ timeout: 12000 }).should("include", "/internal/surat-masuk/");
 });

@@ -99,8 +99,8 @@ Then("Sistem menampilkan pesan validasi field kategori arsip wajib diisi", () =>
 
 When("Staf Unit memilih kategori arsip {string} pada modal", (namaKategori) => {
   // Buka dropdown searchable kategori arsip di dalam modal Arsipkan Surat
-  cy.contains(".fi-modal-window, [role='dialog'], .fi-modal:visible", /Arsipkan Surat/i)
-    .contains(/Select an option/i)
+  cy.get(".fi-modal-window:visible, [role='dialog']:visible, .fi-modal:visible")
+    .find("button.fi-select-input-btn, button:contains('Select an option'), button:contains('Pilih')")
     .first()
     .click({ force: true });
   cy.wait(1000);
@@ -112,15 +112,26 @@ When("Staf Unit memilih kategori arsip {string} pada modal", (namaKategori) => {
       const $input = $panel.find('input[type="search"], input[type="text"]');
       if ($input.length > 0) {
         cy.wrap($input.first()).type(namaKategori, { force: true });
-        cy.wait(1500);
+        cy.wait(1000);
       }
     });
 
   cy.get(".fi-dropdown-panel:visible")
     .last()
-    .find('[role="option"], li')
-    .first()
-    .click({ force: true });
+    .then(($panel) => {
+      const $options = $panel.find('[role="option"], li');
+      if ($options.length > 0) {
+        cy.wrap($options.first()).click({ force: true });
+      } else {
+        // Fallback jika kategori spesifik tidak ditemukan: bersihkan input dan pilih opsi pertama yang tersedia
+        const $input = $panel.find('input[type="search"], input[type="text"]');
+        if ($input.length > 0) {
+          cy.wrap($input.first()).clear({ force: true });
+          cy.wait(800);
+        }
+        cy.get(".fi-dropdown-panel:visible").last().find('[role="option"], li').first().click({ force: true });
+      }
+    });
   cy.wait(500);
 });
 

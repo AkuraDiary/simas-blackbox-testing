@@ -1,0 +1,179 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 0,
+    "pending": 0,
+    "failures": 4,
+    "start": "2026-11-01T02:04:47.612Z",
+    "end": "2026-11-01T02:08:45.440Z",
+    "duration": 237828,
+    "testsRegistered": 4,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "afe678e8-89f7-4250-9eab-fe8b318261c0",
+      "title": "",
+      "fullFile": "cypress/e2e/features/mahasiswa/fr_req_06_portal_mahasiswa.feature",
+      "file": "cypress/e2e/features/mahasiswa/fr_req_06_portal_mahasiswa.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cb921cd1-f7c9-4b08-9b61-52565c12aa85",
+          "title": "FR-REQ-06 & FR-REQ-01 Portal Pengajuan dan Riwayat Surat Mahasiswa",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-FR-REQ-06-A - Mahasiswa Melihat Daftar Riwayat Pengajuan Surat Pribadi",
+              "fullTitle": "FR-REQ-06 & FR-REQ-01 Portal Pengajuan dan Riwayat Surat Mahasiswa TC-FR-REQ-06-A - Mahasiswa Melihat Daftar Riwayat Pengajuan Surat Pribadi",
+              "timedOut": null,
+              "duration": 19776,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected 'https://dev.elsimas.my.id/internal/login' to not include '/login'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected 'https://dev.elsimas.my.id/internal/login' to not include '/login'\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/mahasiswa/fr_req_06_portal_mahasiswa.feature:15057:39)\n    at getRet (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121346:20)\n    at tryCatcher (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:1780:23)\n    at Promise.attempt.Promise.try (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:4288:29)\n    at Context.thenFn (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121357:66)\n    at Context.then (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121608:21)\n    at wrapped (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:146375:19)",
+                "diff": null
+              },
+              "uuid": "84ff6f17-f080-4554-8291-2a5f42ce6830",
+              "parentUUID": "cb921cd1-f7c9-4b08-9b61-52565c12aa85",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-REQ-06-B - Mahasiswa Melakukan Pencarian Riwayat Surat Berdasarkan Perihal",
+              "fullTitle": "FR-REQ-06 & FR-REQ-01 Portal Pengajuan dan Riwayat Surat Mahasiswa TC-FR-REQ-06-B - Mahasiswa Melakukan Pencarian Riwayat Surat Berdasarkan Perihal",
+              "timedOut": null,
+              "duration": 19683,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected 'https://dev.elsimas.my.id/internal/login' to not include '/login'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected 'https://dev.elsimas.my.id/internal/login' to not include '/login'\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/mahasiswa/fr_req_06_portal_mahasiswa.feature:15057:39)\n    at getRet (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121346:20)\n    at tryCatcher (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:1780:23)\n    at Promise.attempt.Promise.try (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:4288:29)\n    at Context.thenFn (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121357:66)\n    at Context.then (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121608:21)\n    at wrapped (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:146375:19)",
+                "diff": null
+              },
+              "uuid": "23c84d55-f704-41b4-b7c3-6f9a52de8baa",
+              "parentUUID": "cb921cd1-f7c9-4b08-9b61-52565c12aa85",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-REQ-01-MHS - Mahasiswa Mengajukan Permohonan Surat Baru Menggunakan Template Resmi",
+              "fullTitle": "FR-REQ-06 & FR-REQ-01 Portal Pengajuan dan Riwayat Surat Mahasiswa TC-FR-REQ-01-MHS - Mahasiswa Mengajukan Permohonan Surat Baru Menggunakan Template Resmi",
+              "timedOut": null,
+              "duration": 19421,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected 'https://dev.elsimas.my.id/internal/login' to not include '/login'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected 'https://dev.elsimas.my.id/internal/login' to not include '/login'\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/mahasiswa/fr_req_06_portal_mahasiswa.feature:15057:39)\n    at getRet (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121346:20)\n    at tryCatcher (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:1780:23)\n    at Promise.attempt.Promise.try (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:4288:29)\n    at Context.thenFn (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121357:66)\n    at Context.then (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121608:21)\n    at wrapped (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:146375:19)",
+                "diff": null
+              },
+              "uuid": "48549f09-f990-46e2-beb4-68b1634431c8",
+              "parentUUID": "cb921cd1-f7c9-4b08-9b61-52565c12aa85",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-REQ-06-A - Verifikasi Field Identitas Mahasiswa Bersifat Read-Only",
+              "fullTitle": "FR-REQ-06 & FR-REQ-01 Portal Pengajuan dan Riwayat Surat Mahasiswa TC-ALT-FR-REQ-06-A - Verifikasi Field Identitas Mahasiswa Bersifat Read-Only",
+              "timedOut": null,
+              "duration": 19572,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: expected 'https://dev.elsimas.my.id/internal/login' to not include '/login'",
+                "estack": "AssertionError: Timed out retrying after 15000ms: expected 'https://dev.elsimas.my.id/internal/login' to not include '/login'\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/features/mahasiswa/fr_req_06_portal_mahasiswa.feature:15057:39)\n    at getRet (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121346:20)\n    at tryCatcher (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:1780:23)\n    at Promise.attempt.Promise.try (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:4288:29)\n    at Context.thenFn (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121357:66)\n    at Context.then (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121608:21)\n    at wrapped (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:146375:19)",
+                "diff": null
+              },
+              "uuid": "e62a3edb-570b-47ff-bc4d-705712e4ab92",
+              "parentUUID": "cb921cd1-f7c9-4b08-9b61-52565c12aa85",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "84ff6f17-f080-4554-8291-2a5f42ce6830",
+            "23c84d55-f704-41b4-b7c3-6f9a52de8baa",
+            "48549f09-f990-46e2-beb4-68b1634431c8",
+            "e62a3edb-570b-47ff-bc4d-705712e4ab92"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 78452,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

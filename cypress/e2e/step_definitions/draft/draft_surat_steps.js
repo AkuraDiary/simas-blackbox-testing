@@ -71,11 +71,11 @@ function fillDynamicTemplateFieldsIfAny() {
         if (!val || val.trim() === "") {
           const type = $el.attr("type");
           if (type === "number") {
-            cy.wrap($el).clear({ force: true }).type("100", { force: true }).trigger("input").trigger("change").blur();
+            cy.wrap($el).clear({ force: true }).type("100", { force: true }).trigger("input").trigger("change");
           } else if (type === "date") {
-            cy.wrap($el).clear({ force: true }).type("2026-10-30", { force: true }).trigger("input").trigger("change").blur();
+            cy.wrap($el).clear({ force: true }).type("2026-10-30", { force: true }).trigger("input").trigger("change");
           } else if (type !== "radio" && type !== "checkbox" && type !== "file") {
-            cy.wrap($el).clear({ force: true }).type("Data Uji Variabel QA", { force: true }).trigger("input").trigger("change").blur();
+            cy.wrap($el).clear({ force: true }).type("Data Uji Variabel QA", { force: true }).trigger("input").trigger("change");
           }
           cy.wait(300);
         }
@@ -93,11 +93,11 @@ function fillDynamicTemplateFieldsIfAny() {
         if (!val || val.trim() === "") {
           const type = $req.attr("type");
           if (type === "number") {
-            cy.wrap($req).clear({ force: true }).type("100", { force: true }).trigger("input").trigger("change").blur();
+            cy.wrap($req).clear({ force: true }).type("100", { force: true }).trigger("input").trigger("change");
           } else if (type === "date") {
-            cy.wrap($req).clear({ force: true }).type("2026-10-30", { force: true }).trigger("input").trigger("change").blur();
+            cy.wrap($req).clear({ force: true }).type("2026-10-30", { force: true }).trigger("input").trigger("change");
           } else if (type !== "radio" && type !== "checkbox" && type !== "file") {
-            cy.wrap($req).clear({ force: true }).type("Data Uji Variabel QA", { force: true }).trigger("input").trigger("change").blur();
+            cy.wrap($req).clear({ force: true }).type("Data Uji Variabel QA", { force: true }).trigger("input").trigger("change");
           }
           cy.wait(300);
         }
@@ -165,7 +165,7 @@ When("Staf Unit memilih template surat pertama yang tersedia", () => {
     .trigger("change");
 
   // Tunggu hingga Livewire selesai merender banner template terpilih
-  cy.contains("span, a", /Unduh File Word|Template Terpilih/i, { timeout: 15000 }).should("be.visible");
+  cy.contains("button, span, a", /Unduh Dokumen|Unduh File Word|Template Terpilih/i, { timeout: 15000 }).should("be.visible");
   cy.wait(1500);
 
   // Pastikan unit tujuan terisi jika diperlukan
@@ -184,8 +184,7 @@ When("Staf Unit mengisi perihal surat dengan {string}", (perihalText) => {
       .clear({ force: true })
       .type(perihalText, { force: true })
       .trigger("input")
-      .trigger("change")
-      .blur();
+      .trigger("change");
   });
 
   cy.wait(500);

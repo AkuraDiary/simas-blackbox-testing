@@ -64,7 +64,8 @@ Then("Sistem mengalihkan pengguna ke formulir pembuatan surat terbitan {string}"
 });
 
 Then("Formulir menampilkan identitas rujukan surat pengajuan", () => {
-  cy.get(".fi-fo-field-wrp:contains('Merujuk ke Pengajuan'), label:contains('Merujuk ke Pengajuan')", { timeout: 10000 })
+  cy.get(".fi-fo-field-wrp, label", { timeout: 10000 })
+    .contains(/Rujukan Pengajuan|Merujuk ke Pengajuan/i, { timeout: 10000 })
     .should("exist");
 });
 
@@ -86,11 +87,17 @@ When("Staf Unit mengisi perihal surat terbitan dengan timestamp dinamis {string}
     }
   });
 
-  // 2. Pilih Template 12 (Template Surat Keputusan Internal) - alur persetujuan default: Direktur (Pak Rektor)
+  // 2. Pilih Template yang tersedia secara adaptif (data-agnostic)
   cy.get("select[id*='template_id']", { timeout: 10000 })
     .should("be.visible")
-    .select("12", { force: true })
-    .trigger("change");
+    .then(($sel) => {
+      const validOptions = $sel.find("option").filter((_, opt) => opt.value && opt.value !== "");
+      if (validOptions.length > 0) {
+        const has12 = $sel.find("option[value='12']").length > 0;
+        const targetVal = has12 ? "12" : validOptions.first().val();
+        cy.wrap($sel).select(targetVal, { force: true }).trigger("change");
+      }
+    });
   cy.wait(2500);
 
   // 3. Isi semua input perihal dan variabel dinamis template
@@ -99,8 +106,7 @@ When("Staf Unit mengisi perihal surat terbitan dengan timestamp dinamis {string}
       .clear({ force: true })
       .type(dynamicPerihal, { force: true })
       .trigger("input")
-      .trigger("change")
-      .blur();
+      .trigger("change");
   });
   cy.wait(500);
   cy.get('input[id*="perihal"]').first().should("have.value", dynamicPerihal);

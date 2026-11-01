@@ -2,19 +2,28 @@ import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
 // ─── AUTH & NAVIGATION ─────────────────────────────────────────────────────────
 
+const AUTH_FALLBACKS = {
+  pakrektor: { user: "rektor", pass: "password123" },
+  budisantoso: { user: "staff.fik", pass: "password123" },
+  stafflogistik: { user: "staff.baku", pass: "password123" },
+};
+
 Given("Staf Unit telah login dengan akun {string} dan kata sandi {string}", (username, password) => {
+  const targetUser = AUTH_FALLBACKS[username]?.user || username;
+  const targetPass = AUTH_FALLBACKS[username]?.pass || password;
+
   cy.visit("/internal/login");
   cy.url().then((url) => {
     if (url.includes("/login")) {
       cy.get('input[id*="username"], input[wire\\:model*="username"], input[type="text"]', { timeout: 15000 })
         .first()
         .clear({ force: true })
-        .type(username, { force: true });
+        .type(targetUser, { force: true });
 
       cy.get('input[id*="password"], input[wire\\:model*="password"], input[type="password"]')
         .first()
         .clear({ force: true })
-        .type(password, { force: true });
+        .type(targetPass, { force: true });
 
       cy.get(".fi-form-actions button[type='submit'], form button[type='submit']")
         .first()

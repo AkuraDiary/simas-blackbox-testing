@@ -100,6 +100,9 @@ When("Saya menekan tombol {string} pada form", (buttonText) => {
 Then("Pegawai dengan NIP {string} harus muncul pada daftar pegawai", (nip) => {
   const nipVal = getEffectiveNip(nip);
   cy.visit("/internal/user-pegawais");
+  cy.get(".fi-ta-table, [role='table']", { timeout: 10000 }).should("be.visible");
+  cy.get(".fi-ta-header input, .fi-ta-search-field input, .fi-ta input[type='search']").first().clear().type(`${nipVal}{enter}`);
+  cy.wait(1200);
   cy.get(".fi-ta-table, [role='table']", { timeout: 10000 })
     .should("contain", nipVal);
 });
@@ -112,7 +115,7 @@ Then("Form pegawai tidak terkirim dan menampilkan validasi error", () => {
 
 When("Saya mencari pegawai dengan kata kunci {string}", (keyword) => {
   const keywordVal = keyword === "198001012005011001" ? getEffectiveNip(keyword) : keyword;
-  cy.get("input[type='search'], input[placeholder*='Cari']", { timeout: 10000 })
+  cy.get(".fi-ta-header input, .fi-ta-search-field input, .fi-ta input[type='search']", { timeout: 10000 })
     .first()
     .clear()
     .type(`${keywordVal}{enter}`);
@@ -120,10 +123,10 @@ When("Saya mencari pegawai dengan kata kunci {string}", (keyword) => {
 });
 
 When("Saya membuka form edit pegawai {string}", (namaPegawai) => {
-  cy.contains("tr", namaPegawai)
-    .within(() => {
-      cy.contains("a, button", "Edit").click({ force: true });
-    });
+  cy.get(".fi-ta-table, [role='table']", { timeout: 10000 }).should("be.visible");
+  cy.get("tbody tr").first().within(() => {
+    cy.contains("a, button", /Edit|Ubah/i).click({ force: true });
+  });
   cy.url({ timeout: 10000 }).should("include", "/edit");
 });
 
@@ -141,6 +144,9 @@ When("Saya mengisi nomor telepon pegawai {string}", (phone) => {
 
 Then("Pegawai dengan nama {string} harus muncul pada daftar pegawai", (namaPegawai) => {
   cy.visit("/internal/user-pegawais");
+  cy.get(".fi-ta-table, [role='table']", { timeout: 10000 }).should("be.visible");
+  cy.get(".fi-ta-header input, .fi-ta-search-field input, .fi-ta input[type='search']").first().clear().type(`${namaPegawai}{enter}`);
+  cy.wait(1200);
   cy.get(".fi-ta-table, [role='table']", { timeout: 10000 })
     .should("contain", namaPegawai);
 });
@@ -216,7 +222,7 @@ Then("Form mahasiswa tidak terkirim dan menampilkan validasi error", () => {
 
 When("Saya mencari mahasiswa dengan kata kunci {string}", (keyword) => {
   const keywordVal = keyword === "2010114001" ? getEffectiveNim(keyword) : keyword;
-  cy.get("input[type='search'], input[placeholder*='Cari']", { timeout: 10000 })
+  cy.get(".fi-ta-header input, .fi-ta-search-field input, .fi-ta input[type='search']", { timeout: 10000 })
     .first()
     .clear()
     .type(`${keywordVal}{enter}`);

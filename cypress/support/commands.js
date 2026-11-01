@@ -8,30 +8,50 @@ Cypress.Commands.add('loginAs', (role) => {
     }
 
     let username = '';
-    let password = 'password';
+    let password = 'password123';
 
     switch (role.toLowerCase()) {
       case 'admin':
         username = 'admin';
         password = 'password';
         break;
+      case 'staff.fik':
       case 'pegawai':
       case 'staff':
-        username = 'stafflogistik';
+      case 'arasy':
+      case 'budisantoso': // Fallback backward-compatibility
+        username = 'staff.fik';
+        password = 'password123';
+        break;
+      case 'dekan.fik':
+        username = 'dekan.fik';
+        password = 'password123';
+        break;
+      case 'rektor':
+      case 'pakrektor': // Fallback backward-compatibility
+        username = 'rektor';
+        password = 'password123';
+        break;
+      case 'warek2':
+        username = 'warek2';
+        password = 'password123';
+        break;
+      case 'staff.baku':
+      case 'stafflogistik': // Fallback backward-compatibility
+        username = 'staff.baku';
+        password = 'password123';
+        break;
+      case 'kepala.baku':
+        username = 'kepala.baku';
         password = 'password123';
         break;
       case 'mahasiswa':
         username = 'mahasiswa';
-        password = 'password123';
-        break;
-      case 'pakrektor':
-      case 'rektor':
-        username = 'pakrektor';
         password = 'password';
         break;
       default:
         username = role;
-        password = 'password';
+        password = 'password123';
         break;
     }
 
