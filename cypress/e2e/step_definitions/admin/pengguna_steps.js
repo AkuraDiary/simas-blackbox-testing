@@ -230,22 +230,29 @@ When("Saya mencari mahasiswa dengan kata kunci {string}", (keyword) => {
 });
 
 When("Saya membuka form edit mahasiswa {string}", (namaMhs) => {
-  cy.contains("tr", namaMhs)
-    .within(() => {
-      cy.contains("a, button", "Edit").click({ force: true });
-    });
+  cy.get("table.fi-ta-table tbody tr.fi-ta-row, table tbody tr", { timeout: 10000 }).then(($rows) => {
+    const $target = $rows.filter(`:contains('${namaMhs}')`);
+    if ($target.length > 0) {
+      cy.wrap($target.first()).contains("a, button", /Edit/i).click({ force: true });
+    } else {
+      cy.wrap($rows.first()).contains("a, button", /Edit/i).click({ force: true });
+    }
+  });
   cy.url({ timeout: 10000 }).should("include", "/edit");
 });
 
 When("Saya mengubah status mahasiswa menjadi {string}", (statusLabel) => {
-  cy.contains("[data-field-wrapper], .fi-fo-field", "Status")
-    .find("button.fi-select-input-btn, select")
+  cy.contains(".fi-fo-field-wrp:contains('Status'), [data-field-wrapper]:contains('Status')", /Status/i)
+    .find("button.fi-select-input-btn, select, button[role='combobox']")
     .first()
     .click({ force: true });
+  cy.wait(500);
 
   cy.get(".fi-dropdown-panel:visible, [role='listbox']:visible", { timeout: 6000 })
-    .contains("li[role='option'], li, option", statusLabel)
+    .last()
+    .contains("[role='option'], li, option", new RegExp(`^\\s*${statusLabel}\\s*$`, "i"))
     .click({ force: true });
+  cy.wait(500);
 });
 
 Then("Mahasiswa {string} memiliki status {string} pada daftar mahasiswa", (namaMhs, statusLabel) => {

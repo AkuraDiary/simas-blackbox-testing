@@ -207,8 +207,19 @@ When("Saya mengubah nama template menjadi {string}", (newName) => {
 });
 
 Then("Template {string} tidak boleh muncul pada daftar template", (namaTemplate) => {
+  cy.get(".fi-modal:visible:not(#database-notifications)", { timeout: 8000 }).should("not.exist");
+  cy.url({ timeout: 15000 }).should("not.include", "/edit");
   cy.visit("/internal/template-resource/templates");
-  cy.get(".fi-ta-table, [role='table'], .fi-ta-content", { timeout: 10000 })
+  cy.get(".fi-ta-content, table, body", { timeout: 15000 }).should("be.visible");
+  cy.wait(1000);
+  cy.get("body").then(($body) => {
+    const $search = $body.find(".fi-ta-search-field input, input[type='search'], input[placeholder*='Cari'], input[placeholder*='Search']");
+    if ($search.length > 0 && $search.is(":visible")) {
+      cy.wrap($search.first()).clear().type(`${namaTemplate}{enter}`);
+      cy.wait(1500);
+    }
+  });
+  cy.get(".fi-ta-table, [role='table'], .fi-ta-content, body", { timeout: 10000 })
     .should("not.contain", namaTemplate);
 });
 

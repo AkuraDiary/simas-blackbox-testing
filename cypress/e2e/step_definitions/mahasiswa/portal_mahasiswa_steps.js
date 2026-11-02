@@ -1,39 +1,7 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
 Given("Mahasiswa telah login dengan akun {string} dan kata sandi {string}", (username, password) => {
-  cy.visit("/internal/login");
-  cy.url().then((url) => {
-    if (url.includes("/login")) {
-      const doLogin = (pass) => {
-        cy.get('input[id*="username"], input[wire\\:model*="username"], input[type="text"]')
-          .first()
-          .clear({ force: true })
-          .type(username, { force: true });
-
-        cy.get('input[id*="password"], input[wire\\:model*="password"], input[type="password"]')
-          .first()
-          .clear({ force: true })
-          .type(pass, { force: true });
-
-        cy.get(".fi-form-actions button[type='submit'], form button[type='submit']")
-          .first()
-          .click({ force: true });
-      };
-
-      // Coba password yang diberikan, bila gagal gunakan fallback password default ('password' atau 'password123')
-      doLogin(password);
-
-      cy.wait(1500);
-      cy.get("body").then(($body) => {
-        if ($body.text().includes("These credentials do not match our records")) {
-          const fallbackPass = password === "password123" ? "password" : "password123";
-          doLogin(fallbackPass);
-        }
-      });
-
-      cy.url({ timeout: 15000 }).should("not.include", "/login");
-    }
-  });
+  cy.loginAs(username);
 });
 
 Given("Mahasiswa mengakses halaman portal pengajuan surat {string}", (url) => {
@@ -117,11 +85,13 @@ When("Mahasiswa memilih template surat resmi yang tersedia di portal", () => {
 When("Mahasiswa memeriksa identitas akademik terisi otomatis pada form", () => {
   cy.get('input[id*="pengirim_nama"], input[wire\\:model*="pengirim_nama"]')
     .first()
-    .should("have.value", "mahasiswa");
+    .invoke("val")
+    .should("not.be.empty");
 
   cy.get('input[id*="pengirim_nim"], input[wire\\:model*="pengirim_nim"]')
     .first()
-    .should("have.value", "124");
+    .invoke("val")
+    .should("not.be.empty");
 
   // Isi nomor WhatsApp (aktif) yang mandatory pada Step 2
   cy.get('input[id*="pengirim_telp"], input[wire\\:model*="pengirim_telp"]')

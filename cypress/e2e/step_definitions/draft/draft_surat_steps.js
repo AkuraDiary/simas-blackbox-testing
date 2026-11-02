@@ -122,7 +122,30 @@ When("Staf Unit menekan tombol {string}", (buttonText) => {
     // 1. Bersihkan baris repeater default kosong jika ada agar tidak memblokir submit draft (Butir 3 AGENTS.md)
     cleanupEmptyRepeaterRows();
 
-    // 2. Beri toleransi jeda sebelum submit
+    // 2. Isi seluruh field dinamis template (input, textarea) yang masih kosong
+    cy.get("body").then(($body) => {
+      const $inputs = $body.find("input[name*='content.'], textarea[name*='content.'], form input[required]:visible, form textarea[required]:visible");
+      if ($inputs.length > 0) {
+        cy.wrap($inputs).each(($el) => {
+          const id = $el.attr("id") || "";
+          const name = $el.attr("name") || "";
+          if (id.includes("perihal") || name.includes("perihal") || id.includes("username") || id.includes("password")) return;
+          const val = $el.val();
+          if (!val || val.trim() === "") {
+            const type = $el.attr("type");
+            if (type === "number") {
+              cy.wrap($el).clear({ force: true }).type("100", { force: true }).trigger("input").trigger("change");
+            } else if (type === "date") {
+              cy.wrap($el).clear({ force: true }).type("2026-10-30", { force: true }).trigger("input").trigger("change");
+            } else if (type !== "radio" && type !== "checkbox" && type !== "file") {
+              cy.wrap($el).clear({ force: true }).type("Data Uji Variabel QA", { force: true }).trigger("input").trigger("change");
+            }
+            cy.wait(200);
+          }
+        });
+      }
+    });
+
     cy.wait(800);
 
     // 3. Isolasi tombol Simpan Draft di area aksi form

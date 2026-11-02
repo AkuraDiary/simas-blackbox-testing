@@ -64,7 +64,20 @@ Given("Pengguna publik membuat pengajuan surat baru ke unit Rektorat", () => {
     if ($body.find('select[id*="unit_tujuan"], select[wire\\:model*="unit_tujuan"]').length > 0) {
       cy.get('select[id*="unit_tujuan"], select[wire\\:model*="unit_tujuan"]')
         .first()
-        .select(1, { force: true });
+        .then(($sel) => {
+          const $options = $sel.find("option");
+          let selected = false;
+          $options.each((idx, opt) => {
+            if (Cypress.$(opt).text().includes("Fakultas Ilmu Kesehatan")) {
+              cy.wrap($sel).select(Cypress.$(opt).val(), { force: true });
+              selected = true;
+              return false;
+            }
+          });
+          if (!selected) {
+            cy.wrap($sel).select(1, { force: true });
+          }
+        });
     } else {
       cy.contains("label", /Unit Tujuan/i)
         .parent()
@@ -75,8 +88,17 @@ Given("Pengguna publik membuat pengajuan surat baru ke unit Rektorat", () => {
             cy.wrap($el).select(1, { force: true });
           } else {
             cy.wrap($el).click({ force: true });
-            cy.wait(500);
-            cy.get('li[role="option"], [role="option"]').first().click({ force: true });
+            cy.wait(800);
+            cy.get(".fi-dropdown-panel:visible, [role='listbox']:visible")
+              .last()
+              .then(($panel) => {
+                const $fikOpt = $panel.find("li[role='option']:contains('Fakultas Ilmu Kesehatan')");
+                if ($fikOpt.length > 0) {
+                  cy.wrap($fikOpt.first()).click({ force: true });
+                } else {
+                  cy.wrap($panel.find("li[role='option']").first()).click({ force: true });
+                }
+              });
           }
         });
     }

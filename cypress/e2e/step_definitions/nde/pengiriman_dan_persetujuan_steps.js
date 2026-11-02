@@ -63,168 +63,172 @@ Given("Staf Unit berada di halaman pembuatan surat {string}", (url) => {
   cy.get(".fi-page-header, form, body", { timeout: 15000 }).should("be.visible");
 });
 
-function sendQuickApprovalSurat(callback) {
-  const uniqueTitle = `Surat Persetujuan QA ${Date.now()}`;
-  Cypress.env("activePendingSurat", uniqueTitle);
+function createFreshPengajuanForFik(callback) {
+  cy.visit("/pengajuan");
+  cy.get("body", { timeout: 15000 }).should("be.visible");
 
-  cy.visit("/internal/surats/create");
-  cy.get(".fi-page-header, form, body", { timeout: 15000 }).should("be.visible");
-
-  // Pilih metode scratch
-  cy.contains("label", /Tulis dari Awal/i).click({ force: true });
-  cy.wait(1000);
-
-  // Isi perihal
-  cy.get("input[id*='perihal'], input[wire\\:model*='perihal'], input[name*='perihal']")
-    .first().clear({ force: true }).type(uniqueTitle, { force: true });
-
-  // 1. Scroll dan buka section Jalur Persetujuan Khusus
-  cy.contains(".fi-section-header", /Jalur Persetujuan Khusus/i)
+  // Step 1: Template (Scratch)
+  cy.contains(/Buat Surat Tanpa Template/i, { timeout: 10000 })
     .scrollIntoView()
+    .should("be.visible")
     .click({ force: true });
-  cy.wait(1000);
+  cy.wait(1200);
+  cy.get("button").contains(/^\s*Lanjutkan\s*$/i).first().should("be.visible").click({ force: true });
+  cy.wait(1200);
 
-  // 2. Klik tombol tambah repeater dan tunggu Livewire me-render baris baru
-  cy.contains("button", /Add to alur Persetujuan|Tambah/i, { timeout: 10000 })
-    .scrollIntoView()
-    .click({ force: true });
-  cy.wait(1500);
+  // Step 2: Data Pengirim
+  cy.get('input[id*="pengirim_nama"], input[wire\\:model*="pengirim_nama"]')
+    .first().clear({ force: true }).type("Mitra Penguji QA", { force: true });
 
-  // 3. Pastikan section tetap terbuka jika re-render sempat menutupnya
-  cy.get("body").then(($body) => {
-    const $btn = $body.find(".fi-select-input-btn:visible");
-    if ($btn.length === 0) {
-      cy.contains(".fi-section-header", /Jalur Persetujuan Khusus/i).click({ force: true });
-      cy.wait(1000);
+  cy.get('input[id*="pengirim_email"], input[wire\\:model*="pengirim_email"]')
+    .first().clear({ force: true }).type("mitra.tester@gmail.com", { force: true });
+
+  cy.get('input[id*="pengirim_telp"], input[wire\\:model*="pengirim_telp"]')
+    .first().clear({ force: true }).type("081234567890", { force: true });
+
+  cy.get('input[id*="pengirim_instansi"], input[wire\\:model*="pengirim_instansi"]')
+    .first().clear({ force: true }).type("FIK UNIK QA", { force: true });
+
+  cy.get("button").contains(/^\s*Lanjutkan\s*$/i).first().click({ force: true });
+  cy.wait(1200);
+
+  // Step 3: Isi Surat
+  cy.get("body").then(($b3) => {
+    if ($b3.find('select[id*="unit_tujuan"], select[wire\\:model*="unit_tujuan"]').length > 0) {
+      cy.get('select[id*="unit_tujuan"], select[wire\\:model*="unit_tujuan"]')
+        .first()
+        .then(($sel) => {
+          const $options = $sel.find("option");
+          let selected = false;
+          $options.each((idx, opt) => {
+            if (Cypress.$(opt).text().includes("Fakultas Ilmu Kesehatan")) {
+              cy.wrap($sel).select(Cypress.$(opt).val(), { force: true });
+              selected = true;
+              return false;
+            }
+          });
+          if (!selected) {
+            cy.wrap($sel).select(1, { force: true });
+          }
+        });
+    } else {
+      cy.contains("label", /Unit Tujuan/i)
+        .parent()
+        .find("select, input, button")
+        .first()
+        .then(($el) => {
+          if ($el.is("select")) {
+            cy.wrap($el).select(1, { force: true });
+          } else {
+            cy.wrap($el).click({ force: true });
+            cy.wait(800);
+            cy.get(".fi-dropdown-panel:visible, [role='listbox']:visible")
+              .last()
+              .then(($panel) => {
+                const $fikOpt = $panel.find("li[role='option']:contains('Fakultas Ilmu Kesehatan')");
+                if ($fikOpt.length > 0) {
+                  cy.wrap($fikOpt.first()).click({ force: true });
+                } else {
+                  cy.wrap($panel.find("li[role='option']").first()).click({ force: true });
+                }
+              });
+          }
+        });
     }
   });
 
-  // 4. Buka dropdown jabatan
-  cy.get(".fi-select-input-btn", { timeout: 10000 })
-    .last()
-    .scrollIntoView()
-    .click({ force: true });
-  cy.wait(1000);
+  const perihalUnik = `Permohonan Review Backtrack QA - ${Date.now()}`;
+  cy.get('input[id*="perihal"], input[wire\\:model*="perihal"]')
+    .first().clear({ force: true }).type(perihalUnik, { force: true });
 
-  // 5. Cari dan pilih opsi jabatan pimpinan (Wakil Rektor II)
-  cy.get(".fi-dropdown-panel:visible, [role='listbox']:visible").last().then(($panel) => {
-    const $search = $panel.find("input.fi-input, input[type='search'], input[type='text'], input");
-    if ($search.length > 0) {
-      cy.wrap($search.first()).type("Wakil Rektor II", { force: true });
-      cy.wait(1000);
-    }
-    cy.get(".fi-dropdown-panel:visible, [role='listbox']:visible")
-      .last()
-      .find(".fi-dropdown-list-item, [role='option'], li")
-      .first()
-      .click({ force: true });
-  });
-
-  cy.wait(800);
-
-  // 6. Aktifkan switch Penandatangan secara defensif jika tersedia
-  cy.get("body").then(($body) => {
-    const $sw = $body.find("button[role='switch'][id*='is_signer'], button[role='switch']");
-    if ($sw.length > 0) {
-      if ($sw.attr("aria-checked") !== "true") {
-        cy.wrap($sw.last()).click({ force: true });
-      }
-    }
-  });
-
-  // Isi konten TinyMCE / textarea
   cy.wait(1000);
   cy.window().then((win) => {
     const hasEditors = win.tinymce && win.tinymce.editors && Object.keys(win.tinymce.editors).length > 0;
     if (win.tinymce && (win.tinymce.activeEditor || hasEditors)) {
-      const editor = win.tinymce.get("content.isi_surat") || win.tinymce.activeEditor || (hasEditors ? Object.values(win.tinymce.editors)[0] : null);
+      const editor = win.tinymce.activeEditor || (hasEditors ? Object.values(win.tinymce.editors)[0] : null);
       if (editor) {
-        editor.setContent("<p>Isi naskah alur persetujuan QA.</p>");
+        editor.setContent("<p>Isi permohonan review untuk pengujian backtrack.</p>");
         editor.fire("change");
         editor.save();
         return;
       }
     }
-    cy.get("body").then(($body) => {
-      const textareas = $body.find("textarea[id*='isi'], textarea[name*='isi'], textarea");
-      if (textareas.length > 0) {
-        cy.wrap(textareas.first()).clear({ force: true }).type("Isi naskah alur persetujuan QA.", { force: true });
+    cy.get("body").then(($bTiny) => {
+      if ($bTiny.find('iframe[id*="content_scratch"]').length > 0) {
+        cy.get('iframe[id*="content_scratch"]')
+          .its("0.contentDocument.body")
+          .should("not.be.empty")
+          .then(cy.wrap)
+          .clear({ force: true })
+          .type("Isi permohonan review untuk pengujian backtrack", { force: true });
+      } else if ($bTiny.find('textarea[id*="content_scratch"]').length > 0) {
+        cy.get('textarea[id*="content_scratch"]').type("Isi permohonan review untuk pengujian backtrack", { force: true });
       }
     });
   });
 
-  cleanupEmptyRepeaterRows();
+  cy.get("button").contains(/^\s*Lanjutkan\s*$/i).first().click({ force: true });
+  cy.wait(1200);
 
-  // Kirim
-  cy.get(".fi-form-actions, form, body")
-    .contains("button", /Kirim \/ Pengajuan/i, { timeout: 10000 })
-    .click({ force: true });
+  // Step 4: Lampiran
+  cy.get("button").contains(/^\s*Lanjutkan\s*$/i).first().click({ force: true });
+  cy.wait(1200);
 
-  // Modal konfirmasi kirim - isi catatan
-  cy.get(".fi-modal:visible:not(#database-notifications), [role='dialog']:visible", { timeout: 10000 })
-    .find("textarea")
+  // Step 5: Konfirmasi
+  cy.get('input[type="checkbox"][id*="konfirmasi"], input[type="checkbox"]')
+    .last()
+    .check({ force: true });
+  cy.get("button[type='submit']")
+    .contains(/Kirim Sekarang|Kirim/i)
     .first()
-    .clear({ force: true })
-    .type("Draf diajukan untuk proses review QA", { force: true });
+    .click({ force: true });
+  cy.contains(/Surat Berhasil Dikirim/i, { timeout: 15000 }).should("be.visible");
 
-  cy.get(".fi-modal:visible:not(#database-notifications), [role='dialog']:visible", { timeout: 10000 })
-    .find("button[type='submit'], button.fi-btn-primary, button:contains('Submit'), button:contains('Kirim')")
-    .first().click({ force: true });
-
-  // Tunggu redirect ke surat keluar
-  cy.url({ timeout: 15000 }).should("include", "/internal/surats");
+  // Login kembali sebagai dekan.fik dan buka surat di tab Pengajuan
+  cy.loginAs("dekan.fik");
+  cy.visit("/internal/surat-masuk?activeTab=pengajuan");
+  cy.get(".fi-ta-content, table", { timeout: 15000 }).should("be.visible");
+  cy.wait(1200);
+  cy.get("table.fi-ta-table tbody tr.fi-ta-row, .fi-ta-record").first().find("a[href*='/internal/surat-masuk/']").first().click({ force: true });
+  cy.url({ timeout: 15000 }).should("include", "/internal/surat-masuk/");
+  cy.get(".fi-header-heading, .fi-page-header, main", { timeout: 15000 }).should("exist");
 
   if (typeof callback === "function") {
-    callback(uniqueTitle);
+    callback();
   }
 }
 
-function navigateAndOpenSuratByTitle(title) {
-  cy.visit("/internal/surat-masuk");
-  cy.get("table tbody, .fi-ta-content, body", { timeout: 15000 }).should("be.visible");
-  cy.get(".fi-ta-search-field input", { timeout: 10000 })
-    .first()
-    .clear({ force: true })
-    .type(`${title}{enter}`, { force: true });
-  cy.wait(2000);
-  cy.get("table tbody tr, .fi-ta-record")
-    .first()
-    .find("a[href*='/internal/surat-masuk/']")
-    .first()
-    .click({ force: true });
-  cy.url({ timeout: 15000 }).should("include", "/internal/surat-masuk/");
-  cy.get(".fi-page-header, main, body", { timeout: 15000 }).should("be.visible");
+function ensurePendingApprovalSurat(callback) {
+  cy.loginAs("dekan.fik");
+  cy.visit("/internal/surat-masuk?activeTab=pengajuan");
+  cy.get(".fi-ta-content, table, body", { timeout: 15000 }).should("be.visible");
+  cy.wait(1500);
+
+  cy.get("body").then(($body) => {
+    const $rows = $body.find("table.fi-ta-table tbody tr.fi-ta-row, .fi-ta-record");
+    if ($rows.length > 0) {
+      const link = $rows.first().find("a[href*='/internal/surat-masuk/']").first();
+      if (link.length > 0) {
+        cy.wrap(link).click({ force: true });
+        cy.url({ timeout: 15000 }).should("include", "/internal/surat-masuk/");
+        cy.wait(1000);
+        cy.get("body").then(($detail) => {
+          if ($detail.find("button:contains('Kembalikan / Tolak'), button:contains('Proses Surat')").length > 0) {
+            if (typeof callback === "function") callback();
+            return;
+          }
+          // Jika surat pertama tidak memiliki tombol Kembalikan, buat pengajuan fresh
+          createFreshPengajuanForFik(callback);
+        });
+        return;
+      }
+    }
+    createFreshPengajuanForFik(callback);
+  });
 }
 
 Given("Pimpinan membuka salah satu surat masuk yang sedang diproses", () => {
-  const activeTitle = Cypress.env("activePendingSurat");
-
-  if (activeTitle) {
-    cy.visit("/internal/surat-masuk");
-    cy.get("table tbody, .fi-ta-content, body", { timeout: 15000 }).should("be.visible");
-    cy.get(".fi-ta-search-field input", { timeout: 10000 })
-      .first()
-      .clear({ force: true })
-      .type(`${activeTitle}{enter}`, { force: true });
-    cy.wait(2000);
-
-    cy.get("body").then(($body) => {
-      const $rows = $body.find("table tbody tr, .fi-ta-record");
-      if ($rows.length > 0 && $rows.text().includes(activeTitle)) {
-        cy.wrap($rows.first()).find("a[href*='/internal/surat-masuk/']").first().click({ force: true });
-        cy.url({ timeout: 15000 }).should("include", "/internal/surat-masuk/");
-        cy.get(".fi-page-header, main, body", { timeout: 15000 }).should("be.visible");
-      } else {
-        sendQuickApprovalSurat((createdTitle) => {
-          navigateAndOpenSuratByTitle(createdTitle);
-        });
-      }
-    });
-  } else {
-    sendQuickApprovalSurat((createdTitle) => {
-      navigateAndOpenSuratByTitle(createdTitle);
-    });
-  }
+  ensurePendingApprovalSurat();
 });
 
 Given("Pimpinan membuka salah satu surat masuk yang tersedia", () => {

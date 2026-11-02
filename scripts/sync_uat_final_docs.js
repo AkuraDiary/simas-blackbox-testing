@@ -25,6 +25,9 @@ function syncUatFinalDocs() {
     { pattern: "pakrektor", replacement: "rektor" },
     { pattern: "budisantoso", replacement: "staff.fik" },
     { pattern: "stafflogistik", replacement: "staff.baku" },
+    { pattern: "dekanft", replacement: "dekan.fik" },
+    { pattern: "dekan.ft", replacement: "dekan.fik" },
+    { pattern: "staff.ft", replacement: "staff.fik" },
 
     // 2. Unit Kerja Resmi UNIK
     { pattern: "Biro Administrasi Umum", replacement: "Biro Administrasi Keuangan dan Umum (BAKU)" },
@@ -33,10 +36,12 @@ function syncUatFinalDocs() {
     // 3. Format Penomoran Surat Resmi UNIK
     { pattern: "001/BAU/2026", replacement: "{NOMOR}/BAKU/{BULAN_ROMAWI}/{TAHUN}" },
     { pattern: "001/FT/2026", replacement: "{NOMOR}/FIK UNIK/{BULAN_ROMAWI}/{TAHUN}" },
+    { pattern: "001/REK/2026", replacement: "{NOMOR}/REK/{BULAN_ROMAWI}/{TAHUN}" },
 
     // 4. Template Naskah Dinas Resmi UNIK
     { pattern: "Surat Tugas Standar", replacement: "Surat Pemberitahuan Sterilisasi Ruang & Kegiatan Operasional" },
-    { pattern: "Surat Keputusan Rektor", replacement: "Surat Pengantar Usulan Akun SISTER Dosen" }
+    { pattern: "Surat Keputusan Rektor", replacement: "Surat Pengantar Usulan Akun SISTER Dosen" },
+    { pattern: "Surat Keterangan Pengantar Izin Penelitian Mahasiswa", replacement: "Surat Pemberitahuan Sterilisasi Ruang & Kegiatan Operasional" }
   ];
 
   let totalReplacements = 0;

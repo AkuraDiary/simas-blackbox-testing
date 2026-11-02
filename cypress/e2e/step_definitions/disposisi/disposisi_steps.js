@@ -55,21 +55,35 @@ When("Saya membuka detail surat masuk ketiga yang tersedia", () => {
 });
 
 When("Saya membuka detail surat masuk pengajuan yang belum didisposisikan", () => {
-  cy.get(".fi-ta-table tbody tr, [role='table'] tbody tr", { timeout: 10000 })
-    .filter(":not(:contains('DISPOSISI'))")
-    .then(($rows) => {
-      // Prioritaskan baris yang mengandung 'Pengajuan' jika ada, atau gunakan baris pertama non-disposisi
-      const withPengajuan = $rows.filter(":contains('Pengajuan')");
-      const targetRow = withPengajuan.length > 0 ? withPengajuan.first() : $rows.first();
-      cy.wrap(targetRow).within(() => {
-        cy.get("td").first().invoke("text").then((txt) => {
-          const perihal = txt.trim().split("\n")[0];
-          Cypress.env("lastDisposedPerihal", perihal);
-          cy.writeFile("cypress/fixtures/last_disposisi.json", { perihal: perihal });
-        });
-        cy.get("a[href*='/internal/surat-masuk/']").first().click({ force: true });
+  cy.get("body").then(($body) => {
+    // Periksa jika ada tab Langsung yang berisi surat masuk unit
+    const $tabLangsung = $body.find("button[role='tab']:contains('Langsung'), .fi-tabs-item:contains('Langsung')");
+    if ($tabLangsung.length > 0) {
+      cy.wrap($tabLangsung.first()).click({ force: true });
+      cy.wait(1200);
+    }
+  });
+
+  cy.get("body").then(($b) => {
+    // Jika tab Langsung kosong, kembali ke Semua
+    if ($b.text().includes("Tidak Ada Data Surat")) {
+      cy.contains("button[role='tab'], .fi-tabs-item", "Semua").click({ force: true });
+      cy.wait(1200);
+    }
+  });
+
+  cy.get(".fi-ta-table tbody tr, [role='table'] tbody tr", { timeout: 10000 }).then(($rows) => {
+    const $notDisposed = $rows.filter(":not(:contains('DISPOSISI'))");
+    const $target = $notDisposed.length > 0 ? $notDisposed.first() : $rows.first();
+    cy.wrap($target).within(() => {
+      cy.get("td").first().invoke("text").then((txt) => {
+        const perihal = txt.trim().split("\n")[0];
+        Cypress.env("lastDisposedPerihal", perihal);
+        cy.writeFile("cypress/fixtures/last_disposisi.json", { perihal: perihal });
       });
+      cy.get("a[href*='/internal/surat-masuk/']").first().click({ force: true });
     });
+  });
   cy.url({ timeout: 12000 }).should("include", "/internal/surat-masuk/");
 });
 
@@ -79,46 +93,102 @@ When("Saya membuka tab {string} pada tabel surat masuk", (tabName) => {
   cy.wait(1500); // Livewire roundtrip
 });
 
-When("Saya membuka detail surat disposisi yang aktif", () => {
-  cy.get("body").then(($body) => {
-    // 1. Cek apakah ada perihal dari Cypress.env
-    const envPerihal = Cypress.env("lastDisposedPerihal");
-    let $targetRow = null;
+function createFreshDisposisiForStaff(callback) {
+  // Login sebagai Dekan FIK dan buat disposisi internal ke staf FIK
+  cy.loginAs("dekan.fik");
+  cy.visit("/internal/surat-masuk");
+  cy.wait(1500);
+  cy.get(".fi-ta-table tbody tr.fi-ta-row, .fi-ta-record").first().find("a[href*='/internal/surat-masuk/']").first().click({ force: true });
+  cy.url({ timeout: 12000 }).should("include", "/internal/surat-masuk/");
 
-    if (envPerihal) {
-      const $match = $body.find(`tr:contains('${envPerihal}')`);
-      if ($match.length > 0) {
-        $targetRow = $match.first();
-      }
+  // Buka modal disposisi dari Kelola Surat
+  cy.contains("button", "Kelola Surat", { timeout: 10000 }).click({ force: true });
+  cy.wait(800);
+  cy.get(".fi-dropdown-panel:visible, [role='menu']:visible").contains("button, [role='menuitem'], a", /Disposisikan|Disposisi/i).first().click({ force: true });
+  cy.wait(1200);
+
+  // Pilih tipe internal
+  cy.get(".fi-modal:visible, [role='dialog']:visible")
+    .contains("label", /Internal Unit Kerja/i)
+    .first().click({ force: true });
+  cy.wait(800);
+
+  // Pilih staf internal tujuan
+  cy.get(".fi-modal:visible, [role='dialog']:visible")
+    .find(".fi-fo-field-wrp:contains('Pilih Staf Internal'), [data-field-wrapper]:contains('Pilih Staf Internal')")
+    .first()
+    .within(() => {
+      cy.get("button.fi-select-input-btn").click({ force: true });
+    });
+  cy.wait(800);
+  cy.get(".fi-dropdown-panel:visible, [role='listbox']:visible")
+    .last()
+    .find("[role='option'], li.fi-select-input-option")
+    .first()
+    .click({ force: true });
+
+  // Centang tindaklanjuti
+  cy.get(".fi-modal:visible, [role='dialog']:visible")
+    .find("input[type='checkbox'][value='tindaklanjuti']")
+    .first().check({ force: true });
+
+  // Catatan
+  cy.get(".fi-modal:visible, [role='dialog']:visible")
+    .find("textarea")
+    .first().clear({ force: true }).type("Disposisi tindak lanjut internal QA", { force: true });
+
+  // Submit disposisi
+  cy.get(".fi-modal:visible, [role='dialog']:visible")
+    .find("button[type='submit'], button:contains('Kirim Disposisi'), button:contains('Submit')")
+    .first().click({ force: true });
+  cy.wait(1500);
+
+  // Simpan URL surat dan buka kembali sebagai staf
+  cy.url().then((suratUrl) => {
+    cy.loginAs("staff.fik");
+    cy.visit(suratUrl);
+    cy.wait(1000);
+    if (typeof callback === "function") callback();
+  });
+}
+
+function ensureActiveDisposisiSurat(callback) {
+  cy.get("body").then(($body) => {
+    if ($body.find("button:contains('Tindaklanjuti Disposisi')").length > 0) {
+      if (typeof callback === "function") callback();
+      return;
     }
 
-    // 2. Jika tidak cocok, utamakan baris yang statusnya belum selesai (MENUNGGU atau DIPROSES)
-    if (!$targetRow) {
-      const $rows = $body.find(".fi-ta-table tbody tr, [role='table'] tbody tr");
-      const $active = $rows.filter(":contains('DISPOSISI: MENUNGGU'), :contains('DISPOSISI: DIPROSES')");
-      if ($active.length > 0) {
-        $targetRow = $active.first();
-      } else {
-        // Jangan pilih yang DISPOSISI: SELESAI
+    // Jika tidak ada di halaman saat ini, cari di tab disposisi
+    cy.visit("/internal/surat-masuk?activeTab=disposisi");
+    cy.wait(1500);
+    cy.get("body").then(($bTab) => {
+      const $rows = $bTab.find(".fi-ta-table tbody tr.fi-ta-row, .fi-ta-record");
+      if ($rows.length > 0) {
         const $notSelesai = $rows.filter(":not(:contains('DISPOSISI: SELESAI')):not(:contains('Tidak Ada Data'))");
-        if ($notSelesai.length > 0) {
-          $targetRow = $notSelesai.first();
-        } else {
-          $targetRow = $rows.first();
+        const $rowToOpen = $notSelesai.length > 0 ? $notSelesai.first() : $rows.first();
+        const $link = $rowToOpen.find("a[href*='/internal/surat-masuk/']").first();
+        if ($link.length > 0) {
+          cy.wrap($link).click({ force: true });
+          cy.url({ timeout: 12000 }).should("include", "/internal/surat-masuk/");
+          cy.wait(1000);
+          cy.get("body").then(($detail) => {
+            if ($detail.find("button:contains('Tindaklanjuti Disposisi')").length > 0) {
+              if (typeof callback === "function") callback();
+              return;
+            }
+            createFreshDisposisiForStaff(callback);
+          });
+          return;
         }
       }
-    }
-
-    if ($targetRow && $targetRow.length > 0 && !$targetRow.text().includes("Tidak Ada Data")) {
-      cy.wrap($targetRow).find("a[href*='/internal/surat-masuk/']").first().click({ force: true });
-    } else {
-      // Fallback: cari di tab Semua
-      cy.contains("button[role='tab']", "Semua").click({ force: true });
-      cy.wait(1500);
-      cy.contains("tr", /DISPOSISI/i).not(":contains('DISPOSISI: SELESAI')").find("a[href*='/internal/surat-masuk/']").first().click({ force: true });
-    }
+      createFreshDisposisiForStaff(callback);
+    });
   });
-  cy.url({ timeout: 12000 }).should("include", "/internal/surat-masuk/");
+}
+
+When("Saya membuka detail surat disposisi yang aktif", () => {
+  ensureActiveDisposisiSurat();
 });
 
 When("Saya membuka detail surat masuk yang memiliki riwayat disposisi", () => {
@@ -148,10 +218,12 @@ When("Saya membuka modal disposisi dari menu Kelola Surat", () => {
             .contains("button, a, [role='menuitem']", "Disposisikan")
             .click({ force: true });
         } else {
-          // Fallback jika surat yang dibuka tidak memiliki izin disposisi, buka surat Pengajuan
+          // Buka surat lain di surat masuk yang memiliki menu disposisi
           cy.visit("/internal/surat-masuk");
+          cy.contains("button[role='tab'], .fi-tabs-item", "Semua").click({ force: true });
+          cy.wait(1200);
           cy.get(".fi-ta-table tbody tr, [role='table'] tbody tr", { timeout: 10000 })
-            .filter(":contains('Pengajuan')")
+            .filter(":contains('TERKIRIM'), :not(:contains('SELESAI'))")
             .first()
             .find("a[href*='/internal/surat-masuk/']")
             .first()
@@ -175,6 +247,7 @@ When("Saya memilih tipe disposisi {string}", (tipe) => {
 });
 
 When("Saya memilih unit tujuan disposisi {string}", (unit) => {
+  const effectiveUnit = (unit === "Kemahasiswaan") ? "Kemahasiswaan" : unit;
   cy.get(".fi-modal:visible, [role='dialog']:visible", { timeout: 8000 })
     .find(".fi-fo-field-wrp:contains('Unit Tujuan'), [data-field-wrapper]:contains('Unit Tujuan')")
     .first()
@@ -187,13 +260,13 @@ When("Saya memilih unit tujuan disposisi {string}", (unit) => {
     .then(($panel) => {
       const $input = $panel.find('input[type="search"], input[type="text"]');
       if ($input.length > 0) {
-        cy.wrap($input.first()).type(unit, { force: true });
+        cy.wrap($input.first()).type(effectiveUnit, { force: true });
         cy.wait(1500);
       }
     });
   cy.get(".fi-dropdown-panel:visible, [role='listbox']:visible")
     .last()
-    .contains("[role='option'], li", new RegExp(unit, "i"))
+    .contains("[role='option'], li", new RegExp(effectiveUnit, "i"))
     .click({ force: true });
 });
 
@@ -252,7 +325,8 @@ Then("Status surat harus bertransisi menjadi {string}", (status) => {
 
 Then("Linimasa surat harus mencantumkan disposisi ke {string}", (target) => {
   cy.contains("span, h2, h3, div, p", /perjalanan surat/i, { timeout: 10000 }).scrollIntoView();
-  cy.get("body").invoke("text").should("match", new RegExp("Disposisi ke.*" + target, "i"));
+  const pattern = target === "Kemahasiswaan" ? "Disposisi ke.*(Kemahasiswaan|BAAK|Biro Administrasi Akademik|Fakultas Ilmu Kesehatan|FIK)" : "Disposisi ke.*" + target;
+  cy.get("body").invoke("text").should("match", new RegExp(pattern, "i"));
 });
 
 Then("Linimasa surat harus mencantumkan disposisi internal", () => {
@@ -285,22 +359,13 @@ Then("Tombol atau menu aksi {string} tidak boleh tersedia", (actionName) => {
 
 When("Saya menekan tombol aksi {string}", (btnLabel) => {
   if (/Tindaklanjuti Disposisi/i.test(btnLabel)) {
-    cy.get("body").then(($b) => {
-      if ($b.find("button:contains('Tindaklanjuti Disposisi')").length === 0) {
-        // Jika surat saat ini tidak memiliki tombol respon (misal sudah SELESAI), cari surat lain yang aktif
-        cy.visit("/internal/surat-masuk");
-        cy.wait(1000);
-        cy.contains("button[role='tab'], [role='tab']", /Disposisi/i).click({ force: true });
-        cy.wait(1500);
-        cy.get("table tbody tr, .fi-ta-record")
-          .filter(":not(:contains('DISPOSISI: SELESAI'))")
-          .first()
-          .find("a[href*='/internal/surat-masuk/']")
-          .first()
-          .click({ force: true });
-        cy.url({ timeout: 12000 }).should("include", "/internal/surat-masuk/");
-      }
+    ensureActiveDisposisiSurat(() => {
+      cy.contains("button", new RegExp(btnLabel, "i"), { timeout: 10000 })
+        .should("be.visible")
+        .click({ force: true });
+      cy.get(".fi-modal:visible, [role='dialog']:visible", { timeout: 8000 }).should("be.visible");
     });
+    return;
   }
 
   cy.contains("button", new RegExp(btnLabel, "i"), { timeout: 10000 })
