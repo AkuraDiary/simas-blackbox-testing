@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-11-08T10:07:58.891Z",
+    "end": "2026-11-08T10:08:44.184Z",
+    "duration": 45293,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5684f4eb-ea2f-4a5f-b67c-6b439319f5f8",
+      "title": "",
+      "fullFile": "cypress/e2e/take_lightmode_screenshots.cy.js",
+      "file": "cypress/e2e/take_lightmode_screenshots.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a8b4cf76-16cf-4e88-ab1c-a6484329f0d6",
+          "title": "Pengambilan Screenshot Light Mode Sub-Bab 4.3.3",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Alur Penuh Penerbitan Surat Terbitan Balasan",
+              "fullTitle": "Pengambilan Screenshot Light Mode Sub-Bab 4.3.3 Alur Penuh Penerbitan Surat Terbitan Balasan",
+              "timedOut": null,
+              "duration": 14939,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `select[id*=\"unit_tujuan\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `select[id*=\"unit_tujuan\"]`, but never found it.\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/take_lightmode_screenshots.cy.js:25:10)",
+                "diff": null
+              },
+              "uuid": "214b4b5d-b929-4275-87e2-f9473c85b853",
+              "parentUUID": "a8b4cf76-16cf-4e88-ab1c-a6484329f0d6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "214b4b5d-b929-4275-87e2-f9473c85b853"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 14939,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

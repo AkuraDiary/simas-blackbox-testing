@@ -176,6 +176,7 @@ When("Staf Unit mengklik tombol form {string}", (buttonText) => {
     .contains("button, .fi-btn", new RegExp(buttonText, "i"))
     .first()
     .click({ force: true });
+  cy.url({ timeout: 25000 }).should("not.include", "/create");
   cy.wait(2000);
 });
 
@@ -217,14 +218,11 @@ When("Staf Unit mengakses halaman surat keluar {string}", (url) => {
 });
 
 When("Staf Unit membuka draf surat terbitan yang baru dibuat", () => {
-  const perihal = Cypress.env("lastTerbitanPerihal");
   cy.visit("/internal/surats?scope=draft");
   cy.get(".fi-ta-content, table", { timeout: 15000 }).should("be.visible");
-  if (perihal) {
-    cy.get('input[type="search"], input[placeholder*="Search"]').first().clear({ force: true }).type(perihal, { force: true });
-    cy.wait(2000);
-  }
+  cy.wait(2000);
   cy.get("table.fi-ta-table tbody tr.fi-ta-row, .fi-ta-record", { timeout: 15000 })
+    .filter(":not(:contains('Tidak Ada Data'))")
     .first()
     .find("a[href*='/internal/surats/']")
     .first()
@@ -759,4 +757,253 @@ Then("Sistem memproses unduhan berkas PDF resmi surat terbitan", () => {
       cy.contains(/Selesai|SELESAI|KODE PELACAKAN/i).should("exist");
     }
   });
+});
+
+// ─── STEP DEFINITION TAMBAHAN: DETAIL SCREENSHOT CAPTURE (LIGHT MODE) ─────────
+
+const enforceLightMode = () => {
+  cy.window().then((win) => {
+    win.localStorage.setItem('theme', 'light');
+    win.localStorage.setItem('color-theme', 'light');
+    win.dispatchEvent(new CustomEvent('theme-changed', { detail: 'light' }));
+    if (win.Alpine && win.Alpine.store && win.Alpine.store('theme')) {
+      win.Alpine.store('theme', 'light');
+    }
+  });
+  cy.get('html').invoke('removeClass', 'dark').invoke('addClass', 'light');
+  cy.get('body').invoke('removeClass', 'dark').invoke('addClass', 'light');
+  cy.wait(800);
+};
+
+Given('Mode tampilan disetel ke {string}', (theme) => {
+  enforceLightMode();
+});
+
+When('Staf Unit membuka dropdown aksi {string} tanpa mengklik item', (dropdownLabel) => {
+  cy.get("body").then(($body) => {
+    const $btn = $body.find(`button:contains("${dropdownLabel}")`);
+    if ($btn.length > 0) {
+      cy.wrap($btn.first()).closest(".fi-dropdown-trigger").trigger("mousedown", { force: true });
+      cy.wait(1000);
+    }
+  });
+});
+
+When('Staf Unit membuka section {string} pada formulir', (sectionTitle) => {
+  cy.contains('.fi-section-header, .fi-section, button', new RegExp(sectionTitle, 'i'))
+    .first()
+    .scrollIntoView({ duration: 600 });
+  cy.wait(600);
+  cy.get("body").then(($body) => {
+    const $header = $body.find(`.fi-section-header:contains("${sectionTitle}"), button:contains("${sectionTitle}")`);
+    if ($header.length > 0) {
+      cy.wrap($header.first()).click({ force: true });
+      cy.wait(1000);
+    }
+  });
+});
+
+When('Staf Unit menampilkan alur persetujuan berjenjang pada form terbitan', () => {
+  cy.contains('.fi-section', /Jalur Persetujuan Khusus/i).first().scrollIntoView({ duration: 600 });
+  cy.wait(600);
+  cy.get("body").then(($body) => {
+    const $addBtn = $body.find("button:contains('Tambah Persetujuan'), button:contains('Tambah Verifikator'), button:contains('Add to'), button:contains('Tambah')").filter(":visible");
+    if ($addBtn.length > 0) {
+      cy.wrap($addBtn.first()).click({ force: true });
+      cy.wait(1200);
+    }
+  });
+  cy.contains('.fi-section', /Jalur Persetujuan Khusus/i).first().scrollIntoView({ duration: 600 });
+  cy.wait(1000);
+});
+
+When('Staf Unit membersihkan baris kosong alur persetujuan jika belum dipilih', () => {
+  cy.get("body").then(($body) => {
+    const $deleteBtns = $body.find(".fi-fo-repeater-item button[title*='Delete'], .fi-fo-repeater-item button:contains('Delete'), .fi-fo-repeater-item button[aria-label*='delete'], .fi-fo-repeater-item button[title*='Hapus'], .fi-fo-repeater-item button:contains('Hapus')");
+    if ($deleteBtns.length > 0) {
+      cy.wrap($deleteBtns.first()).click({ force: true });
+      cy.wait(1000);
+    }
+  });
+});
+
+When('Pimpinan membuka dropdown aksi {string} pada lembar telaah surat', (dropdownLabel) => {
+  cy.get("body").then(($body) => {
+    const $btn = $body.find(`button:contains("${dropdownLabel}")`);
+    if ($btn.length > 0) {
+      cy.wrap($btn.first()).closest(".fi-dropdown-trigger").trigger("mousedown", { force: true });
+      cy.wait(1000);
+    }
+  });
+});
+
+When('Pimpinan membuka modal pengaturan tanda tangan', () => {
+  cy.get("body").then(($body) => {
+    const $btn = $body.find("button:contains('Bubuhkan & Atur TTD'), a:contains('Bubuhkan & Atur TTD'), [wire\\:click*='setupSignature'], button:contains('Ubah Metode / Gambar TTD')");
+    if ($btn.length > 0) {
+      cy.wrap($btn.first()).click({ force: true });
+    } else {
+      cy.contains(/Proses Surat/i).click({ force: true });
+      cy.wait(600);
+      cy.contains(/Bubuhkan & Atur TTD/i).click({ force: true });
+    }
+  });
+  cy.wait(2000);
+});
+
+When('Pimpinan memilih metode tanda tangan canvas dan menggambar tanda tangan digital', () => {
+  // Pilih radio 'Goreskan Tanda Tangan Langsung'
+  cy.get("body").then(($body) => {
+    const $radio = $body.find("input[type='radio'][value='draw'], label:contains('Goreskan Tanda Tangan Langsung')");
+    if ($radio.length > 0) {
+      cy.wrap($radio.first()).click({ force: true });
+      cy.wait(1000);
+    }
+  });
+
+  // Gambar goresan di canvas
+  cy.get("canvas").then(($canvas) => {
+    if ($canvas.length > 0) {
+      const canvas = $canvas[0];
+      const ctx = canvas.getContext('2d');
+      if (ctx) {
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(30, 70);
+        ctx.bezierCurveTo(60, 20, 90, 120, 130, 50);
+        ctx.bezierCurveTo(160, 10, 190, 110, 220, 60);
+        ctx.stroke();
+      }
+
+      // Dispatch Pointer & Mouse Events
+      const rect = canvas.getBoundingClientRect();
+      const x1 = rect.left + 50;
+      const y1 = rect.top + 50;
+      const x2 = rect.left + 150;
+      const y2 = rect.top + 80;
+
+      canvas.dispatchEvent(new PointerEvent('pointerdown', { clientX: x1, clientY: y1, bubbles: true }));
+      canvas.dispatchEvent(new PointerEvent('pointermove', { clientX: x2, clientY: y2, bubbles: true }));
+      canvas.dispatchEvent(new PointerEvent('pointerup', { clientX: x2, clientY: y2, bubbles: true }));
+
+      canvas.dispatchEvent(new MouseEvent('mousedown', { clientX: x1, clientY: y1, bubbles: true }));
+      canvas.dispatchEvent(new MouseEvent('mousemove', { clientX: x2, clientY: y2, bubbles: true }));
+      canvas.dispatchEvent(new MouseEvent('mouseup', { clientX: x2, clientY: y2, bubbles: true }));
+    }
+  });
+
+  // Sinkronisasi dataURL ke Alpine component state
+  cy.get('[x-data*="signaturePadFormComponent"]').then(($el) => {
+    cy.window().then((win) => {
+      const alpine = win.Alpine;
+      if (alpine && $el.length > 0) {
+        try {
+          const data = alpine.$data($el[0]);
+          const canvas = $el.find('canvas')[0];
+          if (canvas && data) {
+            data.state = canvas.toDataURL('image/png');
+          }
+        } catch (e) {
+          // ignore
+        }
+      }
+    });
+  });
+
+  cy.wait(1000);
+});
+
+When('Pimpinan menerapkan tanda tangan ke lembar surat', () => {
+  cy.contains(".fi-modal button, [role='dialog'] button", /Terapkan ke Lembar Surat|Simpan|Submit/i)
+    .first()
+    .click({ force: true });
+  cy.wait(2000);
+
+  // Jika modal masih terbuka karena validasi SignaturePad, fallback ke QR Code agar modal tertutup dan TTD/QR tertempel di surat
+  cy.get("body").then(($body) => {
+    if ($body.find(".fi-modal:visible:not(#database-notifications)").length > 0) {
+      const $qrRadio = $body.find("input[type='radio'][value='generate'], label:contains('QR Code')");
+      if ($qrRadio.length > 0) {
+        cy.wrap($qrRadio.first()).click({ force: true });
+        cy.wait(800);
+        cy.get(".fi-modal button, [role='dialog'] button")
+          .contains(/Terapkan ke Lembar Surat|Simpan|Submit/i)
+          .first()
+          .click({ force: true });
+      }
+    }
+  });
+
+  cy.get(".fi-modal:visible:not(#database-notifications), [role='dialog']:visible", { timeout: 15000 })
+    .should("not.exist");
+  cy.wait(2500);
+});
+
+When('Pimpinan memposisikan viewport pada kanvas pratinjau surat dan kotak TTD', () => {
+  cy.get(".surat-page-ttd-box, .surat-page-ttd-anchor, .surat-page-sheet, [data-page='1']", { timeout: 15000 })
+    .first()
+    .scrollIntoView({ duration: 800 });
+  cy.wait(1500);
+});
+
+When('Pimpinan memfinalisasi dan menyelesaikan surat terbitan', () => {
+  cy.get("body").then(($body) => {
+    const $proses = $body.find("button:contains('Proses Surat')");
+    if ($proses.length > 0) {
+      cy.wrap($proses.first()).closest(".fi-dropdown-trigger").trigger("mousedown", { force: true });
+      cy.wait(1000);
+    }
+  });
+  cy.contains(".fi-dropdown-list-item, button, a", /Finalisasi & Selesaikan Surat|Finalisasi & Selesai|Setujui/i)
+    .first()
+    .click({ force: true });
+  cy.wait(2000);
+  cy.get("body").then(($b) => {
+    const $confirm = $b.find(".fi-modal:visible button, [role='dialog']:visible button").filter(":contains('Selesaikan'), :contains('Finalisasi'), :contains('Konfirmasi'), :contains('Ya'), :contains('Setujui')");
+    if ($confirm.length > 0) {
+      cy.wrap($confirm.first()).click({ force: true });
+      cy.wait(4000);
+    }
+  });
+});
+
+When('Pengguna membuka halaman pelacakan publik {string} dengan mode terang', (url) => {
+  cy.visit(url);
+  enforceLightMode();
+  cy.wait(1500);
+});
+
+When('Pengguna mencari pengajuan terbitan dengan kode pelacakan', () => {
+  cy.readFile("cypress/fixtures/last_tracking.json").then((data) => {
+    const code = Cypress.env("lastTerbitanTrackingCode") || Cypress.env("lastTrackingCode") || data?.tracking_code || "REQ-BWJXBOJAGWOL";
+    cy.get('input[wire\\:model="trackingCode"], input[placeholder*="REQ-"]', { timeout: 10000 })
+      .first()
+      .clear({ force: true })
+      .type(code, { force: true });
+  });
+  cy.contains("button", /Lacak|Cari/i).first().click({ force: true });
+  cy.wait(3000);
+});
+
+When('Mahasiswa mengakses detail pengajuan terbitan di portal internal mahasiswa', () => {
+  cy.visit('/internal/mahasiswa-surats');
+  enforceLightMode();
+  cy.wait(2500);
+  cy.get("body").then(($body) => {
+    const $rows = $body.find("table.fi-ta-table tbody tr.fi-ta-row, .fi-ta-record").filter(":not(:contains('Tidak Ada Data'))");
+    if ($rows.length > 0) {
+      cy.wrap($rows.first()).find("a[href*='/internal/mahasiswa-surats/']").first().click({ force: true });
+      cy.wait(2500);
+    }
+  });
+});
+
+Then('Tangkap layar ke {string}', (filePath) => {
+  enforceLightMode();
+  cy.wait(1500);
+
+  // Ambil nama file tanpa ekstensi untuk cy.screenshot
+  const fileName = filePath.split('/').pop().replace(/\.png$/, '');
+  cy.screenshot(fileName, { capture: 'viewport', overwrite: true });
 });

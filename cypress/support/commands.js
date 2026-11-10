@@ -39,7 +39,7 @@ Cypress.Commands.add('loginAs', (role) => {
       break;
     case 'mahasiswa':
       username = 'mahasiswa';
-      password = 'password123';
+      password = 'password';
       break;
     default:
       username = role;

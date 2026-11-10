@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-11-08T10:53:05.549Z",
+    "end": "2026-11-08T10:55:04.359Z",
+    "duration": 118810,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5be5aeef-7f49-488b-9a67-770b1c168293",
+      "title": "",
+      "fullFile": "cypress/e2e/capture_terbitan_lightmode.feature",
+      "file": "cypress/e2e/capture_terbitan_lightmode.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ea39ea47-088d-4b77-86a4-22a41a149823",
+          "title": "Capture Tangkapan Layar Terbitan Surat (Light Mode) untuk Sub-Bab 4.3.3",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Capture Alur Penerbitan Surat Terbitan dalam Light Mode",
+              "fullTitle": "Capture Tangkapan Layar Terbitan Surat (Light Mode) untuk Sub-Bab 4.3.3 Capture Alur Penerbitan Surat Terbitan dalam Light Mode",
+              "timedOut": null,
+              "duration": 118584,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "06ff3d06-9145-40be-b5f9-cd3956ff5ffb",
+              "parentUUID": "ea39ea47-088d-4b77-86a4-22a41a149823",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "06ff3d06-9145-40be-b5f9-cd3956ff5ffb"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 118584,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

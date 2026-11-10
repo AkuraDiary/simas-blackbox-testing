@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-11-08T12:12:59.956Z",
+    "end": "2026-11-08T12:19:07.989Z",
+    "duration": 368033,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "40b44840-82cb-4413-906e-27698ec7487d",
+      "title": "",
+      "fullFile": "cypress/e2e/capture_terbitan_lightmode.feature",
+      "file": "cypress/e2e/capture_terbitan_lightmode.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c6944ffd-b185-4ff1-b8c3-21e4cc5d33ae",
+          "title": "Capture 5 Aspek Tangkapan Layar Terbitan Surat (Light Mode) untuk Sub-Bab 4.3.3",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Capture Detail Alur Penerbitan Surat Terbitan dalam Light Mode",
+              "fullTitle": "Capture 5 Aspek Tangkapan Layar Terbitan Surat (Light Mode) untuk Sub-Bab 4.3.3 Capture Detail Alur Penerbitan Surat Terbitan dalam Light Mode",
+              "timedOut": null,
+              "duration": 86317,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: '/Proses Surat/i' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: '/Proses Surat/i' but never did.\n    at Context.eval (https://dev.elsimas.my.id/__cypress/tests?p=cypress/e2e/capture_terbitan_lightmode.feature:13827:16)\n    at getRet (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121346:20)\n    at tryCatcher (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:1780:23)\n    at Promise.attempt.Promise.try (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:4288:29)\n    at Context.thenFn (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121357:66)\n    at Context.then (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:121608:21)\n    at wrapped (https://dev.elsimas.my.id/__cypress/runner/cypress_runner.js:146375:19)",
+                "diff": null
+              },
+              "uuid": "bb8d3158-eef6-42f7-98a7-1f37bc9d0fc5",
+              "parentUUID": "c6944ffd-b185-4ff1-b8c3-21e4cc5d33ae",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "bb8d3158-eef6-42f7-98a7-1f37bc9d0fc5"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 86317,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

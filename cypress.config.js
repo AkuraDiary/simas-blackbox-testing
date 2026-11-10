@@ -33,6 +33,8 @@ module.exports = defineConfig({
         if (browser.family === "chromium" && browser.name !== "electron") {
           launchOptions.args.push(
             "--disable-features=SameSiteByDefaultCookies,CookiesWithoutSameSiteMustBeSecure",
+            "--force-dark-mode=false",
+            "--blink-settings=forceDarkModeEnabled=false"
           );
         }
         return launchOptions;
