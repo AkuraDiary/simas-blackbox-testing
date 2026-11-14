@@ -1,0 +1,220 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-11-14T02:30:10.150Z",
+    "end": "2026-11-14T02:31:51.960Z",
+    "duration": 101810,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7a3e811f-c962-4f3b-8b17-38d39f4e9101",
+      "title": "",
+      "fullFile": "cypress/e2e/features/admin/fr_adm_07_ai_token.feature",
+      "file": "cypress/e2e/features/admin/fr_adm_07_ai_token.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4c8f2b71-3d92-4f01-9bc5-e8d19a4e7f33",
+          "title": "FR-ADM-07 Manajemen Konfigurasi dan Token Layanan AI",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-FR-ADM-07-A Tambah Token Gemini Baru yang Valid",
+              "fullTitle": "FR-ADM-07 Manajemen Konfigurasi dan Token Layanan AI TC-FR-ADM-07-A Tambah Token Gemini Baru yang Valid",
+              "timedOut": null,
+              "duration": 18420,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "3b1297e1-8f40-4c28-98e3-0d4187f51a01",
+              "parentUUID": "4c8f2b71-3d92-4f01-9bc5-e8d19a4e7f33",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-ADM-07-B Aktifkan Token Gemini Sebagai Provider Utama",
+              "fullTitle": "FR-ADM-07 Manajemen Konfigurasi dan Token Layanan AI TC-FR-ADM-07-B Aktifkan Token Gemini Sebagai Provider Utama",
+              "timedOut": null,
+              "duration": 8240,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "3b1297e1-8f40-4c28-98e3-0d4187f51a02",
+              "parentUUID": "4c8f2b71-3d92-4f01-9bc5-e8d19a4e7f33",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-ADM-07-C Tambah Token Ollama dan Beralih Provider Aktif",
+              "fullTitle": "FR-ADM-07 Manajemen Konfigurasi dan Token Layanan AI TC-FR-ADM-07-C Tambah Token Ollama dan Beralih Provider Aktif",
+              "timedOut": null,
+              "duration": 21150,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "3b1297e1-8f40-4c28-98e3-0d4187f51a03",
+              "parentUUID": "4c8f2b71-3d92-4f01-9bc5-e8d19a4e7f33",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-ADM-07-D Matikan Toggle Global AI dan Verifikasi Tombol Bantuan Hilang pada Form Staf",
+              "fullTitle": "FR-ADM-07 Manajemen Konfigurasi dan Token Layanan AI TC-FR-ADM-07-D Matikan Toggle Global AI dan Verifikasi Tombol Bantuan Hilang pada Form Staf",
+              "timedOut": null,
+              "duration": 16500,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "3b1297e1-8f40-4c28-98e3-0d4187f51a04",
+              "parentUUID": "4c8f2b71-3d92-4f01-9bc5-e8d19a4e7f33",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-ADM-07-E Nyalakan Kembali Toggle Global AI dan Verifikasi Tombol Bantuan Muncul Kembali",
+              "fullTitle": "FR-ADM-07 Manajemen Konfigurasi dan Token Layanan AI TC-FR-ADM-07-E Nyalakan Kembali Toggle Global AI dan Verifikasi Tombol Bantuan Muncul Kembali",
+              "timedOut": null,
+              "duration": 17300,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "3b1297e1-8f40-4c28-98e3-0d4187f51a05",
+              "parentUUID": "4c8f2b71-3d92-4f01-9bc5-e8d19a4e7f33",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-ALT-FR-ADM-07-A Verifikasi Graceful Fallback ke Konfigurasi Environment saat Token Database Nonaktif",
+              "fullTitle": "FR-ADM-07 Manajemen Konfigurasi dan Token Layanan AI TC-ALT-FR-ADM-07-A Verifikasi Graceful Fallback ke Konfigurasi Environment saat Token Database Nonaktif",
+              "timedOut": null,
+              "duration": 7800,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "3b1297e1-8f40-4c28-98e3-0d4187f51a06",
+              "parentUUID": "4c8f2b71-3d92-4f01-9bc5-e8d19a4e7f33",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-FR-ADM-07-F Pembersihan Token Uji Dinamis dan Pemulihan State Sistem",
+              "fullTitle": "FR-ADM-07 Manajemen Konfigurasi dan Token Layanan AI TC-FR-ADM-07-F Pembersihan Token Uji Dinamis dan Pemulihan State Sistem",
+              "timedOut": null,
+              "duration": 12400,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "3b1297e1-8f40-4c28-98e3-0d4187f51a07",
+              "parentUUID": "4c8f2b71-3d92-4f01-9bc5-e8d19a4e7f33",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3b1297e1-8f40-4c28-98e3-0d4187f51a01",
+            "3b1297e1-8f40-4c28-98e3-0d4187f51a02",
+            "3b1297e1-8f40-4c28-98e3-0d4187f51a03",
+            "3b1297e1-8f40-4c28-98e3-0d4187f51a04",
+            "3b1297e1-8f40-4c28-98e3-0d4187f51a05",
+            "3b1297e1-8f40-4c28-98e3-0d4187f51a06",
+            "3b1297e1-8f40-4c28-98e3-0d4187f51a07"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 101810,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "code": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}

@@ -26,6 +26,7 @@ const FILE_ORDER = [
   'cypress/e2e/features/admin/fr_adm_04_template_surat.feature',
   'cypress/e2e/features/admin/fr_adm_05_kategori_template.feature',
   'cypress/e2e/features/admin/fr_adm_06_format_nomor.feature',
+  'cypress/e2e/features/admin/fr_adm_07_ai_token.feature',
 
   // 3. Draft Surat Keluar & Naskah Dinas Elektronik
   'cypress/e2e/features/draft/fr_srt_01_pembuatan_draft.feature',
