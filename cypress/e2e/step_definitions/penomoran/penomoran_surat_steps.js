@@ -3,7 +3,7 @@ import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 // ─── HELPER: PASTIKAN FORMAT PENOMORAN AKTIF TERSEDIA ────────────────────────
 
 function ensureActiveFormatExists() {
-  cy.visit("/internal/format-nomor-surats");
+  cy.visit("/internal/format-nomor-surat");
   cy.get(".fi-ta-content, body", { timeout: 15000 }).should("be.visible");
   cy.wait(1000);
 
@@ -11,7 +11,7 @@ function ensureActiveFormatExists() {
     const hasRows = $body.find("tbody tr:not(.fi-ta-empty-state-row)").length > 0;
     if (!hasRows) {
       cy.log("Format nomor belum ada, membuat format standar aktif...");
-      cy.visit("/internal/format-nomor-surats/create");
+      cy.visit("/internal/format-nomor-surat/create");
       cy.get("body").should("be.visible");
       cy.get('input[id*="nama_format"]').first().type("Format Standar Institusi QA", { force: true });
       cy.get('input[id*="format_penomoran"]').first().type("{NOMOR}/UNIK/{KODE_UNIT}/{BULAN_ROMAWI}/{TAHUN}", { parseSpecialCharSequences: false, force: true });

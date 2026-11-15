@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "kill:stuck": "pkill -15 -f 'cypress' || true && pkill -9 -f 'cypress' || true && pkill -9 -f 'remote-debugging-port' || true",
     "clean:reports": "rm -rf cypress/reports && mkdir -p cypress/reports || true",
     "cy:run": "npx cypress run --browser chrome",
     "merge:reports": "npx mochawesome-merge \"cypress/reports/mochawesome*.json\" > cypress/reports/merged-report.json",

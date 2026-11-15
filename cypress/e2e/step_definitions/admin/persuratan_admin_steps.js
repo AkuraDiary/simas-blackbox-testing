@@ -8,7 +8,7 @@ Given("Saya mengakses halaman manajemen template surat", () => {
 });
 
 Given("Saya mengakses halaman manajemen format nomor surat", () => {
-  cy.visit("/internal/format-nomor-surats");
+  cy.visit("/internal/format-nomor-surat");
   cy.get(".fi-ta-table, [role='table'], .fi-ta-content", { timeout: 10000 }).should("be.visible");
 });
 
@@ -237,7 +237,7 @@ When("Saya mengisi formulir format nomor surat:", (dataTable) => {
 });
 
 Then("Format nomor {string} harus muncul pada daftar format nomor", (namaFormat) => {
-  cy.visit("/internal/format-nomor-surats");
+  cy.visit("/internal/format-nomor-surat");
   cy.get(".fi-ta-table, [role='table'], .fi-ta-content", { timeout: 10000 })
     .should("contain", namaFormat);
 });
@@ -271,7 +271,7 @@ When("Saya mengubah nama format nomor menjadi {string}", (newName) => {
 });
 
 Then("Format nomor {string} tidak boleh muncul pada daftar format nomor", (namaFormat) => {
-  cy.visit("/internal/format-nomor-surats");
+  cy.visit("/internal/format-nomor-surat");
   cy.get(".fi-ta-table, [role='table'], .fi-ta-content", { timeout: 10000 })
     .should("not.contain", namaFormat);
 });

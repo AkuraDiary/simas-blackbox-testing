@@ -27,12 +27,12 @@ const getEffectiveNim = (nim) => {
 // ─── NAVIGASI ─────────────────────────────────────────────────────────────────
 
 Given("Saya mengakses halaman manajemen pegawai", () => {
-  cy.visit("/internal/user-pegawais");
+  cy.visit("/internal/akun-pegawai");
   cy.get(".fi-ta-table, [role='table']", { timeout: 10000 }).should("be.visible");
 });
 
 Given("Saya mengakses halaman manajemen mahasiswa", () => {
-  cy.visit("/internal/user-mahasiswas");
+  cy.visit("/internal/akun-mahasiswa");
   cy.get(".fi-ta-table, [role='table']", { timeout: 10000 }).should("be.visible");
 });
 
@@ -99,7 +99,7 @@ When("Saya menekan tombol {string} pada form", (buttonText) => {
 
 Then("Pegawai dengan NIP {string} harus muncul pada daftar pegawai", (nip) => {
   const nipVal = getEffectiveNip(nip);
-  cy.visit("/internal/user-pegawais");
+  cy.visit("/internal/akun-pegawai");
   cy.get(".fi-ta-table, [role='table']", { timeout: 10000 }).should("be.visible");
   cy.get(".fi-ta-header input, .fi-ta-search-field input, .fi-ta input[type='search']").first().clear().type(`${nipVal}{enter}`);
   cy.wait(1200);
@@ -143,7 +143,7 @@ When("Saya mengisi nomor telepon pegawai {string}", (phone) => {
 });
 
 Then("Pegawai dengan nama {string} harus muncul pada daftar pegawai", (namaPegawai) => {
-  cy.visit("/internal/user-pegawais");
+  cy.visit("/internal/akun-pegawai");
   cy.get(".fi-ta-table, [role='table']", { timeout: 10000 }).should("be.visible");
   cy.get(".fi-ta-header input, .fi-ta-search-field input, .fi-ta input[type='search']").first().clear().type(`${namaPegawai}{enter}`);
   cy.wait(1200);
@@ -167,7 +167,7 @@ When("Saya mengonfirmasi tindakan pada modal", () => {
 
 Then("Pegawai dengan NIP {string} tidak boleh muncul pada daftar pegawai", (nip) => {
   const nipVal = getEffectiveNip(nip);
-  cy.visit("/internal/user-pegawais");
+  cy.visit("/internal/akun-pegawai");
   cy.get(".fi-ta-table, [role='table']", { timeout: 10000 })
     .should("not.contain", nipVal);
   activeNip = null;
@@ -209,7 +209,7 @@ When("Saya memilih program studi mahasiswa pertama yang tersedia", () => {
 
 Then("Mahasiswa dengan NIM {string} harus muncul pada daftar mahasiswa", (nim) => {
   const nimVal = getEffectiveNim(nim);
-  cy.visit("/internal/user-mahasiswas");
+  cy.visit("/internal/akun-mahasiswa");
   cy.get(".fi-ta-table, [role='table']", { timeout: 10000 })
     .should("contain", nimVal);
 });
@@ -256,7 +256,7 @@ When("Saya mengubah status mahasiswa menjadi {string}", (statusLabel) => {
 });
 
 Then("Mahasiswa {string} memiliki status {string} pada daftar mahasiswa", (namaMhs, statusLabel) => {
-  cy.visit("/internal/user-mahasiswas");
+  cy.visit("/internal/akun-mahasiswa");
   const regex = new RegExp(statusLabel, "i");
   cy.contains("tr", namaMhs, { timeout: 10000 })
     .invoke("text")
@@ -265,7 +265,7 @@ Then("Mahasiswa {string} memiliki status {string} pada daftar mahasiswa", (namaM
 
 Then("Mahasiswa dengan NIM {string} tidak boleh muncul pada daftar mahasiswa", (nim) => {
   const nimVal = getEffectiveNim(nim);
-  cy.visit("/internal/user-mahasiswas");
+  cy.visit("/internal/akun-mahasiswa");
   cy.get(".fi-ta-table, [role='table']", { timeout: 10000 })
     .should("not.contain", nimVal);
   activeNim = null;
